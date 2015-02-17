@@ -16,6 +16,8 @@
 		19E529AA1A9370D200F5CF22 /* ScoreTheFightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529A91A9370D200F5CF22 /* ScoreTheFightTests.swift */; };
 		19E529B41A93711500F5CF22 /* FightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B31A93711500F5CF22 /* FightModel.swift */; };
 		19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B51A93752300F5CF22 /* AddFightViewController.swift */; };
+		19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B71A937E3300F5CF22 /* NavigationController.swift */; };
+		19E529BA1A9380E000F5CF22 /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B91A9380E000F5CF22 /* FightCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		19E529A91A9370D200F5CF22 /* ScoreTheFightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTheFightTests.swift; sourceTree = "<group>"; };
 		19E529B31A93711500F5CF22 /* FightModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightModel.swift; sourceTree = "<group>"; };
 		19E529B51A93752300F5CF22 /* AddFightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFightViewController.swift; sourceTree = "<group>"; };
+		19E529B71A937E3300F5CF22 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		19E529B91A9380E000F5CF22 /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
+				19E529B91A9380E000F5CF22 /* FightCell.swift */,
 				19E529951A9370D200F5CF22 /* FightTableViewController.swift */,
 				19E529B51A93752300F5CF22 /* AddFightViewController.swift */,
 				19E529971A9370D200F5CF22 /* Main.storyboard */,
+				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
 				19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */,
 				19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */,
@@ -222,7 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */,
+				19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */,
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
+				19E529BA1A9380E000F5CF22 /* FightCell.swift in Sources */,
 				19E529B41A93711500F5CF22 /* FightModel.swift in Sources */,
 				19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */,
 				19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */,

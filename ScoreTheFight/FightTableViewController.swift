@@ -28,12 +28,14 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         let fetchReq = NSFetchRequest(entityName: "Fight")
         
-        // Set title for table view
-        self.title = "Scorecards"
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
         
         // Fetch and reload table data
         fightList = context.executeFetchRequest(fetchReq, error: nil)!
         fightTableView.reloadData()
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +63,7 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             // Set Data Points
             fightCell.textLabel?.text = data.valueForKeyPath("BoxerA") as? String
             fightCell.detailTextLabel?.text = data.valueForKeyPath("BoxerB") as? String
+
         }
         
         return fightCell

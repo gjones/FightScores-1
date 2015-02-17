@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureAppearance() {
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+        // UINavigationBar.appearance().backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+        UITableViewCell.appearance().backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        UITableView.appearance().rowHeight              = 80
+        UITableView.appearance().backgroundColor =      UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+
     }
 
     func applicationWillResignActive(application: UIApplication) {
