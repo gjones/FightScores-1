@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19C26CEA1A93888A005D7FDF /* FightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */; };
 		19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529901A9370D200F5CF22 /* AppDelegate.swift */; };
 		19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */; };
 		19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529951A9370D200F5CF22 /* FightTableViewController.swift */; };
@@ -17,7 +18,8 @@
 		19E529B41A93711500F5CF22 /* FightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B31A93711500F5CF22 /* FightModel.swift */; };
 		19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B51A93752300F5CF22 /* AddFightViewController.swift */; };
 		19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B71A937E3300F5CF22 /* NavigationController.swift */; };
-		19E529BA1A9380E000F5CF22 /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B91A9380E000F5CF22 /* FightCell.swift */; };
+		19F0BB221A940A6D00B7074E /* FightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB211A940A6D00B7074E /* FightDetailViewController.swift */; };
+		19F0BB241A94151200B7074E /* EditFightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB231A94151200B7074E /* EditFightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightTableViewCell.swift; path = ../FightTableViewCell.swift; sourceTree = "<group>"; };
 		19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTheFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5298F1A9370D200F5CF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19E529901A9370D200F5CF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +48,8 @@
 		19E529B31A93711500F5CF22 /* FightModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightModel.swift; sourceTree = "<group>"; };
 		19E529B51A93752300F5CF22 /* AddFightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFightViewController.swift; sourceTree = "<group>"; };
 		19E529B71A937E3300F5CF22 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		19E529B91A9380E000F5CF22 /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightCell.swift; sourceTree = "<group>"; };
+		19F0BB211A940A6D00B7074E /* FightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightDetailViewController.swift; sourceTree = "<group>"; };
+		19F0BB231A94151200B7074E /* EditFightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
-				19E529B91A9380E000F5CF22 /* FightCell.swift */,
+				19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */,
 				19E529951A9370D200F5CF22 /* FightTableViewController.swift */,
 				19E529B51A93752300F5CF22 /* AddFightViewController.swift */,
+				19F0BB211A940A6D00B7074E /* FightDetailViewController.swift */,
 				19E529971A9370D200F5CF22 /* Main.storyboard */,
+				19F0BB231A94151200B7074E /* EditFightViewController.swift */,
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
 				19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */,
@@ -227,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C26CEA1A93888A005D7FDF /* FightTableViewCell.swift in Sources */,
 				19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */,
+				19F0BB241A94151200B7074E /* EditFightViewController.swift in Sources */,
 				19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */,
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
-				19E529BA1A9380E000F5CF22 /* FightCell.swift in Sources */,
 				19E529B41A93711500F5CF22 /* FightModel.swift in Sources */,
 				19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */,
+				19F0BB221A940A6D00B7074E /* FightDetailViewController.swift in Sources */,
 				19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

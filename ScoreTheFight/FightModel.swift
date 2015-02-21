@@ -13,9 +13,9 @@ import CoreData
 
 class FightModel: NSManagedObject {
     
-    @NSManaged var boxerA:  String
-    @NSManaged var boxerB:  String
-    @NSManaged var rounds:  String
-    @NSManaged var notes:   String
-    
+    @NSManaged var boxerA:      String
+    @NSManaged var boxerB:      String
+    @NSManaged var rounds:      String
+    @NSManaged var notes:       String
+    @NSManaged var date:        NSDate
 }

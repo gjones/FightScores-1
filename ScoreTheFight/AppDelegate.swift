@@ -24,9 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureAppearance() {
         // UINavigationBar.appearance().backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-        UITableViewCell.appearance().backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        UITableViewCell.appearance().backgroundColor    = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
         UITableView.appearance().rowHeight              = 80
-        UITableView.appearance().backgroundColor =      UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        UITableView.appearance().separatorColor         = UIColor(red: 255, green: 255, blue: 255, alpha: 0.2)
+        UITableView.appearance().backgroundColor        = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        
+//        UILabel.appearance().font = UIFont (name: "HelveticaNeue-Thin", size: 18)
+//        UILabel.appearance().tintColor = UIColor .whiteColor()
+//        UITextField.appearance().font = UIFont (name: "HelveticaNeue-Thin", size: 18)
+//        UITextField.appearance().tintColor = UIColor .whiteColor()
+//        UITextField.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+//        
+//        UIView.appearance().tintColor = UIColor .whiteColor()
 
     }
 

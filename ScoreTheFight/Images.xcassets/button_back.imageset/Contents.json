@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Background.png"
+      "filename" : "button_back.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Background@2x.png"
+      "filename" : "button_back@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Background@3x.png"
+      "filename" : "button_back@3x.png"
     }
   ],
   "info" : {

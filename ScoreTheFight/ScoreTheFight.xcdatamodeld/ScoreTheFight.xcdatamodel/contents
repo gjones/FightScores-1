@@ -3,10 +3,11 @@
     <entity name="Fight" representedClassName="FightModel" syncable="YES">
         <attribute name="boxerA" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="boxerB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rounds" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fight" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Fight" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
