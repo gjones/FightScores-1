@@ -232,111 +232,116 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         
         labelBoxerA.text =  boxerA
         labelBoxerB.text =  boxerB
+        labelATotalScore.text = boxerA_totalScore
+        labelBTotalScore.text = boxerB_totalScore
         
-//        if notes != nil {
-//            textFieldNotes.text = notes
-//        }
+        textFieldNotes.delegate = self
         
-        if boxerA_totalScore != nil {
-            labelATotalScore.text = boxerA_totalScore
-        }
-        
-        if boxerB_totalScore != nil {
-            labelBTotalScore.text = boxerB_totalScore
+        if notes != nil {
+            textFieldNotes.text = notes
         }
         
-        if boxerA_round1 != nil {
-            buttonA1.setTitle(boxerA_round1, forState: .Normal)
+        buttonA1.setTitle(boxerA_round1, forState: .Normal)
+        buttonB1.setTitle(boxerB_round1, forState: .Normal)
+        buttonA2.setTitle(boxerA_round2, forState: .Normal)
+        buttonB2.setTitle(boxerB_round2, forState: .Normal)
+        buttonA3.setTitle(boxerA_round3, forState: .Normal)
+        buttonB3.setTitle(boxerB_round3, forState: .Normal)
+        buttonA4.setTitle(boxerA_round4, forState: .Normal)
+        buttonB4.setTitle(boxerB_round4, forState: .Normal)
+        buttonA5.setTitle(boxerA_round5, forState: .Normal)
+        buttonB5.setTitle(boxerB_round5, forState: .Normal)
+        buttonA6.setTitle(boxerA_round6, forState: .Normal)
+        buttonB6.setTitle(boxerB_round6, forState: .Normal)
+        buttonA7.setTitle(boxerA_round7, forState: .Normal)
+        buttonB7.setTitle(boxerB_round7, forState: .Normal)
+        buttonA8.setTitle(boxerA_round8, forState: .Normal)
+        buttonB8.setTitle(boxerB_round8, forState: .Normal)
+        buttonA9.setTitle(boxerA_round9, forState: .Normal)
+        buttonB9.setTitle(boxerB_round9, forState: .Normal)
+        buttonA10.setTitle(boxerA_round10, forState: .Normal)
+        buttonB10.setTitle(boxerB_round10, forState: .Normal)
+        buttonA11.setTitle(boxerA_round11, forState: .Normal)
+        buttonB11.setTitle(boxerB_round11, forState: .Normal)
+        buttonA12.setTitle(boxerA_round12, forState: .Normal)
+        buttonB12.setTitle(boxerB_round12, forState: .Normal)
+        
+        if rounds == "4" {
+            viewRd5.hidden = true
+            viewRd6.hidden = true
+            viewRd7.hidden = true
+            viewRd8.hidden = true
+            viewRd9.hidden = true
+            viewRd10.hidden = true
+            viewRd11.hidden = true
+            viewRd12.hidden = true
         }
-        if boxerB_round1 != nil {
-            buttonB1.setTitle(boxerB_round1, forState: .Normal)
+        
+        if rounds == "6" {
+            viewRd7.hidden = true
+            viewRd8.hidden = true
+            viewRd9.hidden = true
+            viewRd10.hidden = true
+            viewRd11.hidden = true
+            viewRd12.hidden = true
         }
-        if boxerA_round2 != nil {
-            buttonA2.setTitle(boxerA_round2, forState: .Normal)
-        }
-        if boxerB_round2 != nil {
-            buttonB2.setTitle(boxerB_round2, forState: .Normal)
-        }
-        if boxerA_round3 != nil {
-            buttonA3.setTitle(boxerA_round3, forState: .Normal)
-        }
-        if boxerB_round3 != nil {
-            buttonB3.setTitle(boxerB_round3, forState: .Normal)
-        }
-        if boxerA_round4 != nil {
-            buttonA4.setTitle(boxerA_round4, forState: .Normal)
-        }
-        if boxerB_round4 != nil {
-            buttonB4.setTitle(boxerB_round4, forState: .Normal)
-        }
-        if boxerA_round5 != nil {
-            buttonA5.setTitle(boxerA_round5, forState: .Normal)
-        }
-        if boxerB_round5 != nil {
-            buttonB5.setTitle(boxerB_round5, forState: .Normal)
-        }
-        if boxerA_round6 != nil {
-            buttonA6.setTitle(boxerA_round6, forState: .Normal)
-        }
-        if boxerB_round6 != nil {
-            buttonB6.setTitle(boxerB_round6, forState: .Normal)
-        }
-        if boxerA_round7 != nil {
-            buttonA7.setTitle(boxerA_round7, forState: .Normal)
-        }
-        if boxerB_round7 != nil {
-            buttonB7.setTitle(boxerB_round7, forState: .Normal)
-        }
-        if boxerA_round8 != nil {
-            buttonA8.setTitle(boxerA_round8, forState: .Normal)
-        }
-        if boxerB_round8 != nil {
-            buttonB8.setTitle(boxerB_round8, forState: .Normal)
+        
+        if rounds == "8" {
+            viewRd9.hidden = true
+            viewRd10.hidden = true
+            viewRd11.hidden = true
+            viewRd12.hidden = true
         }
 
-        if boxerA_round9 != nil {
-            buttonA9.setTitle(boxerA_round9, forState: .Normal)
+        if rounds == "10" {
+            viewRd11.hidden = true
+            viewRd12.hidden = true
         }
-        if boxerB_round9 != nil {
-            buttonB9.setTitle(boxerB_round9, forState: .Normal)
-        }
-        if boxerA_round10 != nil {
-            buttonA10.setTitle(boxerA_round10, forState: .Normal)
-        }
-        if boxerB_round10 != nil {
-            buttonB10.setTitle(boxerB_round10, forState: .Normal)
-        }
-        if boxerA_round11 != nil {
-            buttonA11.setTitle(boxerA_round11, forState: .Normal)
-        }
-        if boxerB_round11 != nil {
-            buttonB11.setTitle(boxerB_round11, forState: .Normal)
-        }
-        if boxerA_round12 != nil {
-            buttonA12.setTitle(boxerA_round12, forState: .Normal)
-        }
-        if boxerB_round12 != nil {
-            buttonB12.setTitle(boxerB_round12, forState: .Normal)
-        }
-        
-        
         // Apply styles
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
         standardLabel(labelvs)
+        standardLabel(labelNotes)
+        smallLabel(labelATotalScore)
+        smallLabel(labelBTotalScore)
+        softWhiteTextField(textFieldNotes)
+        softWhiteButton(buttonA1)
+        softWhiteButton(buttonA2)
+        softWhiteButton(buttonA3)
+        softWhiteButton(buttonA4)
+        softWhiteButton(buttonA5)
+        softWhiteButton(buttonA6)
+        softWhiteButton(buttonA7)
+        softWhiteButton(buttonA8)
+        softWhiteButton(buttonA9)
+        softWhiteButton(buttonA10)
+        softWhiteButton(buttonA11)
+        softWhiteButton(buttonA12)
+        softWhiteButton(buttonB1)
+        softWhiteButton(buttonB2)
+        softWhiteButton(buttonB3)
+        softWhiteButton(buttonB4)
+        softWhiteButton(buttonB5)
+        softWhiteButton(buttonB6)
+        softWhiteButton(buttonB7)
+        softWhiteButton(buttonB8)
+        softWhiteButton(buttonB9)
+        softWhiteButton(buttonB10)
+        softWhiteButton(buttonB11)
+        softWhiteButton(buttonB12)
         
-//        self.viewScoring.alpha = 0.0
+        
+        self.viewScoring.alpha = 0.0
 //        
-//        // Scrollview
+        // Scrollview
 //        scrollView.userInteractionEnabled = true
 //        scrollView.indicatorStyle = .Black
-//        scrollView.contentSize = CGSizeMake(0, 900)
 //        view.addSubview(scrollView)
-//        
-//        // Adding swipe back to previous page
-//        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-//        self.view.addGestureRecognizer(swipeRight)
+        
+        // Adding swipe back to previous page
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
         
     }
     
@@ -373,7 +378,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         let context: NSManagedObjectContext = appDel.managedObjectContext!
         let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
 
-        // thisFight.setValue(textFieldNotes.text as String, forKey: "notes")
+        thisFight.setValue(textFieldNotes.text as String, forKey: "notes")
         thisFight.setValue(buttonA1.titleLabel!.text! as String, forKey: "boxerA_round1")
         thisFight.setValue(buttonB1.titleLabel!.text! as String, forKey: "boxerB_round1")
         thisFight.setValue(buttonA2.titleLabel!.text! as String, forKey: "boxerA_round2")
@@ -412,8 +417,11 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+        self.scrollView.endEditing(true)
+        
     }
     
     func calculateScores() {
@@ -635,13 +643,31 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         fieldInQuestion.layer.borderColor = borderColor.CGColor
         fieldInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)   
     }
-    
+
+    func softWhiteButton(fieldInQuestion: UIButton) {
+        
+        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
+        
+        // fieldInQuestion.layer.cornerRadius = 4
+        //fieldInQuestion.textColor = UIColor .whiteColor()
+        fieldInQuestion.backgroundColor = whiteColor
+        fieldInQuestion.layer.borderWidth = 0.5
+        fieldInQuestion.layer.borderColor = borderColor.CGColor
+        //fieldInQuestion.layer.font = UIFont (name: "HelveticaNeue-Light", size: 14)
+    }
     func standardLabel(labelInQuestion: UILabel) {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
         labelInQuestion.textColor = UIColor .whiteColor()
     }
 
+    func smallLabel(labelInQuestion: UILabel) {
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 11)
+        labelInQuestion.textColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
+    }
     
 
 }

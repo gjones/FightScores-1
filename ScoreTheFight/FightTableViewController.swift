@@ -76,10 +76,32 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             fightDetailViewController.rounds = selectedFight.valueForKey("rounds") as? String
             fightDetailViewController.date = timestamp
             fightDetailViewController.notes = selectedFight.valueForKey("notes") as? String
+            fightDetailViewController.boxerA_totalScore = selectedFight.valueForKey("boxerA_totalScore") as? String
+            fightDetailViewController.boxerB_totalScore = selectedFight.valueForKey("boxerB_totalScore") as? String
             fightDetailViewController.boxerA_round1 = selectedFight.valueForKey("boxerA_round1") as? String
             fightDetailViewController.boxerB_round1 = selectedFight.valueForKey("boxerB_round1") as? String
             fightDetailViewController.boxerA_round2 = selectedFight.valueForKey("boxerA_round2") as? String
             fightDetailViewController.boxerB_round2 = selectedFight.valueForKey("boxerB_round2") as? String
+            fightDetailViewController.boxerA_round3 = selectedFight.valueForKey("boxerA_round3") as? String
+            fightDetailViewController.boxerB_round3 = selectedFight.valueForKey("boxerB_round3") as? String
+            fightDetailViewController.boxerA_round4 = selectedFight.valueForKey("boxerA_round4") as? String
+            fightDetailViewController.boxerB_round4 = selectedFight.valueForKey("boxerB_round4") as? String
+            fightDetailViewController.boxerA_round5 = selectedFight.valueForKey("boxerA_round5") as? String
+            fightDetailViewController.boxerB_round5 = selectedFight.valueForKey("boxerB_round5") as? String
+            fightDetailViewController.boxerA_round6 = selectedFight.valueForKey("boxerA_round6") as? String
+            fightDetailViewController.boxerB_round6 = selectedFight.valueForKey("boxerB_round6") as? String
+            fightDetailViewController.boxerA_round7 = selectedFight.valueForKey("boxerA_round7") as? String
+            fightDetailViewController.boxerB_round7 = selectedFight.valueForKey("boxerB_round7") as? String
+            fightDetailViewController.boxerA_round8 = selectedFight.valueForKey("boxerA_round8") as? String
+            fightDetailViewController.boxerB_round8 = selectedFight.valueForKey("boxerB_round8") as? String
+            fightDetailViewController.boxerA_round9 = selectedFight.valueForKey("boxerA_round9") as? String
+            fightDetailViewController.boxerB_round9 = selectedFight.valueForKey("boxerB_round9") as? String
+            fightDetailViewController.boxerA_round10 = selectedFight.valueForKey("boxerA_round10") as? String
+            fightDetailViewController.boxerB_round10 = selectedFight.valueForKey("boxerB_round10") as? String
+            fightDetailViewController.boxerA_round11 = selectedFight.valueForKey("boxerA_round11") as? String
+            fightDetailViewController.boxerB_round11 = selectedFight.valueForKey("boxerB_round11") as? String
+            fightDetailViewController.boxerA_round12 = selectedFight.valueForKey("boxerA_round12") as? String
+            fightDetailViewController.boxerB_round12 = selectedFight.valueForKey("boxerB_round12") as? String
             fightDetailViewController.thisFight = selectedFight
             println(selectedFight)
         }
@@ -112,7 +134,8 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             fightCell?.labelBoxerB.text = data.valueForKeyPath("boxerB") as? String
             fightCell?.labelRounds.text = "\(rounds!) Rounds"
             fightCell?.labelFightDate.text = timestamp
-            
+            fightCell?.labelBoxerATotal.text = data.valueForKeyPath("boxerA_totalScore") as? String
+            fightCell?.labelBoxerBTotal.text = data.valueForKeyPath("boxerB_totalScore") as? String
 
         }
         

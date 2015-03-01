@@ -14,6 +14,8 @@ class FightTableViewCell: UITableViewCell {
     @IBOutlet weak var labelBoxerB: UILabel!
     @IBOutlet weak var labelRounds: UILabel!
     @IBOutlet weak var labelFightDate: UILabel!
+    @IBOutlet weak var labelBoxerATotal: UILabel!
+    @IBOutlet weak var labelBoxerBTotal: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,8 @@ class FightTableViewCell: UITableViewCell {
         
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
+        standardLabel(labelBoxerATotal)
+        standardLabel(labelBoxerBTotal)
         
     }
 
