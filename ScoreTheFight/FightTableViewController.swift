@@ -76,6 +76,10 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             fightDetailViewController.rounds = selectedFight.valueForKey("rounds") as? String
             fightDetailViewController.date = timestamp
             fightDetailViewController.notes = selectedFight.valueForKey("notes") as? String
+            fightDetailViewController.boxerA_round1 = selectedFight.valueForKey("boxerA_round1") as? String
+            fightDetailViewController.boxerB_round1 = selectedFight.valueForKey("boxerB_round1") as? String
+            fightDetailViewController.boxerA_round2 = selectedFight.valueForKey("boxerA_round2") as? String
+            fightDetailViewController.boxerB_round2 = selectedFight.valueForKey("boxerB_round2") as? String
             fightDetailViewController.thisFight = selectedFight
             println(selectedFight)
         }
@@ -156,20 +160,6 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
         var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
-    
-//        let col1 = burgundyColor
-//        let col2 = lightBurgundyColor
-//        
-//        let arrayColors = [col1.CGColor, col2.CGColor, col1.CGColor]
-//        let gradient = CAGradientLayer()
-//        gradient.frame = CGRect(origin: CGPointMake(16, 18), size: view.bounds.size)
-//        
-//        gradient.colors = arrayColors
-//        gradient.cornerRadius = 4
-//        gradient.borderWidth = 0.5
-//        gradient.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).CGColor
-
-        //view.layer.insertSublayer(gradient, atIndex:0)
         
         buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
         buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()

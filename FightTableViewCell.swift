@@ -19,6 +19,9 @@ class FightTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        standardLabel(labelBoxerA)
+        standardLabel(labelBoxerB)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -30,6 +33,12 @@ class FightTableViewCell: UITableViewCell {
     override func setHighlighted(highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
+    }
+    
+    func standardLabel(labelInQuestion: UILabel) {
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        labelInQuestion.textColor = UIColor .whiteColor()
     }
 
 }

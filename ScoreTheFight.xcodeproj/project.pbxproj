@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19C26CEA1A93888A005D7FDF /* FightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */; };
+		19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */; };
 		19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529901A9370D200F5CF22 /* AppDelegate.swift */; };
 		19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */; };
 		19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529951A9370D200F5CF22 /* FightTableViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightTableViewCell.swift; path = ../FightTableViewCell.swift; sourceTree = "<group>"; };
+		19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTheFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5298F1A9370D200F5CF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19E529901A9370D200F5CF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				19E529B51A93752300F5CF22 /* AddFightViewController.swift */,
 				19F0BB211A940A6D00B7074E /* FightDetailViewController.swift */,
 				19E529971A9370D200F5CF22 /* Main.storyboard */,
+				19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */,
 				19F0BB231A94151200B7074E /* EditFightViewController.swift */,
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
@@ -240,6 +243,7 @@
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
 				19E529B41A93711500F5CF22 /* FightModel.swift in Sources */,
 				19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */,
+				19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailViewController.swift in Sources */,
 				19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */,
 			);

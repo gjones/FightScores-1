@@ -12,6 +12,7 @@ import CoreData
 class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var buttonStartScoring: UIButton!
     
     @IBOutlet weak var textFieldBoxerA: UITextField!
     @IBOutlet weak var textFieldBoxerB: UITextField!
@@ -57,9 +58,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New Scorecard"
-        // navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
-        // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
-        self.view.backgroundColor = UIColor .blackColor()
+        
         labelBoxerA.text = "Name of First Boxer"
         labelBoxerB.text = "Name of Second Boxer"
         labelRounds.text = "Number of Scheduled Rounds"
@@ -83,9 +82,10 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
         standardLabel(labelRounds)
+        redButton(buttonStartScoring)
         
         scrollView.userInteractionEnabled = true
-        scrollView.contentSize = CGSizeMake(0, 700)
+        // scrollView.contentSize = CGSizeMake(0, 900)
         scrollView.indicatorStyle = .Black
         view.addSubview(scrollView)
         
@@ -125,12 +125,17 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         // Create instance of our data model and initialize
         var newFight = FightModel(entity: entity!, insertIntoManagedObjectContext: context)
         
-        var roundsValue: String = rounds! as String
         // Map our properties
         newFight.boxerA = textFieldBoxerA.text
         newFight.boxerB = textFieldBoxerB.text
         newFight.date = NSDate()
-        newFight.rounds = roundsValue
+        
+        if rounds != nil {
+            newFight.rounds = rounds!
+        } else {
+            newFight.rounds = "12"
+        }
+        
         println("Submitted rounds = \(newFight.rounds)")
         // Set rounds
         
@@ -181,12 +186,14 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
+        
         
         buttonInQuestion.layer.cornerRadius = 20
         buttonInQuestion.clipsToBounds = true
         buttonInQuestion.backgroundColor = whiteColor
         buttonInQuestion.layer.borderWidth = 1
-        buttonInQuestion.layer.borderColor = burgundyColor.CGColor
+        buttonInQuestion.layer.borderColor = borderColor.CGColor
         
         buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchUpInside)
         
@@ -194,22 +201,22 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     
     func activeButton(sender: UIButton!) {
         
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
         
         buttonRd4.backgroundColor = whiteColor
-        buttonRd4.layer.borderColor = burgundyColor.CGColor
+        buttonRd4.layer.borderColor = borderColor.CGColor
         buttonRd6.backgroundColor = whiteColor
-        buttonRd6.layer.borderColor = burgundyColor.CGColor
+        buttonRd6.layer.borderColor = borderColor.CGColor
         buttonRd8.backgroundColor = whiteColor
-        buttonRd8.layer.borderColor = burgundyColor.CGColor
+        buttonRd8.layer.borderColor = borderColor.CGColor
         buttonRd10.backgroundColor = whiteColor
-        buttonRd10.layer.borderColor = burgundyColor.CGColor
+        buttonRd10.layer.borderColor = borderColor.CGColor
         buttonRd12.backgroundColor = whiteColor
-        buttonRd12.layer.borderColor = burgundyColor.CGColor
+        buttonRd12.layer.borderColor = borderColor.CGColor
         
         sender.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
-        sender.layer.borderColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 1).CGColor
+        sender.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.6).CGColor
         sender.resignFirstResponder()
     }
     
@@ -217,12 +224,13 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
         
-        fieldInQuestion.layer.cornerRadius = 4
+        // fieldInQuestion.layer.cornerRadius = 4
         fieldInQuestion.textColor = UIColor .whiteColor()
         fieldInQuestion.backgroundColor = whiteColor
         fieldInQuestion.layer.borderWidth = 0.5
-        fieldInQuestion.layer.borderColor = burgundyColor.CGColor
+        fieldInQuestion.layer.borderColor = borderColor.CGColor
         fieldInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
     }
     
@@ -230,12 +238,19 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
         labelInQuestion.textColor = UIColor .whiteColor()
+        labelInQuestion.tintColor = UIColor .whiteColor()
     }
     
-    
-    
-
-
-    
+    func redButton(buttonInQuestion: UIButton) {
+        
+        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
+        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
+        
+        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
+        buttonInQuestion.backgroundColor = burgundyColor
+        
+        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
+    }
 
 }
