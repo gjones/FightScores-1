@@ -325,18 +325,18 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         standardLabel(labelBoxerB)
         standardLabel(labelvs)
         
-        self.viewScoring.alpha = 0.0
-        
-        // Scrollview
-        scrollView.userInteractionEnabled = true
-        scrollView.indicatorStyle = .Black
-        scrollView.contentSize = CGSizeMake(0, 900)
-        view.addSubview(scrollView)
-        
-        // Adding swipe back to previous page
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
-        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-        self.view.addGestureRecognizer(swipeRight)
+//        self.viewScoring.alpha = 0.0
+//        
+//        // Scrollview
+//        scrollView.userInteractionEnabled = true
+//        scrollView.indicatorStyle = .Black
+//        scrollView.contentSize = CGSizeMake(0, 900)
+//        view.addSubview(scrollView)
+//        
+//        // Adding swipe back to previous page
+//        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+//        self.view.addGestureRecognizer(swipeRight)
         
     }
     
