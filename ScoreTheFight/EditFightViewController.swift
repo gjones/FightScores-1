@@ -21,6 +21,15 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var labelATotalScore: UILabel!
     @IBOutlet weak var labelBTotalScore: UILabel!
+    
+    @IBOutlet weak var buttonTen: UIButton!
+    @IBOutlet weak var buttonNine: UIButton!
+    @IBOutlet weak var buttonEight: UIButton!
+    @IBOutlet weak var buttonSeven: UIButton!
+    @IBOutlet weak var buttonSix: UIButton!
+    @IBOutlet weak var buttonZero: UIButton!
+    @IBOutlet weak var scorecardButton: UIButton!
+    @IBOutlet weak var buttonBack: UIButton!
 
     var boxerA:             String?
     var boxerB:             String?
@@ -228,6 +237,9 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
+        
+        
+        
         self.title = "Update Scorecard"
         
         labelBoxerA.text =  boxerA
@@ -242,28 +254,28 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         }
         
         buttonA1.setTitle(boxerA_round1, forState: .Normal)
-        buttonB1.setTitle(boxerB_round1, forState: .Normal)
         buttonA2.setTitle(boxerA_round2, forState: .Normal)
-        buttonB2.setTitle(boxerB_round2, forState: .Normal)
         buttonA3.setTitle(boxerA_round3, forState: .Normal)
-        buttonB3.setTitle(boxerB_round3, forState: .Normal)
         buttonA4.setTitle(boxerA_round4, forState: .Normal)
-        buttonB4.setTitle(boxerB_round4, forState: .Normal)
         buttonA5.setTitle(boxerA_round5, forState: .Normal)
-        buttonB5.setTitle(boxerB_round5, forState: .Normal)
         buttonA6.setTitle(boxerA_round6, forState: .Normal)
-        buttonB6.setTitle(boxerB_round6, forState: .Normal)
         buttonA7.setTitle(boxerA_round7, forState: .Normal)
-        buttonB7.setTitle(boxerB_round7, forState: .Normal)
         buttonA8.setTitle(boxerA_round8, forState: .Normal)
-        buttonB8.setTitle(boxerB_round8, forState: .Normal)
         buttonA9.setTitle(boxerA_round9, forState: .Normal)
-        buttonB9.setTitle(boxerB_round9, forState: .Normal)
         buttonA10.setTitle(boxerA_round10, forState: .Normal)
-        buttonB10.setTitle(boxerB_round10, forState: .Normal)
         buttonA11.setTitle(boxerA_round11, forState: .Normal)
-        buttonB11.setTitle(boxerB_round11, forState: .Normal)
         buttonA12.setTitle(boxerA_round12, forState: .Normal)
+        buttonB1.setTitle(boxerB_round1, forState: .Normal)
+        buttonB2.setTitle(boxerB_round2, forState: .Normal)
+        buttonB3.setTitle(boxerB_round3, forState: .Normal)
+        buttonB4.setTitle(boxerB_round4, forState: .Normal)
+        buttonB5.setTitle(boxerB_round5, forState: .Normal)
+        buttonB6.setTitle(boxerB_round6, forState: .Normal)
+        buttonB7.setTitle(boxerB_round7, forState: .Normal)
+        buttonB8.setTitle(boxerB_round8, forState: .Normal)
+        buttonB9.setTitle(boxerB_round9, forState: .Normal)
+        buttonB10.setTitle(boxerB_round10, forState: .Normal)
+        buttonB11.setTitle(boxerB_round11, forState: .Normal)
         buttonB12.setTitle(boxerB_round12, forState: .Normal)
         
         if rounds == "4" {
@@ -329,6 +341,13 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         softWhiteButton(buttonB10)
         softWhiteButton(buttonB11)
         softWhiteButton(buttonB12)
+        circularButton(buttonTen)
+        circularButton(buttonNine)
+        circularButton(buttonEight)
+        circularButton(buttonSeven)
+        circularButton(buttonSix)
+        circularButton(buttonZero)
+        redButton(scorecardButton)
         
         
         self.viewScoring.alpha = 0.0
@@ -417,7 +436,6 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         self.scrollView.endEditing(true)
@@ -425,11 +443,12 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     }
     
     func calculateScores() {
+        var defaultValue = "0"
         // Round 1
-        var A1 = buttonA1.titleLabel!.text
-        var A1Int = ripString(A1!)
-        var B1 = buttonB1.titleLabel!.text
-        var B1Int = ripString(B1!)
+        var A1 = buttonA1.titleLabel!.text ?? defaultValue
+        var A1Int = A1.toInt()
+        var B1 = buttonB1.titleLabel!.text ?? defaultValue
+        var B1Int = B1.toInt()
         
         // Round 2
         var A2 = buttonA2.titleLabel!.text
@@ -506,6 +525,10 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     }
     
     func ripString(roundVar: String) -> Int? {
+        if roundVar.isEmpty {
+            var roundVar = "0"
+        }
+        
         var score = roundVar.toInt()
         if score != nil {
             // Nothing
@@ -516,7 +539,6 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         return score
         
     }
-    
     
     func hideChooseScore() {
         UIView.animateWithDuration(0.3, animations: {
@@ -620,15 +642,6 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /// MARK: Styles 
     func softWhiteTextField(fieldInQuestion: UITextField) {
         
@@ -669,5 +682,34 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         labelInQuestion.textColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
     }
     
+    
+    func circularButton(buttonInQuestion: UIButton) {
+        
+        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
+        
+        buttonInQuestion.layer.cornerRadius = 30
+        buttonInQuestion.clipsToBounds = true
+        buttonInQuestion.backgroundColor = whiteColor
+        buttonInQuestion.layer.borderWidth = 1
+        buttonInQuestion.layer.borderColor = borderColor.CGColor
+        buttonInQuestion.tintColor = UIColor .whiteColor()
+        buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 22)
+        
+    }
+    
+    func redButton(buttonInQuestion: UIButton) {
+        
+        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
+        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
+        
+        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
+        buttonInQuestion.backgroundColor = burgundyColor
+        
+        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
+        
+    }
 
 }

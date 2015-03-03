@@ -113,10 +113,42 @@ class FightDetailViewController: UIViewController {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    @IBAction func shareTapped(sender: AnyObject) {
+        let textToShare = "Here's how I scored \(boxerA!) vs \(boxerB!) #boxing"
+        
+        // Generate the screenshot
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        var screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        if let imageToShare = screenshot {
+            let objectsToShare = [textToShare, imageToShare]
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            // Excluded Activities Code
+            activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+            
+        } else {
+            let objectsToShare = [textToShare]
+            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            // Excluded Activities Code
+            activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+                
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation
     */
+    
     
     // Segue for Updating Scorecard
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -132,32 +164,34 @@ class FightDetailViewController: UIViewController {
             scorecardViewController.notes = notes
             scorecardViewController.rounds = rounds
             scorecardViewController.date = date
-            scorecardViewController.boxerA_totalScore = boxerA_totalScore
-            scorecardViewController.boxerB_totalScore = boxerB_totalScore
-            scorecardViewController.boxerA_round1 = boxerA_round1
-            scorecardViewController.boxerA_round2 = boxerA_round2
-            scorecardViewController.boxerA_round3 = boxerA_round3
-            scorecardViewController.boxerA_round4 = boxerA_round4
-            scorecardViewController.boxerA_round5 = boxerA_round5
-            scorecardViewController.boxerA_round6 = boxerA_round6
-            scorecardViewController.boxerA_round7 = boxerA_round7
-            scorecardViewController.boxerA_round8 = boxerA_round8
-            scorecardViewController.boxerA_round9 = boxerA_round9
-            scorecardViewController.boxerA_round10 = boxerA_round10
-            scorecardViewController.boxerA_round11 = boxerA_round11
-            scorecardViewController.boxerA_round12 = boxerA_round12
-            scorecardViewController.boxerB_round1 = boxerB_round1
-            scorecardViewController.boxerB_round2 = boxerB_round2
-            scorecardViewController.boxerB_round3 = boxerB_round3
-            scorecardViewController.boxerB_round4 = boxerB_round4
-            scorecardViewController.boxerB_round5 = boxerB_round5
-            scorecardViewController.boxerB_round6 = boxerB_round6
-            scorecardViewController.boxerB_round7 = boxerB_round7
-            scorecardViewController.boxerB_round8 = boxerB_round8
-            scorecardViewController.boxerB_round9 = boxerB_round9
-            scorecardViewController.boxerB_round10 = boxerB_round10
-            scorecardViewController.boxerB_round11 = boxerB_round11
-            scorecardViewController.boxerB_round12 = boxerB_round12
+
+            var defaultValue = "0"
+            scorecardViewController.boxerA_totalScore = boxerA_totalScore ?? defaultValue
+            scorecardViewController.boxerB_totalScore = boxerB_totalScore ?? defaultValue
+            scorecardViewController.boxerA_round1 = boxerA_round1 ?? defaultValue
+            scorecardViewController.boxerA_round2 = boxerA_round2 ?? defaultValue
+            scorecardViewController.boxerA_round3 = boxerA_round3 ?? defaultValue
+            scorecardViewController.boxerA_round4 = boxerA_round4 ?? defaultValue
+            scorecardViewController.boxerA_round5 = boxerA_round5 ?? defaultValue
+            scorecardViewController.boxerA_round6 = boxerA_round6 ?? defaultValue
+            scorecardViewController.boxerA_round7 = boxerA_round7 ?? defaultValue
+            scorecardViewController.boxerA_round8 = boxerA_round8 ?? defaultValue
+            scorecardViewController.boxerA_round9 = boxerA_round9 ?? defaultValue
+            scorecardViewController.boxerA_round10 = boxerA_round10 ?? defaultValue
+            scorecardViewController.boxerA_round11 = boxerA_round11 ?? defaultValue
+            scorecardViewController.boxerA_round12 = boxerA_round12 ?? defaultValue
+            scorecardViewController.boxerB_round1 = boxerB_round1 ?? defaultValue
+            scorecardViewController.boxerB_round2 = boxerB_round2 ?? defaultValue
+            scorecardViewController.boxerB_round3 = boxerB_round3 ?? defaultValue
+            scorecardViewController.boxerB_round4 = boxerB_round4 ?? defaultValue
+            scorecardViewController.boxerB_round5 = boxerB_round5 ?? defaultValue
+            scorecardViewController.boxerB_round6 = boxerB_round6 ?? defaultValue
+            scorecardViewController.boxerB_round7 = boxerB_round7 ?? defaultValue
+            scorecardViewController.boxerB_round8 = boxerB_round8 ?? defaultValue
+            scorecardViewController.boxerB_round9 = boxerB_round9 ?? defaultValue
+            scorecardViewController.boxerB_round10 = boxerB_round10 ?? defaultValue
+            scorecardViewController.boxerB_round11 = boxerB_round11 ?? defaultValue
+            scorecardViewController.boxerB_round12 = boxerB_round12 ?? defaultValue
             scorecardViewController.thisFight = thisFight
         }
     }

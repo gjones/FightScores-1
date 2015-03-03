@@ -202,7 +202,5 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     }
 
-
-
 }
 
