@@ -30,7 +30,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonZero: UIButton!
     @IBOutlet weak var scorecardButton: UIButton!
     @IBOutlet weak var buttonBack: UIButton!
-
+    
     var boxerA:             String?
     var boxerB:             String?
     var rounds:             String?

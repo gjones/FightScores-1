@@ -21,6 +21,20 @@ class FightDetailViewController: UIViewController {
     @IBOutlet weak var labelNotes:      UILabel!
     @IBOutlet weak var buttonUpdateScorecard: UIButton!
     
+    // Set Round Labels
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
+    @IBOutlet weak var label11: UILabel!
+    @IBOutlet weak var label12: UILabel!
+    
     var boxerA: String?
     var boxerB: String?
     var rounds: String?
@@ -88,6 +102,18 @@ class FightDetailViewController: UIViewController {
         redButton(buttonUpdateScorecard)
         standardLabel(labelBoxerA_totalScore)
         standardLabel(labelBoxerB_totalScore)
+        softWhiteLabel(label1)
+        softWhiteLabel(label2)
+        softWhiteLabel(label3)
+        softWhiteLabel(label4)
+        softWhiteLabel(label5)
+        softWhiteLabel(label6)
+        softWhiteLabel(label7)
+        softWhiteLabel(label8)
+        softWhiteLabel(label9)
+        softWhiteLabel(label10)
+        softWhiteLabel(label11)
+        softWhiteLabel(label12)
         
     }
     
@@ -213,6 +239,18 @@ class FightDetailViewController: UIViewController {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
         labelInQuestion.textColor = UIColor .whiteColor()
+    }
+    
+    func softWhiteLabel(labelInQuestion: UILabel) {
+        var offWhiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
+        labelInQuestion.textColor = UIColor .whiteColor()
+        labelInQuestion.backgroundColor = offWhiteColor
+        labelInQuestion.layer.borderColor = borderColor
+        labelInQuestion.layer.borderWidth = 0.5
+        
     }
 
 }
