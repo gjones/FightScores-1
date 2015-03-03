@@ -26,6 +26,7 @@ class FightModel: NSManagedObject {
     @NSManaged var boxerA_round10:   String
     @NSManaged var boxerA_round11:   String
     @NSManaged var boxerA_round12:   String
+    @NSManaged var boxerA_totalScore: String
     @NSManaged var boxerB:          String
     @NSManaged var boxerB_round1:   String
     @NSManaged var boxerB_round2:   String
@@ -39,6 +40,7 @@ class FightModel: NSManagedObject {
     @NSManaged var boxerB_round10:   String
     @NSManaged var boxerB_round11:   String
     @NSManaged var boxerB_round12:   String
+    @NSManaged var boxerB_totalScore: String
     @NSManaged var rounds:          String
     @NSManaged var notes:           String
     @NSManaged var date:            NSDate

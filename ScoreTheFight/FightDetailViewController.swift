@@ -34,6 +34,34 @@ class FightDetailViewController: UIViewController {
     @IBOutlet weak var label10: UILabel!
     @IBOutlet weak var label11: UILabel!
     @IBOutlet weak var label12: UILabel!
+
+    // Set Boxer A Labels
+    @IBOutlet weak var labelBoxerA1: UILabel!
+    @IBOutlet weak var labelBoxerA2: UILabel!
+    @IBOutlet weak var labelBoxerA3: UILabel!
+    @IBOutlet weak var labelBoxerA4: UILabel!
+    @IBOutlet weak var labelBoxerA5: UILabel!
+    @IBOutlet weak var labelBoxerA6: UILabel!
+    @IBOutlet weak var labelBoxerA7: UILabel!
+    @IBOutlet weak var labelBoxerA8: UILabel!
+    @IBOutlet weak var labelBoxerA9: UILabel!
+    @IBOutlet weak var labelBoxerA10: UILabel!
+    @IBOutlet weak var labelBoxerA11: UILabel!
+    @IBOutlet weak var labelBoxerA12: UILabel!
+
+    // Set Boxer A Labels
+    @IBOutlet weak var labelBoxerB1: UILabel!
+    @IBOutlet weak var labelBoxerB2: UILabel!
+    @IBOutlet weak var labelBoxerB3: UILabel!
+    @IBOutlet weak var labelBoxerB4: UILabel!
+    @IBOutlet weak var labelBoxerB5: UILabel!
+    @IBOutlet weak var labelBoxerB6: UILabel!
+    @IBOutlet weak var labelBoxerB7: UILabel!
+    @IBOutlet weak var labelBoxerB8: UILabel!
+    @IBOutlet weak var labelBoxerB9: UILabel!
+    @IBOutlet weak var labelBoxerB10: UILabel!
+    @IBOutlet weak var labelBoxerB11: UILabel!
+    @IBOutlet weak var labelBoxerB12: UILabel!
     
     var boxerA: String?
     var boxerB: String?
@@ -83,6 +111,134 @@ class FightDetailViewController: UIViewController {
         labelBoxerA_totalScore.text = boxerA_totalScore
         labelBoxerB_totalScore.text = boxerB_totalScore
         
+        var noScore = "-"
+        
+        if boxerA_round1 == "0" {
+            labelBoxerA1.text = noScore
+        } else {
+            labelBoxerA1.text = boxerA_round1
+        }
+        if boxerA_round2 == "0" {
+            labelBoxerA2.text = noScore
+        } else {
+            labelBoxerA2.text = boxerA_round2
+        }
+        if boxerA_round3 == "0" {
+            labelBoxerA3.text = noScore
+        } else {
+            labelBoxerA3.text = boxerA_round3
+        }
+        if boxerA_round4 == "0" {
+            labelBoxerA4.text = noScore
+        } else {
+            labelBoxerA4.text = boxerA_round4
+        }
+        if boxerA_round5 == "0" {
+            labelBoxerA5.text = noScore
+        } else {
+            labelBoxerA5.text = boxerA_round5
+        }
+        if boxerA_round6 == "0" {
+            labelBoxerA6.text = noScore
+        } else {
+            labelBoxerA6.text = boxerA_round6
+        }
+        if boxerA_round7 == "0" {
+            labelBoxerA7.text = noScore
+        } else {
+            labelBoxerA7.text = boxerA_round7
+        }
+        if boxerA_round8 == "0" {
+            labelBoxerA8.text = noScore
+        } else {
+            labelBoxerA8.text = boxerA_round8
+        }
+        if boxerA_round9 == "0" {
+            labelBoxerA9.text = noScore
+        } else {
+            labelBoxerA9.text = boxerA_round9
+        }
+        if boxerA_round10 == "0" {
+            labelBoxerA10.text = noScore
+        } else {
+            labelBoxerA10.text = boxerA_round10
+        }
+        if boxerA_round11 == "0" {
+            labelBoxerA11.text = noScore
+        } else {
+            labelBoxerA11.text = boxerA_round11
+        }
+        if boxerA_round12 == "0" {
+            labelBoxerA12.text = noScore
+        } else {
+            labelBoxerA12.text = boxerA_round12
+        }
+        
+        // Boxer B Labels 
+        if boxerB_round1 == "0" {
+            labelBoxerB1.text = noScore
+        } else {
+            labelBoxerB1.text = boxerB_round1
+        }
+        if boxerB_round2 == "0" {
+            labelBoxerB2.text = noScore
+        } else {
+            labelBoxerB2.text = boxerB_round2
+        }
+        if boxerB_round3 == "0" {
+            labelBoxerB3.text = noScore
+        } else {
+            labelBoxerB3.text = boxerB_round3
+        }
+        if boxerB_round4 == "0" {
+            labelBoxerB4.text = noScore
+        } else {
+            labelBoxerB4.text = boxerB_round4
+        }
+        if boxerB_round5 == "0" {
+            labelBoxerB5.text = noScore
+        } else {
+            labelBoxerB5.text = boxerB_round5
+        }
+        if boxerB_round6 == "0" {
+            labelBoxerB6.text = noScore
+        } else {
+            labelBoxerB6.text = boxerB_round6
+        }
+        if boxerB_round7 == "0" {
+            labelBoxerB7.text = noScore
+        } else {
+            labelBoxerB7.text = boxerB_round7
+        }
+        if boxerB_round8 == "0" {
+            labelBoxerB8.text = noScore
+        } else {
+            labelBoxerB8.text = boxerB_round8
+        }
+        if boxerB_round9 == "0" {
+            labelBoxerB9.text = noScore
+        } else {
+            labelBoxerB9.text = boxerB_round9
+        }
+        if boxerB_round10 == "0" {
+            labelBoxerB10.text = noScore
+        } else {
+            labelBoxerB10.text = boxerB_round10
+        }
+        if boxerB_round11 == "0" {
+            labelBoxerB11.text = noScore
+        } else {
+            labelBoxerB11.text = boxerB_round11
+        }
+        if boxerB_round12 == "0" {
+            labelBoxerB12.text = noScore
+        } else {
+            labelBoxerB12.text = boxerB_round12
+        }
+
+
+        
+        
         if notes != nil {
             labelNotes.text = notes
         } else {
@@ -114,6 +270,30 @@ class FightDetailViewController: UIViewController {
         softWhiteLabel(label10)
         softWhiteLabel(label11)
         softWhiteLabel(label12)
+        borderedLabel(labelBoxerA1)
+        borderedLabel(labelBoxerA2)
+        borderedLabel(labelBoxerA3)
+        borderedLabel(labelBoxerA4)
+        borderedLabel(labelBoxerA5)
+        borderedLabel(labelBoxerA6)
+        borderedLabel(labelBoxerA7)
+        borderedLabel(labelBoxerA8)
+        borderedLabel(labelBoxerA9)
+        borderedLabel(labelBoxerA10)
+        borderedLabel(labelBoxerA11)
+        borderedLabel(labelBoxerA12)
+        borderedLabel(labelBoxerB1)
+        borderedLabel(labelBoxerB2)
+        borderedLabel(labelBoxerB3)
+        borderedLabel(labelBoxerB4)
+        borderedLabel(labelBoxerB5)
+        borderedLabel(labelBoxerB6)
+        borderedLabel(labelBoxerB7)
+        borderedLabel(labelBoxerB8)
+        borderedLabel(labelBoxerB9)
+        borderedLabel(labelBoxerB10)
+        borderedLabel(labelBoxerB11)
+        borderedLabel(labelBoxerB12)
         
     }
     
@@ -250,6 +430,20 @@ class FightDetailViewController: UIViewController {
         labelInQuestion.backgroundColor = offWhiteColor
         labelInQuestion.layer.borderColor = borderColor
         labelInQuestion.layer.borderWidth = 0.5
+    }
+    
+    func borderedLabel(labelInQuestion: UILabel) {
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
+        labelInQuestion.textColor = UIColor .whiteColor()
+        labelInQuestion.layer.borderColor = borderColor
+        labelInQuestion.layer.borderWidth = 0.5
+    }
+    
+    func setRdScore(roundScore: String) {
+        var defaultvalue = "-"
+        
         
     }
 

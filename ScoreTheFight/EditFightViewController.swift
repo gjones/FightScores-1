@@ -235,11 +235,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+
         self.title = "Update Scorecard"
         
         labelBoxerA.text =  boxerA
@@ -349,14 +345,8 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         circularButton(buttonZero)
         redButton(scorecardButton)
         
-        
         self.viewScoring.alpha = 0.0
-//        
-        // Scrollview
-//        scrollView.userInteractionEnabled = true
-//        scrollView.indicatorStyle = .Black
-//        view.addSubview(scrollView)
-        
+
         // Adding swipe back to previous page
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right

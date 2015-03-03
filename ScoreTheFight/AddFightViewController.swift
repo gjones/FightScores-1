@@ -33,6 +33,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     var rounds: String?
     var date:   NSDate?
     
+    
     // Rounds Logic
     @IBAction func buttonRd4(sender: AnyObject) {
         rounds = "4"
@@ -129,7 +130,32 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         newFight.boxerA = textFieldBoxerA.text
         newFight.boxerB = textFieldBoxerB.text
         newFight.date = NSDate()
-        
+        newFight.boxerA_round1 = "0"
+        newFight.boxerA_round2 = "0"
+        newFight.boxerA_round3 = "0"
+        newFight.boxerA_round4 = "0"
+        newFight.boxerA_round5 = "0"
+        newFight.boxerA_round6 = "0"
+        newFight.boxerA_round7 = "0"
+        newFight.boxerA_round8 = "0"
+        newFight.boxerA_round9 = "0"
+        newFight.boxerA_round10 = "0"
+        newFight.boxerA_round11 = "0"
+        newFight.boxerA_round12 = "0"
+        newFight.boxerB_round1 = "0"
+        newFight.boxerB_round2 = "0"
+        newFight.boxerB_round3 = "0"
+        newFight.boxerB_round4 = "0"
+        newFight.boxerB_round5 = "0"
+        newFight.boxerB_round6 = "0"
+        newFight.boxerB_round7 = "0"
+        newFight.boxerB_round8 = "0"
+        newFight.boxerB_round9 = "0"
+        newFight.boxerB_round10 = "0"
+        newFight.boxerB_round11 = "0"
+        newFight.boxerB_round12 = "0"
+        newFight.boxerB_totalScore = "0"
+        newFight.boxerA_totalScore = "0"
         if rounds != nil {
             newFight.rounds = rounds!
         } else {

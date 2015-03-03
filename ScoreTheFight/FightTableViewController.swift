@@ -29,7 +29,6 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     }
     
-    
     override func viewDidAppear(animated: Bool) {
         
         // Reference to our app delegate
