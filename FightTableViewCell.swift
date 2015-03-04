@@ -25,6 +25,9 @@ class FightTableViewCell: UITableViewCell {
         standardLabel(labelBoxerB)
         standardLabel(labelBoxerATotal)
         standardLabel(labelBoxerBTotal)
+        smallLabel(labelFightDate)
+        smallLabel(labelRounds)
+        
         
     }
 
@@ -43,6 +46,12 @@ class FightTableViewCell: UITableViewCell {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
         labelInQuestion.textColor = UIColor .whiteColor()
+    }
+    
+    func smallLabel(labelInQuestion: UILabel) {
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
+        labelInQuestion.textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
     }
 
 }

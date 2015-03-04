@@ -19,6 +19,7 @@ class FightDetailViewController: UIViewController {
     @IBOutlet weak var labelRounds:     UILabel!
     @IBOutlet weak var labelFightDate:  UILabel!
     @IBOutlet weak var labelNotes:      UILabel!
+    @IBOutlet weak var labelNotesTitle:      UILabel!
     @IBOutlet weak var buttonUpdateScorecard: UIButton!
     
     // Set Round Labels
@@ -100,9 +101,7 @@ class FightDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: false)
         self.title = "Scorecard"
-        self.view.backgroundColor = UIColor .blackColor()
         
         labelBoxerA.text = boxerA
         labelBoxerB.text = boxerB
@@ -111,153 +110,55 @@ class FightDetailViewController: UIViewController {
         labelBoxerA_totalScore.text = boxerA_totalScore
         labelBoxerB_totalScore.text = boxerB_totalScore
         
-        var noScore = "-"
         
-        if boxerA_round1 == "0" {
-            labelBoxerA1.text = noScore
-        } else {
-            labelBoxerA1.text = boxerA_round1
-        }
-        if boxerA_round2 == "0" {
-            labelBoxerA2.text = noScore
-        } else {
-            labelBoxerA2.text = boxerA_round2
-        }
-        if boxerA_round3 == "0" {
-            labelBoxerA3.text = noScore
-        } else {
-            labelBoxerA3.text = boxerA_round3
-        }
-        if boxerA_round4 == "0" {
-            labelBoxerA4.text = noScore
-        } else {
-            labelBoxerA4.text = boxerA_round4
-        }
-        if boxerA_round5 == "0" {
-            labelBoxerA5.text = noScore
-        } else {
-            labelBoxerA5.text = boxerA_round5
-        }
-        if boxerA_round6 == "0" {
-            labelBoxerA6.text = noScore
-        } else {
-            labelBoxerA6.text = boxerA_round6
-        }
-        if boxerA_round7 == "0" {
-            labelBoxerA7.text = noScore
-        } else {
-            labelBoxerA7.text = boxerA_round7
-        }
-        if boxerA_round8 == "0" {
-            labelBoxerA8.text = noScore
-        } else {
-            labelBoxerA8.text = boxerA_round8
-        }
-        if boxerA_round9 == "0" {
-            labelBoxerA9.text = noScore
-        } else {
-            labelBoxerA9.text = boxerA_round9
-        }
-        if boxerA_round10 == "0" {
-            labelBoxerA10.text = noScore
-        } else {
-            labelBoxerA10.text = boxerA_round10
-        }
-        if boxerA_round11 == "0" {
-            labelBoxerA11.text = noScore
-        } else {
-            labelBoxerA11.text = boxerA_round11
-        }
-        if boxerA_round12 == "0" {
-            labelBoxerA12.text = noScore
-        } else {
-            labelBoxerA12.text = boxerA_round12
-        }
+        labelBoxerA1.text = boxerA_round1
+        labelBoxerA2.text = boxerA_round2
+        labelBoxerA3.text = boxerA_round3
+        labelBoxerA4.text = boxerA_round4
+        labelBoxerA5.text = boxerA_round5
+        labelBoxerA6.text = boxerA_round6
+        labelBoxerA7.text = boxerA_round7
+        labelBoxerA8.text = boxerA_round8
+        labelBoxerA9.text = boxerA_round9
+        labelBoxerA10.text = boxerA_round10
+        labelBoxerA11.text = boxerA_round11
+        labelBoxerA12.text = boxerA_round12
+        labelBoxerB1.text = boxerB_round1
+        labelBoxerB2.text = boxerB_round2
+        labelBoxerB3.text = boxerB_round3
+        labelBoxerB4.text = boxerB_round4
+        labelBoxerB5.text = boxerB_round5
+        labelBoxerB6.text = boxerB_round6
+        labelBoxerB7.text = boxerB_round7
+        labelBoxerB8.text = boxerB_round8
+        labelBoxerB9.text = boxerB_round9
+        labelBoxerB10.text = boxerB_round10
+        labelBoxerB11.text = boxerB_round11
+        labelBoxerB12.text = boxerB_round12
+        labelNotes.text = notes
         
-        // Boxer B Labels 
-        if boxerB_round1 == "0" {
-            labelBoxerB1.text = noScore
-        } else {
-            labelBoxerB1.text = boxerB_round1
-        }
-        if boxerB_round2 == "0" {
-            labelBoxerB2.text = noScore
-        } else {
-            labelBoxerB2.text = boxerB_round2
-        }
-        if boxerB_round3 == "0" {
-            labelBoxerB3.text = noScore
-        } else {
-            labelBoxerB3.text = boxerB_round3
-        }
-        if boxerB_round4 == "0" {
-            labelBoxerB4.text = noScore
-        } else {
-            labelBoxerB4.text = boxerB_round4
-        }
-        if boxerB_round5 == "0" {
-            labelBoxerB5.text = noScore
-        } else {
-            labelBoxerB5.text = boxerB_round5
-        }
-        if boxerB_round6 == "0" {
-            labelBoxerB6.text = noScore
-        } else {
-            labelBoxerB6.text = boxerB_round6
-        }
-        if boxerB_round7 == "0" {
-            labelBoxerB7.text = noScore
-        } else {
-            labelBoxerB7.text = boxerB_round7
-        }
-        if boxerB_round8 == "0" {
-            labelBoxerB8.text = noScore
-        } else {
-            labelBoxerB8.text = boxerB_round8
-        }
-        if boxerB_round9 == "0" {
-            labelBoxerB9.text = noScore
-        } else {
-            labelBoxerB9.text = boxerB_round9
-        }
-        if boxerB_round10 == "0" {
-            labelBoxerB10.text = noScore
-        } else {
-            labelBoxerB10.text = boxerB_round10
-        }
-        if boxerB_round11 == "0" {
-            labelBoxerB11.text = noScore
-        } else {
-            labelBoxerB11.text = boxerB_round11
-        }
-        if boxerB_round12 == "0" {
-            labelBoxerB12.text = noScore
-        } else {
-            labelBoxerB12.text = boxerB_round12
-        }
-
-
-        
-        
-        if notes != nil {
-            labelNotes.text = notes
-        } else {
-            labelNotes.text = "There are currently no notes for this fight."
-        }
+        labelNotesTitle.text = "Fight Notes"
         
         // Scrollview
         scrollView.userInteractionEnabled = true
         scrollView.indicatorStyle = .Black
         view.addSubview(scrollView)
         
+        // Custom Nav Items
+        leftNavButton()
+        rightNavButton()
+        
         // Adding swipe back to previous page
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
         
-        redButton(buttonUpdateScorecard)
         standardLabel(labelBoxerA_totalScore)
         standardLabel(labelBoxerB_totalScore)
+        standardLabel(labelNotes)
+        smallLabel(labelNotesTitle)
+        smallLabel(labelFightDate)
+        smallLabel(labelRounds)
         softWhiteLabel(label1)
         softWhiteLabel(label2)
         softWhiteLabel(label3)
@@ -315,11 +216,7 @@ class FightDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func shareTapped(sender: AnyObject) {
+    func shareTapped(sender: UIButton) {
         let textToShare = "Here's how I scored \(boxerA!) vs \(boxerB!) #boxing"
         
         // Generate the screenshot
@@ -348,7 +245,41 @@ class FightDetailViewController: UIViewController {
         }
     }
     
+    func leftNavButton() {
+        // hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        buttonBack.frame = CGRectMake(0, 0, 40, 40)
+        buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
+        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
+        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+    }
     
+    func leftNavButtonClick(sender:UIButton!) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func rightNavButton() {
+        // hide default navigation bar button item
+        self.navigationItem.rightBarButtonItem = nil;
+        
+        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        var xCoordinate = (self.view.frame.size.width - 20)
+        buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
+        buttonShare.setImage(UIImage(named:"button_share.png"), forState: UIControlState.Normal)
+        buttonShare.imageEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
+        buttonShare.addTarget(self, action: "shareTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonShare)
+        
+        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
+    }
     
 
     /*
@@ -402,19 +333,6 @@ class FightDetailViewController: UIViewController {
         }
     }
     
-    func redButton(buttonInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
-        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
-        
-        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
-        buttonInQuestion.backgroundColor = burgundyColor
-        
-        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
-        
-    }
-    
     func standardLabel(labelInQuestion: UILabel) {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
@@ -441,10 +359,11 @@ class FightDetailViewController: UIViewController {
         labelInQuestion.layer.borderWidth = 0.5
     }
     
-    func setRdScore(roundScore: String) {
-        var defaultvalue = "-"
+    
+    func smallLabel(labelInQuestion: UILabel) {
         
-        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
+        labelInQuestion.textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
     }
 
 }

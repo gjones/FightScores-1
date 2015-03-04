@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192B43BE1AA665A600DC8B00 /* MainCallToActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43BD1AA665A600DC8B00 /* MainCallToActionButton.swift */; };
+		192B43C21AA68C9C00DC8B00 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43C11AA68C9C00DC8B00 /* SettingsViewController.swift */; };
+		199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199513C91AA7737B00E310B6 /* Main.storyboard */; };
 		19C26CEA1A93888A005D7FDF /* FightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */; };
 		19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */; };
 		19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529901A9370D200F5CF22 /* AppDelegate.swift */; };
 		19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */; };
 		19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529951A9370D200F5CF22 /* FightTableViewController.swift */; };
-		19E529991A9370D200F5CF22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E529971A9370D200F5CF22 /* Main.storyboard */; };
 		19E5299B1A9370D200F5CF22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299A1A9370D200F5CF22 /* Images.xcassets */; };
 		19E5299E1A9370D200F5CF22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */; };
 		19E529AA1A9370D200F5CF22 /* ScoreTheFightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529A91A9370D200F5CF22 /* ScoreTheFightTests.swift */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		192B43BD1AA665A600DC8B00 /* MainCallToActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCallToActionButton.swift; path = ../MainCallToActionButton.swift; sourceTree = "<group>"; };
+		192B43C11AA68C9C00DC8B00 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightTableViewCell.swift; path = ../FightTableViewCell.swift; sourceTree = "<group>"; };
 		19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTheFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +46,6 @@
 		19E529901A9370D200F5CF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19E529931A9370D200F5CF22 /* ScoreTheFight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScoreTheFight.xcdatamodel; sourceTree = "<group>"; };
 		19E529951A9370D200F5CF22 /* FightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightTableViewController.swift; sourceTree = "<group>"; };
-		19E529981A9370D200F5CF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19E5299A1A9370D200F5CF22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19E5299D1A9370D200F5CF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		19E529A31A9370D200F5CF22 /* ScoreTheFightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreTheFightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,12 +97,14 @@
 		19E5298D1A9370D200F5CF22 /* ScoreTheFight */ = {
 			isa = PBXGroup;
 			children = (
+				199513C91AA7737B00E310B6 /* Main.storyboard */,
+				192B43BD1AA665A600DC8B00 /* MainCallToActionButton.swift */,
 				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
 				19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */,
 				19E529951A9370D200F5CF22 /* FightTableViewController.swift */,
 				19E529B51A93752300F5CF22 /* AddFightViewController.swift */,
 				19F0BB211A940A6D00B7074E /* FightDetailViewController.swift */,
-				19E529971A9370D200F5CF22 /* Main.storyboard */,
+				192B43C11AA68C9C00DC8B00 /* SettingsViewController.swift */,
 				19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */,
 				19F0BB231A94151200B7074E /* EditFightViewController.swift */,
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
@@ -217,7 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19E529991A9370D200F5CF22 /* Main.storyboard in Resources */,
+				199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */,
 				19E5299E1A9370D200F5CF22 /* LaunchScreen.xib in Resources */,
 				19E5299B1A9370D200F5CF22 /* Images.xcassets in Resources */,
 			);
@@ -261,8 +267,10 @@
 				19E529B41A93711500F5CF22 /* FightModel.swift in Sources */,
 				19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */,
 				19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */,
+				192B43BE1AA665A600DC8B00 /* MainCallToActionButton.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailViewController.swift in Sources */,
 				19E529B61A93752300F5CF22 /* AddFightViewController.swift in Sources */,
+				192B43C21AA68C9C00DC8B00 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		19E529971A9370D200F5CF22 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19E529981A9370D200F5CF22 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

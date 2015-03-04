@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureAppearance() {
         UITableViewCell.appearance().backgroundColor    = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
-        UITableView.appearance().rowHeight              = 80
+        UITableView.appearance().rowHeight              = 82
         UITableView.appearance().separatorColor         = UIColor(red: 255, green: 255, blue: 255, alpha: 0.2)
         UITableView.appearance().backgroundColor        = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
 

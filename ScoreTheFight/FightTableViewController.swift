@@ -14,19 +14,32 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var fightTableView: UITableView!
     @IBOutlet weak var addFightButton: UIButton!
+    @IBOutlet weak var labelNoFights: UILabel!
     @IBOutlet var backgroundImageView: UIImageView!
     
     var fightList:Array<AnyObject> = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        redButton(addFightButton)
-        // navigationController?.setNavigationBarHidden(true, animated: false)
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.18 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
+        }
     }
     
-    override func viewWillAppear(animated: Bool) {
-       //  navigationController?.setNavigationBarHidden(true, animated: false)
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //redButton(addFightButton)
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
+        
+        labelNoFights.hidden = true
+        
+        standardLabel(labelNoFights)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -37,7 +50,6 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // Reference NSManaged object context
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         let fetchReq = NSFetchRequest(entityName: "Fight")
-        navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
         view.backgroundColor = UIColor .blackColor()
         
         // Fetch and reload table data
@@ -111,6 +123,13 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if fightList.isEmpty {
+//            fightTableView.hidden = true
+//            labelNoFights.hidden = false
+//            labelNoFights.text = "You have no scorecards!\n Add a fight now to get going."
+//        } else {
+//            return fightList.count
+//        }
         return fightList.count
     }
     
@@ -191,6 +210,14 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     }
     
+    func standardLabel(labelInQuestion: UILabel) {
+        
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        labelInQuestion.textColor = UIColor .whiteColor()
+        labelInQuestion.tintColor = UIColor .whiteColor()
+        labelInQuestion.alpha = 0.800
+    }
+    
     func activeButton(sender: UIButton!) {
         
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
@@ -202,4 +229,5 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
 }
+
 

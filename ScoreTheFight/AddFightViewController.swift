@@ -59,14 +59,13 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New Scorecard"
-        
+        leftNavButton()
         labelBoxerA.text = "Name of First Boxer"
         labelBoxerB.text = "Name of Second Boxer"
         labelRounds.text = "Number of Scheduled Rounds"
         
         textFieldBoxerA.delegate = self
         textFieldBoxerB.delegate = self
-        
         
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
 
@@ -83,7 +82,6 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
         standardLabel(labelRounds)
-        redButton(buttonStartScoring)
         
         scrollView.userInteractionEnabled = true
         // scrollView.contentSize = CGSizeMake(0, 900)
@@ -115,67 +113,9 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     }
     
     @IBAction func addFightButton(sender: AnyObject) {
-        
-        // Reference to our app delegate
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        // Reference NSManaged object context
-        let context: NSManagedObjectContext = appDel.managedObjectContext!
-        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
-        
-        // Create instance of our data model and initialize
-        var newFight = FightModel(entity: entity!, insertIntoManagedObjectContext: context)
-        
-        // Map our properties
-        newFight.boxerA = textFieldBoxerA.text
-        newFight.boxerB = textFieldBoxerB.text
-        newFight.date = NSDate()
-        newFight.boxerA_round1 = "0"
-        newFight.boxerA_round2 = "0"
-        newFight.boxerA_round3 = "0"
-        newFight.boxerA_round4 = "0"
-        newFight.boxerA_round5 = "0"
-        newFight.boxerA_round6 = "0"
-        newFight.boxerA_round7 = "0"
-        newFight.boxerA_round8 = "0"
-        newFight.boxerA_round9 = "0"
-        newFight.boxerA_round10 = "0"
-        newFight.boxerA_round11 = "0"
-        newFight.boxerA_round12 = "0"
-        newFight.boxerB_round1 = "0"
-        newFight.boxerB_round2 = "0"
-        newFight.boxerB_round3 = "0"
-        newFight.boxerB_round4 = "0"
-        newFight.boxerB_round5 = "0"
-        newFight.boxerB_round6 = "0"
-        newFight.boxerB_round7 = "0"
-        newFight.boxerB_round8 = "0"
-        newFight.boxerB_round9 = "0"
-        newFight.boxerB_round10 = "0"
-        newFight.boxerB_round11 = "0"
-        newFight.boxerB_round12 = "0"
-        newFight.boxerB_totalScore = "0"
-        newFight.boxerA_totalScore = "0"
-        if rounds != nil {
-            newFight.rounds = rounds!
-        } else {
-            newFight.rounds = "12"
-        }
-        
-        println("Submitted rounds = \(newFight.rounds)")
-        // Set rounds
-        
-        // Save our context
-        context.save(nil)
-        
-        println(newFight)
-        
-        // Navigate back to previous controller
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        submitFight()
+        
     }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -203,6 +143,26 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     func scrollViewDidEndDragging(scrollView: UIScrollView,
         willDecelerate decelerate: Bool){
             scrollView.alpha = 1
+    }
+    
+    func leftNavButton() {
+        // hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        buttonBack.frame = CGRectMake(0, 0, 40, 40)
+        buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
+        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
+        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+    }
+    
+    func leftNavButtonClick(sender:UIButton!) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     
@@ -277,6 +237,81 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         buttonInQuestion.backgroundColor = burgundyColor
         
         buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
+    }
+    
+    // 
+    func submitFight() {
+        // Reference to our app delegate
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // Reference NSManaged object context
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
+        
+        // Create instance of our data model and initialize
+        var newFight = FightModel(entity: entity!, insertIntoManagedObjectContext: context)
+        
+        
+        
+        // Map our properties
+        if textFieldBoxerA.text == "" {
+            newFight.boxerA = "Boxer A"
+        } else {
+            newFight.boxerA = textFieldBoxerA.text
+        }
+        if textFieldBoxerB.text == "" {
+            newFight.boxerB = "Boxer B"
+        } else {
+            newFight.boxerB = textFieldBoxerB.text
+        }
+        
+        newFight.date = NSDate()
+        newFight.boxerA_round1 = "0"
+        newFight.boxerA_round2 = "0"
+        newFight.boxerA_round3 = "0"
+        newFight.boxerA_round4 = "0"
+        newFight.boxerA_round5 = "0"
+        newFight.boxerA_round6 = "0"
+        newFight.boxerA_round7 = "0"
+        newFight.boxerA_round8 = "0"
+        newFight.boxerA_round9 = "0"
+        newFight.boxerA_round10 = "0"
+        newFight.boxerA_round11 = "0"
+        newFight.boxerA_round12 = "0"
+        newFight.boxerB_round1 = "0"
+        newFight.boxerB_round2 = "0"
+        newFight.boxerB_round3 = "0"
+        newFight.boxerB_round4 = "0"
+        newFight.boxerB_round5 = "0"
+        newFight.boxerB_round6 = "0"
+        newFight.boxerB_round7 = "0"
+        newFight.boxerB_round8 = "0"
+        newFight.boxerB_round9 = "0"
+        newFight.boxerB_round10 = "0"
+        newFight.boxerB_round11 = "0"
+        newFight.boxerB_round12 = "0"
+        newFight.boxerB_totalScore = "0"
+        newFight.boxerA_totalScore = "0"
+        newFight.notes = "There are currently no notes for this fight."
+        
+        if rounds != nil {
+            newFight.rounds = rounds!
+        } else {
+            newFight.rounds = "12"
+        }
+        
+        println("Submitted rounds = \(newFight.rounds)")
+        // Set rounds
+        
+        // Save our context
+        context.save(nil)
+        
+        println(newFight)
+        
+        // Navigate on to the edit scorecard controller
+        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("updateScorecard") as! EditFightViewController
+        self.navigationController?.pushViewController(switchViewController, animated: true)
+
     }
 
 }

@@ -12,6 +12,8 @@ import CoreData
 class EditFightViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView:      UIScrollView!
+    @IBOutlet weak var roundsView:      UIView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var labelBoxerA:     UILabel!
     @IBOutlet weak var labelBoxerB:     UILabel!
     @IBOutlet weak var labelNotes:      UILabel!
@@ -66,6 +68,10 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     var thisFight: NSManagedObject!
     var lastButtonPressed: String?
     @IBOutlet weak var viewScoring: UIVisualEffectView!
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.alpha = 1.0
+    }
     
     // Round One
     @IBOutlet weak var viewRd1: UIView!
@@ -231,15 +237,13 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         showChooseScore()
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Update Scorecard"
         
-        labelBoxerA.text =  boxerA
-        labelBoxerB.text =  boxerB
+        labelBoxerA.text = boxerA
+        labelBoxerB.text = boxerB
         labelATotalScore.text = boxerA_totalScore
         labelBTotalScore.text = boxerB_totalScore
         
@@ -248,6 +252,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         if notes != nil {
             textFieldNotes.text = notes
         }
+        
         
         buttonA1.setTitle(boxerA_round1, forState: .Normal)
         buttonA2.setTitle(boxerA_round2, forState: .Normal)
@@ -273,6 +278,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         buttonB10.setTitle(boxerB_round10, forState: .Normal)
         buttonB11.setTitle(boxerB_round11, forState: .Normal)
         buttonB12.setTitle(boxerB_round12, forState: .Normal)
+   
         
         if rounds == "4" {
             viewRd5.hidden = true
@@ -283,6 +289,11 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
             viewRd10.hidden = true
             viewRd11.hidden = true
             viewRd12.hidden = true
+            roundsView.backgroundColor = UIColor .redColor()
+            contentView.backgroundColor = UIColor .greenColor()
+            
+
+            
         }
         
         if rounds == "6" {
@@ -292,6 +303,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
             viewRd10.hidden = true
             viewRd11.hidden = true
             viewRd12.hidden = true
+
         }
         
         if rounds == "8" {
@@ -299,12 +311,19 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
             viewRd10.hidden = true
             viewRd11.hidden = true
             viewRd12.hidden = true
+
         }
 
         if rounds == "10" {
             viewRd11.hidden = true
             viewRd12.hidden = true
         }
+        
+        if rounds == "12" {
+//            contentView.backgroundColor = UIColor .blueColor()
+//            view.frame.size.height = 920
+        }
+        
         // Apply styles
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
@@ -313,29 +332,29 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         smallLabel(labelATotalScore)
         smallLabel(labelBTotalScore)
         softWhiteTextField(textFieldNotes)
-        softWhiteButton(buttonA1)
+        offSoftWhiteButton(buttonA1)
         softWhiteButton(buttonA2)
-        softWhiteButton(buttonA3)
+        offSoftWhiteButton(buttonA3)
         softWhiteButton(buttonA4)
-        softWhiteButton(buttonA5)
+        offSoftWhiteButton(buttonA5)
         softWhiteButton(buttonA6)
-        softWhiteButton(buttonA7)
+        offSoftWhiteButton(buttonA7)
         softWhiteButton(buttonA8)
-        softWhiteButton(buttonA9)
+        offSoftWhiteButton(buttonA9)
         softWhiteButton(buttonA10)
-        softWhiteButton(buttonA11)
+        offSoftWhiteButton(buttonA11)
         softWhiteButton(buttonA12)
-        softWhiteButton(buttonB1)
+        offSoftWhiteButton(buttonB1)
         softWhiteButton(buttonB2)
-        softWhiteButton(buttonB3)
+        offSoftWhiteButton(buttonB3)
         softWhiteButton(buttonB4)
-        softWhiteButton(buttonB5)
+        offSoftWhiteButton(buttonB5)
         softWhiteButton(buttonB6)
-        softWhiteButton(buttonB7)
+        offSoftWhiteButton(buttonB7)
         softWhiteButton(buttonB8)
-        softWhiteButton(buttonB9)
+        offSoftWhiteButton(buttonB9)
         softWhiteButton(buttonB10)
-        softWhiteButton(buttonB11)
+        offSoftWhiteButton(buttonB11)
         softWhiteButton(buttonB12)
         circularButton(buttonTen)
         circularButton(buttonNine)
@@ -343,10 +362,10 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         circularButton(buttonSeven)
         circularButton(buttonSix)
         circularButton(buttonZero)
-        redButton(scorecardButton)
         
         self.viewScoring.alpha = 0.0
 
+        leftNavButton()
         // Adding swipe back to previous page
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
@@ -372,11 +391,6 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
-        
-        let previousViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FightDetailViewController") as! FightDetailViewController
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
 
     @IBAction func scorecardButton(sender: AnyObject) {
         
@@ -533,6 +547,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     func hideChooseScore() {
         UIView.animateWithDuration(0.3, animations: {
             self.viewScoring.alpha = 0.0
+            self.navigationController?.navigationBar.alpha = 1.0
         })
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
@@ -545,6 +560,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     func showChooseScore() {
         UIView.animateWithDuration(0.3, animations: {
             self.viewScoring.alpha = 1.0
+            self.navigationController?.navigationBar.alpha = 0.0
         })
     }
     
@@ -632,6 +648,26 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func leftNavButton() {
+        // hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        buttonBack.frame = CGRectMake(0, 0, 40, 40)
+        buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
+        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
+        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+    }
+    
+    func leftNavButtonClick(sender:UIButton!) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     /// MARK: Styles 
     func softWhiteTextField(fieldInQuestion: UITextField) {
         
@@ -650,16 +686,25 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     func softWhiteButton(fieldInQuestion: UIButton) {
         
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.05)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
         
-        // fieldInQuestion.layer.cornerRadius = 4
-        //fieldInQuestion.textColor = UIColor .whiteColor()
         fieldInQuestion.backgroundColor = whiteColor
         fieldInQuestion.layer.borderWidth = 0.5
         fieldInQuestion.layer.borderColor = borderColor.CGColor
-        //fieldInQuestion.layer.font = UIFont (name: "HelveticaNeue-Light", size: 14)
     }
+    
+    func offSoftWhiteButton(fieldInQuestion: UIButton) {
+        
+        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.1)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
+
+        fieldInQuestion.backgroundColor = whiteColor
+        fieldInQuestion.layer.borderWidth = 0.5
+        fieldInQuestion.layer.borderColor = borderColor.CGColor
+    }
+    
     func standardLabel(labelInQuestion: UILabel) {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
@@ -668,7 +713,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
 
     func smallLabel(labelInQuestion: UILabel) {
         
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 11)
+        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
         labelInQuestion.textColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
     }
     
@@ -686,19 +731,6 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         buttonInQuestion.layer.borderColor = borderColor.CGColor
         buttonInQuestion.tintColor = UIColor .whiteColor()
         buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 22)
-        
-    }
-    
-    func redButton(buttonInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
-        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
-        
-        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
-        buttonInQuestion.backgroundColor = burgundyColor
-        
-        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
         
     }
 
