@@ -30,36 +30,13 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
 
     var boxerA: String?
     var boxerB: String?
-    var rounds: String?
+    var rounds: NSNumber?
     var date:   NSDate?
-    
-    
-    // Rounds Logic
-    @IBAction func buttonRd4(sender: AnyObject) {
-        rounds = "4"
-        println("Rounds = \(rounds!)")
-    }
-    @IBAction func buttonRd6(sender: AnyObject) {
-        rounds = "6"
-        println("Rounds = \(rounds!)")
-    }
-    @IBAction func buttonRd8(sender: AnyObject) {
-        rounds = "8"
-        println("Rounds = \(rounds!)")
-    }
-    @IBAction func buttonRd10(sender: AnyObject) {
-        rounds = "10"
-        println("Rounds = \(rounds!)")
-    }
-    @IBAction func buttonRd12(sender: AnyObject) {
-        rounds = "12"
-        println("Rounds = \(rounds!)")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New Scorecard"
-        leftNavButton()
+    
         labelBoxerA.text = "Name of First Boxer"
         labelBoxerB.text = "Name of Second Boxer"
         labelRounds.text = "Number of Scheduled Rounds"
@@ -67,9 +44,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         textFieldBoxerA.delegate = self
         textFieldBoxerB.delegate = self
         
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-
-        buttonAddFight.layer.cornerRadius = 4
+        leftNavButton()
     
         // Apply Styles
         circularButton(buttonRd4)
@@ -84,7 +59,6 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         standardLabel(labelRounds)
         
         scrollView.userInteractionEnabled = true
-        // scrollView.contentSize = CGSizeMake(0, 900)
         scrollView.indicatorStyle = .Black
         view.addSubview(scrollView)
         
@@ -113,9 +87,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     }
     
     @IBAction func addFightButton(sender: AnyObject) {
-    
         submitFight()
-        
     }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -127,22 +99,6 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    // Scroll View
-    func scrollViewDidScroll(scrollView: UIScrollView){
-        /* Gets called when user scrolls or drags */
-        scrollView.alpha = 0.50
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView){
-        /* Gets called only after scrolling */
-        scrollView.alpha = 1
-    }
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView,
-        willDecelerate decelerate: Bool){
-            scrollView.alpha = 1
     }
     
     func leftNavButton() {
@@ -227,19 +183,24 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         labelInQuestion.tintColor = UIColor .whiteColor()
     }
     
-    func redButton(buttonInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
-        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
-        
-        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
-        buttonInQuestion.backgroundColor = burgundyColor
-        
-        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
+    // Rounds Logic
+    @IBAction func buttonRd4(sender: AnyObject) {
+        rounds = 4
+    }
+    @IBAction func buttonRd6(sender: AnyObject) {
+        rounds = 6
+    }
+    @IBAction func buttonRd8(sender: AnyObject) {
+        rounds = 8
+    }
+    @IBAction func buttonRd10(sender: AnyObject) {
+        rounds = 10
+    }
+    @IBAction func buttonRd12(sender: AnyObject) {
+        rounds = 12
     }
     
-    // 
+    
     func submitFight() {
         // Reference to our app delegate
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -251,13 +212,12 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         // Create instance of our data model and initialize
         var newFight = FightModel(entity: entity!, insertIntoManagedObjectContext: context)
         
-        
-        
         // Map our properties
+
         if textFieldBoxerA.text == "" {
             newFight.boxerA = "Boxer A"
         } else {
-            newFight.boxerA = textFieldBoxerA.text
+            newFight.boxerA = textFieldBoxerA.text ?? "Boxer A"
         }
         if textFieldBoxerB.text == "" {
             newFight.boxerB = "Boxer B"
@@ -266,52 +226,18 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         }
         
         newFight.date = NSDate()
-        newFight.boxerA_round1 = "0"
-        newFight.boxerA_round2 = "0"
-        newFight.boxerA_round3 = "0"
-        newFight.boxerA_round4 = "0"
-        newFight.boxerA_round5 = "0"
-        newFight.boxerA_round6 = "0"
-        newFight.boxerA_round7 = "0"
-        newFight.boxerA_round8 = "0"
-        newFight.boxerA_round9 = "0"
-        newFight.boxerA_round10 = "0"
-        newFight.boxerA_round11 = "0"
-        newFight.boxerA_round12 = "0"
-        newFight.boxerB_round1 = "0"
-        newFight.boxerB_round2 = "0"
-        newFight.boxerB_round3 = "0"
-        newFight.boxerB_round4 = "0"
-        newFight.boxerB_round5 = "0"
-        newFight.boxerB_round6 = "0"
-        newFight.boxerB_round7 = "0"
-        newFight.boxerB_round8 = "0"
-        newFight.boxerB_round9 = "0"
-        newFight.boxerB_round10 = "0"
-        newFight.boxerB_round11 = "0"
-        newFight.boxerB_round12 = "0"
-        newFight.boxerB_totalScore = "0"
-        newFight.boxerA_totalScore = "0"
-        newFight.notes = "There are currently no notes for this fight."
-        
-        if rounds != nil {
-            newFight.rounds = rounds!
+        if rounds == nil {
+            newFight.rounds = 12
         } else {
-            newFight.rounds = "12"
+            newFight.rounds = rounds!
         }
-        
-        println("Submitted rounds = \(newFight.rounds)")
-        // Set rounds
-        
+
         // Save our context
         context.save(nil)
-        
-        println(newFight)
-        
-        // Navigate on to the edit scorecard controller
-        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("updateScorecard") as! EditFightViewController
-        self.navigationController?.pushViewController(switchViewController, animated: true)
 
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    
 
 }

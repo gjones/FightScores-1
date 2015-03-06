@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FightDetailViewController: UIViewController {
+class FightDetailViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var labelBoxerA:     UILabel!
@@ -64,80 +64,92 @@ class FightDetailViewController: UIViewController {
     @IBOutlet weak var labelBoxerB11: UILabel!
     @IBOutlet weak var labelBoxerB12: UILabel!
     
-    var boxerA: String?
-    var boxerB: String?
-    var rounds: String?
-    var date:   String?
-    var notes:  String?
-    var boxerA_round1: String?
-    var boxerA_round2: String?
-    var boxerA_round3: String?
-    var boxerA_round4: String?
-    var boxerA_round5: String?
-    var boxerA_round6: String?
-    var boxerA_round7: String?
-    var boxerA_round8: String?
-    var boxerA_round9: String?
-    var boxerA_round10: String?
-    var boxerA_round11: String?
-    var boxerA_round12: String?
-    var boxerA_totalScore: String?
-    var boxerB_round1: String?
-    var boxerB_round2: String?
-    var boxerB_round3: String?
-    var boxerB_round4: String?
-    var boxerB_round5: String?
-    var boxerB_round6: String?
-    var boxerB_round7: String?
-    var boxerB_round8: String?
-    var boxerB_round9: String?
-    var boxerB_round10: String?
-    var boxerB_round11: String?
-    var boxerB_round12: String?
-    var boxerB_totalScore: String?
+    
+    // Set Object Types
+    var boxerA:             String?
+    var boxerB:             String?
+    var rounds:             NSNumber?
+    var date:               String?
+    var notes:              String?
+    var boxerA_round1:      NSNumber?
+    var boxerA_round2:      NSNumber?
+    var boxerA_round3:      NSNumber?
+    var boxerA_round4:      NSNumber?
+    var boxerA_round5:      NSNumber?
+    var boxerA_round6:      NSNumber?
+    var boxerA_round7:      NSNumber?
+    var boxerA_round8:      NSNumber?
+    var boxerA_round9:      NSNumber?
+    var boxerA_round10:     NSNumber?
+    var boxerA_round11:     NSNumber?
+    var boxerA_round12:     NSNumber?
+    var boxerA_totalScore:  NSNumber?
+    var boxerB_round1:      NSNumber?
+    var boxerB_round2:      NSNumber?
+    var boxerB_round3:      NSNumber?
+    var boxerB_round4:      NSNumber?
+    var boxerB_round5:      NSNumber?
+    var boxerB_round6:      NSNumber?
+    var boxerB_round7:      NSNumber?
+    var boxerB_round8:      NSNumber?
+    var boxerB_round9:      NSNumber?
+    var boxerB_round10:     NSNumber?
+    var boxerB_round11:     NSNumber?
+    var boxerB_round12:     NSNumber?
+    var boxerB_totalScore:  NSNumber?
     
     var thisFight: NSManagedObject!
     
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Scorecard"
         
-        labelBoxerA.text = boxerA
-        labelBoxerB.text = boxerB
-        labelRounds.text = "\(rounds!) Rounds"
-        labelFightDate.text = date
-        labelBoxerA_totalScore.text = boxerA_totalScore
-        labelBoxerB_totalScore.text = boxerB_totalScore
         
+        // Reference NSManaged object context
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var context: NSManagedObjectContext = appDel.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
         
-        labelBoxerA1.text = boxerA_round1
-        labelBoxerA2.text = boxerA_round2
-        labelBoxerA3.text = boxerA_round3
-        labelBoxerA4.text = boxerA_round4
-        labelBoxerA5.text = boxerA_round5
-        labelBoxerA6.text = boxerA_round6
-        labelBoxerA7.text = boxerA_round7
-        labelBoxerA8.text = boxerA_round8
-        labelBoxerA9.text = boxerA_round9
-        labelBoxerA10.text = boxerA_round10
-        labelBoxerA11.text = boxerA_round11
-        labelBoxerA12.text = boxerA_round12
-        labelBoxerB1.text = boxerB_round1
-        labelBoxerB2.text = boxerB_round2
-        labelBoxerB3.text = boxerB_round3
-        labelBoxerB4.text = boxerB_round4
-        labelBoxerB5.text = boxerB_round5
-        labelBoxerB6.text = boxerB_round6
-        labelBoxerB7.text = boxerB_round7
-        labelBoxerB8.text = boxerB_round8
-        labelBoxerB9.text = boxerB_round9
-        labelBoxerB10.text = boxerB_round10
-        labelBoxerB11.text = boxerB_round11
-        labelBoxerB12.text = boxerB_round12
-        labelNotes.text = notes
+        println(thisFight.valueForKey("boxerA_round1"))
         
+        // Set Label Values
+        labelBoxerA.text =              boxerA
+        labelBoxerB.text =              boxerB
+        labelRounds.text =              "\(rounds!) Rounds"
+        labelFightDate.text =           date
+        labelBoxerA_totalScore.text =   "\(boxerA_totalScore!)"
+        labelBoxerB_totalScore.text =   "\(boxerB_totalScore!)"
         labelNotesTitle.text = "Fight Notes"
+        labelNotes.text =               notes
+        
+        labelBoxerA1.text =             "\(boxerA_round1!)"
+        labelBoxerA2.text =             "\(boxerA_round2!)"
+        labelBoxerA3.text =             "\(boxerA_round3!)"
+        labelBoxerA4.text =             "\(boxerA_round4!)"
+        labelBoxerA5.text =             "\(boxerA_round5!)"
+        labelBoxerA6.text =             "\(boxerA_round6!)"
+        labelBoxerA7.text =             "\(boxerA_round7!)"
+        labelBoxerA8.text =             "\(boxerA_round8!)"
+        labelBoxerA9.text =             "\(boxerA_round9!)"
+        labelBoxerA10.text =            "\(boxerA_round10!)"
+        labelBoxerA11.text =            "\(boxerA_round11!)"
+        labelBoxerA12.text =            "\(boxerA_round12!)"
+        labelBoxerB1.text =             "\(boxerB_round1!)"
+        labelBoxerB2.text =             "\(boxerB_round2!)"
+        labelBoxerB3.text =             "\(boxerB_round3!)"
+        labelBoxerB4.text =             "\(boxerB_round4!)"
+        labelBoxerB5.text =             "\(boxerB_round5!)"
+        labelBoxerB6.text =             "\(boxerB_round6!)"
+        labelBoxerB7.text =             "\(boxerB_round7!)"
+        labelBoxerB8.text =             "\(boxerB_round8!)"
+        labelBoxerB9.text =             "\(boxerB_round9!)"
+        labelBoxerB10.text =            "\(boxerB_round10!)"
+        labelBoxerB11.text =            "\(boxerB_round11!)"
+        labelBoxerB12.text =            "\(boxerB_round12!)"
+        
         
         // Scrollview
         scrollView.userInteractionEnabled = true
@@ -153,6 +165,7 @@ class FightDetailViewController: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
         
+        // Set Styling
         standardLabel(labelBoxerA_totalScore)
         standardLabel(labelBoxerB_totalScore)
         standardLabel(labelNotes)
@@ -198,13 +211,14 @@ class FightDetailViewController: UIViewController {
         
     }
     
+    // Right Swipe Functionality
     func swiped(gesture: UIGestureRecognizer) {
-        
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                print("User swiped Right")
+                println("User swiped Right")
                 self.navigationController?.popToRootViewControllerAnimated(true)
+
             default:
                 break
             }
@@ -213,14 +227,14 @@ class FightDetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // Sharing Functionality
     func shareTapped(sender: UIButton) {
         let textToShare = "Here's how I scored \(boxerA!) vs \(boxerB!) #boxing"
         
         // Generate the screenshot
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
         view.layer.renderInContext(UIGraphicsGetCurrentContext())
         var screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -245,7 +259,9 @@ class FightDetailViewController: UIViewController {
         }
     }
     
+    // Custom Navigation Controls
     func leftNavButton() {
+        
         // hide default navigation bar button item
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
@@ -292,8 +308,15 @@ class FightDetailViewController: UIViewController {
         
         // Specify specific segue, prevents nil
         if segue.identifier == "scorecardSegue" {
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+                Int64(0.25 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.navigationController?.navigationBar.alpha = 0.0
+            }
+            let navController = segue.destinationViewController as! UINavigationController
             
-            let scorecardViewController: EditFightViewController = segue.destinationViewController as! EditFightViewController
+            let scorecardViewController = navController.topViewController as! EditFightViewController
+
 
             // Pass data through to see item page
             scorecardViewController.boxerA = boxerA
@@ -302,33 +325,32 @@ class FightDetailViewController: UIViewController {
             scorecardViewController.rounds = rounds
             scorecardViewController.date = date
 
-            var defaultValue = "0"
-            scorecardViewController.boxerA_totalScore = boxerA_totalScore ?? defaultValue
-            scorecardViewController.boxerB_totalScore = boxerB_totalScore ?? defaultValue
-            scorecardViewController.boxerA_round1 = boxerA_round1 ?? defaultValue
-            scorecardViewController.boxerA_round2 = boxerA_round2 ?? defaultValue
-            scorecardViewController.boxerA_round3 = boxerA_round3 ?? defaultValue
-            scorecardViewController.boxerA_round4 = boxerA_round4 ?? defaultValue
-            scorecardViewController.boxerA_round5 = boxerA_round5 ?? defaultValue
-            scorecardViewController.boxerA_round6 = boxerA_round6 ?? defaultValue
-            scorecardViewController.boxerA_round7 = boxerA_round7 ?? defaultValue
-            scorecardViewController.boxerA_round8 = boxerA_round8 ?? defaultValue
-            scorecardViewController.boxerA_round9 = boxerA_round9 ?? defaultValue
-            scorecardViewController.boxerA_round10 = boxerA_round10 ?? defaultValue
-            scorecardViewController.boxerA_round11 = boxerA_round11 ?? defaultValue
-            scorecardViewController.boxerA_round12 = boxerA_round12 ?? defaultValue
-            scorecardViewController.boxerB_round1 = boxerB_round1 ?? defaultValue
-            scorecardViewController.boxerB_round2 = boxerB_round2 ?? defaultValue
-            scorecardViewController.boxerB_round3 = boxerB_round3 ?? defaultValue
-            scorecardViewController.boxerB_round4 = boxerB_round4 ?? defaultValue
-            scorecardViewController.boxerB_round5 = boxerB_round5 ?? defaultValue
-            scorecardViewController.boxerB_round6 = boxerB_round6 ?? defaultValue
-            scorecardViewController.boxerB_round7 = boxerB_round7 ?? defaultValue
-            scorecardViewController.boxerB_round8 = boxerB_round8 ?? defaultValue
-            scorecardViewController.boxerB_round9 = boxerB_round9 ?? defaultValue
-            scorecardViewController.boxerB_round10 = boxerB_round10 ?? defaultValue
-            scorecardViewController.boxerB_round11 = boxerB_round11 ?? defaultValue
-            scorecardViewController.boxerB_round12 = boxerB_round12 ?? defaultValue
+            scorecardViewController.boxerA_totalScore = boxerA_totalScore
+            scorecardViewController.boxerB_totalScore = boxerB_totalScore
+            scorecardViewController.boxerA_round1 = boxerA_round1
+            scorecardViewController.boxerA_round2 = boxerA_round2
+            scorecardViewController.boxerA_round3 = boxerA_round3
+            scorecardViewController.boxerA_round4 = boxerA_round4
+            scorecardViewController.boxerA_round5 = boxerA_round5
+            scorecardViewController.boxerA_round6 = boxerA_round6
+            scorecardViewController.boxerA_round7 = boxerA_round7
+            scorecardViewController.boxerA_round8 = boxerA_round8
+            scorecardViewController.boxerA_round9 = boxerA_round9
+            scorecardViewController.boxerA_round10 = boxerA_round10
+            scorecardViewController.boxerA_round11 = boxerA_round11
+            scorecardViewController.boxerA_round12 = boxerA_round12
+            scorecardViewController.boxerB_round1 = boxerB_round1
+            scorecardViewController.boxerB_round2 = boxerB_round2
+            scorecardViewController.boxerB_round3 = boxerB_round3
+            scorecardViewController.boxerB_round4 = boxerB_round4
+            scorecardViewController.boxerB_round5 = boxerB_round5
+            scorecardViewController.boxerB_round6 = boxerB_round6
+            scorecardViewController.boxerB_round7 = boxerB_round7
+            scorecardViewController.boxerB_round8 = boxerB_round8
+            scorecardViewController.boxerB_round9 = boxerB_round9
+            scorecardViewController.boxerB_round10 = boxerB_round10
+            scorecardViewController.boxerB_round11 = boxerB_round11
+            scorecardViewController.boxerB_round12 = boxerB_round12
             scorecardViewController.thisFight = thisFight
         }
     }
@@ -365,5 +387,4 @@ class FightDetailViewController: UIViewController {
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
         labelInQuestion.textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
     }
-
 }

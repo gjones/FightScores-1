@@ -12,12 +12,16 @@ import QuartzCore
 
 class FightTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    // Set Outlets
     @IBOutlet weak var fightTableView: UITableView!
     @IBOutlet weak var addFightButton: UIButton!
     @IBOutlet weak var labelNoFights: UILabel!
     @IBOutlet var backgroundImageView: UIImageView!
     
-    var fightList:Array<AnyObject> = []
+    // Set Array
+    var fights: [FightModel] = []
+    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -33,13 +37,7 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //redButton(addFightButton)
         navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
-        
-        labelNoFights.hidden = true
-        
-        standardLabel(labelNoFights)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,20 +47,22 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // Reference NSManaged object context
         let context:NSManagedObjectContext = appDel.managedObjectContext!
+        
         let fetchReq = NSFetchRequest(entityName: "Fight")
-        view.backgroundColor = UIColor .blackColor()
+        var error: NSError?
         
         // Fetch and reload table data
-        fightList = context.executeFetchRequest(fetchReq, error: nil)!
+        fights = context.executeFetchRequest(fetchReq, error: &error) as! [FightModel]
         fightTableView.reloadData()
-
-        addFightButton.layer.cornerRadius = 2
 
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    
     
     // MARK: - Table view data source
     
@@ -72,7 +72,7 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // Specify specific segue, prevents nil
         if segue.identifier == "detailSegue" {
             let index = fightTableView.indexPathForSelectedRow()?.row
-            var selectedFight: NSManagedObject = fightList[index!] as! NSManagedObject
+            var selectedFight: NSManagedObject = fights[index!] as NSManagedObject
             let fightDetailViewController: FightDetailViewController = segue.destinationViewController as! FightDetailViewController
             
             // Get nicely formatted date
@@ -84,37 +84,36 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             // Pass data through to see item page
             fightDetailViewController.boxerA = selectedFight.valueForKey("boxerA") as? String
             fightDetailViewController.boxerB = selectedFight.valueForKey("boxerB") as? String
-            fightDetailViewController.rounds = selectedFight.valueForKey("rounds") as? String
+            fightDetailViewController.rounds = selectedFight.valueForKey("rounds") as? NSNumber
             fightDetailViewController.date = timestamp
             fightDetailViewController.notes = selectedFight.valueForKey("notes") as? String
-            fightDetailViewController.boxerA_totalScore = selectedFight.valueForKey("boxerA_totalScore") as? String
-            fightDetailViewController.boxerB_totalScore = selectedFight.valueForKey("boxerB_totalScore") as? String
-            fightDetailViewController.boxerA_round1 = selectedFight.valueForKey("boxerA_round1") as? String
-            fightDetailViewController.boxerB_round1 = selectedFight.valueForKey("boxerB_round1") as? String
-            fightDetailViewController.boxerA_round2 = selectedFight.valueForKey("boxerA_round2") as? String
-            fightDetailViewController.boxerB_round2 = selectedFight.valueForKey("boxerB_round2") as? String
-            fightDetailViewController.boxerA_round3 = selectedFight.valueForKey("boxerA_round3") as? String
-            fightDetailViewController.boxerB_round3 = selectedFight.valueForKey("boxerB_round3") as? String
-            fightDetailViewController.boxerA_round4 = selectedFight.valueForKey("boxerA_round4") as? String
-            fightDetailViewController.boxerB_round4 = selectedFight.valueForKey("boxerB_round4") as? String
-            fightDetailViewController.boxerA_round5 = selectedFight.valueForKey("boxerA_round5") as? String
-            fightDetailViewController.boxerB_round5 = selectedFight.valueForKey("boxerB_round5") as? String
-            fightDetailViewController.boxerA_round6 = selectedFight.valueForKey("boxerA_round6") as? String
-            fightDetailViewController.boxerB_round6 = selectedFight.valueForKey("boxerB_round6") as? String
-            fightDetailViewController.boxerA_round7 = selectedFight.valueForKey("boxerA_round7") as? String
-            fightDetailViewController.boxerB_round7 = selectedFight.valueForKey("boxerB_round7") as? String
-            fightDetailViewController.boxerA_round8 = selectedFight.valueForKey("boxerA_round8") as? String
-            fightDetailViewController.boxerB_round8 = selectedFight.valueForKey("boxerB_round8") as? String
-            fightDetailViewController.boxerA_round9 = selectedFight.valueForKey("boxerA_round9") as? String
-            fightDetailViewController.boxerB_round9 = selectedFight.valueForKey("boxerB_round9") as? String
-            fightDetailViewController.boxerA_round10 = selectedFight.valueForKey("boxerA_round10") as? String
-            fightDetailViewController.boxerB_round10 = selectedFight.valueForKey("boxerB_round10") as? String
-            fightDetailViewController.boxerA_round11 = selectedFight.valueForKey("boxerA_round11") as? String
-            fightDetailViewController.boxerB_round11 = selectedFight.valueForKey("boxerB_round11") as? String
-            fightDetailViewController.boxerA_round12 = selectedFight.valueForKey("boxerA_round12") as? String
-            fightDetailViewController.boxerB_round12 = selectedFight.valueForKey("boxerB_round12") as? String
+            fightDetailViewController.boxerA_totalScore = selectedFight.valueForKey("boxerA_totalScore") as? NSNumber
+            fightDetailViewController.boxerB_totalScore = selectedFight.valueForKey("boxerB_totalScore") as? NSNumber
+            fightDetailViewController.boxerA_round1 = selectedFight.valueForKey("boxerA_round1") as? NSNumber
+            fightDetailViewController.boxerB_round1 = selectedFight.valueForKey("boxerB_round1") as? NSNumber
+            fightDetailViewController.boxerA_round2 = selectedFight.valueForKey("boxerA_round2") as? NSNumber
+            fightDetailViewController.boxerB_round2 = selectedFight.valueForKey("boxerB_round2") as? NSNumber
+            fightDetailViewController.boxerA_round3 = selectedFight.valueForKey("boxerA_round3") as? NSNumber
+            fightDetailViewController.boxerB_round3 = selectedFight.valueForKey("boxerB_round3") as? NSNumber
+            fightDetailViewController.boxerA_round4 = selectedFight.valueForKey("boxerA_round4") as? NSNumber
+            fightDetailViewController.boxerB_round4 = selectedFight.valueForKey("boxerB_round4") as? NSNumber
+            fightDetailViewController.boxerA_round5 = selectedFight.valueForKey("boxerA_round5") as? NSNumber
+            fightDetailViewController.boxerB_round5 = selectedFight.valueForKey("boxerB_round5") as? NSNumber
+            fightDetailViewController.boxerA_round6 = selectedFight.valueForKey("boxerA_round6") as? NSNumber
+            fightDetailViewController.boxerB_round6 = selectedFight.valueForKey("boxerB_round6") as? NSNumber
+            fightDetailViewController.boxerA_round7 = selectedFight.valueForKey("boxerA_round7") as? NSNumber
+            fightDetailViewController.boxerB_round7 = selectedFight.valueForKey("boxerB_round7") as? NSNumber
+            fightDetailViewController.boxerA_round8 = selectedFight.valueForKey("boxerA_round8") as? NSNumber
+            fightDetailViewController.boxerB_round8 = selectedFight.valueForKey("boxerB_round8") as? NSNumber
+            fightDetailViewController.boxerA_round9 = selectedFight.valueForKey("boxerA_round9") as? NSNumber
+            fightDetailViewController.boxerB_round9 = selectedFight.valueForKey("boxerB_round9") as? NSNumber
+            fightDetailViewController.boxerA_round10 = selectedFight.valueForKey("boxerA_round10") as? NSNumber
+            fightDetailViewController.boxerB_round10 = selectedFight.valueForKey("boxerB_round10") as? NSNumber
+            fightDetailViewController.boxerA_round11 = selectedFight.valueForKey("boxerA_round11") as? NSNumber
+            fightDetailViewController.boxerB_round11 = selectedFight.valueForKey("boxerB_round11") as? NSNumber
+            fightDetailViewController.boxerA_round12 = selectedFight.valueForKey("boxerA_round12") as? NSNumber
+            fightDetailViewController.boxerB_round12 = selectedFight.valueForKey("boxerB_round12") as? NSNumber
             fightDetailViewController.thisFight = selectedFight
-            println(selectedFight)
         }
     }
     
@@ -123,14 +122,7 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if fightList.isEmpty {
-//            fightTableView.hidden = true
-//            labelNoFights.hidden = false
-//            labelNoFights.text = "You have no scorecards!\n Add a fight now to get going."
-//        } else {
-//            return fightList.count
-//        }
-        return fightList.count
+        return fights.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -138,8 +130,10 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let fightCell:FightTableViewCell? = fightTableView.dequeueReusableCellWithIdentifier("fightCell") as? FightTableViewCell
      
         if let fightIndexPath = indexPath as NSIndexPath? {
-            var data: NSManagedObject = fightList[fightIndexPath.row] as! NSManagedObject
-            var rounds = data.valueForKeyPath("rounds") as? String
+            var data: NSManagedObject = fights[fightIndexPath.row] as NSManagedObject
+            var rounds = data.valueForKeyPath("rounds") as? NSNumber
+            var boxerA_totalScore = data.valueForKeyPath("boxerA_totalScore") as? NSNumber
+            var boxerB_totalScore = data.valueForKeyPath("boxerB_totalScore") as? NSNumber
             
             // Get nicely formatted date
             var rawDate = data.valueForKeyPath("date") as! NSDate
@@ -152,8 +146,8 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
             fightCell?.labelBoxerB.text = data.valueForKeyPath("boxerB") as? String
             fightCell?.labelRounds.text = "\(rounds!) Rounds"
             fightCell?.labelFightDate.text = timestamp
-            fightCell?.labelBoxerATotal.text = data.valueForKeyPath("boxerA_totalScore") as? String
-            fightCell?.labelBoxerBTotal.text = data.valueForKeyPath("boxerB_totalScore") as? String
+            fightCell?.labelBoxerATotal.text = "\(boxerA_totalScore!)"
+            fightCell?.labelBoxerBTotal.text = "\(boxerB_totalScore!)"
 
         }
         
@@ -175,8 +169,8 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
             if let fightTable = self.fightTableView {
-                context.deleteObject(fightList[indexPath.row] as! NSManagedObject)
-                fightList.removeAtIndex(indexPath.row)
+                context.deleteObject(fights[indexPath.row] as NSManagedObject)
+                fights.removeAtIndex(indexPath.row)
                 fightTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             }
             var error: NSError? = nil
@@ -197,19 +191,6 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         fightCell?.backgroundColor = UIColor .redColor()
     }
     
-    func redButton(buttonInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 85/255, green: 23/255, blue: 24/255, alpha: 0.8)
-        var lightBurgundyColor = UIColor(red: 65/255, green: 23/255, blue: 24/255, alpha: 0.9)
-        
-        buttonInQuestion.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        buttonInQuestion.titleLabel?.textColor = UIColor .whiteColor()
-        buttonInQuestion.backgroundColor = burgundyColor
-        
-        buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchCancel)
-    
-    }
-    
     func standardLabel(labelInQuestion: UILabel) {
         
         labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
@@ -217,16 +198,7 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         labelInQuestion.tintColor = UIColor .whiteColor()
         labelInQuestion.alpha = 0.800
     }
-    
-    func activeButton(sender: UIButton!) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        
-        sender.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
-        sender.layer.borderColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 1).CGColor
 
-    }
 
 }
 
