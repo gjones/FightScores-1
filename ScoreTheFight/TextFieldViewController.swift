@@ -13,7 +13,10 @@ class TextFieldViewController: UITextField {
     @IBInspectable var inset: CGFloat = 16
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds, inset, inset)
+        self.tintColor = UIColor .whiteColor()
+        self.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        return CGRectInset(bounds, inset, 0)
+        
     }
     
     override func editingRectForBounds(bounds: CGRect) -> CGRect {

@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+
+protocol UpdateFightDetailDelegate {
+    func fightInformationUpdated(A1:String, A2:String, A3:String, A4:String, A5:String, A6:String, A7:String, A8:String, A9:String,A10:String, A11:String, A12:String, B1:String, B2:String, B3:String, B4:String, B5:String, B6:String, B7:String, B8:String, B9:String,B10:String, B11:String, B12:String, Atot:String, Btot:String, Notes:String)
+}
+
 class EditFightViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView:      UIScrollView!
@@ -68,6 +73,8 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     var boxerB_totalScore:  NSNumber?
 
     var thisFight: NSManagedObject!
+    var delegate:UpdateFightDetailDelegate? = nil
+
     
     var lastButtonPressed: String?
     @IBOutlet weak var viewScoring: UIVisualEffectView!
@@ -243,7 +250,7 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Update Scorecard"
+        self.title = "Scorecard"
         
         // Hide the scoring view 
         self.viewScoring.alpha = 0.0
@@ -449,48 +456,77 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     }
     
     func finishup() {
-    // Reference to our app delegate
-    let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        // Reference to our app delegate
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    // Reference NSManaged object context
-    let context: NSManagedObjectContext = appDel.managedObjectContext!
-    let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
+        // Reference NSManaged object context
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
     
-    thisFight.setValue(textFieldNotes.text as String, forKey: "notes")
-    thisFight.setValue(rounds, forKey: "rounds")
-    thisFight.setValue(buttonA1.titleLabel!.text!.toInt(), forKey: "boxerA_round1")
-    thisFight.setValue(buttonB1.titleLabel!.text!.toInt(), forKey: "boxerB_round1")
-    thisFight.setValue(buttonA2.titleLabel!.text!.toInt(), forKey: "boxerA_round2")
-    thisFight.setValue(buttonB2.titleLabel!.text!.toInt(), forKey: "boxerB_round2")
-    thisFight.setValue(buttonA3.titleLabel!.text!.toInt(), forKey: "boxerA_round3")
-    thisFight.setValue(buttonB3.titleLabel!.text!.toInt(), forKey: "boxerB_round3")
-    thisFight.setValue(buttonA4.titleLabel!.text!.toInt(), forKey: "boxerA_round4")
-    thisFight.setValue(buttonB4.titleLabel!.text!.toInt(), forKey: "boxerB_round4")
-    thisFight.setValue(buttonA5.titleLabel!.text!.toInt(), forKey: "boxerA_round5")
-    thisFight.setValue(buttonB5.titleLabel!.text!.toInt(), forKey: "boxerB_round5")
-    thisFight.setValue(buttonA6.titleLabel!.text!.toInt(), forKey: "boxerA_round6")
-    thisFight.setValue(buttonB6.titleLabel!.text!.toInt(), forKey: "boxerB_round6")
-    thisFight.setValue(buttonA7.titleLabel!.text!.toInt(), forKey: "boxerA_round7")
-    thisFight.setValue(buttonB7.titleLabel!.text!.toInt(), forKey: "boxerB_round7")
-    thisFight.setValue(buttonA8.titleLabel!.text!.toInt(), forKey: "boxerA_round8")
-    thisFight.setValue(buttonB8.titleLabel!.text!.toInt(), forKey: "boxerB_round8")
-    thisFight.setValue(buttonA9.titleLabel!.text!.toInt(), forKey: "boxerA_round9")
-    thisFight.setValue(buttonB9.titleLabel!.text!.toInt(), forKey: "boxerB_round9")
-    thisFight.setValue(buttonA10.titleLabel!.text!.toInt(), forKey: "boxerA_round10")
-    thisFight.setValue(buttonB10.titleLabel!.text!.toInt(), forKey: "boxerB_round10")
-    thisFight.setValue(buttonA11.titleLabel!.text!.toInt(), forKey: "boxerA_round11")
-    thisFight.setValue(buttonB11.titleLabel!.text!.toInt(), forKey: "boxerB_round11")
-    thisFight.setValue(buttonA12.titleLabel!.text!.toInt(), forKey: "boxerA_round12")
-    thisFight.setValue(buttonB12.titleLabel!.text!.toInt(), forKey: "boxerB_round12")
-    thisFight.setValue(labelATotalScore.text!.toInt(), forKey: "boxerA_totalScore")
-    thisFight.setValue(labelBTotalScore.text!.toInt(), forKey: "boxerB_totalScore")
+        thisFight.setValue(textFieldNotes.text as String, forKey: "notes")
+        thisFight.setValue(rounds, forKey: "rounds")
+        thisFight.setValue(buttonA1.titleLabel!.text!.toInt(), forKey: "boxerA_round1")
+        thisFight.setValue(buttonB1.titleLabel!.text!.toInt(), forKey: "boxerB_round1")
+        thisFight.setValue(buttonA2.titleLabel!.text!.toInt(), forKey: "boxerA_round2")
+        thisFight.setValue(buttonB2.titleLabel!.text!.toInt(), forKey: "boxerB_round2")
+        thisFight.setValue(buttonA3.titleLabel!.text!.toInt(), forKey: "boxerA_round3")
+        thisFight.setValue(buttonB3.titleLabel!.text!.toInt(), forKey: "boxerB_round3")
+        thisFight.setValue(buttonA4.titleLabel!.text!.toInt(), forKey: "boxerA_round4")
+        thisFight.setValue(buttonB4.titleLabel!.text!.toInt(), forKey: "boxerB_round4")
+        thisFight.setValue(buttonA5.titleLabel!.text!.toInt(), forKey: "boxerA_round5")
+        thisFight.setValue(buttonB5.titleLabel!.text!.toInt(), forKey: "boxerB_round5")
+        thisFight.setValue(buttonA6.titleLabel!.text!.toInt(), forKey: "boxerA_round6")
+        thisFight.setValue(buttonB6.titleLabel!.text!.toInt(), forKey: "boxerB_round6")
+        thisFight.setValue(buttonA7.titleLabel!.text!.toInt(), forKey: "boxerA_round7")
+        thisFight.setValue(buttonB7.titleLabel!.text!.toInt(), forKey: "boxerB_round7")
+        thisFight.setValue(buttonA8.titleLabel!.text!.toInt(), forKey: "boxerA_round8")
+        thisFight.setValue(buttonB8.titleLabel!.text!.toInt(), forKey: "boxerB_round8")
+        thisFight.setValue(buttonA9.titleLabel!.text!.toInt(), forKey: "boxerA_round9")
+        thisFight.setValue(buttonB9.titleLabel!.text!.toInt(), forKey: "boxerB_round9")
+        thisFight.setValue(buttonA10.titleLabel!.text!.toInt(), forKey: "boxerA_round10")
+        thisFight.setValue(buttonB10.titleLabel!.text!.toInt(), forKey: "boxerB_round10")
+        thisFight.setValue(buttonA11.titleLabel!.text!.toInt(), forKey: "boxerA_round11")
+        thisFight.setValue(buttonB11.titleLabel!.text!.toInt(), forKey: "boxerB_round11")
+        thisFight.setValue(buttonA12.titleLabel!.text!.toInt(), forKey: "boxerA_round12")
+        thisFight.setValue(buttonB12.titleLabel!.text!.toInt(), forKey: "boxerB_round12")
+        thisFight.setValue(labelATotalScore.text!.toInt(), forKey: "boxerA_totalScore")
+        thisFight.setValue(labelBTotalScore.text!.toInt(), forKey: "boxerB_totalScore")
     
-    // Save our context
-    context.save(nil)
+        // Save our context
+        context.save(nil)
         
-    // Move on 
-    self.dismissViewControllerAnimated(true, completion: nil)
-
+        // Move on
+        if (delegate != nil) {
+            var A1 = buttonA1.titleLabel!.text
+            var B1 = buttonB1.titleLabel!.text
+            var A2 = buttonA2.titleLabel!.text
+            var B2 = buttonB2.titleLabel!.text
+            var A3 = buttonA3.titleLabel!.text
+            var B3 = buttonB3.titleLabel!.text
+            var A4 = buttonA4.titleLabel!.text
+            var B4 = buttonB4.titleLabel!.text
+            var A5 = buttonA5.titleLabel!.text
+            var B5 = buttonB5.titleLabel!.text
+            var A6 = buttonA6.titleLabel!.text
+            var B6 = buttonB6.titleLabel!.text
+            var A7 = buttonA7.titleLabel!.text
+            var B7 = buttonB7.titleLabel!.text
+            var A8 = buttonA8.titleLabel!.text
+            var B8 = buttonB8.titleLabel!.text
+            var A9 = buttonA9.titleLabel!.text
+            var B9 = buttonB9.titleLabel!.text
+            var A10 = buttonA10.titleLabel!.text
+            var B10 = buttonB10.titleLabel!.text
+            var A11 = buttonA11.titleLabel!.text
+            var B11 = buttonB11.titleLabel!.text
+            var A12 = buttonA12.titleLabel!.text
+            var B12 = buttonB12.titleLabel!.text
+            var Atot = labelATotalScore.text
+            var Btot = labelBTotalScore.text
+            var Notes = textFieldNotes.text
+            delegate!.fightInformationUpdated(A1!, A2: A2!, A3: A3!, A4: A4!, A5: A5!, A6: A6!, A7: A7!, A8: A8!, A9: A9!, A10: A10!, A11: A11!, A12: A12!, B1: B1!, B2: B2!, B3: B3!, B4: B4!, B5: B5!, B6: B6!, B7: B7!, B8: B8!, B9: B9!, B10: B10!, B11: B11!, B12: B12!, Atot: Atot!, Btot: Btot!, Notes: Notes!)
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     func hideChooseScore() {

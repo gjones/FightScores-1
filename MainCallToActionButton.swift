@@ -29,6 +29,7 @@ class MainCallToActionButton: UIButton {
         CGContextDrawLinearGradient(context, redGradient, CGPointMake(107, self.layer.bounds.height), CGPointMake(107, -0), 0)
         CGContextRestoreGState(context)
         
+        self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 18)
         UIColor.blackColor().setStroke()
         rectanglePath.lineWidth = 0.5
         rectanglePath.stroke()

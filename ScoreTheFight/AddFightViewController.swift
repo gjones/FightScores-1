@@ -40,6 +40,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         labelBoxerA.text = "Name of First Boxer"
         labelBoxerB.text = "Name of Second Boxer"
         labelRounds.text = "Number of Scheduled Rounds"
+        buttonAddFight.setTitle("Add This Fight", forState: .Normal)
         
         textFieldBoxerA.delegate = self
         textFieldBoxerB.delegate = self

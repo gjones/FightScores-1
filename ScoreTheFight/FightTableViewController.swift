@@ -37,7 +37,9 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.titleView = UIImageView(image: UIImage(named: "Logo.png"))
+            navigationItem.title = "Fight Scores"
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "FSLogo.png"))
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -199,6 +201,59 @@ class FightTableViewController: UIViewController, UITableViewDelegate, UITableVi
         labelInQuestion.alpha = 0.800
     }
 
+    func drawLogo(#frame: CGRect) {
+        //// Color Declarations
+        let color0 = UIColor(red: 0.859, green: 0.859, blue: 0.859, alpha: 1.000)
+        let color2 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
+
+        var shapePath = UIBezierPath()
+        shapePath.moveToPoint(CGPointMake(frame.minX + 43.07, frame.minY + 86.51))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 46.66, frame.minY + 87), controlPoint1: CGPointMake(frame.minX + 44.16, frame.minY + 86.73), controlPoint2: CGPointMake(frame.minX + 45.36, frame.minY + 86.9))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 62.32, frame.minY + 84.91), controlPoint1: CGPointMake(frame.minX + 55.3, frame.minY + 87.9), controlPoint2: CGPointMake(frame.minX + 62.32, frame.minY + 84.91))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 60.7, frame.minY + 95.09), controlPoint1: CGPointMake(frame.minX + 62.32, frame.minY + 84.91), controlPoint2: CGPointMake(frame.minX + 61.78, frame.minY + 92.1))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 48.82, frame.minY + 97.49), controlPoint1: CGPointMake(frame.minX + 59.89, frame.minY + 96.59), controlPoint2: CGPointMake(frame.minX + 56.38, frame.minY + 97.49))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 36.67, frame.minY + 95.09), controlPoint1: CGPointMake(frame.minX + 41.26, frame.minY + 97.49), controlPoint2: CGPointMake(frame.minX + 38.02, frame.minY + 96.59))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 35.08, frame.minY + 85.37), controlPoint1: CGPointMake(frame.minX + 35.95, frame.minY + 94.3), controlPoint2: CGPointMake(frame.minX + 35.23, frame.minY + 90.23))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 22.09, frame.minY + 68.43), controlPoint1: CGPointMake(frame.minX + 31.58, frame.minY + 84.06), controlPoint2: CGPointMake(frame.minX + 26.48, frame.minY + 81.09))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 26.68, frame.minY + 55.24), controlPoint1: CGPointMake(frame.minX + 18.58, frame.minY + 58.54), controlPoint2: CGPointMake(frame.minX + 24.52, frame.minY + 55.24))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 31.54, frame.minY + 70.82), controlPoint1: CGPointMake(frame.minX + 27.22, frame.minY + 62.73), controlPoint2: CGPointMake(frame.minX + 30.19, frame.minY + 69.92))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 29.11, frame.minY + 53.14), controlPoint1: CGPointMake(frame.minX + 30.46, frame.minY + 68.13), controlPoint2: CGPointMake(frame.minX + 29.11, frame.minY + 56.44))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 48.28, frame.minY + 37.56), controlPoint1: CGPointMake(frame.minX + 29.38, frame.minY + 41.76), controlPoint2: CGPointMake(frame.minX + 32.89, frame.minY + 37.56))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 66.91, frame.minY + 53.14), controlPoint1: CGPointMake(frame.minX + 63.67, frame.minY + 37.56), controlPoint2: CGPointMake(frame.minX + 66.91, frame.minY + 41.76))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 61.24, frame.minY + 82.21), controlPoint1: CGPointMake(frame.minX + 66.91, frame.minY + 63.93), controlPoint2: CGPointMake(frame.minX + 65.56, frame.minY + 77.41))
+        shapePath.addCurveToPoint(CGPointMake(frame.minX + 43.07, frame.minY + 86.51), controlPoint1: CGPointMake(frame.minX + 59.31, frame.minY + 84.34), controlPoint2: CGPointMake(frame.minX + 49.7, frame.minY + 86.18))
+        shapePath.closePath()
+        shapePath.miterLimit = 4;
+        
+        shapePath.usesEvenOddFillRule = true;
+        
+        color0.setFill()
+        shapePath.fill()
+        
+        
+        
+        
+        //// Rectangle 2 Drawing
+        let rectangle2Rect = CGRectMake(frame.minX + 90.95, frame.minY + 45, 200, 52)
+        let rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        rectangle2Style.alignment = NSTextAlignment.Left
+        
+        let rectangle2FontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-UltraLight", size: 40)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: rectangle2Style]
+        
+        "Fight".drawInRect(rectangle2Rect, withAttributes: rectangle2FontAttributes)
+        
+        
+        //// Rectangle 4 Drawing
+        let rectangle4Rect = CGRectMake(frame.minX + 182.91, frame.minY + 43, 172.09, 56)
+        let rectangle4Style = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy()as! NSMutableParagraphStyle
+        rectangle4Style.alignment = NSTextAlignment.Left
+        
+        let rectangle4FontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 40)!, NSForegroundColorAttributeName: color2, NSParagraphStyleAttributeName: rectangle4Style]
+        
+        "Scores".drawInRect(rectangle4Rect, withAttributes: rectangle4FontAttributes)
+    }
+
+    
 
 }
 
