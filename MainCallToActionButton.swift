@@ -1,6 +1,6 @@
 //
 //  MainCallToActionButton.swift
-//  ScoreTheFight
+//  FightScores
 //
 //  Created by Gareth Jones on 3/3/15.
 //  Copyright (c) 2015 Gareth Jones. All rights reserved.

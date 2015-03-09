@@ -14,7 +14,7 @@
 		19C26CEA1A93888A005D7FDF /* FightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */; };
 		19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */; };
 		19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529901A9370D200F5CF22 /* AppDelegate.swift */; };
-		19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */; };
+		19E529941A9370D200F5CF22 /* FightScores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* FightScores.xcdatamodeld */; };
 		19E529961A9370D200F5CF22 /* FightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529951A9370D200F5CF22 /* FightTableViewController.swift */; };
 		19E5299B1A9370D200F5CF22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299A1A9370D200F5CF22 /* Images.xcassets */; };
 		19E5299E1A9370D200F5CF22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */; };
@@ -42,14 +42,14 @@
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightTableViewCell.swift; path = ../FightTableViewCell.swift; sourceTree = "<group>"; };
 		19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
-		19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTheFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E5298B1A9370D200F5CF22 /* FightScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5298F1A9370D200F5CF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19E529901A9370D200F5CF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19E529931A9370D200F5CF22 /* ScoreTheFight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScoreTheFight.xcdatamodel; sourceTree = "<group>"; };
+		19E529931A9370D200F5CF22 /* FightScores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FightScores.xcdatamodel; sourceTree = "<group>"; };
 		19E529951A9370D200F5CF22 /* FightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightTableViewController.swift; sourceTree = "<group>"; };
 		19E5299A1A9370D200F5CF22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19E5299D1A9370D200F5CF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		19E529A31A9370D200F5CF22 /* ScoreTheFightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreTheFightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E529A31A9370D200F5CF22 /* FightScoresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FightScoresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E529A81A9370D200F5CF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19E529A91A9370D200F5CF22 /* ScoreTheFightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTheFightTests.swift; sourceTree = "<group>"; };
 		19E529B51A93752300F5CF22 /* AddFightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFightViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		19E529821A9370D200F5CF22 = {
 			isa = PBXGroup;
 			children = (
-				19E5298D1A9370D200F5CF22 /* ScoreTheFight */,
-				19E529A61A9370D200F5CF22 /* ScoreTheFightTests */,
+				19E5298D1A9370D200F5CF22 /* FightScores */,
+				19E529A61A9370D200F5CF22 /* FightScoresTests */,
 				19E5298C1A9370D200F5CF22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,13 +88,13 @@
 		19E5298C1A9370D200F5CF22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */,
-				19E529A31A9370D200F5CF22 /* ScoreTheFightTests.xctest */,
+				19E5298B1A9370D200F5CF22 /* FightScores.app */,
+				19E529A31A9370D200F5CF22 /* FightScoresTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		19E5298D1A9370D200F5CF22 /* ScoreTheFight */ = {
+		19E5298D1A9370D200F5CF22 /* FightScores */ = {
 			isa = PBXGroup;
 			children = (
 				190C42141AA91A5100FAC7FD /* FightModel.swift */,
@@ -111,9 +111,10 @@
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
 				19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */,
-				19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */,
+				19E529921A9370D200F5CF22 /* FightScores.xcdatamodeld */,
 				19E5298E1A9370D200F5CF22 /* Supporting Files */,
 			);
+			name = FightScores;
 			path = ScoreTheFight;
 			sourceTree = "<group>";
 		};
@@ -125,12 +126,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		19E529A61A9370D200F5CF22 /* ScoreTheFightTests */ = {
+		19E529A61A9370D200F5CF22 /* FightScoresTests */ = {
 			isa = PBXGroup;
 			children = (
 				19E529A91A9370D200F5CF22 /* ScoreTheFightTests.swift */,
 				19E529A71A9370D200F5CF22 /* Supporting Files */,
 			);
+			name = FightScoresTests;
 			path = ScoreTheFightTests;
 			sourceTree = "<group>";
 		};
@@ -145,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		19E5298A1A9370D200F5CF22 /* ScoreTheFight */ = {
+		19E5298A1A9370D200F5CF22 /* FightScores */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19E529AD1A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "ScoreTheFight" */;
+			buildConfigurationList = 19E529AD1A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "FightScores" */;
 			buildPhases = (
 				19E529871A9370D200F5CF22 /* Sources */,
 				19E529881A9370D200F5CF22 /* Frameworks */,
@@ -158,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = ScoreTheFight;
+			name = FightScores;
 			productName = ScoreTheFight;
-			productReference = 19E5298B1A9370D200F5CF22 /* ScoreTheFight.app */;
+			productReference = 19E5298B1A9370D200F5CF22 /* FightScores.app */;
 			productType = "com.apple.product-type.application";
 		};
-		19E529A21A9370D200F5CF22 /* ScoreTheFightTests */ = {
+		19E529A21A9370D200F5CF22 /* FightScoresTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19E529B01A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "ScoreTheFightTests" */;
+			buildConfigurationList = 19E529B01A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "FightScoresTests" */;
 			buildPhases = (
 				19E5299F1A9370D200F5CF22 /* Sources */,
 				19E529A01A9370D200F5CF22 /* Frameworks */,
@@ -176,9 +178,9 @@
 			dependencies = (
 				19E529A51A9370D200F5CF22 /* PBXTargetDependency */,
 			);
-			name = ScoreTheFightTests;
+			name = FightScoresTests;
 			productName = ScoreTheFightTests;
-			productReference = 19E529A31A9370D200F5CF22 /* ScoreTheFightTests.xctest */;
+			productReference = 19E529A31A9370D200F5CF22 /* FightScoresTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +201,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 19E529861A9370D200F5CF22 /* Build configuration list for PBXProject "ScoreTheFight" */;
+			buildConfigurationList = 19E529861A9370D200F5CF22 /* Build configuration list for PBXProject "FightScores" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,8 +214,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19E5298A1A9370D200F5CF22 /* ScoreTheFight */,
-				19E529A21A9370D200F5CF22 /* ScoreTheFightTests */,
+				19E5298A1A9370D200F5CF22 /* FightScores */,
+				19E529A21A9370D200F5CF22 /* FightScoresTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +267,7 @@
 				19F0BB241A94151200B7074E /* EditFightViewController.swift in Sources */,
 				19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */,
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
-				19E529941A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld in Sources */,
+				19E529941A9370D200F5CF22 /* FightScores.xcdatamodeld in Sources */,
 				19CD2C821A9EAA610000B54F /* TextFieldViewController.swift in Sources */,
 				192B43BE1AA665A600DC8B00 /* MainCallToActionButton.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailViewController.swift in Sources */,
@@ -287,7 +289,7 @@
 /* Begin PBXTargetDependency section */
 		19E529A51A9370D200F5CF22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 19E5298A1A9370D200F5CF22 /* ScoreTheFight */;
+			target = 19E5298A1A9370D200F5CF22 /* FightScores */;
 			targetProxy = 19E529A41A9370D200F5CF22 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -308,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -351,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -390,7 +394,7 @@
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FightScores;
 			};
 			name = Debug;
 		};
@@ -401,7 +405,7 @@
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FightScores;
 			};
 			name = Release;
 		};
@@ -419,7 +423,7 @@
 				);
 				INFOPLIST_FILE = ScoreTheFightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FightScoresTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoreTheFight.app/ScoreTheFight";
 			};
 			name = Debug;
@@ -434,7 +438,7 @@
 				);
 				INFOPLIST_FILE = ScoreTheFightTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FightScoresTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoreTheFight.app/ScoreTheFight";
 			};
 			name = Release;
@@ -442,7 +446,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19E529861A9370D200F5CF22 /* Build configuration list for PBXProject "ScoreTheFight" */ = {
+		19E529861A9370D200F5CF22 /* Build configuration list for PBXProject "FightScores" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19E529AB1A9370D200F5CF22 /* Debug */,
@@ -451,7 +455,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19E529AD1A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "ScoreTheFight" */ = {
+		19E529AD1A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "FightScores" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19E529AE1A9370D200F5CF22 /* Debug */,
@@ -460,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19E529B01A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "ScoreTheFightTests" */ = {
+		19E529B01A9370D200F5CF22 /* Build configuration list for PBXNativeTarget "FightScoresTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19E529B11A9370D200F5CF22 /* Debug */,
@@ -472,13 +476,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		19E529921A9370D200F5CF22 /* ScoreTheFight.xcdatamodeld */ = {
+		19E529921A9370D200F5CF22 /* FightScores.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				19E529931A9370D200F5CF22 /* ScoreTheFight.xcdatamodel */,
+				19E529931A9370D200F5CF22 /* FightScores.xcdatamodel */,
 			);
-			currentVersion = 19E529931A9370D200F5CF22 /* ScoreTheFight.xcdatamodel */;
-			path = ScoreTheFight.xcdatamodeld;
+			currentVersion = 19E529931A9370D200F5CF22 /* FightScores.xcdatamodel */;
+			path = FightScores.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
