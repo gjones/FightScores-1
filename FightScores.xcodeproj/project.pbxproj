@@ -39,6 +39,7 @@
 		190C42141AA91A5100FAC7FD /* FightModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightModel.swift; path = ../FightModel.swift; sourceTree = "<group>"; };
 		192B43BD1AA665A600DC8B00 /* MainCallToActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCallToActionButton.swift; path = ../MainCallToActionButton.swift; sourceTree = "<group>"; };
 		192B43C11AA68C9C00DC8B00 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FightScores.entitlements; sourceTree = SOURCE_ROOT; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19C26CE91A93888A005D7FDF /* FightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightTableViewCell.swift; path = ../FightTableViewCell.swift; sourceTree = "<group>"; };
 		19CD2C811A9EAA610000B54F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		19E5298D1A9370D200F5CF22 /* FightScores */ = {
 			isa = PBXGroup;
 			children = (
+				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
 				190C42141AA91A5100FAC7FD /* FightModel.swift */,
 				199513C91AA7737B00E310B6 /* Main.storyboard */,
 				192B43BD1AA665A600DC8B00 /* MainCallToActionButton.swift */,
@@ -194,6 +196,12 @@
 				TargetAttributes = {
 					19E5298A1A9370D200F5CF22 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 84ES9PP2AD;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					19E529A21A9370D200F5CF22 = {
 						CreatedOnToolsVersion = 6.3;
@@ -391,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FightScores.entitlements;
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -402,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FightScores.entitlements;
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
