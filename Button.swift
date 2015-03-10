@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCallToActionButton: UIButton {
+class Button: UIButton {
 
     override func drawRect(rect: CGRect) {
         

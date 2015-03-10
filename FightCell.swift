@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FightTableViewCell: UITableViewCell {
+class FightCell: UITableViewCell {
 
     @IBOutlet weak var labelBoxerA: UILabel!
     @IBOutlet weak var labelBoxerB: UILabel!
@@ -19,7 +19,6 @@ class FightTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
@@ -27,18 +26,6 @@ class FightTableViewCell: UITableViewCell {
         standardLabel(labelBoxerBTotal)
         smallLabel(labelFightDate)
         smallLabel(labelRounds)
-        
-        
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
         
     }
     

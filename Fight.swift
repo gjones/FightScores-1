@@ -1,5 +1,5 @@
 //
-//  FightModel.swift
+//  Fight.swift
 //  FightScores
 //
 //  Created by Gareth Jones on 3/5/15.
@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-@objc(FightModel)
+@objc(Fight)
 
-class FightModel: NSManagedObject {
+class Fight: NSManagedObject {
 
     @NSManaged var boxerA: String
     @NSManaged var boxerA_round1: NSNumber

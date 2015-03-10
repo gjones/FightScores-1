@@ -211,7 +211,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
         
         // Create instance of our data model and initialize
-        var newFight = FightModel(entity: entity!, insertIntoManagedObjectContext: context)
+        var newFight = Fight(entity: entity!, insertIntoManagedObjectContext: context)
         
         // Map our properties
 
