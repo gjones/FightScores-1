@@ -2732,7 +2732,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="addFightButton:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="nOY-52-HrU"/>
-                                                    <segue destination="JCN-6N-40g" kind="unwind" identifier="unwindToFightList" unwindAction="unwindToFightList:" id="ceQ-rA-gki"/>
                                                 </connections>
                                             </button>
                                         </subviews>
