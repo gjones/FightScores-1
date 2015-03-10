@@ -23,6 +23,7 @@
 		19E529B61A93752300F5CF22 /* CreateFightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B51A93752300F5CF22 /* CreateFightVC.swift */; };
 		19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B71A937E3300F5CF22 /* NavigationController.swift */; };
 		19E61ABA1AAF49F100E74A3E /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61AB91AAF49F100E74A3E /* LabelStyles.swift */; };
+		19E61ABC1AAF532A00E74A3E /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61ABB1AAF532A00E74A3E /* Table.swift */; };
 		19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB211A940A6D00B7074E /* FightDetailVC.swift */; };
 		19F0BB241A94151200B7074E /* ScorecardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB231A94151200B7074E /* ScorecardVC.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		19E529B51A93752300F5CF22 /* CreateFightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFightVC.swift; sourceTree = "<group>"; };
 		19E529B71A937E3300F5CF22 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		19E61AB91AAF49F100E74A3E /* LabelStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
+		19E61ABB1AAF532A00E74A3E /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		19F0BB211A940A6D00B7074E /* FightDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightDetailVC.swift; sourceTree = "<group>"; };
 		19F0BB231A94151200B7074E /* ScorecardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				192B43BD1AA665A600DC8B00 /* Button.swift */,
 				19CD2C811A9EAA610000B54F /* TextField.swift */,
 				19E61AB91AAF49F100E74A3E /* LabelStyles.swift */,
+				19E61ABB1AAF532A00E74A3E /* Table.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -119,7 +122,6 @@
 				19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */,
 				19A69E741AAF1D6B00325089 /* UI Elements */,
 				199513C91AA7737B00E310B6 /* Main.storyboard */,
-				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
 				19C26CE91A93888A005D7FDF /* FightCell.swift */,
 				19E529951A9370D200F5CF22 /* FightMasterVC.swift */,
 				19E529B51A93752300F5CF22 /* CreateFightVC.swift */,
@@ -163,10 +165,11 @@
 		19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */ = {
 			isa = PBXGroup;
 			children = (
-				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
+				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
 				190C42141AA91A5100FAC7FD /* Fight.swift */,
 				191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */,
 				19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */,
+				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
 			);
 			name = "Date Modal / iCloud";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E61ABC1AAF532A00E74A3E /* Table.swift in Sources */,
 				19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */,
 				19E529961A9370D200F5CF22 /* FightMasterVC.swift in Sources */,
 				190C42151AA91A5100FAC7FD /* Fight.swift in Sources */,
