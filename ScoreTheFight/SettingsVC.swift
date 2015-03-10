@@ -25,17 +25,15 @@ class SettingsVC: UIViewController {
         self.title = "Settings"
         labelInformation.text = "About"
         labelVersion.text = "Version"
-        labelVersion2.text = "0.0.1"
+        labelVersion2.text = "0.5.4"
         labelFeedback.text = "Feedback"
         labelCopyright.text = "Copyright © 2015, Gareth D Jones \nAll rights reserved."
         
-        smallLabel(labelInformation)
         softWhiteView(viewInformationRow)
         softWhiteView(viewFeedbackRow)
         offWhiteLabel(labelVersion)
         offWhiteLabel(labelVersion2)
         WhiteLabel(labelFeedback)
-        copyrightLabel(labelCopyright)
         
     }
 
@@ -64,12 +62,7 @@ class SettingsVC: UIViewController {
     func rightNavButtonClick(sender:UIButton!) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    func smallLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
-        labelInQuestion.textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
-    }
+
     
     func softWhiteView(viewInQuestion: UIView) {
         
@@ -92,8 +85,4 @@ class SettingsVC: UIViewController {
         labelInQuestion.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     }
 
-    func copyrightLabel(labelInQuestion: UILabel) {
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
-        labelInQuestion.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)
-    }
 }
