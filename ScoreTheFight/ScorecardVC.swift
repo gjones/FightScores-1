@@ -14,8 +14,14 @@ protocol UpdateFightDetailDelegate {
     func fightInformationUpdated(A1:String, A2:String, A3:String, A4:String, A5:String, A6:String, A7:String, A8:String, A9:String,A10:String, A11:String, A12:String, B1:String, B2:String, B3:String, B4:String, B5:String, B6:String, B7:String, B8:String, B9:String,B10:String, B11:String, B12:String, Atot:String, Btot:String, Notes:String)
 }
 
-class EditFightViewController: UIViewController, UITextFieldDelegate {
+class ScorecardVC: UIViewController, UITextFieldDelegate {
     
+    var fight : Fight? {
+        didSet {
+            updateFightInfo()
+        }
+    }
+
     @IBOutlet weak var scrollView:      UIScrollView!
     @IBOutlet weak var roundsView:      UIView!
     @IBOutlet weak var contentView:     UIView!
@@ -39,48 +45,97 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonBack: UIButton!
     
     @IBOutlet weak var roundsViewHeightConstraint: NSLayoutConstraint!
-    // Set Object Types
-    var boxerA:             String?
-    var boxerB:             String?
-    var rounds:             NSNumber?
-    var date:               String?
-    var notes:              String?
-    var boxerA_round1:      NSNumber?
-    var boxerA_round2:      NSNumber?
-    var boxerA_round3:      NSNumber?
-    var boxerA_round4:      NSNumber?
-    var boxerA_round5:      NSNumber?
-    var boxerA_round6:      NSNumber?
-    var boxerA_round7:      NSNumber?
-    var boxerA_round8:      NSNumber?
-    var boxerA_round9:      NSNumber?
-    var boxerA_round10:     NSNumber?
-    var boxerA_round11:     NSNumber?
-    var boxerA_round12:     NSNumber?
-    var boxerA_totalScore:  NSNumber?
-    var boxerB_round1:      NSNumber?
-    var boxerB_round2:      NSNumber?
-    var boxerB_round3:      NSNumber?
-    var boxerB_round4:      NSNumber?
-    var boxerB_round5:      NSNumber?
-    var boxerB_round6:      NSNumber?
-    var boxerB_round7:      NSNumber?
-    var boxerB_round8:      NSNumber?
-    var boxerB_round9:      NSNumber?
-    var boxerB_round10:     NSNumber?
-    var boxerB_round11:     NSNumber?
-    var boxerB_round12:     NSNumber?
-    var boxerB_totalScore:  NSNumber?
 
-    var thisFight: NSManagedObject!
     var delegate:UpdateFightDetailDelegate? = nil
 
+    func updateFightInfo() {
+        if fight != nil && isViewLoaded() {
+            
+            println(fight)
+            labelBoxerA.text = fight!.boxerA
+            labelBoxerB.text = fight!.boxerB
+            labelATotalScore.text = "\(fight!.boxerA_totalScore)"
+            labelBTotalScore.text = "\(fight!.boxerB_totalScore)"
+            labelNotes.text = "Fight Notes"
+            textFieldNotes.text = fight!.notes
+        
+            buttonA1.setTitle("\(fight!.boxerA_round1)", forState: .Normal)
+            buttonA2.setTitle("\(fight!.boxerA_round2)", forState: .Normal)
+            buttonA3.setTitle("\(fight!.boxerA_round3)", forState: .Normal)
+            buttonA4.setTitle("\(fight!.boxerA_round4)", forState: .Normal)
+            buttonA5.setTitle("\(fight!.boxerA_round5)", forState: .Normal)
+            buttonA6.setTitle("\(fight!.boxerA_round6)", forState: .Normal)
+            buttonA7.setTitle("\(fight!.boxerA_round7)", forState: .Normal)
+            buttonA8.setTitle("\(fight!.boxerA_round8)", forState: .Normal)
+            buttonA9.setTitle("\(fight!.boxerA_round9)", forState: .Normal)
+            buttonA10.setTitle("\(fight!.boxerA_round10)", forState: .Normal)
+            buttonA11.setTitle("\(fight!.boxerA_round11)", forState: .Normal)
+            buttonA12.setTitle("\(fight!.boxerA_round12)", forState: .Normal)
+            buttonB1.setTitle("\(fight!.boxerB_round1)", forState: .Normal)
+            buttonB2.setTitle("\(fight!.boxerB_round2)", forState: .Normal)
+            buttonB3.setTitle("\(fight!.boxerB_round3)", forState: .Normal)
+            buttonB4.setTitle("\(fight!.boxerB_round4)", forState: .Normal)
+            buttonB5.setTitle("\(fight!.boxerB_round5)", forState: .Normal)
+            buttonB6.setTitle("\(fight!.boxerB_round6)", forState: .Normal)
+            buttonB7.setTitle("\(fight!.boxerB_round7)", forState: .Normal)
+            buttonB8.setTitle("\(fight!.boxerB_round8)", forState: .Normal)
+            buttonB9.setTitle("\(fight!.boxerB_round9)", forState: .Normal)
+            buttonB10.setTitle("\(fight!.boxerB_round10)", forState: .Normal)
+            buttonB11.setTitle("\(fight!.boxerB_round11)", forState: .Normal)
+            buttonB12.setTitle("\(fight!.boxerB_round12)", forState: .Normal)
+            
+            if fight!.rounds == 4 {
+                viewRd5.hidden = true
+                viewRd6.hidden = true
+                viewRd7.hidden = true
+                viewRd8.hidden = true
+                viewRd9.hidden = true
+                viewRd10.hidden = true
+                viewRd11.hidden = true
+                viewRd12.hidden = true
+                roundsViewHeightConstraint.constant = 200
+            }
+            
+            if fight!.rounds == 6 {
+                viewRd7.hidden = true
+                viewRd8.hidden = true
+                viewRd9.hidden = true
+                viewRd10.hidden = true
+                viewRd11.hidden = true
+                viewRd12.hidden = true
+                roundsViewHeightConstraint.constant = 280
+                
+            }
+            
+            if fight!.rounds == 8 {
+                viewRd9.hidden = true
+                viewRd10.hidden = true
+                viewRd11.hidden = true
+                viewRd12.hidden = true
+                roundsViewHeightConstraint.constant = 360
+                
+            }
+            
+            if fight!.rounds == 10 {
+                viewRd11.hidden = true
+                viewRd12.hidden = true
+                roundsViewHeightConstraint.constant = 440
+            }
+            
+            if fight!.rounds == 12 {
+                
+            }
+
+        }
+    }
     
     var lastButtonPressed: String?
     @IBOutlet weak var viewScoring: UIVisualEffectView!
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.alpha = 1.0
+        
+        updateFightInfo()
     }
     
     // Round One
@@ -254,86 +309,14 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
         
         // Hide the scoring view 
         self.viewScoring.alpha = 0.0
-        
-        labelBoxerA.text = boxerA
-        labelBoxerB.text = boxerB
-        labelATotalScore.text = "\(boxerA_totalScore!)"
-        labelBTotalScore.text = "\(boxerB_totalScore!)"
+
         
         textFieldNotes.delegate = self
 
-        textFieldNotes.text = notes
         leftNavButton()
         rightNavButton()
         
-        buttonA1.setTitle("\(boxerA_round1!)", forState: .Normal)
-        buttonA2.setTitle("\(boxerA_round2!)", forState: .Normal)
-        buttonA3.setTitle("\(boxerA_round3!)", forState: .Normal)
-        buttonA4.setTitle("\(boxerA_round4!)", forState: .Normal)
-        buttonA5.setTitle("\(boxerA_round5!)", forState: .Normal)
-        buttonA6.setTitle("\(boxerA_round6!)", forState: .Normal)
-        buttonA7.setTitle("\(boxerA_round7!)", forState: .Normal)
-        buttonA8.setTitle("\(boxerA_round8!)", forState: .Normal)
-        buttonA9.setTitle("\(boxerA_round9!)", forState: .Normal)
-        buttonA10.setTitle("\(boxerA_round10!)", forState: .Normal)
-        buttonA11.setTitle("\(boxerA_round11!)", forState: .Normal)
-        buttonA12.setTitle("\(boxerA_round12!)", forState: .Normal)
-        buttonB1.setTitle("\(boxerB_round1!)", forState: .Normal)
-        buttonB2.setTitle("\(boxerB_round2!)", forState: .Normal)
-        buttonB3.setTitle("\(boxerB_round3!)", forState: .Normal)
-        buttonB4.setTitle("\(boxerB_round4!)", forState: .Normal)
-        buttonB5.setTitle("\(boxerB_round5!)", forState: .Normal)
-        buttonB6.setTitle("\(boxerB_round6!)", forState: .Normal)
-        buttonB7.setTitle("\(boxerB_round7!)", forState: .Normal)
-        buttonB8.setTitle("\(boxerB_round8!)", forState: .Normal)
-        buttonB9.setTitle("\(boxerB_round9!)", forState: .Normal)
-        buttonB10.setTitle("\(boxerB_round10!)", forState: .Normal)
-        buttonB11.setTitle("\(boxerB_round11!)", forState: .Normal)
-        buttonB12.setTitle("\(boxerB_round12!)", forState: .Normal)
-   
-        
-        if rounds == 4 {
-            viewRd5.hidden = true
-            viewRd6.hidden = true
-            viewRd7.hidden = true
-            viewRd8.hidden = true
-            viewRd9.hidden = true
-            viewRd10.hidden = true
-            viewRd11.hidden = true
-            viewRd12.hidden = true
-            roundsViewHeightConstraint.constant = 200
-        }
-        
-        if rounds == 6 {
-            viewRd7.hidden = true
-            viewRd8.hidden = true
-            viewRd9.hidden = true
-            viewRd10.hidden = true
-            viewRd11.hidden = true
-            viewRd12.hidden = true
-            roundsViewHeightConstraint.constant = 280
 
-        }
-        
-        if rounds == 8 {
-            viewRd9.hidden = true
-            viewRd10.hidden = true
-            viewRd11.hidden = true
-            viewRd12.hidden = true
-            roundsViewHeightConstraint.constant = 360
-
-        }
-
-        if rounds == 10 {
-            viewRd11.hidden = true
-            viewRd12.hidden = true
-            roundsViewHeightConstraint.constant = 440
-        }
-        
-        if rounds == 12 {
-            
-        }
-        
         // Apply styles
         standardLabel(labelBoxerA)
         standardLabel(labelBoxerB)
@@ -382,7 +365,9 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func scorecardButton(sender: AnyObject) {
+    
         finishup()
+        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -456,44 +441,40 @@ class EditFightViewController: UIViewController, UITextFieldDelegate {
     }
     
     func finishup() {
-        // Reference to our app delegate
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
-        // Reference NSManaged object context
-        let context: NSManagedObjectContext = appDel.managedObjectContext!
-        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
-    
-        thisFight.setValue(textFieldNotes.text as String, forKey: "notes")
-        thisFight.setValue(rounds, forKey: "rounds")
-        thisFight.setValue(buttonA1.titleLabel!.text!.toInt(), forKey: "boxerA_round1")
-        thisFight.setValue(buttonB1.titleLabel!.text!.toInt(), forKey: "boxerB_round1")
-        thisFight.setValue(buttonA2.titleLabel!.text!.toInt(), forKey: "boxerA_round2")
-        thisFight.setValue(buttonB2.titleLabel!.text!.toInt(), forKey: "boxerB_round2")
-        thisFight.setValue(buttonA3.titleLabel!.text!.toInt(), forKey: "boxerA_round3")
-        thisFight.setValue(buttonB3.titleLabel!.text!.toInt(), forKey: "boxerB_round3")
-        thisFight.setValue(buttonA4.titleLabel!.text!.toInt(), forKey: "boxerA_round4")
-        thisFight.setValue(buttonB4.titleLabel!.text!.toInt(), forKey: "boxerB_round4")
-        thisFight.setValue(buttonA5.titleLabel!.text!.toInt(), forKey: "boxerA_round5")
-        thisFight.setValue(buttonB5.titleLabel!.text!.toInt(), forKey: "boxerB_round5")
-        thisFight.setValue(buttonA6.titleLabel!.text!.toInt(), forKey: "boxerA_round6")
-        thisFight.setValue(buttonB6.titleLabel!.text!.toInt(), forKey: "boxerB_round6")
-        thisFight.setValue(buttonA7.titleLabel!.text!.toInt(), forKey: "boxerA_round7")
-        thisFight.setValue(buttonB7.titleLabel!.text!.toInt(), forKey: "boxerB_round7")
-        thisFight.setValue(buttonA8.titleLabel!.text!.toInt(), forKey: "boxerA_round8")
-        thisFight.setValue(buttonB8.titleLabel!.text!.toInt(), forKey: "boxerB_round8")
-        thisFight.setValue(buttonA9.titleLabel!.text!.toInt(), forKey: "boxerA_round9")
-        thisFight.setValue(buttonB9.titleLabel!.text!.toInt(), forKey: "boxerB_round9")
-        thisFight.setValue(buttonA10.titleLabel!.text!.toInt(), forKey: "boxerA_round10")
-        thisFight.setValue(buttonB10.titleLabel!.text!.toInt(), forKey: "boxerB_round10")
-        thisFight.setValue(buttonA11.titleLabel!.text!.toInt(), forKey: "boxerA_round11")
-        thisFight.setValue(buttonB11.titleLabel!.text!.toInt(), forKey: "boxerB_round11")
-        thisFight.setValue(buttonA12.titleLabel!.text!.toInt(), forKey: "boxerA_round12")
-        thisFight.setValue(buttonB12.titleLabel!.text!.toInt(), forKey: "boxerB_round12")
-        thisFight.setValue(labelATotalScore.text!.toInt(), forKey: "boxerA_totalScore")
-        thisFight.setValue(labelBTotalScore.text!.toInt(), forKey: "boxerB_totalScore")
-    
+        
+        fight!.boxerA_round1 = buttonA1.titleLabel!.text!.toInt()!
+        fight!.boxerB_round1 = buttonB1.titleLabel!.text!.toInt()!
+        fight!.boxerA_round2 = buttonA2.titleLabel!.text!.toInt()!
+        fight!.boxerB_round2 = buttonB2.titleLabel!.text!.toInt()!
+        fight!.boxerA_round3 = buttonA3.titleLabel!.text!.toInt()!
+        fight!.boxerB_round3 = buttonB3.titleLabel!.text!.toInt()!
+        fight!.boxerA_round4 = buttonA4.titleLabel!.text!.toInt()!
+        fight!.boxerB_round4 = buttonB4.titleLabel!.text!.toInt()!
+        fight!.boxerA_round5 = buttonA5.titleLabel!.text!.toInt()!
+        fight!.boxerB_round5 = buttonB5.titleLabel!.text!.toInt()!
+        fight!.boxerA_round6 = buttonA6.titleLabel!.text!.toInt()!
+        fight!.boxerB_round6 = buttonB6.titleLabel!.text!.toInt()!
+        fight!.boxerA_round7 = buttonA7.titleLabel!.text!.toInt()!
+        fight!.boxerB_round7 = buttonB7.titleLabel!.text!.toInt()!
+        fight!.boxerA_round8 = buttonA8.titleLabel!.text!.toInt()!
+        fight!.boxerB_round8 = buttonB8.titleLabel!.text!.toInt()!
+        fight!.boxerA_round9 = buttonA9.titleLabel!.text!.toInt()!
+        fight!.boxerB_round9 = buttonB9.titleLabel!.text!.toInt()!
+        fight!.boxerA_round10 = buttonA10.titleLabel!.text!.toInt()!
+        fight!.boxerB_round10 = buttonB10.titleLabel!.text!.toInt()!
+        fight!.boxerA_round11 = buttonA11.titleLabel!.text!.toInt()!
+        fight!.boxerB_round11 = buttonB11.titleLabel!.text!.toInt()!
+        fight!.boxerA_round12 = buttonA12.titleLabel!.text!.toInt()!
+        fight!.boxerB_round12 = buttonB12.titleLabel!.text!.toInt()!
+        
+        fight!.boxerA_totalScore = labelATotalScore.text!.toInt()!
+        fight!.boxerB_totalScore = labelBTotalScore.text!.toInt()!
+        
+        fight!.notes = textFieldNotes.text!
+        
         // Save our context
-        context.save(nil)
+        var context = fight!.managedObjectContext
+        context?.save(nil)
         
         // Move on
         if (delegate != nil) {

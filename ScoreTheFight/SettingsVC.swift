@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsVC: UIViewController {
     
     @IBOutlet weak var labelInformation:    UILabel!
     @IBOutlet weak var labelVersion:        UILabel!

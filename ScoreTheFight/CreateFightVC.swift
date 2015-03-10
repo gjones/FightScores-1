@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
+class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonStartScoring: UIButton!
@@ -27,19 +27,22 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     @IBOutlet weak var labelBoxerA: UILabel!
     @IBOutlet weak var labelBoxerB: UILabel!
     @IBOutlet weak var labelRounds: UILabel!
-
-    var boxerA: String?
-    var boxerB: String?
-    var rounds: NSNumber?
-    var date:   NSDate?
+    
+    var managedObjectContext : NSManagedObjectContext?
+    var _fight : Fight?
+    var fight : Fight
+        {
+            if _fight == nil
+            {
+                _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
+            }
+            return _fight!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New Scorecard"
     
-        labelBoxerA.text = "Name of First Boxer"
-        labelBoxerB.text = "Name of Second Boxer"
-        labelRounds.text = "Number of Scheduled Rounds"
         buttonAddFight.setTitle("Add This Fight", forState: .Normal)
         
         textFieldBoxerA.delegate = self
@@ -76,7 +79,7 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
                 print("User swiped Right")
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                performSegueWithIdentifier("unwindToFightList", sender: self)
             default:
                 break
             }
@@ -94,7 +97,6 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
         self.scrollView.endEditing(true)
-    
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -119,9 +121,53 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
     }
     
     func leftNavButtonClick(sender:UIButton!) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+       performSegueWithIdentifier("unwindToFightList", sender: self)
     }
     
+    // Rounds Logic
+    
+    var setRounds: NSNumber = 12.0
+    
+    @IBAction func buttonRd4(sender: AnyObject) {
+        setRounds = 4
+    }
+    @IBAction func buttonRd6(sender: AnyObject) {
+        setRounds = 6
+    }
+    @IBAction func buttonRd8(sender: AnyObject) {
+        setRounds = 8
+    }
+    @IBAction func buttonRd10(sender: AnyObject) {
+        setRounds = 10
+    }
+    @IBAction func buttonRd12(sender: AnyObject) {
+        setRounds = 12
+    }
+    
+    
+    func submitFight() {
+        
+        // Map our properties
+        if textFieldBoxerA.text == "" {
+            fight.boxerA = "Boxer A"
+        } else {
+            fight.boxerA = textFieldBoxerA.text ?? "Boxer A"
+        }
+        if textFieldBoxerB.text == "" {
+            fight.boxerB = "Boxer B"
+        } else {
+            fight.boxerB = textFieldBoxerB.text
+        }
+        
+        fight.date = NSDate()
+        fight.rounds = setRounds ?? 12
+        
+        // Save our context
+        managedObjectContext!.save(nil)
+        println(fight)
+        
+        performSegueWithIdentifier("unwindToFightList", sender: self)
+    }
     
     // Styling 
     
@@ -130,7 +176,6 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
         var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
-        
         
         buttonInQuestion.layer.cornerRadius = 20
         buttonInQuestion.clipsToBounds = true
@@ -183,62 +228,5 @@ class AddFightViewController: UIViewController, UIScrollViewDelegate, UITextFiel
         labelInQuestion.textColor = UIColor .whiteColor()
         labelInQuestion.tintColor = UIColor .whiteColor()
     }
-    
-    // Rounds Logic
-    @IBAction func buttonRd4(sender: AnyObject) {
-        rounds = 4
-    }
-    @IBAction func buttonRd6(sender: AnyObject) {
-        rounds = 6
-    }
-    @IBAction func buttonRd8(sender: AnyObject) {
-        rounds = 8
-    }
-    @IBAction func buttonRd10(sender: AnyObject) {
-        rounds = 10
-    }
-    @IBAction func buttonRd12(sender: AnyObject) {
-        rounds = 12
-    }
-    
-    
-    func submitFight() {
-        // Reference to our app delegate
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        // Reference NSManaged object context
-        let context: NSManagedObjectContext = appDel.managedObjectContext!
-        let entity = NSEntityDescription.entityForName("Fight", inManagedObjectContext: context)
-        
-        // Create instance of our data model and initialize
-        var newFight = Fight(entity: entity!, insertIntoManagedObjectContext: context)
-        
-        // Map our properties
-
-        if textFieldBoxerA.text == "" {
-            newFight.boxerA = "Boxer A"
-        } else {
-            newFight.boxerA = textFieldBoxerA.text ?? "Boxer A"
-        }
-        if textFieldBoxerB.text == "" {
-            newFight.boxerB = "Boxer B"
-        } else {
-            newFight.boxerB = textFieldBoxerB.text
-        }
-        
-        newFight.date = NSDate()
-        if rounds == nil {
-            newFight.rounds = 12
-        } else {
-            newFight.rounds = rounds!
-        }
-
-        // Save our context
-        context.save(nil)
-
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    
 
 }

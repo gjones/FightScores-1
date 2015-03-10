@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldViewController: UITextField {
+class TextField: UITextField {
 
     @IBInspectable var inset: CGFloat = 16
     

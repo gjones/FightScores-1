@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Fight Table View Controller-->
+        <!--Fight MasterVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="FightTableViewController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="FightMasterVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -31,7 +31,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ABj-z2-lgQ" kind="show" id="tYH-c8-SqP"/>
+                                    <segue destination="FR1-WP-GgK" kind="show" identifier="createFight" id="tYH-c8-SqP"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="neM-DU-7NE">
@@ -71,7 +71,7 @@
                                     </variation>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fightCell" rowHeight="81" id="8Y8-SE-Fgc" customClass="FightCell" customModule="FightScores" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="fightCell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FightCell" rowHeight="81" id="8Y8-SE-Fgc" customClass="FightCell" customModule="FightScores" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Y8-SE-Fgc" id="IVZ-6s-upI">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -165,7 +165,7 @@
                                             <outlet property="labelBoxerBTotal" destination="bOL-nC-JLn" id="U1M-Dn-oai"/>
                                             <outlet property="labelFightDate" destination="5Sg-1o-4Si" id="9p4-pI-f38"/>
                                             <outlet property="labelRounds" destination="zNd-3h-dSx" id="zte-2d-o0L"/>
-                                            <segue destination="FTg-B3-mSp" kind="show" identifier="detailSegue" id="Y6d-1Q-esK"/>
+                                            <segue destination="FTg-B3-mSp" kind="show" identifier="fightDetail" id="Y6d-1Q-esK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="380"/>
         </scene>
-        <!--Fight Detail View Controller-->
+        <!--Fight DetailVC-->
         <scene sceneID="3ld-wb-vfM">
             <objects>
-                <viewController storyboardIdentifier="FightDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FTg-B3-mSp" customClass="FightDetailViewController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FightDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FTg-B3-mSp" customClass="FightDetailVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jVP-gD-Qxc"/>
                         <viewControllerLayoutGuide type="bottom" id="phG-Nc-CIu"/>
@@ -1276,10 +1276,10 @@
             </objects>
             <point key="canvasLocation" x="1589" y="695"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--SettingsVC-->
         <scene sceneID="h9w-Ir-6sm">
             <objects>
-                <viewController id="13E-sn-TmR" customClass="SettingsViewController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="13E-sn-TmR" customClass="SettingsVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xSj-wg-HtZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Oji-EN-jNp"/>
@@ -1407,10 +1407,10 @@
             </objects>
             <point key="canvasLocation" x="1589" y="1366"/>
         </scene>
-        <!--Edit Fight View Controller-->
+        <!--ScorecardVC-->
         <scene sceneID="paV-iw-k44">
             <objects>
-                <viewController storyboardIdentifier="updateScorecard" modalPresentationStyle="pageSheet" id="KUN-pA-xI1" customClass="EditFightViewController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateScorecard" modalPresentationStyle="pageSheet" id="KUN-pA-xI1" customClass="ScorecardVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ttv-Gp-ymU"/>
                         <viewControllerLayoutGuide type="bottom" id="46D-dP-ZL3"/>
@@ -2253,7 +2253,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ig0-EB-DrM" customClass="TextFieldViewController" customModule="FightScores" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ig0-EB-DrM" customClass="TextField" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="634" width="414" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2275,7 +2275,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="MainCallToActionButton" customModule="FightScores" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="Button" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="770" width="382" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="4kM-PE-9uB"/>
@@ -2589,12 +2589,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkL-LD-u2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680.5" y="703.5"/>
+            <point key="canvasLocation" x="3212" y="703"/>
         </scene>
-        <!--Add Fight View Controller-->
+        <!--Create FightVC-->
         <scene sceneID="aEp-IH-kf1">
             <objects>
-                <viewController id="ABj-z2-lgQ" customClass="AddFightViewController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateFightVC" id="ABj-z2-lgQ" customClass="CreateFightVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyK-Zx-p6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="510-Kz-tnQ"/>
@@ -2618,7 +2618,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vie-lo-6iO" customClass="TextFieldViewController" customModule="FightScores" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vie-lo-6iO" customClass="TextField" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="45" width="320" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2628,7 +2628,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eC-W8-Fjq" customClass="TextFieldViewController" customModule="FightScores" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eC-W8-Fjq" customClass="TextField" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="163" width="320" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2732,6 +2732,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="addFightButton:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="nOY-52-HrU"/>
+                                                    <segue destination="JCN-6N-40g" kind="unwind" identifier="unwindToFightList" unwindAction="unwindToFightList:" id="ceQ-rA-gki"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2818,6 +2819,7 @@
                         <barButtonItem key="leftBarButtonItem" image="button_back" width="50" id="JR1-du-K40">
                             <connections>
                                 <action selector="cancelTapped:" destination="ABj-z2-lgQ" id="GbD-mA-enH"/>
+                                <segue destination="JCN-6N-40g" kind="unwind" identifier="unwindToFightList" unwindAction="unwindToFightList:" id="Bqx-BD-ObP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2839,8 +2841,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbL-TB-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JCN-6N-40g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1589" y="15"/>
+            <point key="canvasLocation" x="2121" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KDo-Gt-kzX">
@@ -2897,6 +2900,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VjB-Tx-xDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2148" y="703"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kUh-22-24t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FR1-WP-GgK" customClass="NavigationController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UCx-NS-fya">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ABj-z2-lgQ" kind="relationship" relationship="rootViewController" id="Vir-GU-NaL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRH-6F-iDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589" y="15"/>
         </scene>
     </scenes>
     <resources>
