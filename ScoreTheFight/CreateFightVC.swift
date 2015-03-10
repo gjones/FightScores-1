@@ -56,11 +56,6 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         circularButton(buttonRd8)
         circularButton(buttonRd10)
         circularButton(buttonRd12)
-        softWhiteTextField(textFieldBoxerA)
-        softWhiteTextField(textFieldBoxerB)
-        standardLabel(labelBoxerA)
-        standardLabel(labelBoxerB)
-        standardLabel(labelRounds)
         
         scrollView.userInteractionEnabled = true
         scrollView.indicatorStyle = .Black
@@ -78,7 +73,6 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                print("User swiped Right")
                 performSegueWithIdentifier("unwindToFightList", sender: self)
             default:
                 break
@@ -151,7 +145,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         if textFieldBoxerA.text == "" {
             fight.boxerA = "Boxer A"
         } else {
-            fight.boxerA = textFieldBoxerA.text ?? "Boxer A"
+            fight.boxerA = textFieldBoxerA.text
         }
         if textFieldBoxerB.text == "" {
             fight.boxerB = "Boxer B"
@@ -208,25 +202,4 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         sender.resignFirstResponder()
     }
     
-    func softWhiteTextField(fieldInQuestion: UITextField) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
-        
-        // fieldInQuestion.layer.cornerRadius = 4
-        fieldInQuestion.textColor = UIColor .whiteColor()
-        fieldInQuestion.backgroundColor = whiteColor
-        fieldInQuestion.layer.borderWidth = 0.5
-        fieldInQuestion.layer.borderColor = borderColor.CGColor
-        fieldInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
-    }
-    
-    func standardLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor .whiteColor()
-        labelInQuestion.tintColor = UIColor .whiteColor()
-    }
-
 }

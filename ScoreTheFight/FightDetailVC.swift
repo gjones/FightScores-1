@@ -162,6 +162,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     override func viewWillAppear(animated: Bool) {
         updateFightInfo()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Fight Overview"
@@ -179,51 +180,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
-        
-        // Set Styling
-        standardLabel(labelBoxerA_totalScore)
-        standardLabel(labelBoxerB_totalScore)
-        standardLabel(labelNotes)
-        smallLabel(labelNotesTitle)
-        smallLabel(labelFightDate)
-        smallLabel(labelRounds)
-        softWhiteLabel(label1)
-        softWhiteLabel(label2)
-        softWhiteLabel(label3)
-        softWhiteLabel(label4)
-        softWhiteLabel(label5)
-        softWhiteLabel(label6)
-        softWhiteLabel(label7)
-        softWhiteLabel(label8)
-        softWhiteLabel(label9)
-        softWhiteLabel(label10)
-        softWhiteLabel(label11)
-        softWhiteLabel(label12)
-        borderedLabel(labelBoxerA1)
-        borderedLabel(labelBoxerA2)
-        borderedLabel(labelBoxerA3)
-        borderedLabel(labelBoxerA4)
-        borderedLabel(labelBoxerA5)
-        borderedLabel(labelBoxerA6)
-        borderedLabel(labelBoxerA7)
-        borderedLabel(labelBoxerA8)
-        borderedLabel(labelBoxerA9)
-        borderedLabel(labelBoxerA10)
-        borderedLabel(labelBoxerA11)
-        borderedLabel(labelBoxerA12)
-        borderedLabel(labelBoxerB1)
-        borderedLabel(labelBoxerB2)
-        borderedLabel(labelBoxerB3)
-        borderedLabel(labelBoxerB4)
-        borderedLabel(labelBoxerB5)
-        borderedLabel(labelBoxerB6)
-        borderedLabel(labelBoxerB7)
-        borderedLabel(labelBoxerB8)
-        borderedLabel(labelBoxerB9)
-        borderedLabel(labelBoxerB10)
-        borderedLabel(labelBoxerB11)
-        borderedLabel(labelBoxerB12)
-        
     }
     
     // Right Swipe Functionality
@@ -311,12 +267,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-    */
-    
-    
     // Segue for Updating Scorecard
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
@@ -336,63 +286,4 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
     }
     
-//    func recalculateScores() {
-//        labelBoxerA1.text =             "\(boxerA_round1!)"
-//        labelBoxerA2.text =             "\(boxerA_round2!)"
-//        labelBoxerA3.text =             "\(boxerA_round3!)"
-//        labelBoxerA4.text =             "\(boxerA_round4!)"
-//        labelBoxerA5.text =             "\(boxerA_round5!)"
-//        labelBoxerA6.text =             "\(boxerA_round6!)"
-//        labelBoxerA7.text =             "\(boxerA_round7!)"
-//        labelBoxerA8.text =             "\(boxerA_round8!)"
-//        labelBoxerA9.text =             "\(boxerA_round9!)"
-//        labelBoxerA10.text =            "\(boxerA_round10!)"
-//        labelBoxerA11.text =            "\(boxerA_round11!)"
-//        labelBoxerA12.text =            "\(boxerA_round12!)"
-//        labelBoxerB1.text =             "\(boxerB_round1!)"
-//        labelBoxerB2.text =             "\(boxerB_round2!)"
-//        labelBoxerB3.text =             "\(boxerB_round3!)"
-//        labelBoxerB4.text =             "\(boxerB_round4!)"
-//        labelBoxerB5.text =             "\(boxerB_round5!)"
-//        labelBoxerB6.text =             "\(boxerB_round6!)"
-//        labelBoxerB7.text =             "\(boxerB_round7!)"
-//        labelBoxerB8.text =             "\(boxerB_round8!)"
-//        labelBoxerB9.text =             "\(boxerB_round9!)"
-//        labelBoxerB10.text =            "\(boxerB_round10!)"
-//        labelBoxerB11.text =            "\(boxerB_round11!)"
-//        labelBoxerB12.text =            "\(boxerB_round12!)"
-//    }
-    
-    func standardLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor .whiteColor()
-    }
-    
-    func softWhiteLabel(labelInQuestion: UILabel) {
-        var offWhiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
-        labelInQuestion.textColor = UIColor .whiteColor()
-        labelInQuestion.backgroundColor = offWhiteColor
-        labelInQuestion.layer.borderColor = borderColor
-        labelInQuestion.layer.borderWidth = 0.5
-    }
-    
-    func borderedLabel(labelInQuestion: UILabel) {
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)
-        labelInQuestion.textColor = UIColor .whiteColor()
-        labelInQuestion.layer.borderColor = borderColor
-        labelInQuestion.layer.borderWidth = 0.5
-    }
-    
-    
-    func smallLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
-        labelInQuestion.textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
-    }
 }

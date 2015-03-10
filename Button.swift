@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIButton {
+class RedButton: UIButton {
 
     override func drawRect(rect: CGRect) {
         
@@ -34,7 +34,5 @@ class Button: UIButton {
         rectanglePath.lineWidth = 0.5
         rectanglePath.stroke()
     }
-    
-    
-
 }
+

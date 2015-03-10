@@ -208,14 +208,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
 
-    func standardLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor .whiteColor()
-        labelInQuestion.tintColor = UIColor .whiteColor()
-        labelInQuestion.alpha = 0.800
-    }    
-
 }
 
 

@@ -22,6 +22,7 @@
 		19E5299E1A9370D200F5CF22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */; };
 		19E529B61A93752300F5CF22 /* CreateFightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B51A93752300F5CF22 /* CreateFightVC.swift */; };
 		19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B71A937E3300F5CF22 /* NavigationController.swift */; };
+		19E61ABA1AAF49F100E74A3E /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61AB91AAF49F100E74A3E /* LabelStyles.swift */; };
 		19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB211A940A6D00B7074E /* FightDetailVC.swift */; };
 		19F0BB241A94151200B7074E /* ScorecardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB231A94151200B7074E /* ScorecardVC.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		19E529A91A9370D200F5CF22 /* FightScoresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScoresTests.swift; sourceTree = "<group>"; };
 		19E529B51A93752300F5CF22 /* CreateFightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFightVC.swift; sourceTree = "<group>"; };
 		19E529B71A937E3300F5CF22 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		19E61AB91AAF49F100E74A3E /* LabelStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		19F0BB211A940A6D00B7074E /* FightDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightDetailVC.swift; sourceTree = "<group>"; };
 		19F0BB231A94151200B7074E /* ScorecardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +86,10 @@
 		19A69E741AAF1D6B00325089 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				192B43BD1AA665A600DC8B00 /* Button.swift */,
 				19CD2C811A9EAA610000B54F /* TextField.swift */,
+				19E61AB91AAF49F100E74A3E /* LabelStyles.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -112,11 +116,9 @@
 		19E5298D1A9370D200F5CF22 /* FightScores */ = {
 			isa = PBXGroup;
 			children = (
-				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
-				190C42141AA91A5100FAC7FD /* Fight.swift */,
-				191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */,
-				199513C91AA7737B00E310B6 /* Main.storyboard */,
+				19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */,
 				19A69E741AAF1D6B00325089 /* UI Elements */,
+				199513C91AA7737B00E310B6 /* Main.storyboard */,
 				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
 				19C26CE91A93888A005D7FDF /* FightCell.swift */,
 				19E529951A9370D200F5CF22 /* FightMasterVC.swift */,
@@ -124,10 +126,8 @@
 				19F0BB211A940A6D00B7074E /* FightDetailVC.swift */,
 				192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */,
 				19F0BB231A94151200B7074E /* ScorecardVC.swift */,
-				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
 				19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */,
-				19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */,
 				19E5298E1A9370D200F5CF22 /* Supporting Files */,
 			);
 			name = FightScores;
@@ -158,6 +158,17 @@
 				19E529A81A9370D200F5CF22 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */ = {
+			isa = PBXGroup;
+			children = (
+				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
+				190C42141AA91A5100FAC7FD /* Fight.swift */,
+				191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */,
+				19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */,
+			);
+			name = "Date Modal / iCloud";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
 				191EFFFB1AAE8B14001A6E40 /* CoreDataStack.swift in Sources */,
 				19E529941A9370D200F5CF22 /* Fight.xcdatamodeld in Sources */,
+				19E61ABA1AAF49F100E74A3E /* LabelStyles.swift in Sources */,
 				19CD2C821A9EAA610000B54F /* TextField.swift in Sources */,
 				192B43BE1AA665A600DC8B00 /* Button.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */,
