@@ -42,7 +42,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwV-im-VNm">
-                                            <rect key="frame" x="266" y="31" width="20" height="20"/>
+                                            <rect key="frame" x="258" y="24" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="59z-Tc-jUV"/>
                                                 <constraint firstAttribute="width" constant="20" id="Xd1-9s-6Uc"/>
@@ -54,17 +54,39 @@
                                                 <segue destination="oD9-xe-Owv" kind="presentation" id="Fay-pn-ipy"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a fight to get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-qY-ulQ">
+                                            <rect key="frame" x="64" y="53" width="192" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEr-9w-rgo">
+                                            <rect key="frame" x="145" y="10" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="HNQ-y9-DNS"/>
+                                                <constraint firstAttribute="height" constant="30" id="b1D-bm-Sap"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="Add">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="QwV-im-VNm" secondAttribute="bottom" constant="31" id="9BH-rB-1c4"/>
+                                        <constraint firstAttribute="bottom" secondItem="QwV-im-VNm" secondAttribute="bottom" constant="37" id="9BH-rB-1c4"/>
+                                        <constraint firstItem="dIc-qY-ulQ" firstAttribute="leading" secondItem="luY-xK-ejk" secondAttribute="leading" constant="64" id="C9u-7z-Z5u"/>
                                         <constraint firstAttribute="bottom" secondItem="QwV-im-VNm" secondAttribute="bottom" constant="12" id="CWz-iF-2gA"/>
-                                        <constraint firstItem="QwV-im-VNm" firstAttribute="top" secondItem="luY-xK-ejk" secondAttribute="top" constant="31" id="Rt2-wN-o5i"/>
-                                        <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="34" id="eV8-uy-rua"/>
+                                        <constraint firstAttribute="centerX" secondItem="PEr-9w-rgo" secondAttribute="centerX" id="JF2-aN-AF0"/>
+                                        <constraint firstItem="dIc-qY-ulQ" firstAttribute="top" secondItem="PEr-9w-rgo" secondAttribute="bottom" constant="13" id="ObW-ig-ux0"/>
+                                        <constraint firstItem="QwV-im-VNm" firstAttribute="top" secondItem="luY-xK-ejk" secondAttribute="top" constant="24" id="Rt2-wN-o5i"/>
+                                        <constraint firstItem="PEr-9w-rgo" firstAttribute="top" secondItem="luY-xK-ejk" secondAttribute="top" constant="10" id="Xm1-fY-boS"/>
+                                        <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="42" id="eV8-uy-rua"/>
                                         <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="16" id="gVB-M9-5qb"/>
+                                        <constraint firstAttribute="trailing" secondItem="dIc-qY-ulQ" secondAttribute="trailing" constant="64" id="h3k-5h-AG1"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="9BH-rB-1c4"/>
                                             <exclude reference="CWz-iF-2gA"/>
                                             <exclude reference="gVB-M9-5qb"/>
                                         </mask>
@@ -230,7 +252,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addFightButton" destination="vlX-Fl-dbj" id="qWX-lf-DvR"/>
+                        <outlet property="buttonNoFights" destination="PEr-9w-rgo" id="IoH-Rk-XOa"/>
+                        <outlet property="buttonSettings" destination="QwV-im-VNm" id="qKT-Md-vPy"/>
                         <outlet property="fightTableView" destination="neM-DU-7NE" id="16s-D0-Hw4"/>
+                        <outlet property="labelNoFights" destination="dIc-qY-ulQ" id="LrB-Sr-xJX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -2928,6 +2953,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="60" height="60"/>
         <image name="Background" width="320" height="568"/>
         <image name="button_back" width="18" height="14"/>
         <image name="button_settings" width="16" height="16"/>

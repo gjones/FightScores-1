@@ -15,8 +15,10 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // Set Outlets
     @IBOutlet weak var fightTableView: UITableView!
     @IBOutlet weak var addFightButton: UIButton!
-    @IBOutlet weak var labelNoFights: UILabel!
     @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet weak var labelNoFights: UILabel!
+    @IBOutlet weak var buttonSettings: UIButton!
+    @IBOutlet weak var buttonNoFights: UIButton!
     
     lazy var stack : CoreDataStack = {
         let options =
@@ -72,6 +74,9 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         
+        labelNoFights.alpha = 0.0
+        buttonNoFights.alpha = 0.0
+        
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -105,8 +110,15 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var objects = fights.fetchedObjects
-        if let objects = objects
-        {
+        
+        if let objects = objects {
+            if objects.count == 0 {
+                labelNoFights.alpha = 0.3
+                buttonNoFights.alpha = 1.0
+                buttonSettings.alpha = 0.0
+            } else {
+                buttonSettings.alpha = 0.7
+            }
             return objects.count
         }
         return 0
