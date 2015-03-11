@@ -46,5 +46,6 @@ class StandardTextView: UITextView {
         self.backgroundColor = whiteColor
         self.layer.borderWidth = 0.5
         self.layer.borderColor = borderColor.CGColor
+        self.textContainerInset = UIEdgeInsetsMake(5, 16, 5, 16)
     }
 }
