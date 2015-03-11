@@ -14,7 +14,7 @@ protocol UpdateFightDetailDelegate {
     func fightInformationUpdated(A1:String, A2:String, A3:String, A4:String, A5:String, A6:String, A7:String, A8:String, A9:String,A10:String, A11:String, A12:String, B1:String, B2:String, B3:String, B4:String, B5:String, B6:String, B7:String, B8:String, B9:String,B10:String, B11:String, B12:String, Atot:String, Btot:String, Notes:String)
 }
 
-class ScorecardVC: UIViewController, UITextFieldDelegate {
+class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var fight : Fight? {
         didSet {
@@ -30,7 +30,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelNotes:      UILabel!
     @IBOutlet weak var labelvs:         UILabel!
     
-    @IBOutlet weak var textFieldNotes:  UITextField!
+    @IBOutlet weak var textViewNotes: UITextView!
     
     @IBOutlet weak var labelATotalScore: UILabel!
     @IBOutlet weak var labelBTotalScore: UILabel!
@@ -57,7 +57,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
             labelATotalScore.text = "\(fight!.boxerA_totalScore)"
             labelBTotalScore.text = "\(fight!.boxerB_totalScore)"
             labelNotes.text = "Fight Notes"
-            textFieldNotes.text = fight!.notes
+            textViewNotes.text = fight!.notes
         
             buttonA1.setTitle("\(fight!.boxerA_round1)", forState: .Normal)
             buttonA2.setTitle("\(fight!.boxerA_round2)", forState: .Normal)
@@ -311,7 +311,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
         self.viewScoring.alpha = 0.0
 
         
-        textFieldNotes.delegate = self
+        textViewNotes.delegate = self
 
         leftNavButton()
         rightNavButton()
@@ -324,7 +324,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
         standardLabel(labelNotes)
         smallLabel(labelATotalScore)
         smallLabel(labelBTotalScore)
-        softWhiteTextField(textFieldNotes)
         offSoftWhiteButton(buttonA1)
         softWhiteButton(buttonA2)
         offSoftWhiteButton(buttonA3)
@@ -365,9 +364,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func scorecardButton(sender: AnyObject) {
-    
         finishup()
-        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -379,6 +376,24 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         self.scrollView.endEditing(true)
         
+    }
+
+    func textViewDidBeginEditing(textView: UITextView) {
+        animateViewMoving(true, moveValue: 180)
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        animateViewMoving(false, moveValue: 180)
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        var movementDuration:NSTimeInterval = 0.3
+        var movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        UIView.commitAnimations()
     }
     
     func calculateScores() {
@@ -470,7 +485,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
         fight!.boxerA_totalScore = labelATotalScore.text!.toInt()!
         fight!.boxerB_totalScore = labelBTotalScore.text!.toInt()!
         
-        fight!.notes = textFieldNotes.text!
+        fight!.notes = textViewNotes.text!
         
         // Save our context
         var context = fight!.managedObjectContext
@@ -504,7 +519,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
             var B12 = buttonB12.titleLabel!.text
             var Atot = labelATotalScore.text
             var Btot = labelBTotalScore.text
-            var Notes = textFieldNotes.text
+            var Notes = textViewNotes.text
             delegate!.fightInformationUpdated(A1!, A2: A2!, A3: A3!, A4: A4!, A5: A5!, A6: A6!, A7: A7!, A8: A8!, A9: A9!, A10: A10!, A11: A11!, A12: A12!, B1: B1!, B2: B2!, B3: B3!, B4: B4!, B5: B5!, B6: B6!, B7: B7!, B8: B8!, B9: B9!, B10: B10!, B11: B11!, B12: B12!, Atot: Atot!, Btot: Btot!, Notes: Notes!)
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -613,9 +628,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
-    
-    
     
     func leftNavButton() {
         // hide default navigation bar button item
