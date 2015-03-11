@@ -51,7 +51,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     func updateFightInfo() {
         if fight != nil && isViewLoaded() {
             
-            println(fight)
             labelBoxerA.text = fight!.boxerA
             labelBoxerB.text = fight!.boxerB
             labelATotalScore.text = "\(fight!.boxerA_totalScore)"
@@ -372,10 +371,9 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         return true
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
         self.scrollView.endEditing(true)
-        
     }
 
     func textViewDidBeginEditing(textView: UITextView) {
@@ -634,7 +632,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
         
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
         buttonBack.setImage(UIImage(named:"button_confirm.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
@@ -653,7 +651,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         // hide default navigation bar button item
         self.navigationItem.rightBarButtonItem = nil;
         
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         var xCoordinate = (self.view.frame.size.width - 20)
         buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
         buttonShare.setImage(UIImage(named:"button_close.png"), forState: UIControlState.Normal)

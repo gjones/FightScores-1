@@ -88,7 +88,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         submitFight()
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
         self.scrollView.endEditing(true)
     }
@@ -103,7 +103,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
         
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
         buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)

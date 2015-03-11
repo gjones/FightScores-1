@@ -236,7 +236,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
         
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
         buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
@@ -255,7 +255,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         // hide default navigation bar button item
         self.navigationItem.rightBarButtonItem = nil;
         
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         var xCoordinate = (self.view.frame.size.width - 20)
         buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
         buttonShare.setImage(UIImage(named:"button_share.png"), forState: UIControlState.Normal)
@@ -275,12 +275,12 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             let delayTime = dispatch_time(DISPATCH_TIME_NOW,
                 Int64(0.25 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
-                self.navigationController?.navigationBar.alpha = 0.0
+             //   self.navigationController?.navigationBar.alpha = 0.00
             }
             
-            let navController = segue.destinationViewController as! UINavigationController
+            let navController = segue.destinationViewController as UINavigationController
             
-            let scorecardVC = navController.topViewController as! ScorecardVC
+            let scorecardVC = navController.topViewController as ScorecardVC
             scorecardVC.delegate = self
             scorecardVC.fight = fight! as Fight
         }

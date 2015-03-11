@@ -47,7 +47,7 @@ class SettingsVC: UIViewController {
         // hide default navigation bar button item
         self.navigationItem.rightBarButtonItem = nil;
         
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         var xCoordinate = (self.view.frame.size.width - 20)
         buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
         buttonShare.setImage(UIImage(named:"button_close.png"), forState: UIControlState.Normal)

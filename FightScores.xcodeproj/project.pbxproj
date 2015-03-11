@@ -11,6 +11,8 @@
 		191EFFFB1AAE8B14001A6E40 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */; };
 		192B43BE1AA665A600DC8B00 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43BD1AA665A600DC8B00 /* Button.swift */; };
 		192B43C21AA68C9C00DC8B00 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */; };
+		196E8DF01AB0656900119BD4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEE1AB0656900119BD4 /* Crashlytics.framework */; };
+		196E8DF11AB0656900119BD4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEF1AB0656900119BD4 /* Fabric.framework */; };
 		199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199513C91AA7737B00E310B6 /* Main.storyboard */; };
 		19A69E761AAF431D00325089 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A69E751AAF431D00325089 /* CloudKit.framework */; };
 		19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightCell.swift */; };
@@ -44,6 +46,8 @@
 		192B43BD1AA665A600DC8B00 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = ../Button.swift; sourceTree = "<group>"; };
 		192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FightScores.entitlements; sourceTree = SOURCE_ROOT; };
+		196E8DEE1AB0656900119BD4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		196E8DEF1AB0656900119BD4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		19A69E751AAF431D00325089 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		19C26CE91A93888A005D7FDF /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightCell.swift; path = ../FightCell.swift; sourceTree = "<group>"; };
@@ -71,7 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196E8DF01AB0656900119BD4 /* Crashlytics.framework in Frameworks */,
 				19A69E761AAF431D00325089 /* CloudKit.framework in Frameworks */,
+				196E8DF11AB0656900119BD4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,8 @@
 		19E529821A9370D200F5CF22 = {
 			isa = PBXGroup;
 			children = (
+				196E8DEE1AB0656900119BD4 /* Crashlytics.framework */,
+				196E8DEF1AB0656900119BD4 /* Fabric.framework */,
 				19A69E751AAF431D00325089 /* CloudKit.framework */,
 				19E5298D1A9370D200F5CF22 /* FightScores */,
 				19E529A61A9370D200F5CF22 /* FightScoresTests */,
@@ -288,7 +296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "./Fabric.framework/run df5eef5f38720c3ce18b050c19080a42a27129c0 1bc07f456ba2b6f8925dc043ec1449e401387e3821bf222beecdb3444893c682";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -364,7 +372,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -380,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -432,8 +440,12 @@
 				CODE_SIGN_ENTITLEMENTS = FightScores.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
@@ -447,8 +459,12 @@
 				CODE_SIGN_ENTITLEMENTS = FightScores.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScoreTheFight/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
