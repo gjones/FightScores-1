@@ -105,7 +105,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         
         let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
+        buttonBack.setImage(UIImage(named:"button_back2.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
         buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
         

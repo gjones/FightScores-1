@@ -14,6 +14,8 @@
 		196E8DF01AB0656900119BD4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEE1AB0656900119BD4 /* Crashlytics.framework */; };
 		196E8DF11AB0656900119BD4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEF1AB0656900119BD4 /* Fabric.framework */; };
 		199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199513C91AA7737B00E310B6 /* Main.storyboard */; };
+		199750E21AB2154F008D6D27 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199750E11AB2154F008D6D27 /* View.swift */; };
+		199750E41AB22C9A008D6D27 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199750E31AB22C9A008D6D27 /* RulesVC.swift */; };
 		19A69E761AAF431D00325089 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A69E751AAF431D00325089 /* CloudKit.framework */; };
 		19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightCell.swift */; };
 		19CD2C821A9EAA610000B54F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2C811A9EAA610000B54F /* TextField.swift */; };
@@ -24,7 +26,7 @@
 		19E5299E1A9370D200F5CF22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */; };
 		19E529B61A93752300F5CF22 /* CreateFightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B51A93752300F5CF22 /* CreateFightVC.swift */; };
 		19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529B71A937E3300F5CF22 /* NavigationController.swift */; };
-		19E61ABA1AAF49F100E74A3E /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61AB91AAF49F100E74A3E /* LabelStyles.swift */; };
+		19E61ABA1AAF49F100E74A3E /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61AB91AAF49F100E74A3E /* Label.swift */; };
 		19E61ABC1AAF532A00E74A3E /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E61ABB1AAF532A00E74A3E /* Table.swift */; };
 		19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB211A940A6D00B7074E /* FightDetailVC.swift */; };
 		19F0BB241A94151200B7074E /* ScorecardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0BB231A94151200B7074E /* ScorecardVC.swift */; };
@@ -49,6 +51,8 @@
 		196E8DEE1AB0656900119BD4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		196E8DEF1AB0656900119BD4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		199750E11AB2154F008D6D27 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		199750E31AB22C9A008D6D27 /* RulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
 		19A69E751AAF431D00325089 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		19C26CE91A93888A005D7FDF /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightCell.swift; path = ../FightCell.swift; sourceTree = "<group>"; };
 		19CD2C811A9EAA610000B54F /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		19E529A91A9370D200F5CF22 /* FightScoresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScoresTests.swift; sourceTree = "<group>"; };
 		19E529B51A93752300F5CF22 /* CreateFightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFightVC.swift; sourceTree = "<group>"; };
 		19E529B71A937E3300F5CF22 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		19E61AB91AAF49F100E74A3E /* LabelStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
+		19E61AB91AAF49F100E74A3E /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		19E61ABB1AAF532A00E74A3E /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		19F0BB211A940A6D00B7074E /* FightDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightDetailVC.swift; sourceTree = "<group>"; };
 		19F0BB231A94151200B7074E /* ScorecardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardVC.swift; sourceTree = "<group>"; };
@@ -97,8 +101,9 @@
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				192B43BD1AA665A600DC8B00 /* Button.swift */,
 				19CD2C811A9EAA610000B54F /* TextField.swift */,
-				19E61AB91AAF49F100E74A3E /* LabelStyles.swift */,
+				19E61AB91AAF49F100E74A3E /* Label.swift */,
 				19E61ABB1AAF532A00E74A3E /* Table.swift */,
+				199750E11AB2154F008D6D27 /* View.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				19F0BB211A940A6D00B7074E /* FightDetailVC.swift */,
 				19F0BB231A94151200B7074E /* ScorecardVC.swift */,
 				192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */,
+				199750E31AB22C9A008D6D27 /* RulesVC.swift */,
 				19E5299A1A9370D200F5CF22 /* Images.xcassets */,
 				19E5299C1A9370D200F5CF22 /* LaunchScreen.xib */,
 				19E5298E1A9370D200F5CF22 /* Supporting Files */,
@@ -305,16 +311,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199750E21AB2154F008D6D27 /* View.swift in Sources */,
 				19E61ABC1AAF532A00E74A3E /* Table.swift in Sources */,
 				19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */,
 				19E529961A9370D200F5CF22 /* FightMasterVC.swift in Sources */,
 				190C42151AA91A5100FAC7FD /* Fight.swift in Sources */,
 				19F0BB241A94151200B7074E /* ScorecardVC.swift in Sources */,
 				19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */,
+				199750E41AB22C9A008D6D27 /* RulesVC.swift in Sources */,
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
 				191EFFFB1AAE8B14001A6E40 /* CoreDataStack.swift in Sources */,
 				19E529941A9370D200F5CF22 /* Fight.xcdatamodeld in Sources */,
-				19E61ABA1AAF49F100E74A3E /* LabelStyles.swift in Sources */,
+				19E61ABA1AAF49F100E74A3E /* Label.swift in Sources */,
 				19CD2C821A9EAA610000B54F /* TextField.swift in Sources */,
 				192B43BE1AA665A600DC8B00 /* Button.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */,
@@ -449,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -468,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

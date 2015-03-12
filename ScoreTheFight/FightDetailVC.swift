@@ -238,7 +238,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         
         let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"button_back.png"), forState: UIControlState.Normal)
+        buttonBack.setImage(UIImage(named:"button_back2.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
         buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -272,10 +272,12 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         
         // Specify specific segue, prevents nil
         if segue.identifier == "scorecardSegue" {
+            
             let delayTime = dispatch_time(DISPATCH_TIME_NOW,
                 Int64(0.25 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
-             //   self.navigationController?.navigationBar.alpha = 0.00
+                self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+              //  self.navigationController?.navigationBar.alpha = 0.000
             }
             
             let navController = segue.destinationViewController as UINavigationController

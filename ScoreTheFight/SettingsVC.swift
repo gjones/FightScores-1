@@ -10,30 +10,30 @@ import UIKit
 
 class SettingsVC: UIViewController {
     
-    @IBOutlet weak var labelInformation:    UILabel!
+    @IBOutlet weak var labelInformation:    smallLabel!
     @IBOutlet weak var labelVersion:        UILabel!
     @IBOutlet weak var labelVersion2:       UILabel!
-    @IBOutlet weak var labelFeedback:       UILabel!
-    @IBOutlet weak var labelCopyright:      UILabel!
+    @IBOutlet weak var labelCopyright:      smallLabel!
     @IBOutlet weak var viewInformationRow:  UIView!
-    @IBOutlet weak var viewFeedbackRow:     UIView!
+    @IBOutlet weak var buttonFeedback:      UIButton!
+    @IBOutlet weak var labelScores:         offWhiteLabel!
+    @IBOutlet weak var labelInfo:           smallLabel!
+    @IBOutlet weak var buttonSystem: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rightNavButton()
         self.title = "Settings"
+        labelInfo.text = "General Information"
+        labelScores.text = "Scoring Rules"
         labelInformation.text = "About"
         labelVersion.text = "Version"
         labelVersion2.text = "0.5.4"
-        labelFeedback.text = "Feedback"
+        buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         labelCopyright.text = "Copyright © 2015, Gareth D Jones \nAll rights reserved."
-        
-        softWhiteView(viewInformationRow)
-        softWhiteView(viewFeedbackRow)
-        offWhiteLabel(labelVersion)
-        offWhiteLabel(labelVersion2)
-        WhiteLabel(labelFeedback)
+        buttonSystem.setTitle("10 Point System", forState: .Normal)
+
         
     }
 
@@ -46,6 +46,8 @@ class SettingsVC: UIViewController {
     func rightNavButton() {
         // hide default navigation bar button item
         self.navigationItem.rightBarButtonItem = nil;
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
         
         let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         var xCoordinate = (self.view.frame.size.width - 20)
@@ -62,27 +64,32 @@ class SettingsVC: UIViewController {
     func rightNavButtonClick(sender:UIButton!) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func buttonSystem(sender: AnyObject) {
+        
+        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rulesVC") as RulesVC
+        
+        UIView.animateWithDuration(0.75, animations: { () -> Void in
+            UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
+            self.navigationController?.pushViewController(switchViewController, animated: false)
+            UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromLeft, forView: self.navigationController!.view!, cache: false)
+        })
+        
+    }
 
-    
-    func softWhiteView(viewInQuestion: UIView) {
-        
-        var offWhiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
-        
-        viewInQuestion.backgroundColor = offWhiteColor
-        viewInQuestion.layer.borderColor = borderColor
-        viewInQuestion.layer.borderWidth = 0.5
-        
+    @IBAction func buttonFeedback(sender: AnyObject) {
+        leaveReview()
     }
     
-    func offWhiteLabel(labelInQuestion: UILabel) {
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)
-    }
-    
-    func WhiteLabel(labelInQuestion: UILabel) {
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+    // Leave a review
+    func leaveReview() {
+        if let checkURL = NSURL(string: "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8") {
+            if UIApplication.sharedApplication().openURL(checkURL) {
+                println("url successfully opened")
+            }
+        } else {
+            println("invalid url")
+        }
     }
 
 }

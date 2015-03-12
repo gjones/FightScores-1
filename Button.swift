@@ -36,3 +36,16 @@ class RedButton: UIButton {
     }
 }
 
+class SoftWhiteButton: UIButton {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        var offWhiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34).CGColor
+    
+        self.backgroundColor = offWhiteColor
+        self.layer.borderColor = borderColor
+        self.layer.borderWidth = 0.5
+        self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+    }
+}

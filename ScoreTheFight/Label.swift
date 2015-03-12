@@ -29,6 +29,18 @@ class smallLabel: UILabel {
     
 }
 
+class offWhiteLabel: UILabel {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+        self.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)
+        
+    }
+}
+
+
 // Example Usage: FightDetailVC Round Labels
 class softWhiteLabel:UILabel {
     

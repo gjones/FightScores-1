@@ -674,7 +674,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
         var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
         
-        // fieldInQuestion.layer.cornerRadius = 4
         fieldInQuestion.textColor = UIColor .whiteColor()
         fieldInQuestion.backgroundColor = whiteColor
         fieldInQuestion.layer.borderWidth = 0.5
