@@ -35,14 +35,19 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var labelATotalScore: UILabel!
     @IBOutlet weak var labelBTotalScore: UILabel!
     
+    @IBOutlet weak var scorecardButton: UIButton!
+    @IBOutlet weak var buttonBack: UIButton!
+    
+    // Score Page
+    @IBOutlet weak var labelBoxerName: UILabel!
     @IBOutlet weak var buttonTen: UIButton!
     @IBOutlet weak var buttonNine: UIButton!
     @IBOutlet weak var buttonEight: UIButton!
     @IBOutlet weak var buttonSeven: UIButton!
     @IBOutlet weak var buttonSix: UIButton!
     @IBOutlet weak var buttonZero: UIButton!
-    @IBOutlet weak var scorecardButton: UIButton!
-    @IBOutlet weak var buttonBack: UIButton!
+    
+    
     
     @IBOutlet weak var roundsViewHeightConstraint: NSLayoutConstraint!
 
@@ -731,7 +736,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         buttonInQuestion.layer.borderWidth = 1
         buttonInQuestion.layer.borderColor = borderColor.CGColor
         buttonInQuestion.tintColor = UIColor .whiteColor()
-        buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 22)
+        buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 26)
         
     }
 }

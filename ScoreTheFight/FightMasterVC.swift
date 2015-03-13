@@ -88,7 +88,9 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
             Int64(0.18 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
+            UIView.animateWithDuration(0.3, animations: {
             self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
+            })
         }
     }
     

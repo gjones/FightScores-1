@@ -155,6 +155,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             } else {
                 buttonUpdateScorecard.setTitle("Continue Scoring This Fight", forState: .Normal)
             }
+            
+            setNoOfRounds()
         }
 
     }
@@ -180,6 +182,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
+        
+
     }
     
     // Right Swipe Functionality
@@ -288,4 +292,63 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
     }
     
+    func setNoOfRounds() {
+        if fight?.rounds == 10 {
+            nonApplicableRound(labelBoxerA11)
+            nonApplicableRound(labelBoxerA12)
+            nonApplicableRound(labelBoxerB11)
+            nonApplicableRound(labelBoxerB12)
+        }
+        
+        if fight?.rounds == 8 {
+            nonApplicableRound(labelBoxerA9)
+            nonApplicableRound(labelBoxerA10)
+            nonApplicableRound(labelBoxerB9)
+            nonApplicableRound(labelBoxerB10)
+            nonApplicableRound(labelBoxerA11)
+            nonApplicableRound(labelBoxerA12)
+            nonApplicableRound(labelBoxerB11)
+            nonApplicableRound(labelBoxerB12)
+        }
+        
+        if fight?.rounds == 6 {
+            nonApplicableRound(labelBoxerA7)
+            nonApplicableRound(labelBoxerA8)
+            nonApplicableRound(labelBoxerB7)
+            nonApplicableRound(labelBoxerB8)
+            nonApplicableRound(labelBoxerA9)
+            nonApplicableRound(labelBoxerA10)
+            nonApplicableRound(labelBoxerB9)
+            nonApplicableRound(labelBoxerB10)
+            nonApplicableRound(labelBoxerA11)
+            nonApplicableRound(labelBoxerA12)
+            nonApplicableRound(labelBoxerB11)
+            nonApplicableRound(labelBoxerB12)
+        }
+        
+        if fight?.rounds == 6 {
+            nonApplicableRound(labelBoxerA5)
+            nonApplicableRound(labelBoxerA6)
+            nonApplicableRound(labelBoxerB5)
+            nonApplicableRound(labelBoxerB6)
+            nonApplicableRound(labelBoxerA7)
+            nonApplicableRound(labelBoxerA8)
+            nonApplicableRound(labelBoxerB7)
+            nonApplicableRound(labelBoxerB8)
+            nonApplicableRound(labelBoxerA9)
+            nonApplicableRound(labelBoxerA10)
+            nonApplicableRound(labelBoxerB9)
+            nonApplicableRound(labelBoxerB10)
+            nonApplicableRound(labelBoxerA11)
+            nonApplicableRound(labelBoxerA12)
+            nonApplicableRound(labelBoxerB11)
+            nonApplicableRound(labelBoxerB12)
+        }
+    }
+    
+    func nonApplicableRound(labelInQuestion: UILabel) {
+        var transparentColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
+        labelInQuestion.textColor = transparentColor
+        labelInQuestion.text = "-"
+    }
 }
