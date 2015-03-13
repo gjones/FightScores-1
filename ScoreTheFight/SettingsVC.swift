@@ -69,10 +69,10 @@ class SettingsVC: UIViewController {
         
         let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rulesVC") as RulesVC
         
-        UIView.animateWithDuration(0.75, animations: { () -> Void in
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
             self.navigationController?.pushViewController(switchViewController, animated: false)
-            UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromLeft, forView: self.navigationController!.view!, cache: false)
+            UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromRight, forView: self.navigationController!.view!, cache: false)
         })
         
     }

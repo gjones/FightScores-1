@@ -22,3 +22,14 @@ class RowView: UIView {
     }
 
 }
+
+class BackgroundView: UIImageView {
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.image = UIImage(named: "Portrait.png")
+       // self.backgroundColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1.0)
+    
+    }
+}

@@ -542,10 +542,10 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         UIView.animateWithDuration(0.3, animations: {
             self.viewScoring.alpha = 1.0
             self.navigationController?.navigationBar.alpha = 0.0
+            self.prefersStatusBarHidden()
+            UIApplication.sharedApplication().statusBarHidden = true
         })
     }
-    
-    
     
     @IBAction func buttonTen(sender: UIButton) {
         setTitles("10")

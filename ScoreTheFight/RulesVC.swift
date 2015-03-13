@@ -17,7 +17,7 @@ class RulesVC: UIViewController {
         super.viewDidLoad()
         self.title = "10 Point System"
         labelRulesTitle.text = "How to Score a Fight"
-        labelRules.text = "A boxing match typically consists of a determined number of three-minute rounds, a total of up to 12 rounds (formerly 15). A minute is typically spent between each round with the fighters in their assigned corners receiving advice and attention from their coach and staff. The fight is controlled by a referee who works within the ring to judge and control the conduct of the fighters, rule on their ability to fight safely, count knocked-down fighters, and rule on fouls. Up to three judges are typically present at ringside to score the bout and assign points to the boxers, based on punches that connect, knockdowns, and other, more subjective measures. \n \nA boxing match can have a number of outcomes. A fight can end before the determined number of rounds if there is a KO (Knockout), TKO (Technical Knockout), TD (Technical Decision - usually the result of cuts caused by headbutts or injuries after 4 rounds), DQ (Disqualification), NC (No Contest - usually the result of cuts caused by headbutts or injuries before 4 rounds are completed)."
+        labelRules.text = "Modern bouts generally range from 4 to 12 rounds. Each round should be scored separately and you should try not take into account events from other rounds. The fighter who wins the round should receive the score of 10, with the fighter who loses the round receiving 9. If you deem the round too even to call then both fighters should be awarded 10. Every time a fighter is knocked down you should deduct a point, so if a fighter has been knocked down and has also lost the round (which is generally the case) the round should be scored 10-8. If a fighter is knocked down twice in a round you should score the round 10-7. If both fighters are knocked down in a round then a 9-9 or 9-8 score is possible. \n \nReferees will sometimes also take points from fighters that they feel have broken the rules of the sport, these deductions should be accounted for on your scorecard."
         
         // Scrollview
         scrollView.userInteractionEnabled = true
@@ -58,7 +58,7 @@ class RulesVC: UIViewController {
     func leftNavButtonClick(sender:UIButton!) {
         let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as SettingsVC
         
-        UIView.animateWithDuration(0.75, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
             self.navigationController?.pushViewController(switchViewController, animated: false)
             UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromRight, forView: self.navigationController!.view!, cache: false)
@@ -75,7 +75,7 @@ class RulesVC: UIViewController {
                 
                 let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as SettingsVC
                 
-                UIView.animateWithDuration(0.75, animations: { () -> Void in
+                UIView.animateWithDuration(0.4, animations: { () -> Void in
                     UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
                     self.navigationController?.pushViewController(switchViewController, animated: false)
                     UIView.setAnimationTransition(UIViewAnimationTransition.FlipFromRight, forView: self.navigationController!.view!, cache: false)
