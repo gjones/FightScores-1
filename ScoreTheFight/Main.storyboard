@@ -3091,7 +3091,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="TLW-fX-IuB">
-                        <barButtonItem key="leftBarButtonItem" width="50" id="JR1-du-K40">
+                        <barButtonItem key="backBarButtonItem" title="  " id="nZ9-pJ-emQ"/>
+                        <barButtonItem key="leftBarButtonItem" title="  " width="50" id="JR1-du-K40">
                             <connections>
                                 <action selector="cancelTapped:" destination="ABj-z2-lgQ" id="GbD-mA-enH"/>
                                 <segue destination="JCN-6N-40g" kind="unwind" identifier="unwindToFightList" unwindAction="unwindToFightList:" id="Bqx-BD-ObP"/>
