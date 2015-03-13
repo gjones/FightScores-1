@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190C42151AA91A5100FAC7FD /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C42141AA91A5100FAC7FD /* Fight.swift */; };
 		191EFFFB1AAE8B14001A6E40 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */; };
-		192B43BE1AA665A600DC8B00 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43BD1AA665A600DC8B00 /* Button.swift */; };
 		192B43C21AA68C9C00DC8B00 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */; };
 		196E8DF01AB0656900119BD4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEE1AB0656900119BD4 /* Crashlytics.framework */; };
 		196E8DF11AB0656900119BD4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196E8DEF1AB0656900119BD4 /* Fabric.framework */; };
+		197292121AB3236700B7C239 /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292111AB3236700B7C239 /* Fight.swift */; };
+		197292141AB3237500B7C239 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292131AB3237500B7C239 /* Button.swift */; };
+		197292161AB3237F00B7C239 /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292151AB3237F00B7C239 /* FightCell.swift */; };
 		199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199513C91AA7737B00E310B6 /* Main.storyboard */; };
 		199750E21AB2154F008D6D27 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199750E11AB2154F008D6D27 /* View.swift */; };
 		199750E41AB22C9A008D6D27 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199750E31AB22C9A008D6D27 /* RulesVC.swift */; };
 		19A69E761AAF431D00325089 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A69E751AAF431D00325089 /* CloudKit.framework */; };
-		19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C26CE91A93888A005D7FDF /* FightCell.swift */; };
 		19CD2C821A9EAA610000B54F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2C811A9EAA610000B54F /* TextField.swift */; };
 		19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E529901A9370D200F5CF22 /* AppDelegate.swift */; };
 		19E529941A9370D200F5CF22 /* Fight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */; };
@@ -43,18 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		190C42141AA91A5100FAC7FD /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fight.swift; path = ../Fight.swift; sourceTree = "<group>"; };
 		191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		192B43BD1AA665A600DC8B00 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = ../Button.swift; sourceTree = "<group>"; };
 		192B43C11AA68C9C00DC8B00 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FightScores.entitlements; sourceTree = SOURCE_ROOT; };
 		196E8DEE1AB0656900119BD4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		196E8DEF1AB0656900119BD4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		197292111AB3236700B7C239 /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
+		197292131AB3237500B7C239 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		197292151AB3237F00B7C239 /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightCell.swift; sourceTree = "<group>"; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		199750E11AB2154F008D6D27 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		199750E31AB22C9A008D6D27 /* RulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
 		19A69E751AAF431D00325089 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		19C26CE91A93888A005D7FDF /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightCell.swift; path = ../FightCell.swift; sourceTree = "<group>"; };
 		19CD2C811A9EAA610000B54F /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		19E5298B1A9370D200F5CF22 /* FightScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5298F1A9370D200F5CF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		19A69E741AAF1D6B00325089 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				197292131AB3237500B7C239 /* Button.swift */,
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
-				192B43BD1AA665A600DC8B00 /* Button.swift */,
 				19CD2C811A9EAA610000B54F /* TextField.swift */,
 				19E61AB91AAF49F100E74A3E /* Label.swift */,
 				19E61ABB1AAF532A00E74A3E /* Table.swift */,
@@ -135,7 +135,7 @@
 				19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */,
 				19A69E741AAF1D6B00325089 /* UI Elements */,
 				199513C91AA7737B00E310B6 /* Main.storyboard */,
-				19C26CE91A93888A005D7FDF /* FightCell.swift */,
+				197292151AB3237F00B7C239 /* FightCell.swift */,
 				19E529951A9370D200F5CF22 /* FightMasterVC.swift */,
 				19E529B51A93752300F5CF22 /* CreateFightVC.swift */,
 				19F0BB211A940A6D00B7074E /* FightDetailVC.swift */,
@@ -179,8 +179,8 @@
 		19E61AB81AAF49C900E74A3E /* Date Modal / iCloud */ = {
 			isa = PBXGroup;
 			children = (
+				197292111AB3236700B7C239 /* Fight.swift */,
 				19E529901A9370D200F5CF22 /* AppDelegate.swift */,
-				190C42141AA91A5100FAC7FD /* Fight.swift */,
 				191EFFFA1AAE8B14001A6E40 /* CoreDataStack.swift */,
 				19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */,
 				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
@@ -313,18 +313,18 @@
 			files = (
 				199750E21AB2154F008D6D27 /* View.swift in Sources */,
 				19E61ABC1AAF532A00E74A3E /* Table.swift in Sources */,
-				19C26CEA1A93888A005D7FDF /* FightCell.swift in Sources */,
 				19E529961A9370D200F5CF22 /* FightMasterVC.swift in Sources */,
-				190C42151AA91A5100FAC7FD /* Fight.swift in Sources */,
 				19F0BB241A94151200B7074E /* ScorecardVC.swift in Sources */,
+				197292121AB3236700B7C239 /* Fight.swift in Sources */,
 				19E529B81A937E3300F5CF22 /* NavigationController.swift in Sources */,
+				197292141AB3237500B7C239 /* Button.swift in Sources */,
+				197292161AB3237F00B7C239 /* FightCell.swift in Sources */,
 				199750E41AB22C9A008D6D27 /* RulesVC.swift in Sources */,
 				19E529911A9370D200F5CF22 /* AppDelegate.swift in Sources */,
 				191EFFFB1AAE8B14001A6E40 /* CoreDataStack.swift in Sources */,
 				19E529941A9370D200F5CF22 /* Fight.xcdatamodeld in Sources */,
 				19E61ABA1AAF49F100E74A3E /* Label.swift in Sources */,
 				19CD2C821A9EAA610000B54F /* TextField.swift in Sources */,
-				192B43BE1AA665A600DC8B00 /* Button.swift in Sources */,
 				19F0BB221A940A6D00B7074E /* FightDetailVC.swift in Sources */,
 				19E529B61A93752300F5CF22 /* CreateFightVC.swift in Sources */,
 				192B43C21AA68C9C00DC8B00 /* SettingsVC.swift in Sources */,
