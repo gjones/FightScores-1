@@ -207,9 +207,13 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     // Sharing Functionality
     func shareTapped(sender: UIButton) {
         let textToShare = "Here's how I scored \(fight!.boxerA) vs \(fight!.boxerB) #boxing"
+        
         // Generate the screenshot
+        let layer = UIApplication.sharedApplication().keyWindow?.layer
+        let scale = UIScreen.mainScreen().scale
+        
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        layer?.renderInContext(UIGraphicsGetCurrentContext())
         var screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
