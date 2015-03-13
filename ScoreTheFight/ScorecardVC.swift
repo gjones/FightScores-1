@@ -527,7 +527,9 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         UIView.animateWithDuration(0.3, animations: {
             self.viewScoring.alpha = 0.0
             self.navigationController?.navigationBar.alpha = 1.0
+            UIApplication.sharedApplication().statusBarHidden = false
         })
+        
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
             Int64(0.250 * Double(NSEC_PER_SEC)))
@@ -535,13 +537,14 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             self.calculateScores()
         }
     }
-    
+
     func showChooseScore() {
         UIView.animateWithDuration(0.3, animations: {
             self.viewScoring.alpha = 1.0
             self.navigationController?.navigationBar.alpha = 0.0
         })
     }
+    
     
     
     @IBAction func buttonTen(sender: UIButton) {
