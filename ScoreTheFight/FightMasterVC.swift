@@ -135,19 +135,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    
-    func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            
-            if editingStyle == .Delete {
-                let fight = fights.fetchedObjects![indexPath.row] as Fight
-                stack.context.deleteObject(fight)
-                stack.save()
-            }
-    }
-    
-    
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.fightTableView.beginUpdates()
     }
@@ -174,10 +161,20 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             break
         }
     }
-
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.fightTableView.endUpdates()
+    }
+    
+    func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            
+            if editingStyle == .Delete {
+                let fight = fights.fetchedObjects![indexPath.row] as Fight
+                stack.context.deleteObject(fight)
+                stack.save()
+            }
     }
     
     @IBAction

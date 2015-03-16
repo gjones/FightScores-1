@@ -209,31 +209,33 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         let textToShare = "Here's how I scored \(fight!.boxerA) vs \(fight!.boxerB) #boxing"
         
         // Generate the screenshot
-        let layer = UIApplication.sharedApplication().keyWindow?.layer
-        let scale = UIScreen.mainScreen().scale
-        
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-        layer?.renderInContext(UIGraphicsGetCurrentContext())
-        var screenshot = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        if let imageToShare = screenshot {
-            let objectsToShare = [textToShare, imageToShare]
-            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        if let keyWindow = UIApplication.sharedApplication().keyWindow {
+            let layer = keyWindow.layer
+            let scale = UIScreen.mainScreen().scale
             
-            // Excluded Activities Code
-            activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            UIGraphicsBeginImageContextWithOptions(layer.frame.size, view.opaque, scale);
+            layer.renderInContext(UIGraphicsGetCurrentContext())
+            var screenshot = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
             
-            self.presentViewController(activityViewController, animated: true, completion: nil)
-            
-        } else {
-            let objectsToShare = [textToShare]
-            let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            // Excluded Activities Code
-            activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            if let imageToShare = screenshot {
                 
-            self.presentViewController(activityViewController, animated: true, completion: nil)
+                let objectsToShare = [textToShare, imageToShare]
+                let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+                // Excluded Activities Code
+                activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            
+                self.presentViewController(activityViewController, animated: true, completion: nil)
+            
+            } else {
+                let objectsToShare = [textToShare]
+                let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+                // Excluded Activities Code
+                activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+                self.presentViewController(activityViewController, animated: true, completion: nil)
+            }
         }
     }
     
