@@ -635,5 +635,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     func rightNavButtonClick(sender:UIButton!) {
             self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 
 }

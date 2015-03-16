@@ -342,7 +342,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBb-07-QTr" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="0.0" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="CdN-ca-RHo"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="PbE-jJ-PEW"/>
@@ -358,7 +358,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-sh-0Zh" userLabel="Boxer A12" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="293" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="293" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="3hp-4b-cH2"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="FhO-PB-C4S"/>
@@ -374,7 +374,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-SC-9e3" userLabel="Boxer B1" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="0.0" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="c5i-AR-nrg"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="gqJ-6b-qh9"/>
@@ -389,7 +389,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-cd-qI8" userLabel="Boxer B2" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-cd-qI8" userLabel="Boxer B2" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="152" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="Lfo-gD-cpG"/>
@@ -406,7 +406,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-5T-Ifz" userLabel="Boxer B3" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="53" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="7L9-5h-EJf"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="AsZ-7J-09b"/>
@@ -422,7 +422,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPd-WK-fAc" userLabel="Boxer B4" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="80" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="5N0-Pm-wsb"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="DBw-Kw-Iqe"/>
@@ -437,7 +437,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2v-CK-L5R" userLabel="Boxer B5" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2v-CK-L5R" userLabel="Boxer B5" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="152" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="P6Z-y6-hVx"/>
@@ -454,7 +454,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egU-qS-JHA" userLabel="Boxer B6" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="133" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="133" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="BN7-Vh-T6I"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="Fcr-rh-yv1"/>
@@ -470,7 +470,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq8-J7-cFj" userLabel="Boxer B7" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="160" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="5x5-3S-6WU"/>
                                                     <constraint firstAttribute="height" constant="28" id="auC-9z-20n"/>
@@ -485,7 +485,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIn-dP-f7Y" userLabel="Boxer B8" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIn-dP-f7Y" userLabel="Boxer B8" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="187" y="152" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="BQG-a2-GPE"/>
@@ -502,7 +502,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmb-ya-CbG" userLabel="Boxer B9" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="213" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="213" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="Wu7-Mz-RDA"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="upM-mO-WXi"/>
@@ -518,7 +518,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSY-2t-3vh" userLabel="Boxer B10" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="240" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="240" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="YpJ-mJ-17k"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="cXk-QV-buE"/>
@@ -533,7 +533,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe7-Y0-iw3" userLabel="Boxer B11" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe7-Y0-iw3" userLabel="Boxer B11" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="152" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="269-z3-cpd"/>
@@ -550,7 +550,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-al-DPK" userLabel="Boxer B12" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="293" y="152" width="27" height="28"/>
+                                                <rect key="frame" x="293" y="152" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="H7w-h2-y0p"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="oYt-14-d1b"/>
@@ -566,7 +566,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oL-yE-zCn" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="53" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="B7l-U0-duO"/>
                                                     <constraint firstAttribute="height" constant="28" id="es8-de-Y4x"/>
@@ -582,7 +582,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-jy-K5g" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="293" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="293" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="LQW-2I-dQv"/>
                                                     <constraint firstAttribute="height" constant="28" id="UO5-9g-Vpb"/>
@@ -597,7 +597,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbK-5D-Nzo" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbK-5D-Nzo" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="96" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="FDO-MP-YyM"/>
@@ -614,7 +614,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lZ-Va-h5e" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="80" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="KWv-Is-Uat"/>
                                                     <constraint firstAttribute="height" constant="28" id="M5z-2J-x3y"/>
@@ -629,7 +629,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-cD-aNh" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-cD-aNh" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="96" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="JMA-5C-xOs"/>
@@ -646,7 +646,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-MX-JcE" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="133" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="133" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="SYo-RA-EtJ"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="j2Q-1Y-6q7"/>
@@ -662,7 +662,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-Kx-NOL" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="160" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="HSh-PI-wJM"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="ZrV-fI-kmU"/>
@@ -677,7 +677,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-YW-Flj" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-YW-Flj" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="187" y="96" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="1fn-oe-1ut"/>
@@ -694,7 +694,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjm-7a-6x4" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="213" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="213" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="egR-EH-7bJ"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="qaW-lu-PNJ"/>
@@ -710,7 +710,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efG-Ut-QHN" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="240" y="96" width="27" height="28"/>
+                                                <rect key="frame" x="240" y="96" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="1mM-xp-Psr"/>
                                                     <constraint firstAttribute="height" constant="28" id="AgK-68-r7o"/>
@@ -725,7 +725,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Y-sv-aMU" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Y-sv-aMU" customClass="softWhiteLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="96" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="30t-nM-xrF"/>
@@ -741,13 +741,14 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByG-jF-C8L" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByG-jF-C8L" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="428" width="288" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="eZq-fg-cTc"/>
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Update Scorecard">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -790,7 +791,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-A3-R21" userLabel="BoxerA1" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="0.0" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="OZo-cN-LFV"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="utg-dx-IpV"/>
@@ -805,7 +806,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wi-pf-XDD" userLabel="Boxer A2" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wi-pf-XDD" userLabel="Boxer A2" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="124" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="esv-tK-sup"/>
@@ -822,7 +823,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN2-yJ-fQo" userLabel="Boxer A3" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="53" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="HnD-4k-5ZR"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="iF6-Qm-63L"/>
@@ -838,7 +839,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMx-Ja-FFW" userLabel="Boxer A4" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="80" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="H4M-Dl-7YZ"/>
                                                     <constraint firstAttribute="height" constant="28" id="KkZ-NN-d0Y"/>
@@ -854,7 +855,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kS-LE-is0" userLabel="Boxer A5" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="107" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="106" y="124" width="27" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="GyM-GB-EME"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="bKe-Co-K7p"/>
@@ -870,7 +871,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBt-at-axq" userLabel="Boxer A6" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="133" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="133" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="MOO-DT-0xU"/>
                                                     <constraint firstAttribute="height" constant="28" id="P0P-Ch-4Ps"/>
@@ -886,7 +887,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMi-n4-qpG" userLabel="Boxer A7" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="160" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="Pgx-d0-H5d"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="gTC-Dt-ZdD"/>
@@ -901,7 +902,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvJ-wR-BJr" userLabel="Boxer A8" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvJ-wR-BJr" userLabel="Boxer A8" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="187" y="124" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="Pax-az-nfk"/>
@@ -918,7 +919,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPT-1I-35i" userLabel="Boxer A9" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="213" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="213" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="6WQ-lZ-VXr"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="B63-hv-3zq"/>
@@ -934,7 +935,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe1-Eg-BQ1" userLabel="Boxer A10" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="240" y="124" width="27" height="28"/>
+                                                <rect key="frame" x="240" y="124" width="26.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="271-Gn-nKY"/>
                                                     <constraint firstAttribute="height" constant="28" id="ZVv-e9-BMw"/>
@@ -949,7 +950,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHd-nG-DPJ" userLabel="Boxer A11" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHd-nG-DPJ" userLabel="Boxer A11" customClass="borderedLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="124" width="26" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="3WR-nB-BO4"/>
@@ -2519,7 +2520,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aTotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-FV-Ay3" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="39.5" width="148" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="39" width="148" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2530,7 +2531,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="824" width="343" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="4kM-PE-9uB"/>

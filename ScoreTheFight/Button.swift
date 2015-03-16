@@ -30,10 +30,28 @@ class RedButton: UIButton {
         CGContextRestoreGState(context)
         
         self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 18)
+        self.titleColorForState(.Highlighted)
         UIColor.blackColor().setStroke()
         rectanglePath.lineWidth = 0.5
         rectanglePath.stroke()
+        self.tintColor = UIColor .whiteColor()
     }
+    
+    override var highlighted: Bool {
+        didSet {
+            
+            if (highlighted) {
+                self.alpha = 0.7
+            }
+            else {
+                self.alpha = 1.0
+            }
+            
+        }
+    }
+    
+    
+    
 }
 
 class SoftWhiteButton: UIButton {

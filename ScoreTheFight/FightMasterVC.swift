@@ -179,7 +179,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBAction
     func unwindToFightList(segue:UIStoryboardSegue) {
-        NSLog("Unwinding to Fight List")
         var error : NSErrorPointer = nil
         if stack.context.hasChanges
         {

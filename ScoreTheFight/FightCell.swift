@@ -29,6 +29,14 @@ class FightCell: UITableViewCell {
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
 
     }
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        if (highlighted) {
+            self.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.05)
+        }
+        else {
+            self.backgroundColor = UIColor .clearColor()
+        }
+    }
     
     func updateFightInfo() {
 

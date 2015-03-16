@@ -163,6 +163,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     
     override func viewWillAppear(animated: Bool) {
         updateFightInfo()
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
     }
     
     override func viewDidLoad() {
@@ -191,7 +192,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                println("User swiped Right")
                 self.navigationController?.popToRootViewControllerAnimated(true)
 
             default:
@@ -284,6 +284,12 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         if segue.identifier == "scorecardSegue" {
             
             let navController = segue.destinationViewController as UINavigationController
+            
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+                Int64(0.25 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            }
             
             let scorecardVC = navController.topViewController as ScorecardVC
             scorecardVC.delegate = self

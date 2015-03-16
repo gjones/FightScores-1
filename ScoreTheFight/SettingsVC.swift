@@ -29,19 +29,16 @@ class SettingsVC: UIViewController {
         labelScores.text = "Scoring Rules"
         labelInformation.text = "About"
         labelVersion.text = "Version"
-        labelVersion2.text = "0.5.4"
+        labelVersion2.text = "0.9"
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         labelCopyright.text = "Copyright © 2015, Gareth D Jones \nAll rights reserved."
         buttonSystem.setTitle("10 Point System", forState: .Normal)
-
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     func rightNavButton() {
         // hide default navigation bar button item

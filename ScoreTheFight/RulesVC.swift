@@ -71,7 +71,6 @@ class RulesVC: UIViewController {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                println("User swiped Right")
                 
                 let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as SettingsVC
                 
