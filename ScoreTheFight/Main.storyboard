@@ -1687,14 +1687,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mK5-go-Tsr" customClass="BackgroundView" customModule="FightScores" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="acJ-D0-XxX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="acJ-D0-XxX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-1h-Jmc" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-1h-Jmc" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-3k-p5a">
-                                                <rect key="frame" x="167" y="16" width="40" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-3k-p5a" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="167" y="16" width="40" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="TiV-ef-yJn"/>
                                                 </constraints>
@@ -1702,20 +1702,20 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Boxer A Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lin-ND-9q6">
-                                                <rect key="frame" x="8" y="16" width="141" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxer A Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lin-ND-9q6" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="16" width="140" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxer B Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-Gu-B5d">
-                                                <rect key="frame" x="227" y="16" width="140" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxer B Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-Gu-B5d" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="227" y="16" width="140" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-hH-FxB" userLabel="roundsView">
-                                                <rect key="frame" x="0.0" y="75" width="375" height="520"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-hH-FxB" userLabel="roundsView">
+                                                <rect key="frame" x="0.0" y="76" width="375" height="520"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPu-QZ-PfM" userLabel="viewRd1">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -1729,8 +1729,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96R-VM-Cvh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96R-VM-Cvh" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Ozm-vs-sAk"/>
                                                                 </constraints>
@@ -1746,7 +1746,7 @@
                                                                     <action selector="buttonA1:" destination="KUN-pA-xI1" eventType="touchUpInside" id="Ike-vg-AhQ"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG2-Kp-lBl">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG2-Kp-lBl" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="frB-R7-tIJ"/>
@@ -1791,8 +1791,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-Ci-cd7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-Ci-cd7" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="h2y-bE-oKz"/>
                                                                 </constraints>
@@ -1808,7 +1808,7 @@
                                                                     <action selector="buttonA2:" destination="KUN-pA-xI1" eventType="touchUpInside" id="DRi-Dh-upu"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpK-Ji-Sov">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpK-Ji-Sov" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="3Wn-IL-gJu"/>
@@ -1853,8 +1853,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu1-rm-jwg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu1-rm-jwg" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="YTq-EE-Iew"/>
                                                                 </constraints>
@@ -1870,7 +1870,7 @@
                                                                     <action selector="buttonA3:" destination="KUN-pA-xI1" eventType="touchUpInside" id="E7I-kq-36j"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW8-mj-MIV">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW8-mj-MIV" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="eSy-E8-djg"/>
@@ -1915,8 +1915,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP5-0J-knj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP5-0J-knj" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="K7U-V7-BjX"/>
                                                                 </constraints>
@@ -1932,7 +1932,7 @@
                                                                     <action selector="buttonA4:" destination="KUN-pA-xI1" eventType="touchUpInside" id="CjP-59-Kdn"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHU-8D-FFb">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHU-8D-FFb" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="qFS-SM-OJX"/>
@@ -1977,8 +1977,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d30-cM-58e">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d30-cM-58e" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Aqg-ep-Gah"/>
                                                                 </constraints>
@@ -1994,7 +1994,7 @@
                                                                     <action selector="buttonA5:" destination="KUN-pA-xI1" eventType="touchUpInside" id="3QS-4v-GcS"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-6C-cfw">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-6C-cfw" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="e4E-l7-nFq"/>
@@ -2039,8 +2039,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwa-zS-pxv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwa-zS-pxv" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="pps-uJ-pXH"/>
                                                                 </constraints>
@@ -2056,7 +2056,7 @@
                                                                     <action selector="buttonA6:" destination="KUN-pA-xI1" eventType="touchUpInside" id="u8f-tF-OkA"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-22-lzO">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-22-lzO" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="5md-4P-sv8"/>
@@ -2101,8 +2101,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-5C-5IX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-5C-5IX" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="BVQ-ky-9PD"/>
                                                                 </constraints>
@@ -2118,7 +2118,7 @@
                                                                     <action selector="buttonA7:" destination="KUN-pA-xI1" eventType="touchUpInside" id="7FE-Ph-oYb"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-8r-w1R">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-8r-w1R" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="XWx-TX-sSr"/>
@@ -2163,8 +2163,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahG-hJ-PhC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahG-hJ-PhC" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="mVf-qx-VBE"/>
                                                                 </constraints>
@@ -2180,7 +2180,7 @@
                                                                     <action selector="buttonA8:" destination="KUN-pA-xI1" eventType="touchUpInside" id="Exx-B1-Nae"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-oE-MD9">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-oE-MD9" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="19u-By-Kwq"/>
@@ -2225,8 +2225,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldT-BU-7V6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldT-BU-7V6" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="DA8-6g-Uqk"/>
                                                                 </constraints>
@@ -2242,7 +2242,7 @@
                                                                     <action selector="buttonA9:" destination="KUN-pA-xI1" eventType="touchUpInside" id="Mpq-dn-rfw"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-63-a56">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-63-a56" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="4M1-5k-fwc"/>
@@ -2287,8 +2287,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9Q-be-qbR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9Q-be-qbR" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="s66-Nz-5EO"/>
                                                                 </constraints>
@@ -2304,7 +2304,7 @@
                                                                     <action selector="buttonA10:" destination="KUN-pA-xI1" eventType="touchUpInside" id="oP4-VF-uug"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-yo-J8b">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-yo-J8b" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="TZe-yq-omh"/>
@@ -2349,8 +2349,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-Vi-g6s">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-Vi-g6s" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="QtL-y3-vcy"/>
                                                                 </constraints>
@@ -2366,7 +2366,7 @@
                                                                     <action selector="buttonA11:" destination="KUN-pA-xI1" eventType="touchUpInside" id="c3Z-5Z-2o0"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jns-zA-drd">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jns-zA-drd" customClass="TableRowSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="0vV-sL-XaK"/>
@@ -2411,8 +2411,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oug-jQ-Ihv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oug-jQ-Ihv" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="0Hh-ZE-d6a"/>
                                                                 </constraints>
@@ -2428,7 +2428,7 @@
                                                                     <action selector="buttonA12:" destination="KUN-pA-xI1" eventType="touchUpInside" id="P3A-D5-1Oh"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-64-JOe">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-64-JOe" customClass="TableRowOffSoftWhiteButton" customModule="FightScores" customModuleProvider="target">
                                                                 <rect key="frame" x="226" y="0.0" width="149" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="pTT-Sk-fGO"/>
@@ -2509,8 +2509,8 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fight Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-p1-3ms">
-                                                <rect key="frame" x="16" y="595" width="104" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fight Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-p1-3ms" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="596" width="104" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="104" id="J6n-xt-MfE"/>
                                                 </constraints>
@@ -2518,20 +2518,20 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="aTotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-FV-Ay3">
-                                                <rect key="frame" x="0.0" y="39" width="149" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aTotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqx-FV-Ay3" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="39.5" width="148" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bTotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba8-UT-ow4">
-                                                <rect key="frame" x="227" y="39" width="148" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="bTotal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba8-UT-ow4" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="227" y="39" width="148" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="823" width="343" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-QK-koS" customClass="RedButton" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="824" width="343" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="4kM-PE-9uB"/>
                                                 </constraints>
@@ -2543,11 +2543,11 @@
                                                     <action selector="scorecardButton:" destination="KUN-pA-xI1" eventType="touchUpInside" id="Tkv-eV-ujH"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2Y-A7-YiD" customClass="StandardTextView" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="631" width="375" height="160"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2Y-A7-YiD" customClass="StandardTextView" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="632" width="375" height="160"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="qRJ-ah-9sM"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="qRJ-ah-9sM"/>
                                                 </constraints>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2641,7 +2641,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alv-5v-Ktd">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alv-5v-Ktd" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="50" y="150" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="Iaj-Jr-OKn"/>
@@ -2654,7 +2654,7 @@
                                                 <action selector="buttonTen:" destination="KUN-pA-xI1" eventType="touchUpInside" id="GcW-cT-xj9"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAQ-yS-1kp">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAQ-yS-1kp" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="50" y="246" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="8gj-Pm-baV"/>
@@ -2667,7 +2667,7 @@
                                                 <action selector="buttonSeven:" destination="KUN-pA-xI1" eventType="touchUpInside" id="L2L-fJ-XgB"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-Mb-LQ1">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6V-Mb-LQ1" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="157" y="150" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="OQt-AU-jnh"/>
@@ -2680,7 +2680,7 @@
                                                 <action selector="buttonNine:" destination="KUN-pA-xI1" eventType="touchUpInside" id="qme-aF-aFZ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBS-S7-UBv">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBS-S7-UBv" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="265" y="150" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="9oU-Ow-yBo"/>
@@ -2693,7 +2693,7 @@
                                                 <action selector="buttonEight:" destination="KUN-pA-xI1" eventType="touchUpInside" id="9S0-gD-CMs"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-5X-1Vf">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYb-5X-1Vf" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="265" y="246" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="9BG-w6-lbK"/>
@@ -2706,7 +2706,7 @@
                                                 <action selector="buttonZero:" destination="KUN-pA-xI1" eventType="touchUpInside" id="SCh-27-U2r"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYj-Yx-NQq">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYj-Yx-NQq" customClass="ScoringRoundButton" customModule="FightScores" customModuleProvider="target">
                                             <rect key="frame" x="157" y="246" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="Kjy-PJ-DQL"/>

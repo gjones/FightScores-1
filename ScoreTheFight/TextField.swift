@@ -46,6 +46,11 @@ class StandardTextView: UITextView {
         self.backgroundColor = whiteColor
         self.layer.borderWidth = 0.5
         self.layer.borderColor = borderColor.CGColor
-        self.textContainerInset = UIEdgeInsetsMake(5, 16, 5, 16)
+        self.textContainerInset = UIEdgeInsetsMake(16, 16, 16, 16)
+        
+        self.sizeToFit()
+        self.layoutIfNeeded()
+        let height = self.sizeThatFits(CGSizeMake(self.frame.size.width, CGFloat.max)).height
+        self.contentSize.height = height
     }
 }

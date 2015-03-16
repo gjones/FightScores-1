@@ -87,6 +87,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             buttonB10.setTitle("\(fight!.boxerB_round10)", forState: .Normal)
             buttonB11.setTitle("\(fight!.boxerB_round11)", forState: .Normal)
             buttonB12.setTitle("\(fight!.boxerB_round12)", forState: .Normal)
+            scorecardButton.setTitle("Submit Your Scores", forState: .Normal)
             
             if fight!.rounds == 4 {
                 viewRd5.hidden = true
@@ -319,46 +320,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
         leftNavButton()
         rightNavButton()
-        
-
-        // Apply styles
-        standardLabel(labelBoxerA)
-        standardLabel(labelBoxerB)
-        standardLabel(labelvs)
-        standardLabel(labelNotes)
-        smallLabel(labelATotalScore)
-        smallLabel(labelBTotalScore)
-        offSoftWhiteButton(buttonA1)
-        softWhiteButton(buttonA2)
-        offSoftWhiteButton(buttonA3)
-        softWhiteButton(buttonA4)
-        offSoftWhiteButton(buttonA5)
-        softWhiteButton(buttonA6)
-        offSoftWhiteButton(buttonA7)
-        softWhiteButton(buttonA8)
-        offSoftWhiteButton(buttonA9)
-        softWhiteButton(buttonA10)
-        offSoftWhiteButton(buttonA11)
-        softWhiteButton(buttonA12)
-        offSoftWhiteButton(buttonB1)
-        softWhiteButton(buttonB2)
-        offSoftWhiteButton(buttonB3)
-        softWhiteButton(buttonB4)
-        offSoftWhiteButton(buttonB5)
-        softWhiteButton(buttonB6)
-        offSoftWhiteButton(buttonB7)
-        softWhiteButton(buttonB8)
-        offSoftWhiteButton(buttonB9)
-        softWhiteButton(buttonB10)
-        offSoftWhiteButton(buttonB11)
-        softWhiteButton(buttonB12)
-        circularButton(buttonTen)
-        circularButton(buttonNine)
-        circularButton(buttonEight)
-        circularButton(buttonSeven)
-        circularButton(buttonSix)
-        circularButton(buttonZero)
-        
         
     }
 
@@ -674,69 +635,5 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     func rightNavButtonClick(sender:UIButton!) {
             self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    /// MARK: Styles 
-    func softWhiteTextField(fieldInQuestion: UITextField) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
-        
-        fieldInQuestion.textColor = UIColor .whiteColor()
-        fieldInQuestion.backgroundColor = whiteColor
-        fieldInQuestion.layer.borderWidth = 0.5
-        fieldInQuestion.layer.borderColor = borderColor.CGColor
-        fieldInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 14)   
-    }
 
-    func softWhiteButton(fieldInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.05)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
-        
-        fieldInQuestion.backgroundColor = whiteColor
-        fieldInQuestion.layer.borderWidth = 0.5
-        fieldInQuestion.layer.borderColor = borderColor.CGColor
-    }
-    
-    func offSoftWhiteButton(fieldInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.1)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
-
-        fieldInQuestion.backgroundColor = whiteColor
-        fieldInQuestion.layer.borderWidth = 0.5
-        fieldInQuestion.layer.borderColor = borderColor.CGColor
-    }
-    
-    func standardLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-        labelInQuestion.textColor = UIColor .whiteColor()
-    }
-
-    func smallLabel(labelInQuestion: UILabel) {
-        
-        labelInQuestion.font = UIFont (name: "HelveticaNeue-Light", size: 12)
-        labelInQuestion.textColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
-    }
-    
-    
-    func circularButton(buttonInQuestion: UIButton) {
-        
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
-        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
-        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
-        
-        buttonInQuestion.layer.cornerRadius = 30
-        buttonInQuestion.clipsToBounds = true
-        buttonInQuestion.backgroundColor = whiteColor
-        buttonInQuestion.layer.borderWidth = 1
-        buttonInQuestion.layer.borderColor = borderColor.CGColor
-        buttonInQuestion.tintColor = UIColor .whiteColor()
-        buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 26)
-        
-    }
 }

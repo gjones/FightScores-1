@@ -49,3 +49,51 @@ class SoftWhiteButton: UIButton {
         self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
     }
 }
+
+// Scorecard Buttons
+
+class TableRowSoftWhiteButton: UIButton {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.1)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
+        
+        self.backgroundColor = whiteColor
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = borderColor.CGColor
+        self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+    }
+}
+
+class TableRowOffSoftWhiteButton: UIButton {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.05)
+        var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.24)
+        
+        self.backgroundColor = whiteColor
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = borderColor.CGColor
+        self.titleLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+    
+    }
+}
+
+class ScoringRoundButton: UIButton {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+            var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
+            var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
+
+            self.layer.cornerRadius = 30
+            self.clipsToBounds = true
+            self.backgroundColor = whiteColor
+            self.layer.borderWidth = 1
+            self.layer.borderColor = borderColor.CGColor
+            self.tintColor = UIColor .whiteColor()
+            self.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 26)
+    }
+}
+
