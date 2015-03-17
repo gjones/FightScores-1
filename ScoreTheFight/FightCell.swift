@@ -23,10 +23,9 @@ class FightCell: UITableViewCell {
     @IBOutlet weak var labelBoxerATotal: UILabel!
     @IBOutlet weak var labelBoxerBTotal: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        self.backgroundColor = UIColor .clearColor()
 
     }
     override func setHighlighted(highlighted: Bool, animated: Bool) {

@@ -69,6 +69,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewWillAppear(animated)
         fights.performFetch(nil)
         fightTableView.reloadData()
+        fightTableView.backgroundColor = UIColor .clearColor()
         stack.updateContextWithUbiquitousContentUpdates = true
         
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
@@ -134,7 +135,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.fight = fights.fetchedObjects![indexPath.row] as? Fight
         return cell
     }
-    
+
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.fightTableView.beginUpdates()
     }
