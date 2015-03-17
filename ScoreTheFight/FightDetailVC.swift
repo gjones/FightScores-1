@@ -124,7 +124,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             labelBoxerA_totalScore.text =   "\(fight!.boxerA_totalScore)"
             labelBoxerB_totalScore.text =   "\(fight!.boxerB_totalScore)"
             labelNotesTitle.text =          "Fight Notes"
-            labelNotes.text =               fight!.notes
             labelBoxerA1.text =             "\(fight!.boxerA_round1)"
             labelBoxerA2.text =             "\(fight!.boxerA_round2)"
             labelBoxerA3.text =             "\(fight!.boxerA_round3)"
@@ -150,6 +149,12 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             labelBoxerB11.text =             "\(fight!.boxerB_round11)"
             labelBoxerB12.text =             "\(fight!.boxerB_round12)"
             
+            if fight?.notes == "  " {
+                labelNotes.text = "There are currently no notes for this fight."
+            } else {
+                labelNotes.text = fight!.notes
+            }
+            
             if labelBoxerA_totalScore.text  == "0" {
                 buttonUpdateScorecard.setTitle("Begin Scoring This Fight", forState: .Normal)
             } else {
@@ -164,6 +169,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     override func viewWillAppear(animated: Bool) {
         updateFightInfo()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
+        println(fight?.notes)
     }
     
     override func viewDidLoad() {
