@@ -137,34 +137,24 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
 
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        self.fightTableView.beginUpdates()
     }
     
-    func controller(controller: NSFetchedResultsController,
-        didChangeObject anObject: AnyObject,
-        atIndexPath indexPath: NSIndexPath?,
-        forChangeType type: NSFetchedResultsChangeType,
-        newIndexPath: NSIndexPath?) {
+    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath!) {
         switch(type) {
         case .Insert:
             if let newIndexPath = newIndexPath {
-                self.fightTableView.insertRowsAtIndexPaths([newIndexPath],
-                    withRowAnimation:UITableViewRowAnimation.Fade)
+                fightTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
             }
-            println("Insert")
         case .Delete:
             if let indexPath = indexPath {
-                self.fightTableView.deleteRowsAtIndexPaths([indexPath],
-                    withRowAnimation: UITableViewRowAnimation.Fade)
+                fightTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
-            println("Remove")
         default:
             break
         }
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        self.fightTableView.endUpdates()
     }
     
     func tableView(tableView: UITableView,
