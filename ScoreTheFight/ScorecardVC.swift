@@ -62,6 +62,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             labelBTotalScore.text = "\(fight!.boxerB_totalScore)"
             labelNotes.text = "Fight Notes"
             textViewNotes.text = fight!.notes
+            fight!.winner = "none"
         
             buttonA1.setTitle("\(fight!.boxerA_round1)", forState: .Normal)
             buttonA2.setTitle("\(fight!.boxerA_round2)", forState: .Normal)
@@ -317,7 +318,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
         
         textViewNotes.delegate = self
-
+        
         leftNavButton()
         rightNavButton()
         

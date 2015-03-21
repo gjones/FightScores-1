@@ -44,6 +44,6 @@ class Fight: NSManagedObject {
     @NSManaged var date: NSDate
     @NSManaged var notes: String
     @NSManaged var rounds: NSNumber
-    @NSManaged var victor: Bool
+    @NSManaged var winner: String
 
 }

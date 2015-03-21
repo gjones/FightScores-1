@@ -158,7 +158,6 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         
         // Save our context
         managedObjectContext!.save(nil)
-        println(fight)
         
         performSegueWithIdentifier("unwindToFightList", sender: self)
     }

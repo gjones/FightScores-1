@@ -169,7 +169,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     override func viewWillAppear(animated: Bool) {
         updateFightInfo()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
-        println(fight?.notes)
+
     }
     
     override func viewDidLoad() {

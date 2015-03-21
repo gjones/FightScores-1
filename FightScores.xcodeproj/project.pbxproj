@@ -51,6 +51,7 @@
 		197292111AB3236700B7C239 /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		197292131AB3237500B7C239 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		197292151AB3237F00B7C239 /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightCell.swift; sourceTree = "<group>"; };
+		1983A2351ABCCB750028ADF8 /* Fight v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Fight v2.xcdatamodel"; sourceTree = "<group>"; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		199750E11AB2154F008D6D27 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		199750E31AB22C9A008D6D27 /* RulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
@@ -551,9 +552,10 @@
 		19E529921A9370D200F5CF22 /* Fight.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1983A2351ABCCB750028ADF8 /* Fight v2.xcdatamodel */,
 				19E529931A9370D200F5CF22 /* Fight.xcdatamodel */,
 			);
-			currentVersion = 19E529931A9370D200F5CF22 /* Fight.xcdatamodel */;
+			currentVersion = 1983A2351ABCCB750028ADF8 /* Fight v2.xcdatamodel */;
 			path = Fight.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
