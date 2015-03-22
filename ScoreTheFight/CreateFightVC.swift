@@ -49,15 +49,18 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         
         
         // Set button title
+        var todayDate = NSDate()
         var rawDate = date as NSDate
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat  = "dd MMMM, yyyy"
-        let timestamp = dateFormatter.stringFromDate(rawDate)
         
-        if fight.date == NSDate() {
+        let nowDate = dateFormatter.stringFromDate(todayDate)
+        let fightDate = dateFormatter.stringFromDate(rawDate)
+        
+        if fightDate == nowDate {
             buttonDate.setTitle("Today", forState: .Normal)
         } else {
-            buttonDate.setTitle(timestamp, forState: .Normal)
+            buttonDate.setTitle(fightDate, forState: .Normal)
         }
     }
     

@@ -101,8 +101,13 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     }
     
     @IBAction func confirmDate(sender: AnyObject) {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if fightDate != nil {
             self.onDateAvailable?(date: fightDate!)
+        } else {
+            self.onDateAvailable?(date: NSDate())
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
