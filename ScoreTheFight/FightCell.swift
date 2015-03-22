@@ -42,16 +42,22 @@ class FightCell: UITableViewCell {
         if fight != nil {
             
             // Get nicely formatted date
+            var rawDateToday = NSDate()
             var rawDate = fight!.date as NSDate
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat  = "dd MMMM, yyyy"
             let timestamp = dateFormatter.stringFromDate(rawDate)
+            let todayTimestamp = dateFormatter.stringFromDate(rawDateToday)
             
             labelBoxerA.text = fight!.boxerA as String
             labelBoxerB.text = fight!.boxerB as String
             labelBoxerATotal.text = "\(fight!.boxerA_totalScore)"
             labelBoxerBTotal.text = "\(fight!.boxerB_totalScore)"
-            labelFightDate.text = timestamp
+            if timestamp == todayTimestamp {
+                labelFightDate.text = "Today"
+            } else {
+                labelFightDate.text = timestamp
+            }
             labelRounds.text = "\(fight!.rounds) Rounds"
         }
     }
