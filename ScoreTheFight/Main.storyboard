@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lXa-54-CQy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lXa-54-CQy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1630,7 +1630,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
-                                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2"/>
                                                         </attributes>
@@ -2935,13 +2935,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-1A-nQg" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of First Boxer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUa-Xv-yhx" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="16" width="144" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name of First Boxer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUa-Xv-yhx" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="16" width="143.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vie-lo-6iO" customClass="StandardTextField" customModule="FightScores" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vie-lo-6iO" customClass="StandardTextField" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="51" width="320" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2951,7 +2951,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eC-W8-Fjq" customClass="StandardTextField" customModule="FightScores" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eC-W8-Fjq" customClass="StandardTextField" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="169" width="320" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2961,19 +2961,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Second Boxer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-fk-zrJ" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name of Second Boxer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-fk-zrJ" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="134" width="181" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Scheduled Rounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-Kb-izn" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of Scheduled Rounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-Kb-izn" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
                                                 <rect key="frame" x="17" y="257" width="288" height="19"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgW-PQ-Mvp">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgW-PQ-Mvp">
                                                 <rect key="frame" x="252" y="292" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -2989,7 +2989,7 @@
                                                     <action selector="buttonRd12:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="gyT-xA-vbb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQf-vP-TwT">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQf-vP-TwT">
                                                 <rect key="frame" x="193" y="292" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -3003,7 +3003,7 @@
                                                     <action selector="buttonRd10:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="E9D-ye-azQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDJ-Wr-NEJ">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDJ-Wr-NEJ">
                                                 <rect key="frame" x="134" y="292" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -3017,7 +3017,7 @@
                                                     <action selector="buttonRd8:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="eh9-xS-1AM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g73-TV-tuK">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g73-TV-tuK">
                                                 <rect key="frame" x="75" y="292" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -3031,7 +3031,7 @@
                                                     <action selector="buttonRd6:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="gYx-bk-nmz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-eA-7oB">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-eA-7oB">
                                                 <rect key="frame" x="16" y="292" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -3057,6 +3057,16 @@
                                                     <action selector="addFightButton:" destination="ABj-z2-lgQ" eventType="touchUpInside" id="nOY-52-HrU"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygy-r2-hzw">
+                                                <rect key="frame" x="174" y="11" width="130" height="30"/>
+                                                <state key="normal" title="Date">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="5M1-lm-DbY" kind="presentation" identifier="showFightDate" id="fuy-L9-AvX"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="gSn-eA-7oB" firstAttribute="leading" secondItem="VUb-1A-nQg" secondAttribute="leading" constant="16" id="0vS-e4-mrY"/>
@@ -3068,6 +3078,7 @@
                                             <constraint firstItem="ZgW-PQ-Mvp" firstAttribute="top" secondItem="fCv-Kb-izn" secondAttribute="bottom" constant="16" id="9ga-1z-dv1"/>
                                             <constraint firstItem="fCv-Kb-izn" firstAttribute="leading" secondItem="VUb-1A-nQg" secondAttribute="leading" constant="17" id="C19-hZ-s2a"/>
                                             <constraint firstItem="BIn-fk-zrJ" firstAttribute="leading" secondItem="VUb-1A-nQg" secondAttribute="leading" constant="16" id="Ewk-5d-I14"/>
+                                            <constraint firstAttribute="trailing" secondItem="ygy-r2-hzw" secondAttribute="trailing" constant="8" id="Jdm-Yy-2IX"/>
                                             <constraint firstItem="ZgW-PQ-Mvp" firstAttribute="leading" secondItem="rQf-vP-TwT" secondAttribute="trailing" constant="20" id="Jvy-gp-TcW"/>
                                             <constraint firstItem="4eC-W8-Fjq" firstAttribute="top" secondItem="BIn-fk-zrJ" secondAttribute="bottom" constant="16" id="ORO-h3-ogB"/>
                                             <constraint firstItem="rQf-vP-TwT" firstAttribute="top" secondItem="fCv-Kb-izn" secondAttribute="bottom" constant="16" id="OSe-Zb-fNx"/>
@@ -3092,6 +3103,8 @@
                                             <constraint firstItem="g73-TV-tuK" firstAttribute="leading" secondItem="gSn-eA-7oB" secondAttribute="trailing" constant="13" id="nwb-I8-1lV"/>
                                             <constraint firstItem="fCv-Kb-izn" firstAttribute="top" secondItem="4eC-W8-Fjq" secondAttribute="bottom" constant="38" id="oap-ps-6jF"/>
                                             <constraint firstItem="g73-TV-tuK" firstAttribute="leading" secondItem="gSn-eA-7oB" secondAttribute="trailing" constant="14" id="pUf-eM-ROY"/>
+                                            <constraint firstItem="vie-lo-6iO" firstAttribute="top" secondItem="ygy-r2-hzw" secondAttribute="bottom" constant="16" id="phs-xI-cCX"/>
+                                            <constraint firstItem="ygy-r2-hzw" firstAttribute="top" secondItem="VUb-1A-nQg" secondAttribute="top" constant="16" id="t55-Mw-qMg"/>
                                             <constraint firstAttribute="centerX" secondItem="4eC-W8-Fjq" secondAttribute="centerX" id="ueN-on-aXI"/>
                                             <constraint firstAttribute="trailing" secondItem="BIn-fk-zrJ" secondAttribute="trailing" constant="123" id="yKI-Za-oez"/>
                                             <constraint firstItem="WDJ-Wr-NEJ" firstAttribute="leading" secondItem="g73-TV-tuK" secondAttribute="trailing" constant="14" id="zp5-ye-fgK"/>
@@ -3158,6 +3171,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="buttonAddFight" destination="5gS-11-sEa" id="XRc-Pd-Uqr"/>
+                        <outlet property="buttonDate" destination="ygy-r2-hzw" id="d88-Gu-cqj"/>
                         <outlet property="buttonRd10" destination="rQf-vP-TwT" id="RgF-Iy-Geb"/>
                         <outlet property="buttonRd12" destination="ZgW-PQ-Mvp" id="FVz-oO-Vic"/>
                         <outlet property="buttonRd4" destination="gSn-eA-7oB" id="SZD-kJ-ckC"/>
@@ -3176,6 +3190,107 @@
                 <exit id="JCN-6N-40g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2121" y="15"/>
+        </scene>
+        <!--Fight DateVC-->
+        <scene sceneID="ZFY-3a-gnu">
+            <objects>
+                <viewController id="5M1-lm-DbY" customClass="FightDateVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UVK-C9-Dqd"/>
+                        <viewControllerLayoutGuide type="bottom" id="f72-DZ-K1Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQh-xZ-7m2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="00S-2K-qze" customClass="BackgroundView" customModule="FightScores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-6T-sMv" customClass="CVCalendarMenuView" customModule="FightScores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="74" width="320" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ehx-jf-OIa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Mg-Wsl" customClass="CVCalendarView" customModule="FightScores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="125" width="320" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="calendarDelegate" destination="5M1-lm-DbY" id="j83-4j-7Pd"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRb-WV-JSI" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsW-XD-lnO">
+                                <rect key="frame" x="276" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="B70-6d-UQg"/>
+                                    <constraint firstAttribute="width" constant="20" id="ifi-qB-8OR"/>
+                                </constraints>
+                                <state key="normal" image="button_close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonCloseModal:" destination="5M1-lm-DbY" eventType="touchUpInside" id="x2Z-Wd-Jip"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwF-JU-q7J">
+                                <rect key="frame" x="26" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="NKa-vq-OFQ"/>
+                                    <constraint firstAttribute="height" constant="20" id="dg2-76-HCW"/>
+                                </constraints>
+                                <state key="normal" image="button_confirm">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmDate:" destination="5M1-lm-DbY" eventType="touchUpInside" id="05S-cm-Dio"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bgE-6T-sMv" firstAttribute="top" secondItem="eRb-WV-JSI" secondAttribute="bottom" constant="23.5" id="2Iz-lh-hGv"/>
+                            <constraint firstItem="uwF-JU-q7J" firstAttribute="top" secondItem="UVK-C9-Dqd" secondAttribute="bottom" constant="10" id="DiU-zP-tDg"/>
+                            <constraint firstItem="00S-2K-qze" firstAttribute="top" secondItem="fsW-XD-lnO" secondAttribute="bottom" constant="10" id="FLF-XA-Zky"/>
+                            <constraint firstItem="bgE-6T-sMv" firstAttribute="leading" secondItem="vQh-xZ-7m2" secondAttribute="leading" id="Flz-Hv-GKG"/>
+                            <constraint firstItem="uwF-JU-q7J" firstAttribute="leading" secondItem="vQh-xZ-7m2" secondAttribute="leadingMargin" constant="10" id="Iox-JH-ZB1"/>
+                            <constraint firstItem="00S-2K-qze" firstAttribute="leading" secondItem="vQh-xZ-7m2" secondAttribute="leading" id="JZ2-2v-ouj"/>
+                            <constraint firstAttribute="trailing" secondItem="wLN-Mg-Wsl" secondAttribute="trailing" id="NQg-df-US9"/>
+                            <constraint firstAttribute="trailing" secondItem="eRb-WV-JSI" secondAttribute="trailing" id="Yry-6c-c83"/>
+                            <constraint firstAttribute="trailing" secondItem="00S-2K-qze" secondAttribute="trailing" id="d4h-Qu-Alh"/>
+                            <constraint firstItem="f72-DZ-K1Y" firstAttribute="top" secondItem="wLN-Mg-Wsl" secondAttribute="bottom" constant="100" id="dLY-1V-jeG"/>
+                            <constraint firstItem="eRb-WV-JSI" firstAttribute="leading" secondItem="vQh-xZ-7m2" secondAttribute="leading" id="iu8-W6-26i"/>
+                            <constraint firstItem="00S-2K-qze" firstAttribute="top" secondItem="UVK-C9-Dqd" secondAttribute="bottom" id="jbe-hj-fVW"/>
+                            <constraint firstItem="wLN-Mg-Wsl" firstAttribute="top" secondItem="bgE-6T-sMv" secondAttribute="bottom" constant="16" id="jlC-QF-c7G"/>
+                            <constraint firstItem="fsW-XD-lnO" firstAttribute="top" secondItem="UVK-C9-Dqd" secondAttribute="bottom" constant="10" id="mvS-Q4-4Jb"/>
+                            <constraint firstItem="f72-DZ-K1Y" firstAttribute="top" secondItem="00S-2K-qze" secondAttribute="bottom" id="pWF-J2-jhK"/>
+                            <constraint firstItem="wLN-Mg-Wsl" firstAttribute="leading" secondItem="vQh-xZ-7m2" secondAttribute="leading" id="tHg-8M-cTW"/>
+                            <constraint firstAttribute="trailing" secondItem="bgE-6T-sMv" secondAttribute="trailing" id="tyg-AL-kSS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsW-XD-lnO" secondAttribute="trailing" constant="8" id="xID-C9-GaX"/>
+                            <constraint firstItem="eRb-WV-JSI" firstAttribute="top" secondItem="UVK-C9-Dqd" secondAttribute="bottom" constant="10" id="xs9-Uz-y5r"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FLF-XA-Zky"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="calendarView" destination="wLN-Mg-Wsl" id="I7a-Yh-yDG"/>
+                        <outlet property="menuView" destination="bgE-6T-sMv" id="jG3-Ev-z4L"/>
+                        <outlet property="monthLabel" destination="eRb-WV-JSI" id="ldi-PW-0dU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDv-O3-VbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KDo-Gt-kzX">
@@ -3272,6 +3387,8 @@
     </scenes>
     <resources>
         <image name="Add" width="60" height="60"/>
+        <image name="button_close" width="17" height="17"/>
+        <image name="button_confirm" width="19" height="15"/>
         <image name="button_next" width="10" height="17"/>
         <image name="button_settings" width="16" height="16"/>
         <image name="button_share" width="13" height="18"/>

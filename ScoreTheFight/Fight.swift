@@ -45,5 +45,11 @@ class Fight: NSManagedObject {
     @NSManaged var notes: String
     @NSManaged var rounds: NSNumber
     @NSManaged var winner: String
+    
+    override func awakeFromInsert()
+    {
+        super.awakeFromInsert()
+        date = NSDate()
+    }
 
 }

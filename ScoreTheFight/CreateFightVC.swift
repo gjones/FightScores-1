@@ -11,6 +11,7 @@ import CoreData
 
 class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonStartScoring: UIButton!
     
@@ -23,11 +24,12 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     @IBOutlet weak var buttonRd8: UIButton!
     @IBOutlet weak var buttonRd10: UIButton!
     @IBOutlet weak var buttonRd12: UIButton!
+    @IBOutlet weak var buttonDate: UIButton!
     
     @IBOutlet weak var labelBoxerA: UILabel!
     @IBOutlet weak var labelBoxerB: UILabel!
     @IBOutlet weak var labelRounds: UILabel!
-    
+
     var managedObjectContext : NSManagedObjectContext?
     var _fight : Fight?
     var fight : Fight
@@ -37,6 +39,22 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
                 _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
             }
             return _fight!
+    }
+    
+    func doSomethingWithDate(date: NSDate) {
+        
+        
+        // Set fight date as Date
+        fight.date = date
+        
+        
+        // Set button title
+        var rawDate = date as NSDate
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat  = "dd MMMM, yyyy"
+        let timestamp = dateFormatter.stringFromDate(rawDate)
+        buttonDate.setTitle(timestamp, forState: .Normal)
+        
     }
     
     override func viewDidLoad() {
@@ -118,6 +136,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
        performSegueWithIdentifier("unwindToFightList", sender: self)
     }
     
+    
     // Rounds Logic
     
     var setRounds: NSNumber = 12.0
@@ -138,6 +157,20 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         setRounds = 12
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showFightDate" {
+            if let dateView = segue.destinationViewController as? FightDateVC {
+                dateView.onDateAvailable = {[weak self]
+                    (date) in
+                    if let weakSelf = self {
+                        weakSelf.doSomethingWithDate(date)
+                    }
+                }
+            }
+        }
+    }
+
+    
     
     func submitFight() {
         
@@ -153,7 +186,6 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
             fight.boxerB = textFieldBoxerB.text
         }
         
-        fight.date = NSDate()
         fight.rounds = setRounds ?? 12
         
         // Save our context
