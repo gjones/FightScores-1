@@ -53,8 +53,12 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat  = "dd MMMM, yyyy"
         let timestamp = dateFormatter.stringFromDate(rawDate)
-        buttonDate.setTitle(timestamp, forState: .Normal)
         
+        if fight.date == NSDate() {
+            buttonDate.setTitle("Today", forState: .Normal)
+        } else {
+            buttonDate.setTitle(timestamp, forState: .Normal)
+        }
     }
     
     override func viewDidLoad() {

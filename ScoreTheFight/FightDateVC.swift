@@ -19,10 +19,9 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     }
     
     var onDateAvailable : ((date: NSDate) -> ())?
+    var fightDate: NSDate!
     
     func sendDate(date: NSDate) {
-        // Whenever you want to send data back to viewController1, check
-        // if the closure is implemented and then call it if it is
         self.onDateAvailable?(date: date)
     }
     
@@ -35,11 +34,27 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         self.monthLabel.text = CVDate(date: NSDate()).description()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.calendarView.alpha = 0
+        self.menuView.alpha = 0
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         self.calendarView.commitCalendarViewUpdate()
         self.menuView.commitMenuViewUpdate()
+        UIView.animateWithDuration(0.2, animations: {
+            self.calendarView.alpha = 1
+            self.menuView.alpha = 1
+        })
+        
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        
+        let landscapeWidth = self.view.bounds.size.width
+        self.calendarView.layer.frame.size.width = landscapeWidth
     }
     
     @IBAction func switchChanged(sender: UISwitch) {
@@ -81,22 +96,13 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         var dateString = "\(year!)-\(month!)-\(day!)"
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var fightDate = dateFormatter.dateFromString(dateString)
-        
-        println(fightDate)
-        
-        self.onDateAvailable?(date: fightDate!)
+        fightDate = dateFormatter.dateFromString(dateString)
         
     }
     
     @IBAction func confirmDate(sender: AnyObject) {
-        
-            var dateString = "2001-12-03"
-            var dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            var fightDate = dateFormatter.dateFromString(dateString)
-        
             self.dismissViewControllerAnimated(true, completion: nil)
+            self.onDateAvailable?(date: fightDate!)
     }
     
     
