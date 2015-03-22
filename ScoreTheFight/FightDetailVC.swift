@@ -17,27 +17,27 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
     }
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var labelBoxerA:     UILabel!
-    @IBOutlet weak var labelBoxerB:     UILabel!
-    @IBOutlet weak var labelBoxerA_totalScore:     UILabel!
-    @IBOutlet weak var labelBoxerB_totalScore:     UILabel!
-    @IBOutlet weak var labelRounds:     UILabel!
-    @IBOutlet weak var labelFightDate:  UILabel!
-    @IBOutlet weak var labelNotes:      UILabel!
-    @IBOutlet weak var labelNotesTitle:      UILabel!
-    @IBOutlet weak var buttonUpdateScorecard: UIButton!
+    @IBOutlet weak var scrollView:              UIScrollView!
+    @IBOutlet weak var labelBoxerA:             UILabel!
+    @IBOutlet weak var labelBoxerB:             UILabel!
+    @IBOutlet weak var labelBoxerA_totalScore:  UILabel!
+    @IBOutlet weak var labelBoxerB_totalScore:  UILabel!
+    @IBOutlet weak var labelRounds:             UILabel!
+    @IBOutlet weak var labelFightDate:          UILabel!
+    @IBOutlet weak var labelNotes:              UILabel!
+    @IBOutlet weak var labelNotesTitle:         UILabel!
+    @IBOutlet weak var buttonUpdateScorecard:   UIButton!
     
     // Set Round Labels
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
-    @IBOutlet weak var label6: UILabel!
-    @IBOutlet weak var label7: UILabel!
-    @IBOutlet weak var label8: UILabel!
-    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label1:  UILabel!
+    @IBOutlet weak var label2:  UILabel!
+    @IBOutlet weak var label3:  UILabel!
+    @IBOutlet weak var label4:  UILabel!
+    @IBOutlet weak var label5:  UILabel!
+    @IBOutlet weak var label6:  UILabel!
+    @IBOutlet weak var label7:  UILabel!
+    @IBOutlet weak var label8:  UILabel!
+    @IBOutlet weak var label9:  UILabel!
     @IBOutlet weak var label10: UILabel!
     @IBOutlet weak var label11: UILabel!
     @IBOutlet weak var label12: UILabel!
@@ -110,17 +110,23 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     func updateFightInfo() {
         
         if fight != nil && isViewLoaded() {
+            
             // Get nicely formatted date
+            var rawDateToday = NSDate()
             var rawDate = fight!.date as NSDate
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat  = "dd MMMM, yyyy"
+            let todayTimestamp = dateFormatter.stringFromDate(rawDateToday)
             let timestamp = dateFormatter.stringFromDate(rawDate)
-        
+            if timestamp == todayTimestamp {
+                labelFightDate.text = "Today"
+            } else {
+                labelFightDate.text = timestamp
+            }
             // Set Label Values
             labelBoxerA.text =              fight!.boxerA
             labelBoxerB.text =              fight!.boxerB
             labelRounds.text =              "\(fight!.rounds) Rounds"
-            labelFightDate.text =           timestamp
             labelBoxerA_totalScore.text =   "\(fight!.boxerA_totalScore)"
             labelBoxerB_totalScore.text =   "\(fight!.boxerB_totalScore)"
             labelNotesTitle.text =          "Fight Notes"

@@ -29,7 +29,8 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     @IBOutlet weak var labelBoxerA: UILabel!
     @IBOutlet weak var labelBoxerB: UILabel!
     @IBOutlet weak var labelRounds: UILabel!
-
+    
+    var fightDatePassed: NSDate!
     var managedObjectContext : NSManagedObjectContext?
     var _fight : Fight?
     var fight : Fight
@@ -46,7 +47,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         
         // Set fight date as Date
         fight.date = date
-        
+        fightDatePassed = date
         
         // Set button title
         var todayDate = NSDate()
@@ -173,6 +174,10 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
                         weakSelf.doSomethingWithDate(date)
                     }
                 }
+                if fightDatePassed != nil {
+                    dateView.fightDate = fightDatePassed
+                }
+                println(fightDatePassed)
             }
         }
     }

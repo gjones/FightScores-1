@@ -32,23 +32,24 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         super.viewDidLoad()
         
         self.monthLabel.text = CVDate(date: NSDate()).description()
+        
+        if fightDate != nil {
+            self.calendarView.toggleMonthViewWithDate(fightDate)
+            println("Fight Date Currently is \(fightDate!)")
+        }
+        
+        self.calendarView.commitCalendarViewUpdate()
+        self.menuView.commitMenuViewUpdate()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.calendarView.alpha = 0
-        self.menuView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.calendarView.commitCalendarViewUpdate()
-        self.menuView.commitMenuViewUpdate()
-        UIView.animateWithDuration(0.2, animations: {
-            self.calendarView.alpha = 1
-            self.menuView.alpha = 1
-        })
-        
+        self.calendarView.alpha = 1
+        self.menuView.alpha = 1
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
