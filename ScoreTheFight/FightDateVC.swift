@@ -14,6 +14,9 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     @IBOutlet var menuView: CVCalendarMenuView!
     @IBOutlet var calendarView: CVCalendarView!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var buttonRewind: UIButton!
+    @IBOutlet weak var buttonForward: UIButton!
+    @IBOutlet weak var labelScroll: UILabel!
     
     @IBAction func buttonCloseModal(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -48,6 +51,9 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         super.viewWillAppear(animated)
         self.calendarView.alpha = 0
         self.menuView.alpha = 0
+        labelScroll.alpha = 0
+        buttonRewind.alpha = 0
+        buttonForward.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -57,13 +63,15 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         UIView.animateWithDuration(0.15, animations: {
             self.calendarView.alpha = 1.0
             self.menuView.alpha = 1.0
+            self.labelScroll.alpha = 1.0
+            self.buttonRewind.alpha = 1.0
+            self.buttonForward.alpha = 1.0
         })
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        
-        let landscapeWidth = self.view.bounds.size.width
-        self.calendarView.layer.frame.size.width = landscapeWidth
+        self.menuView.commitMenuViewUpdate()
+
     }
     
     @IBAction func switchChanged(sender: UISwitch) {
@@ -143,7 +151,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         return true
     }
     
-    
     func presentedDateUpdated(date: CVDate) {
         if self.monthLabel.text != date.description() && self.animationFinished {
             let updatedMonthLabel = UILabel()
@@ -179,6 +186,14 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
             
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
         }
+    }
+    
+    @IBAction func rewindButtonAction(sender: UIButton) {
+        self.calendarView.loadPreviousMonthView()
+    }
+    
+    @IBAction func forwardButtonAction(sender: UIButton) {
+        self.calendarView.loadNextMonthView()
     }
     
     func toggleMonthViewWithMonthOffset(offset: Int) {

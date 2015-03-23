@@ -3211,12 +3211,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRb-WV-JSI" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
-                                        <rect key="frame" x="70" y="32" width="180" height="20.5"/>
+                                        <rect key="frame" x="139" y="32" width="42" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="9Pa-n8-1ze"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9Pa-n8-1ze"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwF-JU-q7J" userLabel="Submit Button">
                                         <rect key="frame" x="8" y="20" width="40" height="40"/>
@@ -3247,6 +3252,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="eRb-WV-JSI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uwF-JU-q7J" secondAttribute="trailing" constant="22" id="0S3-0u-0uO"/>
                                     <constraint firstItem="fsW-XD-lnO" firstAttribute="top" secondItem="TJ8-5o-c3c" secondAttribute="top" constant="20" id="2IG-AR-O0G"/>
                                     <constraint firstAttribute="height" constant="64" id="6fJ-L3-Gdj"/>
                                     <constraint firstItem="uwF-JU-q7J" firstAttribute="top" secondItem="fsW-XD-lnO" secondAttribute="top" id="DKM-qt-lXh"/>
@@ -3256,6 +3262,7 @@
                                     <constraint firstAttribute="centerX" secondItem="eRb-WV-JSI" secondAttribute="centerX" id="WQg-J6-Zpj"/>
                                     <constraint firstItem="uwF-JU-q7J" firstAttribute="leading" secondItem="fsW-XD-lnO" secondAttribute="leading" id="X77-ii-1nZ"/>
                                     <constraint firstItem="uwF-JU-q7J" firstAttribute="top" secondItem="TJ8-5o-c3c" secondAttribute="top" constant="20" id="XjS-XF-Ry7"/>
+                                    <constraint firstItem="fsW-XD-lnO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eRb-WV-JSI" secondAttribute="trailing" constant="22" id="ehz-ZM-yoG"/>
                                     <constraint firstAttribute="trailing" secondItem="fsW-XD-lnO" secondAttribute="trailing" constant="8" id="tlh-dW-loP"/>
                                     <constraint firstItem="eRb-WV-JSI" firstAttribute="top" secondItem="TJ8-5o-c3c" secondAttribute="top" constant="32" id="uau-6k-Unc"/>
                                 </constraints>
@@ -3268,10 +3275,10 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDT-NL-RMm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDT-NL-RMm">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-6T-sMv" customClass="CVCalendarMenuView" customModule="FightScores" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-6T-sMv" customClass="CVCalendarMenuView" customModule="FightScores" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="16" width="320" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -3284,7 +3291,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Mg-Wsl" customClass="CVCalendarView" customModule="FightScores" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Mg-Wsl" customClass="CVCalendarView" customModule="FightScores" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="61" width="320" height="280"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -3294,10 +3301,52 @@
                                             <outlet property="calendarDelegate" destination="5M1-lm-DbY" id="j83-4j-7Pd"/>
                                         </connections>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9Q-U3-ofD" userLabel="Rewind Button">
+                                        <rect key="frame" x="8" y="351" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="cKl-YD-BrJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="fm8-AV-xTl"/>
+                                        </constraints>
+                                        <state key="normal" image="button_rewind">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rewindButtonAction:" destination="5M1-lm-DbY" eventType="touchUpInside" id="6zz-bC-a4H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-Db-1cU" userLabel="Rewind Button">
+                                        <rect key="frame" x="272" y="351" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2g3-R0-4LA"/>
+                                            <constraint firstAttribute="height" constant="40" id="rva-yu-1q1"/>
+                                        </constraints>
+                                        <state key="normal" image="button_forward">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forwardButtonAction:" destination="5M1-lm-DbY" eventType="touchUpInside" id="aZu-i1-SXt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to Next Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAW-uN-eEu">
+                                        <rect key="frame" x="83" y="360" width="155" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="c9Q-U3-ofD" firstAttribute="leading" secondItem="lDT-NL-RMm" secondAttribute="leading" constant="8" id="8ZZ-eL-XbD"/>
+                                    <constraint firstItem="kAW-uN-eEu" firstAttribute="top" secondItem="wLN-Mg-Wsl" secondAttribute="bottom" constant="19" id="Dx9-rv-pyT"/>
                                     <constraint firstItem="wLN-Mg-Wsl" firstAttribute="top" secondItem="bgE-6T-sMv" secondAttribute="bottom" constant="10" id="N3U-x0-Hiq"/>
+                                    <constraint firstItem="7R3-Db-1cU" firstAttribute="top" secondItem="wLN-Mg-Wsl" secondAttribute="bottom" constant="10" id="NGU-na-8bw"/>
+                                    <constraint firstAttribute="trailing" secondItem="wLN-Mg-Wsl" secondAttribute="trailing" id="WXB-nZ-veu"/>
+                                    <constraint firstAttribute="centerX" secondItem="kAW-uN-eEu" secondAttribute="centerX" id="Zxa-Gy-wsQ"/>
+                                    <constraint firstItem="wLN-Mg-Wsl" firstAttribute="leading" secondItem="bgE-6T-sMv" secondAttribute="leading" id="eFm-zG-ziG"/>
+                                    <constraint firstItem="c9Q-U3-ofD" firstAttribute="top" secondItem="wLN-Mg-Wsl" secondAttribute="bottom" constant="10" id="hax-ei-CcT"/>
                                     <constraint firstItem="bgE-6T-sMv" firstAttribute="top" secondItem="lDT-NL-RMm" secondAttribute="top" constant="16" id="hpN-Vk-KlG"/>
+                                    <constraint firstAttribute="trailing" secondItem="7R3-Db-1cU" secondAttribute="trailing" constant="8" id="vU6-4e-NsX"/>
+                                    <constraint firstAttribute="bottom" secondItem="wLN-Mg-Wsl" secondAttribute="bottom" constant="163" id="wge-LE-Gat"/>
+                                    <constraint firstItem="wLN-Mg-Wsl" firstAttribute="leading" secondItem="lDT-NL-RMm" secondAttribute="leading" id="zVT-2e-bKu"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -3332,7 +3381,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="buttonForward" destination="7R3-Db-1cU" id="rPk-6A-5WV"/>
+                        <outlet property="buttonRewind" destination="c9Q-U3-ofD" id="pfM-GE-rRV"/>
                         <outlet property="calendarView" destination="wLN-Mg-Wsl" id="I7a-Yh-yDG"/>
+                        <outlet property="labelScroll" destination="kAW-uN-eEu" id="N1O-en-z6E"/>
                         <outlet property="menuView" destination="bgE-6T-sMv" id="jG3-Ev-z4L"/>
                         <outlet property="monthLabel" destination="eRb-WV-JSI" id="ldi-PW-0dU"/>
                         <outlet property="viewHeader" destination="TJ8-5o-c3c" id="N2X-mS-N1x"/>
@@ -3439,7 +3491,9 @@
         <image name="Add" width="60" height="60"/>
         <image name="button_close" width="17" height="17"/>
         <image name="button_confirm" width="19" height="15"/>
+        <image name="button_forward" width="18" height="17"/>
         <image name="button_next" width="10" height="17"/>
+        <image name="button_rewind" width="18" height="17"/>
         <image name="button_settings" width="16" height="16"/>
         <image name="button_share" width="13" height="18"/>
         <image name="glove" width="30" height="40"/>
