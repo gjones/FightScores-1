@@ -71,7 +71,10 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         self.menuView.commitMenuViewUpdate()
+    }
 
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.calendarView.updateCalendarViewUpdate()
     }
     
     @IBAction func switchChanged(sender: UISwitch) {
