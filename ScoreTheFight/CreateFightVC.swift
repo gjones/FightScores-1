@@ -55,7 +55,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         var rawDate = date as NSDate
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat  = "dd MMMM, yyyy"
+        dateFormatter.dateFormat  = "dd MMM, yyyy"
         
         var timestamp = dateFormatter.stringFromDate(rawDate)
         var todayTimestamp = dateFormatter.stringFromDate(rawDateToday)
