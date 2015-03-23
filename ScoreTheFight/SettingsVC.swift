@@ -29,7 +29,7 @@ class SettingsVC: UIViewController {
         labelScores.text = "Scoring Rules"
         labelInformation.text = "About"
         labelVersion.text = "Version"
-        labelVersion2.text = "0.9"
+        labelVersion2.text = "0.9.2"
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         labelCopyright.text = "Copyright © 2015, Gareth D Jones \nAll rights reserved."
         buttonSystem.setTitle("10 Point System", forState: .Normal)
