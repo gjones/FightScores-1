@@ -140,7 +140,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.alpha = 1.0
-        
         updateFightInfo()
     }
     

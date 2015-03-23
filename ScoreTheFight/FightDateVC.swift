@@ -14,9 +14,12 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     @IBOutlet var menuView: CVCalendarMenuView!
     @IBOutlet var calendarView: CVCalendarView!
     @IBOutlet weak var monthLabel: UILabel!
+    
     @IBAction func buttonCloseModal(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBOutlet weak var viewHeader: UIView!
     
     var onDateAvailable : ((date: NSDate) -> ())?
     var fightDate: NSDate!
@@ -31,25 +34,30 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var header_bg = UIImage(named: "header_bg.png")
+        viewHeader.backgroundColor =  UIColor(patternImage:header_bg!)
         self.monthLabel.text = CVDate(date: NSDate()).description()
         
         if fightDate != nil {
             self.calendarView.toggleMonthViewWithDate(fightDate)
-            println("Fight Date Currently is \(fightDate!)")
         }
         
-        self.calendarView.commitCalendarViewUpdate()
-        self.menuView.commitMenuViewUpdate()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.calendarView.alpha = 0
+        self.menuView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.calendarView.alpha = 1
-        self.menuView.alpha = 1
+        self.calendarView.commitCalendarViewUpdate()
+        self.menuView.commitMenuViewUpdate()
+        UIView.animateWithDuration(0.15, animations: {
+            self.calendarView.alpha = 1.0
+            self.menuView.alpha = 1.0
+        })
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
