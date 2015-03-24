@@ -105,8 +105,7 @@ class ScoringRoundButton: UIButton {
             var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
             var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
 
-            self.layer.cornerRadius = 30
-            self.clipsToBounds = true
+            self.layer.cornerRadius = 0.5 * self.bounds.size.width
             self.backgroundColor = whiteColor
             self.layer.borderWidth = 1
             self.layer.borderColor = borderColor.CGColor
