@@ -114,4 +114,3 @@ class ScoringRoundButton: UIButton {
             self.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 26)
     }
 }
-

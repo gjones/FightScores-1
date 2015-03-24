@@ -179,15 +179,14 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     
     func circularButton(buttonInQuestion: UIButton) {
         
-        var burgundyColor = UIColor(red: 155/255, green: 11/255, blue: 11/255, alpha: 0.7)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
         var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
         
-        buttonInQuestion.layer.cornerRadius = 20
-        buttonInQuestion.clipsToBounds = true
+        buttonInQuestion.layer.cornerRadius = 0.5 * buttonInQuestion.bounds.size.width
         buttonInQuestion.backgroundColor = whiteColor
         buttonInQuestion.layer.borderWidth = 1
         buttonInQuestion.layer.borderColor = borderColor.CGColor
+        buttonInQuestion.titleLabel!.font = UIFont (name: "HelveticaNeue-Light", size: 18)
         
         buttonInQuestion.addTarget(self, action: "activeButton:", forControlEvents: .TouchUpInside)
         
@@ -198,16 +197,12 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         var borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.34)
         var whiteColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
         
-        buttonRd4.backgroundColor = whiteColor
-        buttonRd4.layer.borderColor = borderColor.CGColor
-        buttonRd6.backgroundColor = whiteColor
-        buttonRd6.layer.borderColor = borderColor.CGColor
-        buttonRd8.backgroundColor = whiteColor
-        buttonRd8.layer.borderColor = borderColor.CGColor
-        buttonRd10.backgroundColor = whiteColor
-        buttonRd10.layer.borderColor = borderColor.CGColor
-        buttonRd12.backgroundColor = whiteColor
-        buttonRd12.layer.borderColor = borderColor.CGColor
+        let otherButtons = [buttonRd4, buttonRd6, buttonRd8, buttonRd10, buttonRd12]
+        
+        for (index, button) in enumerate(otherButtons) {
+            button.backgroundColor = whiteColor
+            button.layer.borderColor = borderColor.CGColor
+        }
         
         sender.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         sender.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.6).CGColor

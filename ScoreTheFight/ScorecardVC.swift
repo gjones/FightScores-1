@@ -47,8 +47,6 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var buttonSix: UIButton!
     @IBOutlet weak var buttonZero: UIButton!
     
-    
-    
     @IBOutlet weak var roundsViewHeightConstraint: NSLayoutConstraint!
 
     var delegate:UpdateFightDetailDelegate? = nil
@@ -92,45 +90,65 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             scorecardButton.setTitle("Submit Your Scores", forState: .Normal)
             
             if fight!.rounds == 4 {
-                viewRd5.hidden = true
-                viewRd6.hidden = true
-                viewRd7.hidden = true
-                viewRd8.hidden = true
-                viewRd9.hidden = true
-                viewRd10.hidden = true
-                viewRd11.hidden = true
-                viewRd12.hidden = true
+                
+                // Add views to an Array
+                let views = [viewRd5, viewRd6, viewRd7, viewRd8, viewRd9, viewRd10, viewRd11, viewRd12]
+                
+                // Iterate Through Array of Views
+                for (index, view) in enumerate(views) {
+                    view.hidden = true
+                }
+                
+                // Set Appropriate Height Contraint
                 roundsViewHeightConstraint.constant = 200
             }
             
             if fight!.rounds == 6 {
-                viewRd7.hidden = true
-                viewRd8.hidden = true
-                viewRd9.hidden = true
-                viewRd10.hidden = true
-                viewRd11.hidden = true
-                viewRd12.hidden = true
+
+                // Add views to an Array
+                let views = [viewRd7, viewRd8, viewRd9, viewRd10, viewRd11, viewRd12]
+                
+                // Iterate Through Array of Views
+                for (index, view) in enumerate(views) {
+                    view.hidden = true
+                }
+                
+                // Set Appropriate Height Contraint
                 roundsViewHeightConstraint.constant = 280
                 
             }
             
             if fight!.rounds == 8 {
-                viewRd9.hidden = true
-                viewRd10.hidden = true
-                viewRd11.hidden = true
-                viewRd12.hidden = true
+                
+                // Add views to an Array
+                let views = [viewRd9, viewRd10, viewRd11, viewRd12]
+                
+                // Iterate Through Array of Views
+                for (index, view) in enumerate(views) {
+                    view.hidden = true
+                }
+                
+                // Set Appropriate Height Contraint
                 roundsViewHeightConstraint.constant = 360
                 
             }
             
             if fight!.rounds == 10 {
-                viewRd11.hidden = true
-                viewRd12.hidden = true
+                
+                // Add views to an Array
+                let views = [viewRd11, viewRd12]
+                
+                // Iterate Through Array of Views
+                for (index, view) in enumerate(views) {
+                    view.hidden = true
+                }
+                
+                // Set Appropriate Height Contraint
                 roundsViewHeightConstraint.constant = 440
             }
             
             if fight!.rounds == 12 {
-                
+                // Do Nothing
             }
 
         }

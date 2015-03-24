@@ -166,6 +166,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 stack.context.deleteObject(fight)
                 stack.save()
             }
+            
     }
     
     @IBAction

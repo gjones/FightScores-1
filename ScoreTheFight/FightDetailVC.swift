@@ -268,55 +268,47 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     
     func setNoOfRounds() {
         if fight?.rounds == 10 {
-            nonApplicableRound(labelBoxerA11)
-            nonApplicableRound(labelBoxerA12)
-            nonApplicableRound(labelBoxerB11)
-            nonApplicableRound(labelBoxerB12)
+            
+            // Store Labels in an Array
+            let boxerLabels = [labelBoxerA11, labelBoxerA12, labelBoxerB11, labelBoxerB12]
+            
+            // Iterate Through Array of Labels
+            for (index, label) in enumerate(boxerLabels) {
+                nonApplicableRound((label))
+            }
         }
         
         if fight?.rounds == 8 {
-            nonApplicableRound(labelBoxerA9)
-            nonApplicableRound(labelBoxerA10)
-            nonApplicableRound(labelBoxerB9)
-            nonApplicableRound(labelBoxerB10)
-            nonApplicableRound(labelBoxerA11)
-            nonApplicableRound(labelBoxerA12)
-            nonApplicableRound(labelBoxerB11)
-            nonApplicableRound(labelBoxerB12)
+            
+            // Store Labels in an Array
+            let boxerLabels = [labelBoxerA9, labelBoxerA10, labelBoxerA11, labelBoxerA12, labelBoxerB9, labelBoxerB10, labelBoxerB11, labelBoxerB12]
+            
+            // Iterate Through Array of Labels
+            for (index, label) in enumerate(boxerLabels) {
+                nonApplicableRound((label))
+            }
         }
         
         if fight?.rounds == 6 {
-            nonApplicableRound(labelBoxerA7)
-            nonApplicableRound(labelBoxerA8)
-            nonApplicableRound(labelBoxerB7)
-            nonApplicableRound(labelBoxerB8)
-            nonApplicableRound(labelBoxerA9)
-            nonApplicableRound(labelBoxerA10)
-            nonApplicableRound(labelBoxerB9)
-            nonApplicableRound(labelBoxerB10)
-            nonApplicableRound(labelBoxerA11)
-            nonApplicableRound(labelBoxerA12)
-            nonApplicableRound(labelBoxerB11)
-            nonApplicableRound(labelBoxerB12)
+            
+            // Store Labels in an Array
+            let boxerLabels = [labelBoxerA7, labelBoxerA8, labelBoxerA9, labelBoxerA10, labelBoxerA11, labelBoxerA12, labelBoxerB7, labelBoxerB8, labelBoxerB9, labelBoxerB10, labelBoxerB11, labelBoxerB12]
+            
+            // Iterate Through Array of Labels
+            for (index, label) in enumerate(boxerLabels) {
+                nonApplicableRound((label))
+            }
         }
         
         if fight?.rounds == 4 {
-            nonApplicableRound(labelBoxerA5)
-            nonApplicableRound(labelBoxerA6)
-            nonApplicableRound(labelBoxerB5)
-            nonApplicableRound(labelBoxerB6)
-            nonApplicableRound(labelBoxerA7)
-            nonApplicableRound(labelBoxerA8)
-            nonApplicableRound(labelBoxerB7)
-            nonApplicableRound(labelBoxerB8)
-            nonApplicableRound(labelBoxerA9)
-            nonApplicableRound(labelBoxerA10)
-            nonApplicableRound(labelBoxerB9)
-            nonApplicableRound(labelBoxerB10)
-            nonApplicableRound(labelBoxerA11)
-            nonApplicableRound(labelBoxerA12)
-            nonApplicableRound(labelBoxerB11)
-            nonApplicableRound(labelBoxerB12)
+            
+            // Store Labels in an Array
+            let boxerLabels = [labelBoxerA5, labelBoxerA6, labelBoxerA7, labelBoxerA8, labelBoxerA9, labelBoxerA10, labelBoxerA11, labelBoxerA12, labelBoxerB5, labelBoxerB6, labelBoxerB7, labelBoxerB8, labelBoxerB9, labelBoxerB10, labelBoxerB11, labelBoxerB12]
+            
+            // Iterate Through Array of Labels
+            for (index, label) in enumerate(boxerLabels) {
+                nonApplicableRound((label))
+            }
         }
     }
     
