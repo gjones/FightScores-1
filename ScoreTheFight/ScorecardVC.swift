@@ -52,6 +52,7 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var roundsViewHeightConstraint: NSLayoutConstraint!
 
     var delegate:UpdateFightDetailDelegate? = nil
+    var globalFunctions = globalHeaderFunctions()
 
     func updateFightInfo() {
         if fight != nil && isViewLoaded() {
@@ -315,11 +316,10 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         // Hide the scoring view 
         self.viewScoring.alpha = 0.0
 
-        
         textViewNotes.delegate = self
         
-        leftNavButton()
-        rightNavButton()
+        globalFunctions.leftButton(self, image: "button_confirm.png")
+        globalFunctions.rightButton(self, image: "button_close.png")
         
     }
 
@@ -596,40 +596,8 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         
     }
     
-    func leftNavButton() {
-        // hide default navigation bar button item
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = true;
-        
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        buttonBack.frame = CGRectMake(0, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"button_confirm.png"), forState: UIControlState.Normal)
-        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
-        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
-        
-        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
-    }
-    
     func leftNavButtonClick(sender:UIButton!) {
         finishup()
-    }
-    
-    func rightNavButton() {
-        // hide default navigation bar button item
-        self.navigationItem.rightBarButtonItem = nil;
-        
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        var xCoordinate = (self.view.frame.size.width - 20)
-        buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
-        buttonShare.setImage(UIImage(named:"button_close.png"), forState: UIControlState.Normal)
-        buttonShare.imageEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
-        buttonShare.addTarget(self, action: "rightNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonShare)
-        
-        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
     }
     
     func rightNavButtonClick(sender:UIButton!) {

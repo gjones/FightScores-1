@@ -31,6 +31,7 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     @IBOutlet weak var labelRounds: UILabel!
     
     var fightDate = FightDate()
+    var globalFunctions = globalHeaderFunctions()
     var fightDatePassed: NSDate!
     var managedObjectContext : NSManagedObjectContext?
     
@@ -58,8 +59,8 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         textFieldBoxerA.delegate = self
         textFieldBoxerB.delegate = self
         
-        leftNavButton()
-    
+        globalFunctions.leftButton(self, image: "button_back2.png")
+        
         // Apply Styles
         circularButton(buttonRd4)
         circularButton(buttonRd6)
@@ -106,22 +107,6 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    func leftNavButton() {
-        // hide default navigation bar button item
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = true;
-        
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        buttonBack.frame = CGRectMake(0, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"button_back2.png"), forState: UIControlState.Normal)
-        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
-        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
-        
-        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
     }
     
     func leftNavButtonClick(sender:UIButton!) {

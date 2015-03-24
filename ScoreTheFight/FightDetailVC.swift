@@ -12,6 +12,7 @@ import CoreData
 class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     
     var fightDate = FightDate()
+    var globalFunctions = globalHeaderFunctions()
     var fight : Fight? {
         didSet {
             updateFightInfo()
@@ -178,8 +179,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         view.addSubview(scrollView)
         
         // Custom Nav Items
-        leftNavButton()
-        rightNavButton()
+        globalFunctions.leftButton(self, image: "button_back2.png")
+        globalFunctions.rightButton(self, image: "button_share.png")
         
         // Adding swipe back to previous page
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
@@ -207,7 +208,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     }
     
     // Sharing Functionality
-    func shareTapped(sender: UIButton) {
+    func rightNavButtonClick(sender: UIButton) {
         let textToShare = "Here's how I scored \(fight!.boxerA) vs \(fight!.boxerB) #boxing"
         
         // Generate the screenshot
@@ -241,42 +242,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
     }
     
-    // Custom Navigation Controls
-    func leftNavButton() {
-        
-        // hide default navigation bar button item
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = true;
-        
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        buttonBack.frame = CGRectMake(0, 0, 40, 40)
-        buttonBack.setImage(UIImage(named:"button_back2.png"), forState: UIControlState.Normal)
-        buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
-        buttonBack.addTarget(self, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
-        
-        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
-    }
-    
     func leftNavButtonClick(sender:UIButton!) {
         self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    func rightNavButton() {
-        // hide default navigation bar button item
-        self.navigationItem.rightBarButtonItem = nil;
-        
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        var xCoordinate = (self.view.frame.size.width - 20)
-        buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
-        buttonShare.setImage(UIImage(named:"button_share.png"), forState: UIControlState.Normal)
-        buttonShare.imageEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
-        buttonShare.addTarget(self, action: "shareTapped:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonShare)
-        
-        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
     }
     
     // Segue for Updating Scorecard
@@ -333,7 +300,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             nonApplicableRound(labelBoxerB12)
         }
         
-        if fight?.rounds == 6 {
+        if fight?.rounds == 4 {
+            
             nonApplicableRound(labelBoxerA5)
             nonApplicableRound(labelBoxerA6)
             nonApplicableRound(labelBoxerB5)

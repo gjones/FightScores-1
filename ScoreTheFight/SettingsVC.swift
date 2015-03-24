@@ -20,11 +20,12 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var labelInfo:           smallLabel!
     @IBOutlet weak var buttonSystem: UIButton!
     
+    var globalFunctions = globalHeaderFunctions()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rightNavButton()
         self.title = "Settings"
         labelInfo.text = "General Information"
         labelScores.text = "Scoring Rules"
@@ -34,6 +35,7 @@ class SettingsVC: UIViewController {
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         labelCopyright.text = "Copyright © \(getYear()), Gareth D Jones \nAll rights reserved."
         buttonSystem.setTitle("10 Point System", forState: .Normal)
+        globalFunctions.rightButton(self, image: "button_close.png")
     }
 
     
@@ -57,22 +59,6 @@ class SettingsVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func rightNavButton() {
-        self.navigationItem.rightBarButtonItem = nil;
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = true;
-        
-        let buttonShare: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        var xCoordinate = (self.view.frame.size.width - 20)
-        buttonShare.frame = CGRectMake(0, xCoordinate, 40, 40)
-        buttonShare.setImage(UIImage(named:"button_close.png"), forState: UIControlState.Normal)
-        buttonShare.imageEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
-        buttonShare.addTarget(self, action: "rightNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonShare)
-        
-        self.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
-    }
     
     func rightNavButtonClick(sender:UIButton!) {
         self.dismissViewControllerAnimated(true, completion: nil)

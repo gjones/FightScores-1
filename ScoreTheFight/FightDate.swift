@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FightDate: NSObject {
     func dateCalculator(date: NSDate) -> String {
@@ -78,6 +79,45 @@ class FightDate: NSObject {
         
         return timestamp
         
+    }
+
+}
+
+class globalHeaderFunctions: UIViewController {
+    
+    func rightButton(passingView: UIViewController, image: String) -> UIButton {
+        passingView.navigationItem.rightBarButtonItem = nil
+        passingView.navigationItem.hidesBackButton = true
+        
+        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton        
+        var xCoordinate = (passingView.view.frame.size.width - 20)
+        button.frame = CGRectMake(0, xCoordinate, 40, 40)
+        button.setImage(UIImage(named: image), forState: UIControlState.Normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 0.0)
+        button.addTarget(passingView, action: "rightNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: button)
+        
+        passingView.navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: false)
+        
+        return UIButton()
+    }
+    
+    func leftButton(passingView: UIViewController, image: String) -> UIButton {
+        passingView.navigationItem.leftBarButtonItem = nil
+        passingView.navigationItem.hidesBackButton = true
+        
+        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        button.frame = CGRectMake(0, 0, 40, 40)
+        button.setImage(UIImage(named:image), forState: UIControlState.Normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
+        button.addTarget(passingView, action: "leftNavButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: button)
+        
+        passingView.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: false)
+        
+        return UIButton()
     }
 
 }
