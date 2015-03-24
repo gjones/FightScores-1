@@ -19,9 +19,11 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var labelScores:         offWhiteLabel!
     @IBOutlet weak var labelInfo:           smallLabel!
     @IBOutlet weak var buttonSystem: UIButton!
+    @IBOutlet weak var buttonTwitter: SoftWhiteButton!
     
     var globalFunctions = globalHeaderFunctions()
-    
+    var twitterURL = "https://mobile.twitter.com/fightscoresapp"
+    var itunesURL = "itms://itunes.apple.com/us/app/fight-scores/id975691413?ls=1&mt=8"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,12 +79,15 @@ class SettingsVC: UIViewController {
     }
 
     @IBAction func buttonFeedback(sender: AnyObject) {
-        leaveReview()
+        externalLink(itunesURL)
     }
     
-    // Leave a review
-    func leaveReview() {
-        if let checkURL = NSURL(string: "itms://itunes.apple.com/us/app/fight-scores/id975691413?ls=1&mt=8") {
+    @IBAction func buttonTwitter(sender: AnyObject) {
+        externalLink(twitterURL)
+    }
+    
+    func externalLink(url: String) {
+        if let checkURL = NSURL(string: url) {
             if UIApplication.sharedApplication().openURL(checkURL) {
                 println("url successfully opened")
             }
@@ -90,5 +95,4 @@ class SettingsVC: UIViewController {
             println("invalid url")
         }
     }
-
 }
