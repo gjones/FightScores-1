@@ -11,6 +11,7 @@ import CoreData
 
 class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     
+    var fightDate = FightDate()
     var fight : Fight? {
         didSet {
             updateFightInfo()
@@ -106,50 +107,16 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
         
     }
-    
-    func dateCalculator(date: NSDate, label: UILabel) {
-        
-        /// Today
-        let rawDateToday = NSDate()
-        // Tomorrow
-        let rawDateTomorrow = NSCalendar.currentCalendar().dateByAddingUnit(
-            .CalendarUnitDay, value: 1, toDate: rawDateToday, options: NSCalendarOptions(0))
-        // Yesterday
-        let rawDateYesterday = NSCalendar.currentCalendar().dateByAddingUnit(
-            .CalendarUnitDay, value: -1, toDate: rawDateToday, options: NSCalendarOptions(0))
-        var rawDate = date as NSDate
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat  = "dd MMMM, yyyy"
-        
-        var timestamp = dateFormatter.stringFromDate(rawDate)
-        var todayTimestamp = dateFormatter.stringFromDate(rawDateToday)
-        var tomorrowTimestamp = dateFormatter.stringFromDate(rawDateTomorrow!)
-        var yesterdayTimestamp = dateFormatter.stringFromDate(rawDateYesterday!)
-        
-        
-        if timestamp == todayTimestamp {
-            label.text = "Today"
-        } else if timestamp == tomorrowTimestamp {
-            label.text = "Tomorrow"
-        } else if timestamp == yesterdayTimestamp {
-            label.text = "Yesterday"
-        } else {
-            label.text = timestamp
-        }
-        
-    }
-    
+
     func updateFightInfo() {
         
         if fight != nil && isViewLoaded() {
             
-            // Get nicely formatted date
-            dateCalculator(fight!.date, label: labelFightDate)
             // Set Label Values
             labelBoxerA.text =              fight!.boxerA
             labelBoxerB.text =              fight!.boxerB
             labelRounds.text =              "\(fight!.rounds) Rounds"
+            labelFightDate.text =           fightDate.dateCalculator(fight!.date)
             labelBoxerA_totalScore.text =   "\(fight!.boxerA_totalScore)"
             labelBoxerB_totalScore.text =   "\(fight!.boxerB_totalScore)"
             labelNotesTitle.text =          "Fight Notes"

@@ -30,60 +30,23 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     @IBOutlet weak var labelBoxerB: UILabel!
     @IBOutlet weak var labelRounds: UILabel!
     
+    var fightDate = FightDate()
     var fightDatePassed: NSDate!
     var managedObjectContext : NSManagedObjectContext?
-    var _fight : Fight?
-    var fight : Fight
-        {
-            if _fight == nil
-            {
-                _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
-            }
-            return _fight!
-    }
     
-    func dateCalculator(date: NSDate, label: UIButton) {
-        
-        /// Today
-        let rawDateToday = NSDate()
-        // Tomorrow
-        let rawDateTomorrow = NSCalendar.currentCalendar().dateByAddingUnit(
-            .CalendarUnitDay, value: 1, toDate: rawDateToday, options: NSCalendarOptions(0))
-        // Yesterday
-        let rawDateYesterday = NSCalendar.currentCalendar().dateByAddingUnit(
-            .CalendarUnitDay, value: -1, toDate: rawDateToday, options: NSCalendarOptions(0))
-        var rawDate = date as NSDate
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat  = "dd MMM, yyyy"
-        
-        var timestamp = dateFormatter.stringFromDate(rawDate)
-        var todayTimestamp = dateFormatter.stringFromDate(rawDateToday)
-        var tomorrowTimestamp = dateFormatter.stringFromDate(rawDateTomorrow!)
-        var yesterdayTimestamp = dateFormatter.stringFromDate(rawDateYesterday!)
-        
-        
-        if timestamp == todayTimestamp {
-            label.setTitle("Today", forState: .Normal)
-        } else if timestamp == tomorrowTimestamp {
-            label.setTitle("Tomorrow", forState: .Normal)
-        } else if timestamp == yesterdayTimestamp {
-            label.setTitle("Yesterday", forState: .Normal)
-        } else {
-            label.setTitle(timestamp, forState: .Normal)
+    var _fight : Fight?
+    var fight : Fight {
+        if _fight == nil {
+            _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
         }
-        
+        return _fight!
     }
-
     
     func doSomethingWithDate(date: NSDate) {
-          
-        // Set fight date as Date
         fight.date = date
         fightDatePassed = date
         
-        dateCalculator(date, label: buttonDate)
-
+        buttonDate.setTitle(fightDate.shortDateCalculator(date), forState: .Normal)
     }
     
     override func viewDidLoad() {

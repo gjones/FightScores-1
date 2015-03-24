@@ -19,6 +19,7 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var labelScores:         offWhiteLabel!
     @IBOutlet weak var labelInfo:           smallLabel!
     @IBOutlet weak var buttonSystem: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +30,34 @@ class SettingsVC: UIViewController {
         labelScores.text = "Scoring Rules"
         labelInformation.text = "About"
         labelVersion.text = "Version"
-        labelVersion2.text = "0.9.2"
+        labelVersion2.text = getVersion()
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
-        labelCopyright.text = "Copyright © 2015, Gareth D Jones \nAll rights reserved."
+        labelCopyright.text = "Copyright © \(getYear()), Gareth D Jones \nAll rights reserved."
         buttonSystem.setTitle("10 Point System", forState: .Normal)
     }
 
+    
+    func getYear() -> Int {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitYear, fromDate: date)
+        let year = components.year
+        return year
+    }
+    
+    func getVersion() -> String {
+        if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            return version
+        } else {
+            return "No Version"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func rightNavButton() {
-        // hide default navigation bar button item
         self.navigationItem.rightBarButtonItem = nil;
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
