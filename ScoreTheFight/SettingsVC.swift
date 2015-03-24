@@ -82,9 +82,7 @@ class SettingsVC: UIViewController {
     
     // Leave a review
     func leaveReview() {
-        if let checkURL = NSURL(string: "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8") {
-            // Actual link 
-            //"itms://itunes.apple.com/us/app/fight-scores/id975691413?ls=1&mt=8"
+        if let checkURL = NSURL(string: "itms://itunes.apple.com/us/app/fight-scores/id975691413?ls=1&mt=8") {
             if UIApplication.sharedApplication().openURL(checkURL) {
                 println("url successfully opened")
             }
