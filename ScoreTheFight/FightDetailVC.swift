@@ -146,7 +146,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             labelBoxerB11.text =             "\(fight!.boxerB_round11)"
             labelBoxerB12.text =             "\(fight!.boxerB_round12)"
             
-            if fight?.notes == "  " {
+            if fight?.notes == "" {
                 labelNotes.text = "There are currently no notes for this fight."
             } else {
                 labelNotes.text = fight!.notes
@@ -301,7 +301,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         }
         
         if fight?.rounds == 4 {
-            
             nonApplicableRound(labelBoxerA5)
             nonApplicableRound(labelBoxerA6)
             nonApplicableRound(labelBoxerB5)
