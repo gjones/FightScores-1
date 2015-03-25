@@ -35,6 +35,7 @@ class SettingsVC: UIViewController {
         labelVersion.text = "Version"
         labelVersion2.text = getVersion()
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
+        buttonTwitter.setTitle("Follow on Twitter", forState: .Normal)
         labelCopyright.text = "Copyright © \(getYear()), Gareth D Jones \nAll rights reserved."
         buttonSystem.setTitle("10 Point System", forState: .Normal)
         globalFunctions.rightButton(self, image: "button_close.png")

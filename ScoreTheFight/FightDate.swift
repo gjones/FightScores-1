@@ -44,7 +44,6 @@ class FightDate: NSObject {
         return timestamp
         
     }
-
     
     func shortDateCalculator(date: NSDate) -> String {
         
@@ -79,6 +78,30 @@ class FightDate: NSObject {
         
         return timestamp
         
+    }
+    
+    func establishDateContext(date: NSDate) -> String {
+        
+        // Input original dates
+        var rawDateToday = NSDate()
+        var rawDateSupplied = date
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat  = "dd MMMM, yyyy"
+        
+        var today = dateFormatter.stringFromDate(rawDateToday)
+        var suppliedDate = dateFormatter.stringFromDate(rawDateSupplied)
+        
+        var fightTense: String?
+        
+        if today.compare(suppliedDate) == NSComparisonResult.OrderedDescending {
+            fightTense = "Past"
+        } else if today == suppliedDate {
+            fightTense = "Present"
+        } else {
+            fightTense = "Future"
+        }
+        return fightTense!
     }
 
 }
