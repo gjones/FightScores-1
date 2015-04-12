@@ -69,7 +69,7 @@ class SettingsVC: UIViewController {
     
     @IBAction func buttonSystem(sender: AnyObject) {
         
-        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rulesVC") as RulesVC
+        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rulesVC") as! RulesVC
         
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)

@@ -44,7 +44,7 @@ class RulesVC: UIViewController {
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
         
-        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        let buttonBack: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         buttonBack.frame = CGRectMake(0, 0, 40, 40)
         buttonBack.setImage(UIImage(named:"button_back2.png"), forState: UIControlState.Normal)
         buttonBack.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)
@@ -56,7 +56,7 @@ class RulesVC: UIViewController {
     }
     
     func leftNavButtonClick(sender:UIButton!) {
-        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as SettingsVC
+        let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as! SettingsVC
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
@@ -72,7 +72,7 @@ class RulesVC: UIViewController {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
                 
-                let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as SettingsVC
+                let switchViewController = self.storyboard?.instantiateViewControllerWithIdentifier("settingsVC") as! SettingsVC
                 
                 UIView.animateWithDuration(0.4, animations: { () -> Void in
                     UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)

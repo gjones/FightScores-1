@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  FightScores
@@ -128,10 +129,10 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let fight = fights.fetchedObjects![indexPath.row] as Fight
+        let fight = fights.fetchedObjects![indexPath.row] as! Fight
         var identifier = "FightCell"
 
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as FightCell;
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
         cell.fight = fights.fetchedObjects![indexPath.row] as? Fight
         return cell
     }
@@ -139,7 +140,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
     }
     
-    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath!) {
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch(type) {
         case .Insert:
             if let newIndexPath = newIndexPath {
@@ -162,7 +163,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         forRowAtIndexPath indexPath: NSIndexPath) {
             
             if editingStyle == .Delete {
-                let fight = fights.fetchedObjects![indexPath.row] as Fight
+                let fight = fights.fetchedObjects![indexPath.row] as! Fight
                 stack.context.deleteObject(fight)
                 stack.save()
             }
@@ -195,12 +196,12 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         {
             let context = NSManagedObjectContext(concurrencyType: .ConfinementConcurrencyType)
             context.parentContext = stack.context
-            let navController = segue.destinationViewController as UINavigationController
-            let nextViewController = navController.topViewController as CreateFightVC
+            let navController = segue.destinationViewController as! UINavigationController
+            let nextViewController = navController.topViewController as! CreateFightVC
             nextViewController.managedObjectContext = context
         }
         if segue.identifier == "fightDetail" {
-            let detailView = segue.destinationViewController as FightDetailVC
+            let detailView = segue.destinationViewController as! FightDetailVC
                 if let selectedIndex = fightTableView.indexPathForSelectedRow() {
                     if let objects = fights.fetchedObjects {
                         detailView.fight = objects[selectedIndex.row] as? Fight

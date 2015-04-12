@@ -229,7 +229,12 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
                 // Excluded Activities Code
                 activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
             
-                self.presentViewController(activityViewController, animated: true, completion: nil)
+                if respondsToSelector("popoverPresentationController") {
+                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                    activityViewController.popoverPresentationController?.sourceView = sender
+                } else {
+                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                }
             
             } else {
                 let objectsToShare = [textToShare]
@@ -237,7 +242,13 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             
                 // Excluded Activities Code
                 activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
-                self.presentViewController(activityViewController, animated: true, completion: nil)
+                
+                if respondsToSelector("popoverPresentationController") {
+                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                    activityViewController.popoverPresentationController?.sourceView = sender
+                } else {
+                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -252,7 +263,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         // Specify specific segue, prevents nil
         if segue.identifier == "scorecardSegue" {
             
-            let navController = segue.destinationViewController as UINavigationController
+            let navController = segue.destinationViewController as! UINavigationController
             
             let delayTime = dispatch_time(DISPATCH_TIME_NOW,
                 Int64(0.25 * Double(NSEC_PER_SEC)))
@@ -260,7 +271,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
                 self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             }
             
-            let scorecardVC = navController.topViewController as ScorecardVC
+            let scorecardVC = navController.topViewController as! ScorecardVC
             scorecardVC.delegate = self
             scorecardVC.fight = fight! as Fight
         }
