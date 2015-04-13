@@ -112,7 +112,7 @@ class globalHeaderFunctions: UIViewController {
         passingView.navigationItem.rightBarButtonItem = nil
         passingView.navigationItem.hidesBackButton = true
         
-        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton        
+        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton        
         var xCoordinate = (passingView.view.frame.size.width - 20)
         button.frame = CGRectMake(0, xCoordinate, 40, 40)
         button.setImage(UIImage(named: image), forState: UIControlState.Normal)
@@ -130,7 +130,7 @@ class globalHeaderFunctions: UIViewController {
         passingView.navigationItem.leftBarButtonItem = nil
         passingView.navigationItem.hidesBackButton = true
         
-        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         button.frame = CGRectMake(0, 0, 40, 40)
         button.setImage(UIImage(named:image), forState: UIControlState.Normal)
         button.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 20.0)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="v2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="v2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Fight" representedClassName="Fight" syncable="YES">
         <attribute name="boxerA" optional="YES" attributeType="String" defaultValueString="Boxer A" syncable="YES"/>
         <attribute name="boxerA_round1" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>

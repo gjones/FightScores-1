@@ -9,32 +9,25 @@
 import UIKit
 
 class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
-    
-    // MARK: - Type Work 
-    
-    typealias CalendarView = CVCalendarView
-    typealias ContentDelegate = CVCalendarContentDelegate
-    typealias CalendarMode = CVCalendarViewMode
-    typealias MonthContent = CVCalendarMonthContentView
-    typealias WeekContent = CVCalendarWeekContentView
-    typealias MonthView = CVCalendarMonthView
-    typealias DayView = CVCalendarDayView
+    // MARK: - Public Properties
+    let calendarView: CalendarView
+    var presentedMonthView: MonthView
+    var bounds: CGRect {
+        return scrollView.bounds
+    }
     
     // MARK: - Private Properties
-    
-    let calendarView: CalendarView!
-    var presentedMonthView: MonthView!
-    
-    private let scrollView: UIScrollView!
-    private let delegate: ContentDelegate!
+    private let scrollView: UIScrollView
+    private var delegate: ContentDelegate!
 
     // MARK: - Initialization 
     
     init(calendarView: CalendarView, frame: CGRect) {
-        super.init()
-        
         self.calendarView = calendarView
-        self.scrollView = UIScrollView(frame: frame)
+        scrollView = UIScrollView(frame: frame)
+        presentedMonthView = MonthView(calendarView: calendarView, date: NSDate())
+        
+        super.init(nibName: nil, bundle: nil)
         
         // Setup Scroll View. 
         scrollView.contentSize = CGSizeMake(frame.width * 3, frame.height)
@@ -42,19 +35,12 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
         scrollView.pagingEnabled = true
         scrollView.delegate = self
         
-        presentedMonthView = MonthView(calendarView: calendarView, date: NSDate())
         
         if calendarView.calendarMode == CalendarMode.MonthView {
-            delegate = MonthContent(contentController: self)
-            println("Scroll View: \(scrollView)")
+            delegate = MonthContentView(contentController: self)
         } else {
-            delegate = WeekContent(contentController: self)
-            println("Scroll View: \(scrollView)")
+            delegate = WeekContentView(contentController: self)
         }
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -64,18 +50,12 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - View Control 
     
     func preparedScrollView() -> UIScrollView {
-        if let scrollView = self.scrollView {
-            return scrollView
-        } else {
-            return UIScrollView()
-        }
+        return scrollView
     }
     
     // MARK: - Appearance Update 
     
     func updateFrames(frame: CGRect) {
-        println("Updating 1")
-        
         presentedMonthView.updateAppearance(frame)
         
         scrollView.frame = frame
@@ -87,10 +67,9 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func reloadFrames(frame: CGRect) {
-        println("Updating 2")
         scrollView.frame = frame
         scrollView.contentSize = CGSizeMake(frame.size.width, frame.size.height)
-
+        
         delegate.updateFrames()
         
         calendarView.hidden = false
@@ -99,15 +78,19 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Scroll View Delegate 
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        delegate.scrollViewDidScroll(scrollView)
+        delegate.scrollViewDidScroll!(scrollView)
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        delegate.scrollViewWillBeginDragging(scrollView)
+        delegate.scrollViewWillBeginDragging!(scrollView)
     }
 
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        delegate.scrollViewDidEndDecelerating(scrollView)
+        delegate.scrollViewDidEndDecelerating!(scrollView)
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        delegate.scrollViewDidEndDragging!(scrollView, willDecelerate: decelerate)
     }
     
     // MARK: - Day View Selection

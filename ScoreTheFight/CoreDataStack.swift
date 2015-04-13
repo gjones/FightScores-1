@@ -63,7 +63,7 @@ import CoreData
     
     var storeURL : NSURL {
         var storePaths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
-        let storePath = storePaths[0] as String
+        let storePath = storePaths[0] as! String
         let fileManager = NSFileManager.defaultManager()
         
         fileManager.createDirectoryAtPath(storePath, withIntermediateDirectories:

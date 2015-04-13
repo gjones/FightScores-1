@@ -39,7 +39,7 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         
         var header_bg = UIImage(named: "header_bg.png")
         viewHeader.backgroundColor =  UIColor(patternImage:header_bg!)
-        self.monthLabel.text = CVDate(date: NSDate()).description()
+        self.monthLabel.text = CVDate(date: NSDate()).description
         
         if fightDate != nil {
             self.calendarView.toggleMonthViewWithDate(fightDate)
@@ -117,7 +117,7 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         fightDate = dateFormatter.dateFromString(dateString)
-        
+        println(dateString)
     }
     
     @IBAction func confirmDate(sender: AnyObject) {
@@ -155,7 +155,7 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     }
     
     func presentedDateUpdated(date: CVDate) {
-        if self.monthLabel.text != date.description() && self.animationFinished {
+        if self.monthLabel.text != date.description && self.animationFinished {
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
             updatedMonthLabel.font = monthLabel.font
@@ -193,10 +193,22 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     
     @IBAction func rewindButtonAction(sender: UIButton) {
         self.calendarView.loadPreviousMonthView()
+        buttonRewind.enabled = false
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.buttonRewind.enabled = true
+        }
     }
     
     @IBAction func forwardButtonAction(sender: UIButton) {
         self.calendarView.loadNextMonthView()
+        buttonForward.enabled = false
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.buttonForward.enabled = true
+        }
     }
     
     func toggleMonthViewWithMonthOffset(offset: Int) {
