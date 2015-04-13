@@ -188,7 +188,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
-        
+        println(fight?.context)
 
     }
     

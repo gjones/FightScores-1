@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="v2" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Fight" representedClassName="Fight" syncable="YES">
+        <attribute name="boxerA" optional="YES" attributeType="String" defaultValueString="Boxer A" syncable="YES"/>
+        <attribute name="boxerA_round1" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round2" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round3" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round4" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round5" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round6" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round7" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round8" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round9" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round10" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round11" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_round12" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerA_totalScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB" optional="YES" attributeType="String" defaultValueString="Boxer B" syncable="YES"/>
+        <attribute name="boxerB_round1" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round2" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round3" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round4" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round5" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round6" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round7" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round8" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round9" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round10" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round11" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_round12" optional="YES" attributeType="Integer 32" maxValueString="10" defaultValueString="0" syncable="YES"/>
+        <attribute name="boxerB_totalScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="context" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" defaultValueString="  " syncable="YES"/>
+        <attribute name="rounds" optional="YES" attributeType="Integer 32" maxValueString="12" defaultValueString="12" syncable="YES"/>
+        <attribute name="winner" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fight" positionX="-63" positionY="-18" width="128" height="540"/>
+    </elements>
+</model>

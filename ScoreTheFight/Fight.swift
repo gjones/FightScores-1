@@ -45,6 +45,7 @@ class Fight: NSManagedObject {
     @NSManaged var notes: String
     @NSManaged var rounds: NSNumber
     @NSManaged var winner: String
+    @NSManaged var context: String
     
     override func awakeFromInsert()
     {

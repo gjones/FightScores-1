@@ -20,6 +20,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var labelNoFights: UILabel!
     @IBOutlet weak var buttonSettings: UIButton!
     @IBOutlet weak var buttonNoFights: UIButton!
+    var fightDate = FightDate()
     
     lazy var stack : CoreDataStack = {
         let options =
@@ -139,6 +140,8 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let fight = fights.fetchedObjects![indexPath.row] as! Fight
+        var setContext = fightDate.establishDateContext(fight.date)
+        fight.context = setContext
         var identifier = "FightCell"
 
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
