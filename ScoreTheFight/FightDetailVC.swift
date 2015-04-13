@@ -29,6 +29,8 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     @IBOutlet weak var labelNotes:              UILabel!
     @IBOutlet weak var labelNotesTitle:         UILabel!
     @IBOutlet weak var buttonUpdateScorecard:   UIButton!
+    @IBOutlet var barButtonShare: UIBarButtonItem!
+    @IBOutlet var shareLabel: UILabel!
     
     // Set Round Labels
     @IBOutlet weak var label1:  UILabel!
@@ -231,7 +233,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             
                 if respondsToSelector("popoverPresentationController") {
                     self.presentViewController(activityViewController, animated: true, completion: nil)
-                    activityViewController.popoverPresentationController?.sourceView = sender
+                    activityViewController.popoverPresentationController?.sourceView = self.shareLabel
                 } else {
                     self.presentViewController(activityViewController, animated: true, completion: nil)
                 }
@@ -245,7 +247,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
                 
                 if respondsToSelector("popoverPresentationController") {
                     self.presentViewController(activityViewController, animated: true, completion: nil)
-                    activityViewController.popoverPresentationController?.sourceView = sender
+                    activityViewController.popoverPresentationController?.sourceView = self.labelRounds
                 } else {
                     self.presentViewController(activityViewController, animated: true, completion: nil)
                 }

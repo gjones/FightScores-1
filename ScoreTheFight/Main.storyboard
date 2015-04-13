@@ -999,10 +999,21 @@
                                                     <rect key="frame" x="473" y="124" width="48" height="28"/>
                                                 </variation>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-b2-Lnk">
+                                                <rect key="frame" x="268" y="0.0" width="42" height="2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="42" id="4Ip-BE-aQe"/>
+                                                    <constraint firstAttribute="height" constant="2" id="DmJ-5Y-bym"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="4SW-jy-K5g" firstAttribute="leading" secondItem="y0Y-sv-aMU" secondAttribute="trailing" id="0Ce-CH-MS2"/>
                                             <constraint firstAttribute="trailing" secondItem="cFH-al-DPK" secondAttribute="trailing" id="1ck-QY-ZKW"/>
+                                            <constraint firstItem="cTh-b2-Lnk" firstAttribute="top" secondItem="5GS-HJ-mmU" secondAttribute="top" id="29Q-kB-2d9"/>
                                             <constraint firstItem="7IQ-A3-R21" firstAttribute="top" secondItem="TBb-07-QTr" secondAttribute="bottom" id="2Yr-1z-saR"/>
                                             <constraint firstItem="Qe1-Eg-BQ1" firstAttribute="top" secondItem="efG-Ut-QHN" secondAttribute="bottom" id="3aL-at-6Vm"/>
                                             <constraint firstItem="hJz-YW-Flj" firstAttribute="leading" secondItem="Fre-MX-JcE" secondAttribute="trailing" constant="25" id="41S-uK-UnS"/>
@@ -1094,6 +1105,7 @@
                                             <constraint firstItem="y0Y-sv-aMU" firstAttribute="width" secondItem="efG-Ut-QHN" secondAttribute="width" id="XNn-Py-F5W"/>
                                             <constraint firstItem="Fre-MX-JcE" firstAttribute="top" secondItem="xU9-X6-8RH" secondAttribute="bottom" constant="16" id="XvW-iI-cB7"/>
                                             <constraint firstItem="yIn-dP-f7Y" firstAttribute="leading" secondItem="fq8-J7-cFj" secondAttribute="trailing" id="YVv-3P-V5X"/>
+                                            <constraint firstAttribute="trailing" secondItem="cTh-b2-Lnk" secondAttribute="trailing" constant="10" id="YaY-mu-yIE"/>
                                             <constraint firstItem="qMi-n4-qpG" firstAttribute="top" secondItem="Fre-MX-JcE" secondAttribute="bottom" id="YdY-Q4-3UC"/>
                                             <constraint firstItem="iHd-nG-DPJ" firstAttribute="width" secondItem="Qe1-Eg-BQ1" secondAttribute="width" id="Z6b-Ai-Ecs"/>
                                             <constraint firstItem="Fjm-7a-6x4" firstAttribute="leading" secondItem="hJz-YW-Flj" secondAttribute="trailing" id="ZEj-xM-9Lo"/>
@@ -1294,6 +1306,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="barButtonShare" destination="qtd-5t-u4b" id="qDJ-nZ-drd"/>
                         <outlet property="buttonUpdateScorecard" destination="ByG-jF-C8L" id="jXo-a8-iNK"/>
                         <outlet property="label1" destination="TBb-07-QTr" id="D1F-Fi-ovN"/>
                         <outlet property="label10" destination="efG-Ut-QHN" id="F23-vJ-sVF"/>
@@ -1340,6 +1353,7 @@
                         <outlet property="labelNotesTitle" destination="fi8-sQ-fif" id="nWf-Qo-rdc"/>
                         <outlet property="labelRounds" destination="cpd-VB-r2Q" id="if1-Z3-iHs"/>
                         <outlet property="scrollView" destination="vjT-W0-AKW" id="6Zj-8j-SrF"/>
+                        <outlet property="shareLabel" destination="cTh-b2-Lnk" id="sIK-EG-MSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbt-PI-lsR" userLabel="First Responder" sceneMemberID="firstResponder"/>

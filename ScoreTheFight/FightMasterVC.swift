@@ -68,17 +68,26 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        fights.performFetch(nil)
-        fightTableView.reloadData()
         fightTableView.backgroundColor = UIColor .clearColor()
         stack.updateContextWithUbiquitousContentUpdates = true
-        
+        self.fights.performFetch(nil)
+        self.fightTableView.reloadData()
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        
+
         labelNoFights.alpha = 0.0
         buttonNoFights.alpha = 0.0
         
+    }
+    
+    override func viewDidLoad() {
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(1.0 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.stack.updateContextWithUbiquitousContentUpdates = true
+            self.fights.performFetch(nil)
+            self.fightTableView.reloadData()
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {
