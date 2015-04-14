@@ -12,6 +12,7 @@ class SettingsVC: UIViewController {
     
     @IBOutlet weak var labelInformation:    smallLabel!
     @IBOutlet weak var labelVersion:        UILabel!
+    @IBOutlet var labelFilters: offWhiteLabel!
     @IBOutlet weak var labelVersion2:       UILabel!
     @IBOutlet weak var labelCopyright:      smallLabel!
     @IBOutlet weak var viewInformationRow:  UIView!
@@ -20,6 +21,7 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var labelInfo:           smallLabel!
     @IBOutlet weak var buttonSystem: UIButton!
     @IBOutlet weak var buttonTwitter: SoftWhiteButton!
+    @IBOutlet var switchFilters: UISwitch!
     
     var globalFunctions = globalHeaderFunctions()
     var twitterURL = "https://mobile.twitter.com/fightscoresapp"
@@ -34,6 +36,7 @@ class SettingsVC: UIViewController {
         labelInformation.text = "About"
         labelVersion.text = "Version"
         labelVersion2.text = getVersion()
+        labelFilters.text = "Show Date Filters"
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         buttonTwitter.setTitle("Follow on Twitter", forState: .Normal)
         labelCopyright.text = "Copyright © \(getYear()), Gareth D Jones \nAll rights reserved."
@@ -62,6 +65,13 @@ class SettingsVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func switchValueChanged(sender: UISwitch) {
+        if sender.on {
+            println("Filters are on!")
+        } else {
+            println("Filters are off!")
+        }
+    }
     
     func rightNavButtonClick(sender:UIButton!) {
         self.dismissViewControllerAnimated(true, completion: nil)

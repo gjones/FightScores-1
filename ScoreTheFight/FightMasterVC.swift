@@ -21,8 +21,10 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var buttonSettings: UIButton!
     @IBOutlet weak var buttonNoFights: UIButton!
     @IBOutlet var buttonFilter: UIButton!
-    @IBOutlet var segmentFightContext: StandardSegmentedControl!
-    
+    @IBOutlet var segmentedControl: CustomSegmentedControl!
+
+
+    @IBOutlet var constraintTableToSuperView: NSLayoutConstraint!
     var fightDate = FightDate()
     
     lazy var stack : CoreDataStack = {
@@ -59,17 +61,27 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var _fetchedFightsController : NSFetchedResultsController? = nil
     
-    // Set Predicates
-    let todayPredicate = NSPredicate(format: "context == %@", "Today")
-    let futurePredicate = NSPredicate(format: "context == %@", "Future")
-    let pastPredicate = NSPredicate(format: "context == %@", "Past")
+    // MARK: Segmented Control
     
-    let allPredicate = NSPredicate(format: "context == %@", "Past")
-    
+    func showFilters(filtersOn: Bool) {
+        let filtersOn = filtersOn
+        var result: Bool?
+        var constraint: CGFloat?
+        if filtersOn == true {
+            result = false
+            constraint = 85
+        } else if filtersOn == false {
+            result = true
+            constraint = 10
+        }
+        
+        segmentedControl.hidden = result!
+       // constraintTableToSuperView.constant = constraint!
+    }
     
     @IBAction func changeFightContext(sender: AnyObject) {
         
-        if segmentFightContext.selectedSegmentIndex == 0 {
+        if segmentedControl.selectedIndex == 0 {
             println("Showing All Fights")
             fetchedFightsController.fetchRequest.predicate = nil
             self.fetchedFightsController.performFetch(nil)
@@ -77,21 +89,21 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             println("All Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
             
             
-        } else if segmentFightContext.selectedSegmentIndex == 1 {
+        } else if segmentedControl.selectedIndex == 1 {
             println("Showing Today's Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Today")
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             println("Todays Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
             
-        } else if segmentFightContext.selectedSegmentIndex == 2 {
+        } else if segmentedControl.selectedIndex == 2 {
             println("Showing Future Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Future")
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             println("Future Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
             
-        } else if segmentFightContext.selectedSegmentIndex == 3 {
+        } else if segmentedControl.selectedIndex == 3 {
             println("Showing Past Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Past")
             self.fetchedFightsController.performFetch(nil)
@@ -127,10 +139,15 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.fightTableView.reloadData()
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-
-        labelNoFights.alpha = 0.0
-        buttonNoFights.alpha = 0.0
+        showFilters(true)
+        labelNoFights.hidden = true
+        buttonNoFights.hidden = true
         
+        segmentedControl.items = ["All", "Today", "Future", "Past"]
+        segmentedControl.font = UIFont(name: "HelveticaNeue-Light", size: 12)
+        segmentedControl.borderColor = UIColor(white: 1.0, alpha: 0.3)
+        segmentedControl.thumbColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        segmentedControl.addTarget(self, action: "changeFightContext:", forControlEvents: .ValueChanged)
     }
     
     override func viewDidLoad() {
@@ -178,9 +195,17 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     // These two don't do much yet
     var fightCount : Int {
-        return fetchedFightsController.sections![0].numberOfObjects
-    }
+        var count: Int?
+        if fetchedFightsController.fetchRequest.predicate == nil {
+            count = fetchedFightsController.sections![0].numberOfObjects
+        } else if fetchedFightsController.fetchRequest.predicate == NSPredicate(format: "context == %@", "Future") {
+            count = fetchedFightsController.sections![0].numberOfObjects
+        }
+        
+        return count!
     
+    }
+
     func getFightAtIndexPath(indexPath : NSIndexPath) -> Fight {
         return fetchedFightsController.objectAtIndexPath(indexPath) as! Fight
     }
@@ -191,10 +216,13 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         if let objects = objects {
             if objects.count == 0 {
                 labelNoFights.alpha = 0.3
-                buttonNoFights.alpha = 1.0
-                buttonSettings.alpha = 0.0
+                buttonNoFights.hidden = false
+                buttonSettings.hidden = true
             } else {
+                labelNoFights.hidden = true
+                buttonNoFights.hidden = true
                 buttonSettings.alpha = 0.7
+                buttonSettings.hidden = false
             }
             return objects.count
         }
