@@ -34,10 +34,34 @@
                                     <segue destination="FR1-WP-GgK" kind="show" identifier="createFight" id="tYH-c8-SqP"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="neM-DU-7NE" customClass="StandardTableView" customModule="FightScores" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="21" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="neM-DU-7NE" customClass="StandardTableView" customModule="FightScores" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="85" width="320" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="9z7-3Q-pWb" userLabel="Control View">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vxE-ct-WDc" customClass="StandardSegmentedControl" customModule="FightScores" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="4" width="288" height="29"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Today"/>
+                                                <segment title="Future"/>
+                                                <segment title="Past"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changeFightContext:" destination="vXZ-lx-hvc" eventType="valueChanged" id="AgF-Qk-37w"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="vxE-ct-WDc" secondAttribute="trailing" constant="16" id="1D0-Kn-f71"/>
+                                        <constraint firstItem="vxE-ct-WDc" firstAttribute="top" secondItem="9z7-3Q-pWb" secondAttribute="top" constant="4" id="7QP-iY-bkI"/>
+                                        <constraint firstItem="vxE-ct-WDc" firstAttribute="leading" secondItem="9z7-3Q-pWb" secondAttribute="leading" constant="16" id="ubn-Dl-sxo"/>
+                                    </constraints>
+                                </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="luY-xK-ejk">
                                     <rect key="frame" x="0.0" y="103" width="320" height="82"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,19 +95,6 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs0-w0-0J7">
-                                            <rect key="frame" x="16" y="24" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="exj-fh-DcJ"/>
-                                                <constraint firstAttribute="width" constant="20" id="zgc-ai-WZR"/>
-                                            </constraints>
-                                            <state key="normal" image="button_filter">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="2PZ-Ig-8aq" kind="presentation" id="L9S-ED-i4C"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -97,8 +108,6 @@
                                         <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="34" id="eV8-uy-rua"/>
                                         <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="16" id="gVB-M9-5qb"/>
                                         <constraint firstAttribute="trailing" secondItem="dIc-qY-ulQ" secondAttribute="trailing" constant="64" id="h3k-5h-AG1"/>
-                                        <constraint firstItem="Bs0-w0-0J7" firstAttribute="top" secondItem="luY-xK-ejk" secondAttribute="top" constant="24" id="jlU-gD-uwq"/>
-                                        <constraint firstItem="Bs0-w0-0J7" firstAttribute="leading" secondItem="luY-xK-ejk" secondAttribute="leading" constant="16" id="xTJ-aB-d50"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -270,179 +279,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addFightButton" destination="vlX-Fl-dbj" id="qWX-lf-DvR"/>
-                        <outlet property="buttonFilter" destination="Bs0-w0-0J7" id="SdV-Ml-uY0"/>
                         <outlet property="buttonNoFights" destination="PEr-9w-rgo" id="IoH-Rk-XOa"/>
                         <outlet property="buttonSettings" destination="QwV-im-VNm" id="qKT-Md-vPy"/>
                         <outlet property="fightTableView" destination="neM-DU-7NE" id="16s-D0-Hw4"/>
                         <outlet property="labelNoFights" destination="dIc-qY-ulQ" id="LrB-Sr-xJX"/>
+                        <outlet property="segmentFightContext" destination="vxE-ct-WDc" id="HnI-0m-mvc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1646" y="380"/>
-        </scene>
-        <!--Fight FiltersVC-->
-        <scene sceneID="aUm-Ez-zQO">
-            <objects>
-                <viewController id="gwY-F7-p7u" customClass="FightFiltersVC" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WPN-WB-uMJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="1QP-Cl-wNm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oNz-I2-6St">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4u-QY-DpW" userLabel="Background View" customClass="BackgroundView" customModule="FightScores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-s9-qqX">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NH-gM-xFb" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-nX-ABx" userLabel="Show All" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="45" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="NdZ-Iy-PCi"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Option 1">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonFeedback:" destination="13E-sn-TmR" eventType="touchUpInside" id="un9-qV-8V2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knm-du-Zpk" userLabel="Show Today" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="95" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="MIg-Qr-qdp"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Option 2">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonFeedback:" destination="13E-sn-TmR" eventType="touchUpInside" id="xj0-Hw-Gmd"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNc-uh-ajb" userLabel="Show Future" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="145" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="242-CP-wL1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="-15" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Option 3">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonFeedback:" destination="13E-sn-TmR" eventType="touchUpInside" id="vHQ-sM-cyF"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-Ha-R2s" userLabel="Show Future" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="195" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ZtF-uk-rMR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Option 4">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonFeedback:" destination="13E-sn-TmR" eventType="touchUpInside" id="j0l-nc-xdB"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX fights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkz-N9-AYQ" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="174" width="82" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="82" id="SXB-vz-bXR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="sNc-uh-ajb" firstAttribute="top" secondItem="knm-du-Zpk" secondAttribute="bottom" id="8dX-eQ-qJV"/>
-                                            <constraint firstItem="Mkz-N9-AYQ" firstAttribute="leading" secondItem="5NH-gM-xFb" secondAttribute="leading" constant="16" id="Afy-N9-tq0"/>
-                                            <constraint firstItem="knm-du-Zpk" firstAttribute="top" secondItem="fcm-nX-ABx" secondAttribute="bottom" id="L9S-uJ-zoU"/>
-                                            <constraint firstAttribute="trailing" secondItem="PnQ-Ha-R2s" secondAttribute="trailing" id="Nbo-6X-60V"/>
-                                            <constraint firstAttribute="trailing" secondItem="fcm-nX-ABx" secondAttribute="trailing" id="NrV-zY-bnu"/>
-                                            <constraint firstAttribute="trailing" secondItem="knm-du-Zpk" secondAttribute="trailing" id="O9Y-Zk-XIp"/>
-                                            <constraint firstItem="knm-du-Zpk" firstAttribute="leading" secondItem="5NH-gM-xFb" secondAttribute="leading" id="Wf0-Tn-dwd"/>
-                                            <constraint firstItem="sNc-uh-ajb" firstAttribute="leading" secondItem="5NH-gM-xFb" secondAttribute="leading" id="Xah-sL-chD"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mkz-N9-AYQ" secondAttribute="trailing" constant="222" id="l5z-qQ-xzW"/>
-                                            <constraint firstItem="PnQ-Ha-R2s" firstAttribute="top" secondItem="sNc-uh-ajb" secondAttribute="bottom" id="mw7-9t-q3a"/>
-                                            <constraint firstItem="PnQ-Ha-R2s" firstAttribute="leading" secondItem="5NH-gM-xFb" secondAttribute="leading" id="qj5-6j-fCO"/>
-                                            <constraint firstItem="fcm-nX-ABx" firstAttribute="leading" secondItem="5NH-gM-xFb" secondAttribute="leading" id="sfh-q0-tK2"/>
-                                            <constraint firstAttribute="trailing" secondItem="sNc-uh-ajb" secondAttribute="trailing" id="tmL-wd-YJF"/>
-                                            <constraint firstItem="Mkz-N9-AYQ" firstAttribute="top" secondItem="sNc-uh-ajb" secondAttribute="bottom" constant="-21" id="zAb-LQ-zqu"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="general info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpI-GF-BE3" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="16" width="150" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="dFv-4b-DsZ"/>
-                                            <constraint firstAttribute="width" constant="150" id="j8n-yh-KW7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="5NH-gM-xFb" firstAttribute="top" secondItem="SqA-s9-qqX" secondAttribute="top" id="1QU-Vi-0uZ"/>
-                                    <constraint firstItem="5NH-gM-xFb" firstAttribute="leading" secondItem="SqA-s9-qqX" secondAttribute="leading" id="AU3-vi-pks"/>
-                                    <constraint firstAttribute="trailing" secondItem="5NH-gM-xFb" secondAttribute="trailing" id="Br2-a3-k6G"/>
-                                    <constraint firstItem="JpI-GF-BE3" firstAttribute="leading" secondItem="SqA-s9-qqX" secondAttribute="leading" constant="16" id="Eaf-UF-PnB"/>
-                                    <constraint firstAttribute="bottom" secondItem="5NH-gM-xFb" secondAttribute="bottom" id="JbB-DM-IKk"/>
-                                    <constraint firstItem="fcm-nX-ABx" firstAttribute="top" secondItem="JpI-GF-BE3" secondAttribute="bottom" constant="8" id="hqY-yL-drP"/>
-                                    <constraint firstItem="JpI-GF-BE3" firstAttribute="top" secondItem="SqA-s9-qqX" secondAttribute="top" constant="16" id="pY7-BS-u7R"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="X4u-QY-DpW" firstAttribute="leading" secondItem="oNz-I2-6St" secondAttribute="leading" id="1Qc-Hd-s0e"/>
-                            <constraint firstItem="5NH-gM-xFb" firstAttribute="width" secondItem="oNz-I2-6St" secondAttribute="width" id="2BD-k6-izk"/>
-                            <constraint firstAttribute="trailing" secondItem="SqA-s9-qqX" secondAttribute="trailing" id="4Hb-25-Wl3"/>
-                            <constraint firstAttribute="trailing" secondItem="X4u-QY-DpW" secondAttribute="trailing" id="6sB-oT-11c"/>
-                            <constraint firstAttribute="trailing" secondItem="X4u-QY-DpW" secondAttribute="trailing" id="EVh-l8-NVV"/>
-                            <constraint firstItem="SqA-s9-qqX" firstAttribute="leading" secondItem="oNz-I2-6St" secondAttribute="leading" id="KVQ-q3-ZHF"/>
-                            <constraint firstItem="X4u-QY-DpW" firstAttribute="top" secondItem="WPN-WB-uMJ" secondAttribute="bottom" id="MOR-qp-WaV"/>
-                            <constraint firstItem="SqA-s9-qqX" firstAttribute="top" secondItem="WPN-WB-uMJ" secondAttribute="bottom" id="OCR-nO-Kbz"/>
-                            <constraint firstItem="5NH-gM-xFb" firstAttribute="height" secondItem="oNz-I2-6St" secondAttribute="height" id="WCg-Xx-A49"/>
-                            <constraint firstItem="X4u-QY-DpW" firstAttribute="leading" secondItem="oNz-I2-6St" secondAttribute="leading" id="b9w-en-wnS"/>
-                            <constraint firstItem="1QP-Cl-wNm" firstAttribute="top" secondItem="X4u-QY-DpW" secondAttribute="bottom" id="jbj-Y1-zdc"/>
-                            <constraint firstItem="1QP-Cl-wNm" firstAttribute="top" secondItem="SqA-s9-qqX" secondAttribute="bottom" id="xoT-6S-gq7"/>
-                            <constraint firstItem="1QP-Cl-wNm" firstAttribute="top" secondItem="X4u-QY-DpW" secondAttribute="bottom" id="yEg-iU-ibx"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="b8b-ix-bQZ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="buttonShowAll" destination="fcm-nX-ABx" id="aiQ-oC-arA"/>
-                        <outlet property="buttonShowFuture" destination="sNc-uh-ajb" id="RMp-iP-TNx"/>
-                        <outlet property="buttonShowPast" destination="PnQ-Ha-R2s" id="94h-8B-XKB"/>
-                        <outlet property="buttonShowToday" destination="knm-du-Zpk" id="Okx-KP-OZ6"/>
-                        <outlet property="labelFilter" destination="JpI-GF-BE3" id="fU2-P8-MWb"/>
-                        <outlet property="labelFutureFightCount" destination="Mkz-N9-AYQ" id="Lr4-b0-qVp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofz-5X-5fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2107" y="-293"/>
         </scene>
         <!--Fight DetailVC-->
         <scene sceneID="3ld-wb-vfM">
@@ -3703,24 +3549,6 @@
             </objects>
             <point key="canvasLocation" x="2041" y="1421"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Hbq-G0-Vco">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2PZ-Ig-8aq" customClass="NavigationController" customModule="FightScores" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wC3-er-FL9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gwY-F7-p7u" kind="relationship" relationship="rootViewController" id="L4O-Nh-uWw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="134-u1-kMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1646" y="-293"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Add" width="60" height="60"/>
@@ -3728,7 +3556,6 @@
         <image name="button_calendar" width="21" height="16"/>
         <image name="button_close" width="17" height="17"/>
         <image name="button_confirm" width="19" height="15"/>
-        <image name="button_filter" width="15" height="15"/>
         <image name="button_forward" width="18" height="17"/>
         <image name="button_next" width="10" height="17"/>
         <image name="button_rewind" width="18" height="17"/>

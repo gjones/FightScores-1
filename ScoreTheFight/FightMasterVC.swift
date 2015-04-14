@@ -21,6 +21,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var buttonSettings: UIButton!
     @IBOutlet weak var buttonNoFights: UIButton!
     @IBOutlet var buttonFilter: UIButton!
+    @IBOutlet var segmentFightContext: StandardSegmentedControl!
     
     var fightDate = FightDate()
     
@@ -56,22 +57,54 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    lazy var futureFightsPredicate: NSPredicate = {
-        var predicate =
-        NSPredicate(format: "fight.context == %@", "Future")
-        return predicate
-        }()
-    
-    
     var _fetchedFightsController : NSFetchedResultsController? = nil
+    
+    // Set Predicates
+    let todayPredicate = NSPredicate(format: "context == %@", "Today")
+    let futurePredicate = NSPredicate(format: "context == %@", "Future")
+    let pastPredicate = NSPredicate(format: "context == %@", "Past")
+    
+    let allPredicate = NSPredicate(format: "context == %@", "Past")
+    
+    
+    @IBAction func changeFightContext(sender: AnyObject) {
+        
+        if segmentFightContext.selectedSegmentIndex == 0 {
+            println("Showing All Fights")
+            fetchedFightsController.fetchRequest.predicate = nil
+            self.fetchedFightsController.performFetch(nil)
+            fightTableView.reloadData()
+            println("All Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            
+            
+        } else if segmentFightContext.selectedSegmentIndex == 1 {
+            println("Showing Today's Fights")
+            fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Today")
+            self.fetchedFightsController.performFetch(nil)
+            self.fightTableView.reloadData()
+            println("Todays Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            
+        } else if segmentFightContext.selectedSegmentIndex == 2 {
+            println("Showing Future Fights")
+            fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Future")
+            self.fetchedFightsController.performFetch(nil)
+            self.fightTableView.reloadData()
+            println("Future Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            
+        } else if segmentFightContext.selectedSegmentIndex == 3 {
+            println("Showing Past Fights")
+            fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Past")
+            self.fetchedFightsController.performFetch(nil)
+            self.fightTableView.reloadData()
+            println("Past Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+        }
+    }
+
     var fetchedFightsController : NSFetchedResultsController {
         if _fetchedFightsController == nil {
             let request = NSFetchRequest(entityName: "Fight")
             request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             request.fetchBatchSize = 20
-          request.predicate = NSPredicate(format: "context == %@", "Past")
-        //  request.predicate = NSPredicate(format: "context == %@", "Future")
-        //  request.predicate = NSPredicate(format: "context == %@", "Present")
             
             let regularFetchedFightsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
             regularFetchedFightsController.delegate = self
