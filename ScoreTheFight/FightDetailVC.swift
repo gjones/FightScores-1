@@ -168,7 +168,6 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     override func viewWillAppear(animated: Bool) {
         updateFightInfo()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
-
     }
     
     override func viewDidLoad() {
@@ -188,7 +187,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
-        println(fight?.context)
+        println(fight!.context)
 
     }
     
