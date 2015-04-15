@@ -438,9 +438,6 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         if weekView.dayViews != nil {
             let dayViews = weekView.dayViews!
             
-            for day in dayViews {
-                day.topMarker?.hidden = hidden
-            }
         } else {
             fatalError("Day Views must not be nil!")
         }

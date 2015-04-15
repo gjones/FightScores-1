@@ -17,8 +17,6 @@ class CVCalendarDayView: UIView {
     var dayLabel: UILabel!
     
     var circleView: CVAuxiliaryView?
-    var topMarker: CALayer?
-    var dotMarker: CVAuxiliaryView?
     
     var isOut = false
     var isCurrentDay = false
@@ -43,7 +41,6 @@ class CVCalendarDayView: UIView {
     override var frame: CGRect {
         didSet {
             if oldValue != frame {
-                topMarkerSetup()
             }
         }
     }
@@ -59,8 +56,6 @@ class CVCalendarDayView: UIView {
         date = dateWithWeekView(weekView, andWeekIndex: weekdayIndex)
         
         labelSetup()
-        setupDotMarker()
-        topMarkerSetup()
     }
     
     func dateWithWeekView(weekView: CVCalendarWeekView, andWeekIndex index: Int) -> CVDate {
@@ -167,140 +162,9 @@ extension CVCalendarDayView {
     }
     
     // TODO: Make this widget customizable
-    func topMarkerSetup() {
-        safeExecuteBlock({
-            func createMarker() {
-                let height = CGFloat(0.5)
-                let layer = CALayer()
-                layer.borderColor = UIColor.grayColor().CGColor
-                layer.borderWidth = height
-                layer.frame = CGRectMake(0, 1, CGRectGetWidth(self.frame), height)
-                
-                self.topMarker = layer
-                self.layer.addSublayer(self.topMarker!)
-            }
-            
-            if let delegate = self.calendarView.delegate {
-                if self.topMarker != nil {
-                    self.topMarker?.removeFromSuperlayer()
-                    self.topMarker = nil
-                }
-                
-                if delegate.topMarker(shouldDisplayOnDayView: self) {
-                    createMarker()
-                }
-            } else {
-                println("Setting up here")
-                if self.topMarker == nil {
-                    createMarker()
-                } else {
-                    self.topMarker?.removeFromSuperlayer()
-                    self.topMarker = nil
-                    createMarker()
-                }
-            }
-            }, collapsingOnNil: false, withObjects: weekView, weekView.monthView, weekView.monthView)
-    }
     
-    func setupDotMarker() {
-        if let dotMarker = dotMarker {
-            self.dotMarker!.removeFromSuperview()
-            self.dotMarker = nil
-        }
-        
-        if let delegate = calendarView.delegate {
-            if delegate.dotMarker(shouldShowOnDayView: self) {
-                let color = isOut ? .grayColor() : delegate.dotMarker(colorOnDayView: self)
-                let (width: CGFloat, height: CGFloat) = (13, 13)
-                
-                var yOffset: CGFloat = 5
-                if let y = delegate.dotMarker?(moveOffsetOnDayView: self) {
-                    yOffset = y
-                }
-                
-                let x = frame.width / 2
-                let y = CGRectGetMidY(frame) + yOffset
-                let markerFrame = CGRectMake(0, 0, width, height)
-                
-                dotMarker = CVAuxiliaryView(frame: markerFrame, shape: .Circle)
-                dotMarker!.fillColor = color
-                dotMarker!.center = CGPointMake(x, y)
-                insertSubview(dotMarker!, atIndex: 0)
-                
-                let coordinator = CVCalendarDayViewControlCoordinator.sharedControlCoordinator
-                if self == coordinator.selectedDayView {
-                    moveDotMarkerBack(false, coloring: false)
-                }
-                
-                dotMarker!.setNeedsDisplay()
-            }
-        }
-    }
 }
 
-// MARK: - Dot marker movement
-
-extension CVCalendarDayView {
-    func moveDotMarkerBack(unwinded: Bool, var coloring: Bool) {
-        if let calendarView = calendarView {
-            if let dotMarker = dotMarker {
-                var shouldMove = true
-                if let delegate = calendarView.delegate {
-                    shouldMove = delegate.dotMarker(shouldMoveOnHighlightingOnDayView: self)
-                }
-                
-                func colorMarker() {
-                    if let delegate = calendarView.delegate {
-                        let appearance = Appearance.sharedCalendarViewAppearance
-                        let frame = dotMarker.frame
-                        var color: UIColor?
-                        if unwinded {
-                            color = (isOut) ? appearance.dayLabelWeekdayOutTextColor : delegate.dotMarker(colorOnDayView: self)
-                        } else {
-                            color = appearance.dotMarkerColor
-                        }
-                        
-                        dotMarker.fillColor = color
-                        dotMarker.setNeedsDisplay()
-                    }
-                    
-                }
-                
-                func moveMarker() {
-                    var transform: CGAffineTransform!
-                    if let circleView = circleView {
-                        let point = pointAtAngle(CGFloat(-90).toRadians(), withinCircleView: circleView)
-                        let spaceBetweenDotAndCircle = CGFloat(1)
-                        let offset = point.y - dotMarker.frame.origin.y - dotMarker.bounds.height/2 + spaceBetweenDotAndCircle
-                        transform = unwinded ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, offset)
-                        
-                        if dotMarker.center.y + offset > CGRectGetMaxY(frame) {
-                            coloring = true
-                        }
-                    } else {
-                        transform = CGAffineTransformIdentity
-                    }
-                    
-                    if !coloring {
-                        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                            dotMarker.transform = transform
-                            }, completion: { _ in
-                                
-                        })
-                    } else {
-                        moveDotMarkerBack(unwinded, coloring: coloring)
-                    }
-                }
-                
-                if shouldMove && !coloring {
-                    moveMarker()
-                } else {
-                    colorMarker()
-                }
-            }
-        }
-    }
-}
 
 // MARK: - Circle geometry
 
@@ -377,7 +241,6 @@ extension CVCalendarDayView {
             insertSubview(circleView!, atIndex: 0)
         }
         
-        moveDotMarkerBack(false, coloring: false)
         
     }
     
@@ -409,7 +272,6 @@ extension CVCalendarDayView {
         dayLabel?.textColor = color
         dayLabel?.font = font
         
-        moveDotMarkerBack(true, coloring: false)
         
         if removeViews {
             circleView?.removeFromSuperview()
@@ -449,7 +311,6 @@ extension CVCalendarDayView {
             insertSubview(circleView!, atIndex: 0)
         }
         
-        moveDotMarkerBack(false, coloring: false)
     }
     
     func setDayLabelDeselectedDismissingState(removeViews: Bool) {
@@ -462,7 +323,6 @@ extension CVCalendarDayView {
 
 extension CVCalendarDayView {
     func reloadContent() {
-        setupDotMarker()
         dayLabel?.frame = bounds
         
         var shouldShowDaysOut = calendarView.shouldShowWeekdaysOut!

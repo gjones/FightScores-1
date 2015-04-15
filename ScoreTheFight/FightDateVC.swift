@@ -77,16 +77,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         self.calendarView.updateCalendarViewUpdate()
     }
     
-    @IBAction func switchChanged(sender: UISwitch) {
-        if sender.on {
-            self.calendarView!.changeDaysOutShowingState(false)
-            self.shouldShowDaysOut = true
-        } else {
-            self.calendarView!.changeDaysOutShowingState(true)
-            self.shouldShowDaysOut = false
-        }
-    }
-    
     @IBAction func todayMonthView() {
         self.calendarView.toggleTodayMonthView()
     }
@@ -109,7 +99,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     }
     
     func didSelectDayView(dayView: CVCalendarDayView) {
-        
         var year = dayView.date?.year
         var month = dayView.date?.month
         var day = dayView.date?.day
@@ -128,30 +117,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
             self.onDateAvailable?(date: NSDate())
         }
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> UIColor {
-        if dayView.date?.day == 3 {
-            return .redColor()
-        } else if dayView.date?.day == 5 {
-            return .blackColor()
-        } else if dayView.date?.day == 2 {
-            return .blueColor()
-        }
-        return .greenColor()
-    }
-    
-    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
-        return false
-    }
-    
-    func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
-        return false
-    }
-    
-    func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
-        return true
     }
     
     func presentedDateUpdated(date: CVDate) {

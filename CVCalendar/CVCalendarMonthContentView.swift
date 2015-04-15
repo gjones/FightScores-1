@@ -274,9 +274,7 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
         for week in weekViews {
             let dayViews = week.dayViews!
             
-            for day in dayViews {
-                day.topMarker?.hidden = hidden
-            }
+
         }
     }
     
@@ -421,11 +419,13 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
                     day = dayView!.date.day
                 }
                 
+                
                 self.selectDayViewWithDay(day, inMonthView: presentedMonthView)
                 
                 self.prepareTopMarkersOnDayViews(self.monthViews[0]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[1]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[2]!, hidden: false)
+                self.calendarView!.presentedDate = CVDate(date: self.monthViews[1]!.date!)
         })
     }
     
@@ -468,6 +468,7 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
                 self.prepareTopMarkersOnDayViews(self.monthViews[0]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[1]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[2]!, hidden: false)
+                self.calendarView!.presentedDate = CVDate(date: self.monthViews[1]!.date!)
         })
     }
     
