@@ -17,7 +17,7 @@ class CVCalendarDayViewControlCoordinator: NSObject {
     
     lazy var appearance: Appearance = {
         return Appearance.sharedCalendarViewAppearance
-    }()
+        }()
     
     // MARK: - Public properties
     weak var selectedDayView: CVCalendarDayView?
@@ -28,7 +28,7 @@ class CVCalendarDayViewControlCoordinator: NSObject {
     class var sharedControlCoordinator: CVCalendarDayViewControlCoordinator {
         return instance
     }
-
+    
     // MARK: - Private initialization
     private override init() { }
 }
@@ -52,11 +52,11 @@ extension CVCalendarDayViewControlCoordinator {
     }
     
     func flush() {
-       selectionSet.removeAll(false)
+        selectionSet.removeAll(false)
     }
 }
 
-// MARK: - Animator reference 
+// MARK: - Animator reference
 
 private extension CVCalendarDayViewControlCoordinator {
     func presentSelectionOnDayView(dayView: DayView) {
@@ -75,7 +75,7 @@ private extension CVCalendarDayViewControlCoordinator {
 extension CVCalendarDayViewControlCoordinator {
     func performDayViewSingleSelection(dayView: DayView) {
         selectionSet.addObject(dayView)
-        println(selectionSet.count)
+        println("selectionSet = \(selectionSet.count)")
         
         if selectionSet.count > 1 {
             let count = selectionSet.count-1
@@ -95,7 +95,7 @@ extension CVCalendarDayViewControlCoordinator {
                 selectedDayView = dayView
                 presentSelectionOnDayView(dayView)
             }
-        } 
+        }
     }
     
     func performDayViewRangeSelection(dayView: DayView) {

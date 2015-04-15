@@ -12,7 +12,7 @@ private let singleton = CVCalendarRenderer()
 
 class CVCalendarRenderer: NSObject {
     
-    // MARK: Initialization 
+    // MARK: Initialization
     
     private override init() {
         super.init()
@@ -28,7 +28,7 @@ class CVCalendarRenderer: NSObject {
         return singleton
     }
     
-    // MARK: - Rendering 
+    // MARK: - Rendering
     
     func renderWeekFrameForMonthView(monthView: MonthView, weekIndex: Int) -> CGRect {
         let width = monthView.frame.width
@@ -37,7 +37,7 @@ class CVCalendarRenderer: NSObject {
         
         let y: CGFloat = CGFloat(weekIndex) * (height + space)
         let x: CGFloat = 0
-
+        
         return CGRectMake(x, y, width, height)
     }
     
@@ -51,5 +51,5 @@ class CVCalendarRenderer: NSObject {
         
         return CGRectMake(x, y, width, height)
     }
-
+    
 }

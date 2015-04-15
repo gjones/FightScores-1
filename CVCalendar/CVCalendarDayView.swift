@@ -25,14 +25,14 @@ class CVCalendarDayView: UIView {
     
     weak var monthView: CVCalendarMonthView! {
         get {
-            return weekView?.monthView
+            return weekView.monthView
         }
     }
     
     weak var calendarView: CVCalendarView! {
         get {
             var calendarView: CVCalendarView!
-            if let activeCalendarView = weekView?.monthView!.calendarView {
+            if let activeCalendarView = weekView!.monthView!.calendarView {
                 calendarView = activeCalendarView
             }
             
@@ -118,7 +118,7 @@ class CVCalendarDayView: UIView {
         
         return CVDate(day: day, month: month, week: week, year: year)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -170,7 +170,7 @@ extension CVCalendarDayView {
     func topMarkerSetup() {
         safeExecuteBlock({
             func createMarker() {
-                let height = CGFloat(0)
+                let height = CGFloat(0.5)
                 let layer = CALayer()
                 layer.borderColor = UIColor.grayColor().CGColor
                 layer.borderWidth = height
@@ -190,6 +190,7 @@ extension CVCalendarDayView {
                     createMarker()
                 }
             } else {
+                println("Setting up here")
                 if self.topMarker == nil {
                     createMarker()
                 } else {
@@ -198,7 +199,7 @@ extension CVCalendarDayView {
                     createMarker()
                 }
             }
-        }, collapsingOnNil: false, withObjects: weekView, weekView.monthView, weekView.monthView)
+            }, collapsingOnNil: false, withObjects: weekView, weekView.monthView, weekView.monthView)
     }
     
     func setupDotMarker() {
@@ -279,12 +280,12 @@ extension CVCalendarDayView {
                     } else {
                         transform = CGAffineTransformIdentity
                     }
-
+                    
                     if !coloring {
                         UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                             dotMarker.transform = transform
-                        }, completion: { _ in
-                            
+                            }, completion: { _ in
+                                
                         })
                     } else {
                         moveDotMarkerBack(unwinded, coloring: coloring)
@@ -301,7 +302,7 @@ extension CVCalendarDayView {
     }
 }
 
-// MARK: - Circle geometry 
+// MARK: - Circle geometry
 
 extension CGFloat {
     func toRadians() -> CGFloat {
@@ -334,10 +335,10 @@ extension CVCalendarDayView {
             UIView.animateWithDuration(pow(10, -1000), delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 let angle = angle.toRadians()
                 view.center = self.pointAtAngle(angle, withinCircleView: circleView)
-            }) { _ in
-                let speed = CGFloat(750).toRadians()
-                let newAngle = straight ? angle + speed : angle - speed
-                self.moveView(view, onCircleView: circleView, fromAngle: newAngle, toAngle: endAngle, straight: straight)
+                }) { _ in
+                    let speed = CGFloat(750).toRadians()
+                    let newAngle = straight ? angle + speed : angle - speed
+                    self.moveView(view, onCircleView: circleView, fromAngle: newAngle, toAngle: endAngle, straight: straight)
             }
         }
     }
@@ -347,6 +348,7 @@ extension CVCalendarDayView {
 
 extension CVCalendarDayView {
     func setDayLabelHighlighted() {
+        println("Highlighted")
         let appearance = CVCalendarViewAppearance.sharedCalendarViewAppearance
         
         var backgroundColor: UIColor!
@@ -376,11 +378,12 @@ extension CVCalendarDayView {
         }
         
         moveDotMarkerBack(false, coloring: false)
-    
+        
     }
     
     func setDayLabelUnhighlightedDismissingState(removeViews: Bool) {
-
+        println("Deselected")
+        
         let appearance = CVCalendarViewAppearance.sharedCalendarViewAppearance
         
         var color: UIColor?
@@ -415,7 +418,8 @@ extension CVCalendarDayView {
     }
     
     func setDayLabelSelected() {
-
+        println("Selected")
+        
         let appearance = CVCalendarViewAppearance.sharedCalendarViewAppearance
         
         var backgroundColor: UIColor!
@@ -451,7 +455,7 @@ extension CVCalendarDayView {
     func setDayLabelDeselectedDismissingState(removeViews: Bool) {
         setDayLabelUnhighlightedDismissingState(removeViews)
     }
-
+    
 }
 
 // MARK: - Content reload

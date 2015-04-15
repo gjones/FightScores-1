@@ -14,7 +14,7 @@ class CVCalendarTouchController {
     // MARK: - Properties
     lazy var coordinator: Coordinator = {
         return CVCalendarDayViewControlCoordinator.sharedControlCoordinator
-    }()
+        }()
     
     class var sharedTouchController: CVCalendarTouchController {
         return singleton
@@ -24,7 +24,7 @@ class CVCalendarTouchController {
     private init() { }
 }
 
-// MARK: - Events receive 
+// MARK: - Events receive
 
 extension CVCalendarTouchController {
     func receiveTouchLocation(location: CGPoint, inMonthView monthView: CVCalendarMonthView, withSelectionType selectionType: CVSelectionType) {
@@ -49,7 +49,7 @@ extension CVCalendarTouchController {
     }
 }
 
-// MARK: - Events management 
+// MARK: - Events management
 
 private extension CVCalendarTouchController {
     func receiveTouchOnDayView(dayView: CVCalendarDayView, withSelectionType selectionType: CVSelectionType) {
@@ -66,9 +66,9 @@ private extension CVCalendarTouchController {
             }
         }
         
-
+        
     }
-
+    
     func monthViewLocation(location: CGPoint, doesBelongToDayView dayView: CVCalendarDayView) -> Bool {
         var dayViewFrame = dayView.frame
         let weekIndex = dayView.weekView.index
@@ -111,7 +111,7 @@ private extension CVCalendarTouchController {
                 }
             }
         }
-
+        
         
         return owner
     }

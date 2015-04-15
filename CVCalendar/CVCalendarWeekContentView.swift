@@ -41,12 +41,12 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         // Add the scroll view.
         calendarView.addSubview(scrollView)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Frames Reload 
+    // MARK: - Frames Reload
     
     func _updateFrames() {
         let frame = scrollView.frame
@@ -69,7 +69,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         recovery.recoverMonthView(presentedMonthView)
     }
     
-    // MARK: - Month Views Loading 
+    // MARK: - Month Views Loading
     
     private let calendar = NSCalendar.currentCalendar()
     private let manager = Manager.sharedManager
@@ -115,7 +115,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         return monthView
     }
     
-    // MARK: - Week Views Loading 
+    // MARK: - Week Views Loading
     
     func presentedWeekView() -> WeekView {
         let components = manager.componentsForDate(presentedDate)
@@ -159,7 +159,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         return previousWeekView
     }
     
-    // MARK: Week Views Insertion 
+    // MARK: Week Views Insertion
     
     func insertWeekView(weekView: WeekView, atIndex index: Int) {
         let x = scrollView.bounds.width * CGFloat(index)
@@ -194,7 +194,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         let _recovery = Recovery()
         _recovery.weekContentView = self
         return _recovery
-    }()
+        }()
     
     func scrolledLeft() {
         if self.page != 1 && self.pageLoadingEnabled {
@@ -218,7 +218,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
             replaceWeekView(presentedWeekView, toPage: 1, animatable: true)
             
             insertWeekView(rightWeekView, atIndex: 2)
-        } 
+        }
     }
     
     func scrolledRight() {
@@ -387,7 +387,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
             
             
             }, completion: { (finished) -> Void in
-
+                
                 extraWeekView.removeFromSuperview()
                 self.recovery.recoverMonthView(presentedWeekView.monthView)
                 
@@ -412,7 +412,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         })
     }
     
-    // MARK: - Date Management 
+    // MARK: - Date Management
     
     func dateBeforeDate(date: NSDate) -> NSDate {
         let components = manager.componentsForDate(date)
@@ -432,7 +432,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         return dateAfter
     }
     
-    // MARK: - Visual Preparation 
+    // MARK: - Visual Preparation
     
     func prepareTopMarkersOnDayViews(weekView: WeekView, hidden: Bool) {
         if weekView.dayViews != nil {
@@ -447,9 +447,9 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
     }
     
     /**
-        Updates showing days out. Invoke if you want to hide days out or on the contrary unhide.
+    Updates showing days out. Invoke if you want to hide days out or on the contrary unhide.
     
-        :param: hidden A mask indicating if days out are shown or not.
+    :param: hidden A mask indicating if days out are shown or not.
     */
     func _updateDayViews(hidden: Bool) {
         func monthViews() -> [MonthView] {
@@ -509,14 +509,14 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         }
     }
     
-    // MARK: - Week View Toggling 
+    // MARK: - Week View Toggling
     
     private var togglingBlocked = false
     func _togglePresentedDate(date: NSDate) {
         let currentWeekView = weekViews[1]!
         let currentDate = currentWeekView.monthView.date
         
-        // Check if we should toggle. 
+        // Check if we should toggle.
         if dateTogglingAllowed(date) {
             // Prepare cache data.
             for weekView in weekViews.values {
@@ -591,7 +591,7 @@ class CVCalendarWeekContentView: NSObject, CVCalendarContentDelegate {
         return allowed
     }
     
-    // MARK: - Content View Delegate 
+    // MARK: - Content View Delegate
     
     func updateFrames() {
         _updateFrames()

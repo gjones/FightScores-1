@@ -116,7 +116,7 @@ class CVCalendarView: UIView {
         loadCalendarMode()
         contentController = CVCalendarContentViewController(calendarView: self, frame: bounds)
     }
-
+    
     /// IB Initialization
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -138,11 +138,12 @@ extension CVCalendarView {
                 contentController.updateFrames(bounds)
             }
         }
+        
     }
-    
     func updateCalendarViewUpdate() {
         let coordinator = CVCalendarDayViewControlCoordinator.sharedControlCoordinator
         contentController.reloadFrames(bounds)
+        
     }
 }
 
@@ -181,7 +182,7 @@ extension CVCalendarView {
     }
 }
 
-// MARK: - Mode load 
+// MARK: - Mode load
 
 private extension CVCalendarView {
     func loadCalendarMode() {
@@ -190,8 +191,8 @@ private extension CVCalendarView {
         
         if let calendarMode = calendarMode {
             switch calendarMode {
-                case "MonthView": self.calendarMode = .MonthView
-                case "WeekView": self.calendarMode = .WeekView
+            case "MonthView": self.calendarMode = .MonthView
+            case "WeekView": self.calendarMode = .WeekView
             default: break
             }
         }

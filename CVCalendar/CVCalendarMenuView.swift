@@ -13,7 +13,7 @@ class CVCalendarMenuView: UIView {
     var starterWeekday = 1
     var symbols = [String]()
     var symbolViews: [UILabel]?
-
+    
     init() {
         super.init(frame: CGRectZero)
         self.setupWeekdaySymbols()
@@ -26,11 +26,11 @@ class CVCalendarMenuView: UIView {
         self.setupWeekdaySymbols()
         self.createDaySymbols()
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-
+        
         self.setupWeekdaySymbols()
         self.createDaySymbols()
     }

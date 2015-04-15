@@ -19,8 +19,8 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Private Properties
     private let scrollView: UIScrollView
     private var delegate: ContentDelegate!
-
-    // MARK: - Initialization 
+    
+    // MARK: - Initialization
     
     init(calendarView: CalendarView, frame: CGRect) {
         self.calendarView = calendarView
@@ -29,7 +29,7 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
         
         super.init(nibName: nil, bundle: nil)
         
-        // Setup Scroll View. 
+        // Setup Scroll View.
         scrollView.contentSize = CGSizeMake(frame.width * 3, frame.height)
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.pagingEnabled = true
@@ -42,18 +42,18 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
             delegate = WeekContentView(contentController: self)
         }
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - View Control 
+    // MARK: - View Control
     
     func preparedScrollView() -> UIScrollView {
         return scrollView
     }
     
-    // MARK: - Appearance Update 
+    // MARK: - Appearance Update
     
     func updateFrames(frame: CGRect) {
         presentedMonthView.updateAppearance(frame)
@@ -75,7 +75,7 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
         calendarView.hidden = false
     }
     
-    // MARK: - Scroll View Delegate 
+    // MARK: - Scroll View Delegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         delegate.scrollViewDidScroll!(scrollView)
@@ -84,7 +84,7 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         delegate.scrollViewWillBeginDragging!(scrollView)
     }
-
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         delegate.scrollViewDidEndDecelerating!(scrollView)
     }
@@ -105,7 +105,7 @@ class CVCalendarContentViewController: UIViewController, UIScrollViewDelegate {
         delegate.togglePresentedDate(date)
     }
     
-    // MARK: - Paging 
+    // MARK: - Paging
     
     func presentNextView(dayView: DayView?) {
         delegate.presentNextView(dayView)

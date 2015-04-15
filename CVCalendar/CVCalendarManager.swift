@@ -37,7 +37,7 @@ class CVCalendarManager: NSObject {
     private override init() {
         self.calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         self.currentDate = NSDate()
-   
+        
         self.components = self.calendar!.components(MonthUnit | DayUnit, fromDate: self.currentDate!)
         
         let propertyName = "CVCalendarStarterWeekday"

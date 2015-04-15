@@ -16,7 +16,7 @@ class CVCalendarWeekContentRecovery: NSObject {
     private var monthViews: [MonthView]!
     private var presentedMonthView: MonthView!
     
-    // MARK: - Initialization 
+    // MARK: - Initialization
     
     override init() {
         super.init()
@@ -40,7 +40,7 @@ class CVCalendarWeekContentRecovery: NSObject {
             flushIfNeeded()
         }
     }
-
+    
     private let limit = 3
     func flushIfNeeded() {
         func recoveryAllowed(monthView: MonthView) -> Bool {
@@ -52,8 +52,8 @@ class CVCalendarWeekContentRecovery: NSObject {
                         }
                     }
                 }
-            } 
-
+            }
+            
             
             return true
         }

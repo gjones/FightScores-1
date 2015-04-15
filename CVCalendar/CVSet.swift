@@ -57,7 +57,7 @@ extension CVSet {
     }
 }
 
-// MARK: - Util 
+// MARK: - Util
 
 private extension CVSet {
     func indexObject(object: T) -> Int? {
