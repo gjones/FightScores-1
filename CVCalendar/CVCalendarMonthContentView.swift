@@ -141,8 +141,6 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
         
         if currentDateRange.month == presentedDateRange.month && currentDateRange.year == presentedDateRange.year {
             selectDayViewWithDay(currentDateRange.day, inMonthView: presentedMonthView)
-        } else {
-            selectDayViewWithDay(1, inMonthView: presentedMonthView)
         }
     }
     
@@ -420,7 +418,7 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
                 }
                 
                 
-                self.selectDayViewWithDay(day, inMonthView: presentedMonthView)
+                // self.selectDayViewWithDay(day, inMonthView: presentedMonthView)
                 
                 self.prepareTopMarkersOnDayViews(self.monthViews[0]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[1]!, hidden: false)
@@ -463,7 +461,7 @@ class CVCalendarMonthContentView: NSObject, CVCalendarContentDelegate {
                     day = dayView!.date.day
                 }
                 
-                self.selectDayViewWithDay(day, inMonthView: presentedMonthView)
+                // self.selectDayViewWithDay(day, inMonthView: presentedMonthView)
                 
                 self.prepareTopMarkersOnDayViews(self.monthViews[0]!, hidden: false)
                 self.prepareTopMarkersOnDayViews(self.monthViews[1]!, hidden: false)

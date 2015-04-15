@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FightDateVC: UIViewController, CVCalendarViewDelegate {
+class FightDateVC: UIViewController {
 
     @IBOutlet var menuView: CVCalendarMenuView!
     @IBOutlet var calendarView: CVCalendarView!
@@ -17,11 +17,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     @IBOutlet weak var buttonRewind: UIButton!
     @IBOutlet weak var buttonForward: UIButton!
     @IBOutlet weak var labelScroll: UILabel!
-    
-    @IBAction func buttonCloseModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBOutlet weak var viewHeader: UIView!
     
     var onDateAvailable : ((date: NSDate) -> ())?
@@ -34,17 +29,15 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
     var shouldShowDaysOut = true
     var animationFinished = true
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var header_bg = UIImage(named: "header_bg.png")
-        viewHeader.backgroundColor =  UIColor(patternImage:header_bg!)
-        self.monthLabel.text = CVDate(date: NSDate()).description
-        
-        if fightDate != nil {
-            self.calendarView.toggleMonthViewWithDate(fightDate)
-        }
-        
+    var managedObjectContext : NSManagedObjectContext?
+    var _fight : Fight?
+    var fight : Fight
+        {
+            if _fight == nil
+            {
+                _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
+            }
+            return _fight!
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +62,19 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         })
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var header_bg = UIImage(named: "header_bg.png")
+        viewHeader.backgroundColor =  UIColor(patternImage:header_bg!)
+        self.monthLabel.text = CVDate(date: NSDate()).description
+        
+        if fightDate != nil {
+            self.calendarView.toggleMonthViewWithDate(fightDate)
+        }
+        
+    }
+    
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         self.menuView.commitMenuViewUpdate()
     }
@@ -77,27 +83,53 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         self.calendarView.updateCalendarViewUpdate()
     }
     
-    @IBAction func todayMonthView() {
-        self.calendarView.toggleTodayMonthView()
+    // MARK: - Buttons
+    
+    @IBAction func confirmDate(sender: AnyObject) {
+        if fightDate != nil {
+            self.onDateAvailable?(date: fightDate!)
+        } else {
+            self.onDateAvailable?(date: NSDate())
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: Calendar View Delegate
+    @IBAction func buttonCloseModal(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func rewindButtonAction(sender: UIButton) {
+        self.calendarView.loadPreviousMonthView()
+        buttonRewind.enabled = false
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.buttonRewind.enabled = true
+        }
+    }
+    
+    @IBAction func forwardButtonAction(sender: UIButton) {
+        self.calendarView.loadNextMonthView()
+        buttonForward.enabled = false
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.buttonForward.enabled = true
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+extension FightDateVC: CVCalendarViewDelegate {
     
     func shouldShowWeekdaysOut() -> Bool {
         return self.shouldShowDaysOut
     }
-    
-    var managedObjectContext : NSManagedObjectContext?
-    var _fight : Fight?
-    var fight : Fight
-        {
-            if _fight == nil
-            {
-                _fight = NSEntityDescription.insertNewObjectForEntityForName("Fight", inManagedObjectContext: self.managedObjectContext!) as? Fight
-            }
-            return _fight!
-    }
-    
+
     func didSelectDayView(dayView: CVCalendarDayView) {
         var year = dayView.date?.year
         var month = dayView.date?.month
@@ -107,16 +139,6 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         fightDate = dateFormatter.dateFromString(dateString)
         println(dateString)
-    }
-    
-    @IBAction func confirmDate(sender: AnyObject) {
-        
-        if fightDate != nil {
-            self.onDateAvailable?(date: fightDate!)
-        } else {
-            self.onDateAvailable?(date: NSDate())
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func presentedDateUpdated(date: CVDate) {
@@ -155,42 +177,4 @@ class FightDateVC: UIViewController, CVCalendarViewDelegate {
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
         }
     }
-    
-    @IBAction func rewindButtonAction(sender: UIButton) {
-        self.calendarView.loadPreviousMonthView()
-        buttonRewind.enabled = false
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64(0.5 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.buttonRewind.enabled = true
-        }
-    }
-    
-    @IBAction func forwardButtonAction(sender: UIButton) {
-        self.calendarView.loadNextMonthView()
-        buttonForward.enabled = false
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64(0.5 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.buttonForward.enabled = true
-        }
-    }
-    
-    func toggleMonthViewWithMonthOffset(offset: Int) {
-        let calendar = NSCalendar.currentCalendar()
-        let calendarManager = CVCalendarManager.sharedManager
-        let components = calendarManager.componentsForDate(NSDate()) // from today
-        
-        components.month += offset
-        
-        let resultDate = calendar.dateFromComponents(components)!
-        
-        self.calendarView.toggleMonthViewWithDate(resultDate)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
