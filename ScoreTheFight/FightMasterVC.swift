@@ -159,7 +159,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             filterDisplayResponse == false
             userDefaults.setObject(filterDisplayResponse, forKey: "filterDisplay")
         }
-        
     }
 
     override func viewWillDisappear(animated: Bool) {
