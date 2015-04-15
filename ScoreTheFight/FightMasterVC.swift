@@ -21,6 +21,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var buttonNoFights: UIButton!
     @IBOutlet var segmentedControl: CustomSegmentedControl!
 
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     var fightDate = FightDate()
     
     lazy var stack : CoreDataStack = {
@@ -152,6 +153,13 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             self.fightTableView.reloadData()
             println("There are \(self.fightCount) fights in the database")
         }
+        
+        var filterDisplayResponse: Bool? = userDefaults.objectForKey("filterDisplay") as! Bool?
+        if filterDisplayResponse == nil {
+            filterDisplayResponse == false
+            userDefaults.setObject(filterDisplayResponse, forKey: "filterDisplay")
+        }
+        
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -231,6 +239,12 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 //    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // Covering my back for 1.1
+        let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
+        if fight.context.isEmpty {
+            fight.context == "Past"
+        }
+        
         var identifier = "FightCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
         cell.fight = fetchedFightsController.fetchedObjects![indexPath.row] as? Fight

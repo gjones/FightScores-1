@@ -23,6 +23,8 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var buttonTwitter: SoftWhiteButton!
     @IBOutlet var switchFilters: UISwitch!
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     var globalFunctions = globalHeaderFunctions()
     var twitterURL = "https://mobile.twitter.com/fightscoresapp"
     var itunesURL = "itms://itunes.apple.com/us/app/fight-scores/id975691413?ls=1&mt=8"
@@ -43,7 +45,6 @@ class SettingsVC: UIViewController {
         buttonSystem.setTitle("10 Point System", forState: .Normal)
         globalFunctions.rightButton(self, image: "button_close.png")
     }
-
     
     func getYear() -> Int {
         let date = NSDate()
@@ -67,8 +68,12 @@ class SettingsVC: UIViewController {
 
     @IBAction func switchValueChanged(sender: UISwitch) {
         if sender.on {
+            let filterDisplayResponse = true
+            userDefaults.synchronize()
             println("Filters are on!")
         } else {
+            let filterDisplayResponse = false
+            userDefaults.synchronize()
             println("Filters are off!")
         }
     }
