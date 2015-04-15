@@ -3300,17 +3300,17 @@
                         <viewControllerLayoutGuide type="bottom" id="f72-DZ-K1Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vQh-xZ-7m2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="00S-2K-qze" customClass="BackgroundView" customModule="FightScores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ8-5o-c3c" userLabel="Header">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRb-WV-JSI" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
-                                        <rect key="frame" x="167" y="32" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRb-WV-JSI" customClass="standardLabel" customModule="FightScores" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="32" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="9Pa-n8-1ze"/>
                                         </constraints>
@@ -3336,7 +3336,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsW-XD-lnO" userLabel="Close Button">
-                                        <rect key="frame" x="327" y="20" width="40" height="40"/>
+                                        <rect key="frame" x="720" y="20" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="B70-6d-UQg"/>
                                             <constraint firstAttribute="width" constant="40" id="ifi-qB-8OR"/>
@@ -3375,10 +3375,10 @@
                                 </variation>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDT-NL-RMm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-6T-sMv" customClass="CVCalendarMenuView" customModule="FightScores" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="16" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="16" width="768" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="HGu-Kd-o6v"/>
@@ -3391,7 +3391,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Mg-Wsl" customClass="CVCalendarView" customModule="FightScores" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="61" width="768" height="280"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="280" id="yfs-FA-1eq"/>
@@ -3414,7 +3414,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-Db-1cU" userLabel="Rewind Button">
-                                        <rect key="frame" x="327" y="351" width="40" height="40"/>
+                                        <rect key="frame" x="720" y="351" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="2g3-R0-4LA"/>
                                             <constraint firstAttribute="height" constant="40" id="rva-yu-1q1"/>
@@ -3479,7 +3479,7 @@
                         </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="buttonForward" destination="7R3-Db-1cU" id="rPk-6A-5WV"/>
                         <outlet property="buttonRewind" destination="c9Q-U3-ofD" id="pfM-GE-rRV"/>
