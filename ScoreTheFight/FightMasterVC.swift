@@ -16,15 +16,11 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // Set Outlets
     @IBOutlet weak var fightTableView: UITableView!
     @IBOutlet weak var addFightButton: UIButton!
-    @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet weak var labelNoFights: UILabel!
     @IBOutlet weak var buttonSettings: UIButton!
     @IBOutlet weak var buttonNoFights: UIButton!
-    @IBOutlet var buttonFilter: UIButton!
     @IBOutlet var segmentedControl: CustomSegmentedControl!
 
-
-    @IBOutlet var constraintTableToSuperView: NSLayoutConstraint!
     var fightDate = FightDate()
     
     lazy var stack : CoreDataStack = {
@@ -76,7 +72,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         
         segmentedControl.hidden = result!
-       // constraintTableToSuperView.constant = constraint!
     }
     
     @IBAction func changeFightContext(sender: AnyObject) {
@@ -88,10 +83,9 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             fightTableView.reloadData()
             println("All Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
             
-            
         } else if segmentedControl.selectedIndex == 1 {
             println("Showing Today's Fights")
-            fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Today")
+            fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Present")
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             println("Todays Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
@@ -108,6 +102,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Past")
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
+            
             println("Past Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
         }
     }
@@ -139,15 +134,13 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.fightTableView.reloadData()
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        showFilters(true)
         labelNoFights.hidden = true
         buttonNoFights.hidden = true
         
         segmentedControl.items = ["All", "Today", "Future", "Past"]
-        segmentedControl.font = UIFont(name: "HelveticaNeue-Light", size: 12)
-        segmentedControl.borderColor = UIColor(white: 1.0, alpha: 0.3)
-        segmentedControl.thumbColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        segmentedControl.thumbColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         segmentedControl.addTarget(self, action: "changeFightContext:", forControlEvents: .ValueChanged)
+        
     }
     
     override func viewDidLoad() {
@@ -164,7 +157,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         stack.updateContextWithUbiquitousContentUpdates = false
-        
         persistentStoreCoordinatorChangesObserver = nil
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
@@ -174,6 +166,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             self.navigationController!.navigationBar.setBackgroundImage(UIImage(named: "header_bg.png"), forBarMetrics: UIBarMetrics.Default)
             })
         }
+        
     }
     
     func persistentStoreCoordinatorWillChangeStores(
@@ -191,19 +184,9 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         notification:NSNotification){
             fetchedFightsController.performFetch(nil)
     }
-    
-    
-    // These two don't do much yet
+
     var fightCount : Int {
-        var count: Int?
-        if fetchedFightsController.fetchRequest.predicate == nil {
-            count = fetchedFightsController.sections![0].numberOfObjects
-        } else if fetchedFightsController.fetchRequest.predicate == NSPredicate(format: "context == %@", "Future") {
-            count = fetchedFightsController.sections![0].numberOfObjects
-        }
-        
-        return count!
-    
+        return fetchedFightsController.sections![0].numberOfObjects
     }
 
     func getFightAtIndexPath(indexPath : NSIndexPath) -> Fight {
@@ -216,6 +199,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         if let objects = objects {
             if objects.count == 0 {
                 labelNoFights.alpha = 0.3
+                labelNoFights.hidden = false
                 buttonNoFights.hidden = false
                 buttonSettings.hidden = true
             } else {
@@ -233,15 +217,26 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         fightTableView.beginUpdates()
     }
     
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
+//        
+//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+//            Int64(3 * Double(NSEC_PER_SEC)))
+//            dispatch_after(delayTime, dispatch_get_main_queue()) {
+//                var setContext = self.fightDate.establishDateContext(fight.date)
+//                fight.context = setContext
+//            }
+//        })
+//    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
-        var setContext = fightDate.establishDateContext(fight.date)
-        fight.context = setContext
         var identifier = "FightCell"
-
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
         cell.fight = fetchedFightsController.fetchedObjects![indexPath.row] as? Fight
+        
         return cell
+        
     }
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
@@ -263,10 +258,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         fightTableView.endUpdates()
     }
     
-    func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
             if editingStyle == .Delete {
                 let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
                 stack.context.deleteObject(fight)
@@ -275,13 +267,10 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
     }
     
-    @IBAction
-    func unwindToFightList(segue:UIStoryboardSegue) {
+    @IBAction func unwindToFightList(segue:UIStoryboardSegue) {
         var error : NSErrorPointer = nil
-        if stack.context.hasChanges
-        {
-            if stack.context.save(error) == false
-            {
+        if stack.context.hasChanges {
+            if stack.context.save(error) == false {
                 print("Error saving \(error)")
             }
         }

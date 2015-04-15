@@ -86,15 +86,23 @@ class FightDate: NSObject {
         var rawDateToday = NSDate()
         var rawDateSupplied = date
 
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat  = "yyyy-MM-dd"
+
+        var todayDate = dateFormatter.stringFromDate(rawDateToday)
+        var suppliedDate = dateFormatter.stringFromDate(rawDateSupplied)
+        
         var fightContext: String?
         
-        if rawDateToday.compare(rawDateSupplied) == NSComparisonResult.OrderedDescending {
+        if todayDate.compare(suppliedDate) == NSComparisonResult.OrderedDescending {
             fightContext = "Past"
-        } else if rawDateToday == rawDateSupplied {
+        } else if todayDate == suppliedDate {
             fightContext = "Present"
         } else {
             fightContext = "Future"
         }
+        
+        println("\(todayDate) vs \(suppliedDate)" )
         
         return fightContext!
     }

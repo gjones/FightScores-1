@@ -75,7 +75,7 @@ import UIKit
     func setupView(){
         
         layer.cornerRadius = frame.height / 2
-        layer.borderColor = UIColor(white: 1.0, alpha: 0.5).CGColor
+        layer.borderColor = UIColor(white: 1.0, alpha: 0.3).CGColor
         layer.borderWidth = 1
         
         backgroundColor = UIColor.clearColor()
@@ -101,7 +101,7 @@ import UIKit
             label.text = items[index - 1]
             label.backgroundColor = UIColor.clearColor()
             label.textAlignment = .Center
-            label.font = UIFont(name: "Avenir-Black", size: 12)
+            label.font = UIFont(name: "HelveticaNeue-Light", size: 12)
             label.textColor = index == 1 ? selectedLabelColor : unselectedLabelColor
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
             self.addSubview(label)
@@ -153,7 +153,7 @@ import UIKit
         var label = labels[selectedIndex]
         label.textColor = selectedLabelColor
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(1, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: nil, animations: {
             
             self.thumbView.frame = label.frame
             

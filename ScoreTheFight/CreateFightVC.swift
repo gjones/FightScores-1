@@ -169,9 +169,12 @@ class CreateFightVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         
         fight.rounds = setRounds ?? 12
         
+        var setContext = self.fightDate.establishDateContext(fight.date)
+        fight.context = setContext
+        
         // Save our context
         managedObjectContext!.save(nil)
-        
+
         performSegueWithIdentifier("unwindToFightList", sender: self)
     }
     

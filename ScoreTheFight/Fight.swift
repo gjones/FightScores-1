@@ -52,6 +52,7 @@ class Fight: NSManagedObject {
         super.awakeFromInsert()
         date = NSDate()
         notes = ""
+        context = "Present"
     }
 
 }
