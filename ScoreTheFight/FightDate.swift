@@ -102,7 +102,7 @@ class FightDate: NSObject {
             fightContext = "Future"
         }
         
-        println("\(todayDate) vs \(suppliedDate)" )
+        // println("\(todayDate) vs \(suppliedDate)" )
         
         return fightContext!
     }

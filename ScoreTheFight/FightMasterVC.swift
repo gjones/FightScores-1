@@ -80,6 +80,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         if segmentedControl.selectedIndex == 0 {
             println("Showing All Fights")
             fetchedFightsController.fetchRequest.predicate = nil
+            fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             fightTableView.reloadData()
             println("All Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
@@ -87,6 +88,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         } else if segmentedControl.selectedIndex == 1 {
             println("Showing Today's Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Present")
+            fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             println("Todays Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
@@ -94,6 +96,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         } else if segmentedControl.selectedIndex == 2 {
             println("Showing Future Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Future")
+            fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             println("Future Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
@@ -101,6 +104,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         } else if segmentedControl.selectedIndex == 3 {
             println("Showing Past Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Past")
+            fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
             
@@ -138,7 +142,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         labelNoFights.hidden = true
         buttonNoFights.hidden = true
         
-        segmentedControl.items = ["All", "Today", "Future", "Past"]
+        segmentedControl.items = ["All", "Today", "Upcoming", "Past"]
         segmentedControl.thumbColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         segmentedControl.addTarget(self, action: "changeFightContext:", forControlEvents: .ValueChanged)
         
@@ -224,30 +228,12 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         fightTableView.beginUpdates()
     }
     
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
-//        
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-//            Int64(3 * Double(NSEC_PER_SEC)))
-//            dispatch_after(delayTime, dispatch_get_main_queue()) {
-//                var setContext = self.fightDate.establishDateContext(fight.date)
-//                fight.context = setContext
-//            }
-//        })
-//    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Covering my back for 1.1
-        let fight = fetchedFightsController.fetchedObjects![indexPath.row] as! Fight
-        if fight.context.isEmpty {
-            fight.context == "Past"
-        }
         
         var identifier = "FightCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
         cell.fight = fetchedFightsController.fetchedObjects![indexPath.row] as? Fight
-        
+
         return cell
         
     }

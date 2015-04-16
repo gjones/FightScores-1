@@ -16,6 +16,7 @@ protocol UpdateFightDetailDelegate {
 
 class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    var fightDate = FightDate()
     var fight : Fight? {
         didSet {
             updateFightInfo()
@@ -468,6 +469,8 @@ class ScorecardVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         fight!.boxerB_totalScore = labelBTotalScore.text!.toInt()!
         
         fight!.notes = textViewNotes.text!
+        var setContext = self.fightDate.establishDateContext(fight!.date)
+        fight!.context = setContext
         
         // Save our context
         var context = fight!.managedObjectContext
