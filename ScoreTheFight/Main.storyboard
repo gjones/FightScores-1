@@ -43,18 +43,18 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a fight to get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-qY-ulQ">
-                                            <rect key="frame" x="64" y="53" width="192" height="21"/>
+                                            <rect key="frame" x="64" y="63" width="192" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEr-9w-rgo">
-                                            <rect key="frame" x="145" y="10" width="30" height="30"/>
+                                            <rect key="frame" x="140" y="10" width="40" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="HNQ-y9-DNS"/>
-                                                <constraint firstAttribute="height" constant="30" id="b1D-bm-Sap"/>
+                                                <constraint firstAttribute="width" constant="40" id="HNQ-y9-DNS"/>
+                                                <constraint firstAttribute="height" constant="40" id="b1D-bm-Sap"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="Add">
+                                            <state key="normal" title=" " image="Add">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -1023,7 +1023,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="DmJ-5Y-bym"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

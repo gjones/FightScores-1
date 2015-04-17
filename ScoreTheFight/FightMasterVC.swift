@@ -23,6 +23,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var fightDate = FightDate()
+    var animation = Animation()
     
     lazy var stack : CoreDataStack = {
         let options =
@@ -58,23 +59,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var _fetchedFightsController : NSFetchedResultsController? = nil
     
-    // MARK: Segmented Control
-    
-    func showFilters(filtersOn: Bool) {
-        let filtersOn = filtersOn
-        var result: Bool?
-        var constraint: CGFloat?
-        if filtersOn == true {
-            result = false
-            constraint = 85
-        } else if filtersOn == false {
-            result = true
-            constraint = 10
-        }
-        
-        segmentedControl.hidden = result!
-    }
-    
     @IBAction func changeFightContext(sender: AnyObject) {
         
         if segmentedControl.selectedIndex == 0 {
@@ -83,7 +67,11 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             fightTableView.reloadData()
-            println("All Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            labelNoFights.text = "Add a fight to get started"
+            let noFightImage = UIImage(named: "Add.png") as UIImage?
+            buttonNoFights.setImage(noFightImage, forState: .Normal)
+            buttonNoFights.alpha = 1
+            animation.stopTheAnimation(buttonNoFights)
             
         } else if segmentedControl.selectedIndex == 1 {
             println("Showing Today's Fights")
@@ -91,7 +79,17 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
-            println("Todays Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            labelNoFights.text = "No fights set for today"
+            let noFightImage = UIImage(named: "icon_fighters.png") as UIImage?
+            buttonNoFights.setImage(noFightImage, forState: .Normal)
+            buttonNoFights.alpha = 0.65
+            animation.stopTheAnimation(buttonNoFights)
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+                Int64(0.18 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.animation.makeItPulse(self.buttonNoFights)
+                self.animation.makeItGrow(self.buttonNoFights)
+            }
             
         } else if segmentedControl.selectedIndex == 2 {
             println("Showing Future Fights")
@@ -99,16 +97,23 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
-            println("Future Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
-            
+            labelNoFights.text = "No fights on the schedule"
+            let noFightImage = UIImage(named: "icon_heavybag.png") as UIImage?
+            buttonNoFights.setImage(noFightImage, forState: .Normal)
+            buttonNoFights.alpha = 0.3
+            animation.stopTheAnimation(buttonNoFights)
+        
         } else if segmentedControl.selectedIndex == 3 {
             println("Showing Past Fights")
             fetchedFightsController.fetchRequest.predicate = NSPredicate(format: "context == %@", "Past")
             fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)
             self.fightTableView.reloadData()
-            
-            println("Past Fights: \(fetchedFightsController.sections![0].numberOfObjects)")
+            labelNoFights.text = "No fights previously scored"
+            let noFightImage = UIImage(named: "icon_ring.png") as UIImage?
+            buttonNoFights.setImage(noFightImage, forState: .Normal)
+            buttonNoFights.alpha = 0.5
+            animation.stopTheAnimation(buttonNoFights)
         }
     }
 
@@ -139,8 +144,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.fightTableView.reloadData()
         persistentStoreCoordinatorChangesObserver = NSNotificationCenter.defaultCenter()
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        labelNoFights.hidden = true
-        buttonNoFights.hidden = true
         
         segmentedControl.items = ["All", "Today", "Upcoming", "Past"]
         segmentedControl.thumbColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
@@ -149,6 +152,9 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     override func viewDidLoad() {
+        labelNoFights.hidden = true
+        buttonNoFights.hidden = true
+        
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
             Int64(1.0 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {

@@ -39,6 +39,7 @@
 		197292121AB3236700B7C239 /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292111AB3236700B7C239 /* Fight.swift */; };
 		197292141AB3237500B7C239 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292131AB3237500B7C239 /* Button.swift */; };
 		197292161AB3237F00B7C239 /* FightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197292151AB3237F00B7C239 /* FightCell.swift */; };
+		197456801AE0890600C3262B /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974567F1AE0890600C3262B /* Animation.swift */; };
 		1983A2391ABDA58D0028ADF8 /* FightDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983A2381ABDA58D0028ADF8 /* FightDateVC.swift */; };
 		199513CA1AA7737B00E310B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199513C91AA7737B00E310B6 /* Main.storyboard */; };
 		199750E21AB2154F008D6D27 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199750E11AB2154F008D6D27 /* View.swift */; };
@@ -104,6 +105,7 @@
 		197292111AB3236700B7C239 /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		197292131AB3237500B7C239 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		197292151AB3237F00B7C239 /* FightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightCell.swift; sourceTree = "<group>"; };
+		1974567F1AE0890600C3262B /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		1983A2351ABCCB750028ADF8 /* Fight v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Fight v2.xcdatamodel"; sourceTree = "<group>"; };
 		1983A2381ABDA58D0028ADF8 /* FightDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightDateVC.swift; sourceTree = "<group>"; };
 		199513C91AA7737B00E310B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		19A69E741AAF1D6B00325089 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				1974567F1AE0890600C3262B /* Animation.swift */,
 				197292131AB3237500B7C239 /* Button.swift */,
 				19E529B71A937E3300F5CF22 /* NavigationController.swift */,
 				19CD2C811A9EAA610000B54F /* TextField.swift */,
@@ -465,6 +468,7 @@
 				193F75E61ABDB28F00E853EE /* CVCalendarContentViewController.swift in Sources */,
 				193F75F51ABDB28F00E853EE /* CVCalendarWeekContentView.swift in Sources */,
 				193F75ED1ABDB28F00E853EE /* CVCalendarRenderer.swift in Sources */,
+				197456801AE0890600C3262B /* Animation.swift in Sources */,
 				193F75F11ABDB28F00E853EE /* CVCalendarViewAppearance.swift in Sources */,
 				19141B171ADAC96F005806A3 /* CVShape.swift in Sources */,
 				1983A2391ABDA58D0028ADF8 /* FightDateVC.swift in Sources */,
@@ -635,7 +639,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -655,7 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = FightScores;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

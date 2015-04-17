@@ -22,6 +22,8 @@
 	<string>12</string>
 	<key>CVCalendarStarterWeekday</key>
 	<integer>2</integer>
+	<key>CVCalendarViewMode</key>
+	<string>MonthView</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -47,11 +49,9 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<true/>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-	<key>CVCalendarViewMode</key>
-	<string>MonthView</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
