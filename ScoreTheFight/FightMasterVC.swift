@@ -21,7 +21,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var buttonNoFights: UIButton!
     @IBOutlet var segmentedControl: CustomSegmentedControl!
 
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     var fightDate = FightDate()
     var animation = Animation()
     
@@ -163,12 +162,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             self.fightTableView.reloadData()
             println("There are \(self.fightCount) fights in the database")
         }
-        
-        var filterDisplayResponse: Bool? = userDefaults.objectForKey("filterDisplay") as! Bool?
-        if filterDisplayResponse == nil {
-            filterDisplayResponse == false
-            userDefaults.setObject(filterDisplayResponse, forKey: "filterDisplay")
-        }
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -204,10 +197,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     var fightCount : Int {
         return fetchedFightsController.sections![0].numberOfObjects
-    }
-
-    func getFightAtIndexPath(indexPath : NSIndexPath) -> Fight {
-        return fetchedFightsController.objectAtIndexPath(indexPath) as! Fight
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

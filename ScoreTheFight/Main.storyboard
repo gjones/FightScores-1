@@ -1482,7 +1482,7 @@
                                                 </variation>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-Fs-b0R" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="186" width="150" height="21"/>
+                                                <rect key="frame" x="16" y="135" width="150" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="bo7-BX-ONa"/>
                                                     <constraint firstAttribute="width" constant="150" id="yku-TD-c30"/>
@@ -1492,7 +1492,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mr-bE-bpO" userLabel="Version Row" customClass="RowView" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="215" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="164" width="320" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2s-th-mQe" customClass="offWhiteLabel" customModule="FightScores" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="14" width="42" height="21"/>
@@ -1518,7 +1518,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-NG-NwH" userLabel="Twitter" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="315" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="264" width="320" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="6nh-vL-ozD"/>
                                                 </constraints>
@@ -1534,7 +1534,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dr-k0-1TU" customClass="smallLabel" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="397" width="288" height="21"/>
+                                                <rect key="frame" x="16" y="346" width="288" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="288" id="SoW-qm-9cG"/>
                                                 </constraints>
@@ -1543,7 +1543,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sk-cX-ubl" customClass="SoftWhiteButton" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="265" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="214" width="320" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Q9F-om-JMq"/>
                                                 </constraints>
@@ -1557,40 +1557,6 @@
                                                     <action selector="buttonFeedback:" destination="13E-sn-TmR" eventType="touchUpInside" id="cwy-y1-tKs"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-l1-YAs" userLabel="Filters Row" customClass="RowView" customModule="FightScores" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="96" width="320" height="50"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpU-Ry-rbJ" customClass="offWhiteLabel" customModule="FightScores" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="15" width="42" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHS-yv-e4Z">
-                                                        <rect key="frame" x="255" y="9" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="switchValueChanged:" destination="13E-sn-TmR" eventType="valueChanged" id="nCc-Mw-tmU"/>
-                                                        </connections>
-                                                    </switch>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="7nD-mw-8O4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="MpU-Ry-rbJ" secondAttribute="bottom" constant="14" id="EDE-gY-7qn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="VHS-yv-e4Z" secondAttribute="trailing" constant="16" id="Kf6-aL-PyB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="VHS-yv-e4Z" secondAttribute="bottom" constant="10" id="RVg-i2-iJU"/>
-                                                    <constraint firstItem="MpU-Ry-rbJ" firstAttribute="leading" secondItem="gJy-l1-YAs" secondAttribute="leading" constant="16" id="VeP-qm-N0V"/>
-                                                    <constraint firstAttribute="height" constant="50" id="XIn-Rd-M8S"/>
-                                                    <constraint firstAttribute="height" constant="50" id="fX3-SX-xHe"/>
-                                                    <constraint firstItem="MpU-Ry-rbJ" firstAttribute="top" secondItem="gJy-l1-YAs" secondAttribute="top" constant="15" id="gGM-VT-D08"/>
-                                                    <constraint firstItem="VHS-yv-e4Z" firstAttribute="top" secondItem="gJy-l1-YAs" secondAttribute="top" constant="9" id="qhC-fN-6Ql"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="7nD-mw-8O4"/>
-                                                        <exclude reference="XIn-Rd-M8S"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
                                         </subviews>
                                         <rect key="contentStretch" x="0.0" y="0.5" width="1" height="1"/>
                                         <constraints>
@@ -1604,6 +1570,7 @@
                                             <constraint firstItem="1Zw-Hf-bvJ" firstAttribute="bottom" secondItem="i5R-LJ-Iax" secondAttribute="top" constant="90" id="GLc-Cv-FNP"/>
                                             <constraint firstItem="vRj-Gc-BsA" firstAttribute="leading" secondItem="i5R-LJ-Iax" secondAttribute="leading" constant="16" id="KVJ-ei-wrT"/>
                                             <constraint firstItem="9sk-cX-ubl" firstAttribute="centerY" secondItem="i5R-LJ-Iax" secondAttribute="centerY" id="LHV-er-si5"/>
+                                            <constraint firstItem="kUT-Fs-b0R" firstAttribute="top" secondItem="fBG-yv-SoP" secondAttribute="bottom" constant="40" id="M2N-xi-XXu"/>
                                             <constraint firstItem="8Mr-bE-bpO" firstAttribute="top" secondItem="kUT-Fs-b0R" secondAttribute="bottom" constant="8" id="Ofw-jJ-SSt"/>
                                             <constraint firstAttribute="trailing" secondItem="fBG-yv-SoP" secondAttribute="trailing" id="OsS-CG-8oE"/>
                                             <constraint firstAttribute="trailing" secondItem="uj2-NG-NwH" secondAttribute="trailing" id="P0v-hC-10a"/>
@@ -1611,20 +1578,16 @@
                                             <constraint firstItem="vRj-Gc-BsA" firstAttribute="top" secondItem="i5R-LJ-Iax" secondAttribute="top" id="T8B-OJ-d0n"/>
                                             <constraint firstItem="8Mr-bE-bpO" firstAttribute="top" secondItem="kUT-Fs-b0R" secondAttribute="bottom" constant="8" id="VDx-EO-4SY"/>
                                             <constraint firstItem="fBG-yv-SoP" firstAttribute="top" secondItem="vRj-Gc-BsA" secondAttribute="bottom" constant="8" id="VL7-hi-Cuq"/>
-                                            <constraint firstAttribute="trailing" secondItem="gJy-l1-YAs" secondAttribute="trailing" id="Vfq-WZ-OFl"/>
                                             <constraint firstItem="9sk-cX-ubl" firstAttribute="top" secondItem="8Mr-bE-bpO" secondAttribute="bottom" id="Vu8-dl-0zX"/>
                                             <constraint firstItem="0dr-k0-1TU" firstAttribute="top" secondItem="9sk-cX-ubl" secondAttribute="bottom" constant="32" id="W4l-Ln-Bpa"/>
                                             <constraint firstItem="0dr-k0-1TU" firstAttribute="leading" secondItem="i5R-LJ-Iax" secondAttribute="leading" constant="16" id="WAK-5i-Yt7"/>
                                             <constraint firstAttribute="trailing" secondItem="vRj-Gc-BsA" secondAttribute="trailing" constant="154" id="Wuk-vc-kge"/>
-                                            <constraint firstItem="gJy-l1-YAs" firstAttribute="top" secondItem="fBG-yv-SoP" secondAttribute="bottom" constant="1" id="X80-c2-2XV"/>
-                                            <constraint firstItem="kUT-Fs-b0R" firstAttribute="top" secondItem="gJy-l1-YAs" secondAttribute="bottom" constant="40" id="Xmv-B9-WJk"/>
                                             <constraint firstItem="vRj-Gc-BsA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5R-LJ-Iax" secondAttribute="leading" constant="16" id="Zf3-GQ-CZG"/>
                                             <constraint firstItem="yHd-fh-ova" firstAttribute="top" secondItem="vRj-Gc-BsA" secondAttribute="bottom" constant="8" id="cB2-8h-guE"/>
                                             <constraint firstAttribute="trailing" secondItem="8Mr-bE-bpO" secondAttribute="trailing" id="dup-1J-6EW"/>
                                             <constraint firstItem="fBG-yv-SoP" firstAttribute="leading" secondItem="i5R-LJ-Iax" secondAttribute="leading" id="eD6-jQ-r1n"/>
                                             <constraint firstItem="yHd-fh-ova" firstAttribute="top" secondItem="vRj-Gc-BsA" secondAttribute="bottom" constant="8" id="gtw-vs-KkS"/>
                                             <constraint firstItem="vRj-Gc-BsA" firstAttribute="top" secondItem="i5R-LJ-Iax" secondAttribute="top" constant="16" id="hvM-t1-Vjy"/>
-                                            <constraint firstItem="gJy-l1-YAs" firstAttribute="leading" secondItem="i5R-LJ-Iax" secondAttribute="leading" id="lIU-6a-UZ7"/>
                                             <constraint firstItem="fBG-yv-SoP" firstAttribute="top" secondItem="vRj-Gc-BsA" secondAttribute="bottom" constant="8" id="lhM-fm-pt5"/>
                                             <constraint firstItem="1Zw-Hf-bvJ" firstAttribute="bottom" secondItem="i5R-LJ-Iax" secondAttribute="top" constant="105" id="m92-HE-rnR"/>
                                             <constraint firstItem="fBG-yv-SoP" firstAttribute="top" secondItem="vRj-Gc-BsA" secondAttribute="bottom" constant="-19" id="ne3-Es-vgk"/>
@@ -1683,13 +1646,11 @@
                         <outlet property="buttonSystem" destination="yHd-fh-ova" id="iDT-9U-lSk"/>
                         <outlet property="buttonTwitter" destination="uj2-NG-NwH" id="rfe-nb-s7a"/>
                         <outlet property="labelCopyright" destination="0dr-k0-1TU" id="I0D-6G-Uhk"/>
-                        <outlet property="labelFilters" destination="MpU-Ry-rbJ" id="mZF-rf-Xfa"/>
                         <outlet property="labelInfo" destination="vRj-Gc-BsA" id="zF3-XO-u9b"/>
                         <outlet property="labelInformation" destination="kUT-Fs-b0R" id="zO6-4j-VxM"/>
                         <outlet property="labelScores" destination="QPi-qy-3fM" id="q9Q-mg-Efc"/>
                         <outlet property="labelVersion" destination="W2s-th-mQe" id="gTy-M4-DCb"/>
                         <outlet property="labelVersion2" destination="sGx-Sn-rBg" id="He2-9t-Nz2"/>
-                        <outlet property="switchFilters" destination="VHS-yv-e4Z" id="OeP-1y-1Nt"/>
                         <outlet property="viewInformationRow" destination="8Mr-bE-bpO" id="3Jw-Ai-VyJ"/>
                     </connections>
                 </viewController>

@@ -12,18 +12,14 @@ class SettingsVC: UIViewController {
     
     @IBOutlet weak var labelInformation:    smallLabel!
     @IBOutlet weak var labelVersion:        UILabel!
-    @IBOutlet var labelFilters: offWhiteLabel!
     @IBOutlet weak var labelVersion2:       UILabel!
     @IBOutlet weak var labelCopyright:      smallLabel!
     @IBOutlet weak var viewInformationRow:  UIView!
     @IBOutlet weak var buttonFeedback:      UIButton!
     @IBOutlet weak var labelScores:         offWhiteLabel!
     @IBOutlet weak var labelInfo:           smallLabel!
-    @IBOutlet weak var buttonSystem: UIButton!
-    @IBOutlet weak var buttonTwitter: SoftWhiteButton!
-    @IBOutlet var switchFilters: UISwitch!
-    
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    @IBOutlet weak var buttonSystem:        UIButton!
+    @IBOutlet weak var buttonTwitter:       SoftWhiteButton!
     
     var globalFunctions = globalHeaderFunctions()
     var twitterURL = "https://mobile.twitter.com/fightscoresapp"
@@ -38,7 +34,6 @@ class SettingsVC: UIViewController {
         labelInformation.text = "About"
         labelVersion.text = "Version"
         labelVersion2.text = getVersion()
-        labelFilters.text = "Show Date Filters"
         buttonFeedback.setTitle("Rate in the App Store", forState: .Normal)
         buttonTwitter.setTitle("Follow on Twitter", forState: .Normal)
         labelCopyright.text = "Copyright © \(getYear()), Gareth D Jones \nAll rights reserved."
@@ -64,18 +59,6 @@ class SettingsVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    @IBAction func switchValueChanged(sender: UISwitch) {
-        if sender.on {
-            let filterDisplayResponse = true
-            userDefaults.synchronize()
-            println("Filters are on!")
-        } else {
-            let filterDisplayResponse = false
-            userDefaults.synchronize()
-            println("Filters are off!")
-        }
     }
     
     func rightNavButtonClick(sender:UIButton!) {
