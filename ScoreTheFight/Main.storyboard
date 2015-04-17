@@ -43,7 +43,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a fight to get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-qY-ulQ">
-                                            <rect key="frame" x="64" y="63" width="192" height="21"/>
+                                            <rect key="frame" x="16" y="63" width="288" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="QwV-im-VNm" secondAttribute="bottom" constant="37" id="9BH-rB-1c4"/>
-                                        <constraint firstItem="dIc-qY-ulQ" firstAttribute="leading" secondItem="luY-xK-ejk" secondAttribute="leading" constant="64" id="C9u-7z-Z5u"/>
+                                        <constraint firstItem="dIc-qY-ulQ" firstAttribute="leading" secondItem="luY-xK-ejk" secondAttribute="leading" constant="16" id="C9u-7z-Z5u"/>
                                         <constraint firstAttribute="bottom" secondItem="QwV-im-VNm" secondAttribute="bottom" constant="12" id="CWz-iF-2gA"/>
                                         <constraint firstAttribute="centerX" secondItem="PEr-9w-rgo" secondAttribute="centerX" id="JF2-aN-AF0"/>
                                         <constraint firstItem="dIc-qY-ulQ" firstAttribute="top" secondItem="PEr-9w-rgo" secondAttribute="bottom" constant="13" id="ObW-ig-ux0"/>
@@ -70,7 +70,7 @@
                                         <constraint firstItem="PEr-9w-rgo" firstAttribute="top" secondItem="luY-xK-ejk" secondAttribute="top" constant="10" id="Xm1-fY-boS"/>
                                         <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="32" id="eV8-uy-rua"/>
                                         <constraint firstAttribute="trailing" secondItem="QwV-im-VNm" secondAttribute="trailing" constant="16" id="gVB-M9-5qb"/>
-                                        <constraint firstAttribute="trailing" secondItem="dIc-qY-ulQ" secondAttribute="trailing" constant="64" id="h3k-5h-AG1"/>
+                                        <constraint firstAttribute="trailing" secondItem="dIc-qY-ulQ" secondAttribute="trailing" constant="16" id="h3k-5h-AG1"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -1605,10 +1605,10 @@
                                                 <exclude reference="VL7-hi-Cuq"/>
                                                 <exclude reference="ne3-Es-vgk"/>
                                                 <exclude reference="ume-81-vs2"/>
-                                                <exclude reference="cB2-8h-guE"/>
-                                                <exclude reference="gtw-vs-KkS"/>
                                                 <exclude reference="6Fw-9H-M3I"/>
                                                 <exclude reference="Ofw-jJ-SSt"/>
+                                                <exclude reference="cB2-8h-guE"/>
+                                                <exclude reference="gtw-vs-KkS"/>
                                                 <exclude reference="LHV-er-si5"/>
                                                 <exclude reference="GLc-Cv-FNP"/>
                                                 <exclude reference="m92-HE-rnR"/>
