@@ -153,6 +153,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         labelNoFights.hidden = true
         buttonNoFights.hidden = true
+        labelNoFights.font = UIFont (name: "HelveticaNeue-Light", size: 17)
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
             Int64(1.0 * Double(NSEC_PER_SEC)))
