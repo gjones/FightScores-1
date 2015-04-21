@@ -195,9 +195,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                self.navigationController?.popToRootViewControllerAnimated(true)
-                var setContext = self.fightDate.establishDateContext(fight!.date)
-                fight!.context = setContext
+                saveContext()
 
             default:
                 break
@@ -254,11 +252,23 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
             }
         }
     }
-    
-    func leftNavButtonClick(sender:UIButton!) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+
+    func saveContext() {
+        
+        // Set new date context
         var setContext = self.fightDate.establishDateContext(fight!.date)
         fight!.context = setContext
+        
+        // Save our context
+        var context = fight!.managedObjectContext
+        context?.save(nil)
+        
+        // Return to Master List
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
+    func leftNavButtonClick(sender:UIButton!) {
+        saveContext()
     }
     
     // Segue for Updating Scorecard

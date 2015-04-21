@@ -106,7 +106,6 @@ class FightDate: NSObject {
         
         return fightContext!
     }
-
 }
 
 class globalHeaderFunctions: UIViewController {

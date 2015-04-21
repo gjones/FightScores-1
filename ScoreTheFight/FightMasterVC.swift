@@ -135,6 +135,24 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return _fetchedFightsController!
     }
     
+    func getInitialContexts() {
+        var fights = fetchedFightsController.fetchedObjects
+        if let fights = fights {
+            for fight in fights {
+                let fight = fight as! Fight
+                var date = fight.date
+                var setContext = self.fightDate.establishDateContext(date)
+                fight.context = setContext
+                
+                // Save our context
+                var context = fight.managedObjectContext
+                context?.save(nil)
+                
+                println("Fight Context: \(setContext)")
+            }
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         fightTableView.backgroundColor = UIColor .clearColor()
@@ -147,7 +165,8 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         segmentedControl.items = ["All", "Today", "Upcoming", "Past"]
         segmentedControl.thumbColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         segmentedControl.addTarget(self, action: "changeFightContext:", forControlEvents: .ValueChanged)
-        
+    
+        getInitialContexts()
     }
     
     override func viewDidLoad() {
@@ -155,8 +174,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         buttonNoFights.hidden = true
         labelNoFights.font = UIFont (name: "HelveticaNeue-Light", size: 17)
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64(1.0 * Double(NSEC_PER_SEC)))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             self.stack.updateContextWithUbiquitousContentUpdates = true
             self.fetchedFightsController.performFetch(nil)
@@ -200,6 +218,11 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return fetchedFightsController.sections![0].numberOfObjects
     }
     
+    func getFightAtIndexPath(indexPath : NSIndexPath) -> Fight {
+        return fetchedFightsController.objectAtIndexPath(indexPath) as! Fight
+    }
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var objects = fetchedFightsController.fetchedObjects
         
@@ -222,32 +245,34 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         fightTableView.beginUpdates()
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var identifier = "FightCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell;
-        cell.fight = fetchedFightsController.fetchedObjects![indexPath.row] as? Fight
 
-        return cell
+        var identifier = "FightCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FightCell
+        cell.fight = self.fetchedFightsController.fetchedObjects![indexPath.row] as? Fight
         
+        return cell
+    
     }
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch(type) {
-        case .Insert:
+        case NSFetchedResultsChangeType.Insert:
             if let newIndexPath = newIndexPath {
                 fightTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
             }
-        case .Delete:
+        case NSFetchedResultsChangeType.Delete:
             if let indexPath = indexPath {
-                fightTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                fightTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         default:
             break
         }
     }
+    
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         fightTableView.endUpdates()
