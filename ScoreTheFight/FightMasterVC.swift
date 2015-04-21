@@ -147,8 +147,6 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 // Save our context
                 var context = fight.managedObjectContext
                 context?.save(nil)
-                
-                println("Fight Context: \(setContext)")
             }
         }
     }
