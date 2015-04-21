@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        println("Return From Snooze")
+    }
+
 
 }
 

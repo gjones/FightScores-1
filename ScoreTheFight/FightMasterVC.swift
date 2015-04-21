@@ -165,14 +165,13 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         segmentedControl.items = ["All", "Today", "Upcoming", "Past"]
         segmentedControl.thumbColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         segmentedControl.addTarget(self, action: "changeFightContext:", forControlEvents: .ValueChanged)
-    
-        getInitialContexts()
     }
     
     override func viewDidLoad() {
         labelNoFights.hidden = true
         buttonNoFights.hidden = true
         labelNoFights.font = UIFont (name: "HelveticaNeue-Light", size: 17)
+        getInitialContexts()
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
