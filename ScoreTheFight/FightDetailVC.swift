@@ -209,7 +209,7 @@ class FightDetailVC: UIViewController, UpdateFightDetailDelegate {
     
     // Sharing Functionality
     func rightNavButtonClick(sender: UIButton) {
-        let textToShare = "Here's how I scored \(fight!.boxerA) vs \(fight!.boxerB) #boxing"
+        let textToShare = "Here's how I scored \(fight!.boxerA) vs \(fight!.boxerB) @fightscoresapp #boxing"
         
         // Generate the screenshot
         if let keyWindow = UIApplication.sharedApplication().keyWindow {

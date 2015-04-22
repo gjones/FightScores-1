@@ -262,11 +262,9 @@
 		19E529821A9370D200F5CF22 = {
 			isa = PBXGroup;
 			children = (
-				196E8DEE1AB0656900119BD4 /* Crashlytics.framework */,
-				196E8DEF1AB0656900119BD4 /* Fabric.framework */,
-				19A69E751AAF431D00325089 /* CloudKit.framework */,
 				19E5298D1A9370D200F5CF22 /* FightScores */,
 				19E529A61A9370D200F5CF22 /* FightScoresTests */,
+				19FDA72A1AE824C200ECB77E /* Frameworks */,
 				19E5298C1A9370D200F5CF22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -339,6 +337,16 @@
 				1937EECD1AADF5AD00F9C444 /* FightScores.entitlements */,
 			);
 			name = "Date Modal / iCloud";
+			sourceTree = "<group>";
+		};
+		19FDA72A1AE824C200ECB77E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				196E8DEE1AB0656900119BD4 /* Crashlytics.framework */,
+				196E8DEF1AB0656900119BD4 /* Fabric.framework */,
+				19A69E751AAF431D00325089 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
