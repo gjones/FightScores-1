@@ -61,7 +61,7 @@ class FightMasterVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func changeFightContext(sender: AnyObject) {
         
         if segmentedControl.selectedIndex == 0 {
-            println("Showing All Fights")
+            print("Showing All Fights")
             fetchedFightsController.fetchRequest.predicate = nil
             fetchedFightsController.fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             self.fetchedFightsController.performFetch(nil)

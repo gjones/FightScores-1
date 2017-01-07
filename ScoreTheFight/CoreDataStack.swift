@@ -68,7 +68,7 @@ import CoreData
         
         fileManager.createDirectoryAtPath(storePath, withIntermediateDirectories:
             true, attributes: nil, error: nil)
-        return NSURL.fileURLWithPath(storePath.stringByAppendingPathComponent(storeName + ".sqlite"))!
+        return NSURL.fileURLWithPath(storePath.stringByAppendingPathComponent(storeName + ".sqlite"))
     }
     
     lazy var model : NSManagedObjectModel = NSManagedObjectModel(contentsOfURL: self.modelURL)!
